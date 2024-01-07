@@ -7,6 +7,11 @@
 
 import UIKit
 
-extension UIButton {
+enum BtnState {
+    case Default
+    case Disabled
+}
+
+final class DayCaratBtn: UIButton {
     
 }
