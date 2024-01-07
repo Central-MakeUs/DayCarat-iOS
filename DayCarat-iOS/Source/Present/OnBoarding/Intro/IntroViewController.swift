@@ -9,4 +9,15 @@ import UIKit
 
 class IntroViewController: BaseViewController {
     
+    override func configure() {
+        
+    }
+    
+    override func addView() {
+        
+    }
+    
+    override func layout() {
+        
+    }
 }

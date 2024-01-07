@@ -13,7 +13,6 @@
 		09073D422B46F88200D840EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09073D402B46F88200D840EC /* LaunchScreen.storyboard */; };
 		09073D4E2B46FEAF00D840EC /* tempDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09073D4D2B46FEAF00D840EC /* tempDomain.swift */; };
 		09073D512B46FEBA00D840EC /* tempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09073D502B46FEBA00D840EC /* tempData.swift */; };
-		0967D8AF2B4A60E5009CFD0A /* tempCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8AE2B4A60E5009CFD0A /* tempCell.swift */; };
 		0967D8B12B4A60F1009CFD0A /* tempInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8B02B4A60F1009CFD0A /* tempInput.swift */; };
 		0967D8B32B4A60F7009CFD0A /* temBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8B22B4A60F7009CFD0A /* temBox.swift */; };
 		0967D8B52B4A60FE009CFD0A /* tempPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8B42B4A60FE009CFD0A /* tempPage.swift */; };
@@ -27,6 +26,11 @@
 		0967D8C82B4A62CA009CFD0A /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0967D8BF2B4A62CA009CFD0A /* Pretendard-Black.otf */; };
 		0967D8C92B4A62CA009CFD0A /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0967D8C02B4A62CA009CFD0A /* Pretendard-Medium.otf */; };
 		0967D8CA2B4A62CA009CFD0A /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0967D8C12B4A62CA009CFD0A /* Pretendard-Thin.otf */; };
+		0967D8CD2B4A7417009CFD0A /* DayCaratCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8CC2B4A7417009CFD0A /* DayCaratCheckBox.swift */; };
+		0967D8CF2B4AE19E009CFD0A /* AgreeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8CE2B4AE19E009CFD0A /* AgreeViewModel.swift */; };
+		0967D8D22B4AE733009CFD0A /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = 0967D8D12B4AE733009CFD0A /* RxGesture */; };
+		0967D8DB2B4AF04F009CFD0A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8DA2B4AF04F009CFD0A /* BaseView.swift */; };
+		0967D8DD2B4AFB13009CFD0A /* IntroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8DC2B4AFB13009CFD0A /* IntroCollectionViewCell.swift */; };
 		DE8479882B47907D00471B4F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8479872B47907D00471B4F /* LoginViewController.swift */; };
 		DE84798B2B4790B500471B4F /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = DE84798A2B4790B500471B4F /* RxBlocking */; };
 		DE84798D2B4790B500471B4F /* RxBlocking-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = DE84798C2B4790B500471B4F /* RxBlocking-Dynamic */; };
@@ -41,7 +45,7 @@
 		DE8479A42B47924200471B4F /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8479A32B47924200471B4F /* Color+.swift */; };
 		DE8479A82B479CB700471B4F /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8479A72B479CB700471B4F /* Font+.swift */; };
 		DE8479D12B47A0FD00471B4F /* DayCaratLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8479D02B47A0FD00471B4F /* DayCaratLabel.swift */; };
-		DE8479D42B47B7E500471B4F /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8479D32B47B7E500471B4F /* UIButton.swift */; };
+		DE8479D42B47B7E500471B4F /* DayCaratBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8479D32B47B7E500471B4F /* DayCaratBtn.swift */; };
 		DE8479D62B47DFB800471B4F /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8479D52B47DFB800471B4F /* IntroViewController.swift */; };
 		DE8479DB2B47E0D000471B4F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8479DA2B47E0D000471B4F /* HomeViewController.swift */; };
 		DE8479DE2B47E16600471B4F /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8479DD2B47E16600471B4F /* EpisodeViewController.swift */; };
@@ -58,7 +62,6 @@
 		09073D432B46F88200D840EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09073D4D2B46FEAF00D840EC /* tempDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempDomain.swift; sourceTree = "<group>"; };
 		09073D502B46FEBA00D840EC /* tempData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempData.swift; sourceTree = "<group>"; };
-		0967D8AE2B4A60E5009CFD0A /* tempCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = tempCell.swift; path = "DayCarat-iOS/tempCell.swift"; sourceTree = SOURCE_ROOT; };
 		0967D8B02B4A60F1009CFD0A /* tempInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = tempInput.swift; path = "DayCarat-iOS/tempInput.swift"; sourceTree = SOURCE_ROOT; };
 		0967D8B22B4A60F7009CFD0A /* temBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = temBox.swift; path = "DayCarat-iOS/temBox.swift"; sourceTree = SOURCE_ROOT; };
 		0967D8B42B4A60FE009CFD0A /* tempPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = tempPage.swift; path = "DayCarat-iOS/tempPage.swift"; sourceTree = SOURCE_ROOT; };
@@ -72,12 +75,16 @@
 		0967D8BF2B4A62CA009CFD0A /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Black.otf"; path = "DayCarat-iOS/Resource/Pretendard-Black.otf"; sourceTree = SOURCE_ROOT; };
 		0967D8C02B4A62CA009CFD0A /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Medium.otf"; path = "DayCarat-iOS/Resource/Pretendard-Medium.otf"; sourceTree = SOURCE_ROOT; };
 		0967D8C12B4A62CA009CFD0A /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Thin.otf"; path = "DayCarat-iOS/Resource/Pretendard-Thin.otf"; sourceTree = SOURCE_ROOT; };
+		0967D8CC2B4A7417009CFD0A /* DayCaratCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCaratCheckBox.swift; sourceTree = "<group>"; };
+		0967D8CE2B4AE19E009CFD0A /* AgreeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeViewModel.swift; sourceTree = "<group>"; };
+		0967D8DA2B4AF04F009CFD0A /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		0967D8DC2B4AFB13009CFD0A /* IntroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IntroCollectionViewCell.swift; path = "DayCarat-iOS/Source/Present/Base/IntroCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		DE8479872B47907D00471B4F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DE8479A02B47912900471B4F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DE8479A32B47924200471B4F /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		DE8479A72B479CB700471B4F /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		DE8479D02B47A0FD00471B4F /* DayCaratLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCaratLabel.swift; sourceTree = "<group>"; };
-		DE8479D32B47B7E500471B4F /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		DE8479D32B47B7E500471B4F /* DayCaratBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCaratBtn.swift; sourceTree = "<group>"; };
 		DE8479D52B47DFB800471B4F /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		DE8479DA2B47E0D000471B4F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DE8479DD2B47E16600471B4F /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +99,7 @@
 			files = (
 				DE8479932B4790B500471B4F /* RxRelay in Frameworks */,
 				DE84799E2B47910C00471B4F /* Then in Frameworks */,
+				0967D8D22B4AE733009CFD0A /* RxGesture in Frameworks */,
 				DE8479912B4790B500471B4F /* RxCocoa-Dynamic in Frameworks */,
 				DE8479962B4790D400471B4F /* Moya in Frameworks */,
 				DE84799B2B4790F000471B4F /* SnapKit-Dynamic in Frameworks */,
@@ -198,13 +206,23 @@
 			isa = PBXGroup;
 			children = (
 				0967D8B72B4A6128009CFD0A /* AgreeViewController.swift */,
+				0967D8CE2B4AE19E009CFD0A /* AgreeViewModel.swift */,
 			);
 			path = Agree;
+			sourceTree = "<group>";
+		};
+		0967D8CB2B4A7404009CFD0A /* CheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				0967D8CC2B4A7417009CFD0A /* DayCaratCheckBox.swift */,
+			);
+			path = CheckBox;
 			sourceTree = "<group>";
 		};
 		DE8479832B478E9D00471B4F /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				0967D8CB2B4A7404009CFD0A /* CheckBox */,
 				DE8479D22B47B7DA00471B4F /* Button */,
 				DE8479CF2B47A0ED00471B4F /* FontLabel */,
 			);
@@ -226,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8479A02B47912900471B4F /* BaseViewController.swift */,
+				0967D8DA2B4AF04F009CFD0A /* BaseView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -267,7 +286,7 @@
 		DE8479D22B47B7DA00471B4F /* Button */ = {
 			isa = PBXGroup;
 			children = (
-				DE8479D32B47B7E500471B4F /* UIButton.swift */,
+				DE8479D32B47B7E500471B4F /* DayCaratBtn.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -307,7 +326,7 @@
 		DE8479DF2B47E18700471B4F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				0967D8AE2B4A60E5009CFD0A /* tempCell.swift */,
+				0967D8DC2B4AFB13009CFD0A /* IntroCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -370,6 +389,7 @@
 				DE8479982B4790F000471B4F /* SnapKit */,
 				DE84799A2B4790F000471B4F /* SnapKit-Dynamic */,
 				DE84799D2B47910C00471B4F /* Then */,
+				0967D8D12B4AE733009CFD0A /* RxGesture */,
 			);
 			productName = "DayCarat-iOS";
 			productReference = 09073D322B46F87E00D840EC /* DayCarat-iOS.app */;
@@ -404,6 +424,7 @@
 				DE8479942B4790D400471B4F /* XCRemoteSwiftPackageReference "Moya" */,
 				DE8479972B4790F000471B4F /* XCRemoteSwiftPackageReference "SnapKit" */,
 				DE84799C2B47910C00471B4F /* XCRemoteSwiftPackageReference "Then" */,
+				0967D8D02B4AE733009CFD0A /* XCRemoteSwiftPackageReference "RxGesture" */,
 			);
 			productRefGroup = 09073D332B46F87E00D840EC /* Products */;
 			projectDirPath = "";
@@ -441,24 +462,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE8479882B47907D00471B4F /* LoginViewController.swift in Sources */,
+				0967D8DB2B4AF04F009CFD0A /* BaseView.swift in Sources */,
 				DE8479A42B47924200471B4F /* Color+.swift in Sources */,
 				DE8479D62B47DFB800471B4F /* IntroViewController.swift in Sources */,
+				0967D8CD2B4A7417009CFD0A /* DayCaratCheckBox.swift in Sources */,
 				09073D4E2B46FEAF00D840EC /* tempDomain.swift in Sources */,
+				0967D8CF2B4AE19E009CFD0A /* AgreeViewModel.swift in Sources */,
 				09073D362B46F87E00D840EC /* AppDelegate.swift in Sources */,
 				09073D382B46F87E00D840EC /* SceneDelegate.swift in Sources */,
+				0967D8DD2B4AFB13009CFD0A /* IntroCollectionViewCell.swift in Sources */,
 				0967D8B52B4A60FE009CFD0A /* tempPage.swift in Sources */,
 				DE8479A82B479CB700471B4F /* Font+.swift in Sources */,
 				DE8479E72B47E8BB00471B4F /* Image+.swift in Sources */,
 				DE8479A12B47912900471B4F /* BaseViewController.swift in Sources */,
 				DE8479E22B47E1F400471B4F /* CustomTabBarController.swift in Sources */,
-				DE8479D42B47B7E500471B4F /* UIButton.swift in Sources */,
+				DE8479D42B47B7E500471B4F /* DayCaratBtn.swift in Sources */,
 				DE8479D12B47A0FD00471B4F /* DayCaratLabel.swift in Sources */,
 				09073D512B46FEBA00D840EC /* tempData.swift in Sources */,
 				DE8479DE2B47E16600471B4F /* EpisodeViewController.swift in Sources */,
 				0967D8B12B4A60F1009CFD0A /* tempInput.swift in Sources */,
 				DE8479DB2B47E0D000471B4F /* HomeViewController.swift in Sources */,
 				0967D8B32B4A60F7009CFD0A /* temBox.swift in Sources */,
-				0967D8AF2B4A60E5009CFD0A /* tempCell.swift in Sources */,
 				0967D8B82B4A6128009CFD0A /* AgreeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -678,6 +702,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0967D8D02B4AE733009CFD0A /* XCRemoteSwiftPackageReference "RxGesture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.4;
+			};
+		};
 		DE8479892B4790B500471B4F /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -713,6 +745,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0967D8D12B4AE733009CFD0A /* RxGesture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0967D8D02B4AE733009CFD0A /* XCRemoteSwiftPackageReference "RxGesture" */;
+			productName = RxGesture;
+		};
 		DE84798A2B4790B500471B4F /* RxBlocking */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DE8479892B4790B500471B4F /* XCRemoteSwiftPackageReference "RxSwift" */;

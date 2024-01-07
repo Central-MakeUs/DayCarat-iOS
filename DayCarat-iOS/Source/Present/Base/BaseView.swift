@@ -8,13 +8,17 @@
 import UIKit
 
 class BaseView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    func layout() {}
+    func configure() {}
+    func addview() {}
+    override init(frame: CGRect) {
+        super.init(frame: .zero)
+        self.backgroundColor = .white
+        self.addview()
+        self.configure()
+        self.layout()
     }
-    */
-
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
 }
