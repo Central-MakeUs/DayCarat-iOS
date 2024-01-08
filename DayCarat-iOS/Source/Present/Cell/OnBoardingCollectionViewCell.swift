@@ -7,13 +7,21 @@
 
 import UIKit
 
+import RxGesture
+import RxSwift
+
 class OnBoardingCollectionViewCell: UICollectionViewCell {
     static let identifier = "OnBoardingCollectionViewCell"
     private let firstView = InputNameSection()
     private let secondView = JobSection()
     private let thirdView = StrengthSection()
-    
+    var onSubviewTapped: (() -> Void)?
+    var inputNameSection: InputNameSection? {
+        return firstView
+    }
+
     private var currentIndex: Int = 0
+    var disposeBag = DisposeBag()
 
     func configureCell(index: Int) {
          currentIndex = index
@@ -44,6 +52,38 @@ class OnBoardingCollectionViewCell: UICollectionViewCell {
     private func removeAllSubviews() {
         subviews.forEach { $0.removeFromSuperview() }
     }
+    
+    func setupGestureRecognizer() {
+        firstView
+            .rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { [weak self] _ in
+                self?.onSubviewTapped?()
+            })
+            .disposed(by: disposeBag)
+        secondView
+            .rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { [weak self] _ in
+                self?.onSubviewTapped?()
+            })
+            .disposed(by: disposeBag)
+        thirdView
+            .rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { [weak self] _ in
+                self?.onSubviewTapped?()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag = DisposeBag()
+    }
         
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -52,6 +92,4 @@ class OnBoardingCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-
 }

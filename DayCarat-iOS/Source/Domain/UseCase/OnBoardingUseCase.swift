@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+protocol OnBoardingUseCaseProtocol {
+    func processIntroCellData() -> OnBoardingModel
+}
+
+final class OnBoardingUseCase: OnBoardingUseCaseProtocol {
+    func processIntroCellData() -> OnBoardingModel {
+        return OnBoardingModel()
+    }
+}

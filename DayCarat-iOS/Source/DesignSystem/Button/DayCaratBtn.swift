@@ -25,6 +25,24 @@ final class DayCaratBtn: UIButton {
         }
     }
     
+    override var isEnabled: Bool {
+        didSet {
+            updateUIForEnabledState()
+        }
+    }
+
+    private func updateUIForEnabledState() {
+        if isEnabled {
+            // 버튼이 활성화된 경우
+            self.backgroundColor = .Main
+            self.setTitleColor(.white, for: .normal)
+        } else {
+            // 버튼이 비활성화된 경우
+            self.backgroundColor = .Gray300
+            self.setTitleColor(.Gray600, for: .normal)
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090143082B4C052D006EAE30 /* OnBoardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090143072B4C052D006EAE30 /* OnBoardingModel.swift */; };
+		0901430A2B4C18B2006EAE30 /* TextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090143092B4C18B2006EAE30 /* TextField+.swift */; };
+		0901430C2B4C2E21006EAE30 /* JobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901430B2B4C2E21006EAE30 /* JobCollectionViewCell.swift */; };
+		0901430E2B4C3612006EAE30 /* CollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901430D2B4C3612006EAE30 /* CollectionView+.swift */; };
 		09073D362B46F87E00D840EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09073D352B46F87E00D840EC /* AppDelegate.swift */; };
 		09073D382B46F87E00D840EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09073D372B46F87E00D840EC /* SceneDelegate.swift */; };
 		09073D3F2B46F88200D840EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09073D3E2B46F88200D840EC /* Assets.xcassets */; };
@@ -35,7 +39,6 @@
 		DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */; };
 		DE5F41162B4B90A700581075 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41152B4B90A700581075 /* IntroViewModel.swift */; };
 		DE5F41192B4B90E300581075 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41182B4B90E300581075 /* ViewModelType.swift */; };
-		DE5F411F2B4B929800581075 /* tempInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F411E2B4B929800581075 /* tempInterface.swift */; };
 		DE5F41222B4B92B500581075 /* tempRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41212B4B92B500581075 /* tempRepository.swift */; };
 		DE5F41252B4B92CE00581075 /* tempDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41242B4B92CE00581075 /* tempDTO.swift */; };
 		DE5F41282B4B92DA00581075 /* tempService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41272B4B92DA00581075 /* tempService.swift */; };
@@ -75,6 +78,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		090143072B4C052D006EAE30 /* OnBoardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingModel.swift; sourceTree = "<group>"; };
+		090143092B4C18B2006EAE30 /* TextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+.swift"; sourceTree = "<group>"; };
+		0901430B2B4C2E21006EAE30 /* JobCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCollectionViewCell.swift; sourceTree = "<group>"; };
+		0901430D2B4C3612006EAE30 /* CollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+.swift"; sourceTree = "<group>"; };
 		09073D322B46F87E00D840EC /* DayCarat-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DayCarat-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09073D352B46F87E00D840EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09073D372B46F87E00D840EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,7 +110,6 @@
 		DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControlView.swift; sourceTree = "<group>"; };
 		DE5F41152B4B90A700581075 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		DE5F41182B4B90E300581075 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
-		DE5F411E2B4B929800581075 /* tempInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempInterface.swift; sourceTree = "<group>"; };
 		DE5F41212B4B92B500581075 /* tempRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempRepository.swift; sourceTree = "<group>"; };
 		DE5F41242B4B92CE00581075 /* tempDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempDTO.swift; sourceTree = "<group>"; };
 		DE5F41272B4B92DA00581075 /* tempService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempService.swift; sourceTree = "<group>"; };
@@ -271,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				DE5F41112B4B883400581075 /* IntroModel.swift */,
+				090143072B4C052D006EAE30 /* OnBoardingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,7 +303,6 @@
 		DE5F411D2B4B929000581075 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				DE5F411E2B4B929800581075 /* tempInterface.swift */,
 				DE5F41352B4BD2F500581075 /* OnBoardingInterface.swift */,
 			);
 			path = Interface;
@@ -384,6 +390,8 @@
 				DE8479A32B47924200471B4F /* Color+.swift */,
 				DE8479A72B479CB700471B4F /* Font+.swift */,
 				DE8479E62B47E8BB00471B4F /* Image+.swift */,
+				090143092B4C18B2006EAE30 /* TextField+.swift */,
+				0901430D2B4C3612006EAE30 /* CollectionView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -458,6 +466,7 @@
 			children = (
 				0967D8DC2B4AFB13009CFD0A /* IntroCollectionViewCell.swift */,
 				DE5F41452B4BE39100581075 /* OnBoardingCollectionViewCell.swift */,
+				0901430B2B4C2E21006EAE30 /* JobCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -598,6 +607,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0901430C2B4C2E21006EAE30 /* JobCollectionViewCell.swift in Sources */,
 				DE8479882B47907D00471B4F /* LoginViewController.swift in Sources */,
 				0967D8DB2B4AF04F009CFD0A /* BaseView.swift in Sources */,
 				DE8479A42B47924200471B4F /* Color+.swift in Sources */,
@@ -609,15 +619,16 @@
 				09073D362B46F87E00D840EC /* AppDelegate.swift in Sources */,
 				09073D382B46F87E00D840EC /* SceneDelegate.swift in Sources */,
 				0967D8DD2B4AFB13009CFD0A /* IntroCollectionViewCell.swift in Sources */,
-				DE5F411F2B4B929800581075 /* tempInterface.swift in Sources */,
 				DE5F413F2B4BD80D00581075 /* StrengthSection.swift in Sources */,
 				DE5F41222B4B92B500581075 /* tempRepository.swift in Sources */,
 				DE5F41342B4BD2EB00581075 /* OnBoardingUseCase.swift in Sources */,
 				DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */,
 				0967D8B52B4A60FE009CFD0A /* tempPage.swift in Sources */,
 				DE5F41362B4BD2F500581075 /* OnBoardingInterface.swift in Sources */,
+				0901430E2B4C3612006EAE30 /* CollectionView+.swift in Sources */,
 				DE5F41462B4BE39100581075 /* OnBoardingCollectionViewCell.swift in Sources */,
 				DE8479A82B479CB700471B4F /* Font+.swift in Sources */,
+				090143082B4C052D006EAE30 /* OnBoardingModel.swift in Sources */,
 				DE5F412D2B4BC50100581075 /* Coordinator.swift in Sources */,
 				DE8479E72B47E8BB00471B4F /* Image+.swift in Sources */,
 				DE5F41282B4B92DA00581075 /* tempService.swift in Sources */,
@@ -636,6 +647,7 @@
 				DE8479DB2B47E0D000471B4F /* HomeViewController.swift in Sources */,
 				0967D8B32B4A60F7009CFD0A /* temBox.swift in Sources */,
 				0967D8B82B4A6128009CFD0A /* AgreeViewController.swift in Sources */,
+				0901430A2B4C18B2006EAE30 /* TextField+.swift in Sources */,
 				DE5F41192B4B90E300581075 /* ViewModelType.swift in Sources */,
 				DE5F412A2B4B953A00581075 /* IntroUseCase.swift in Sources */,
 				DE5F41322B4BD27000581075 /* OnBoardingViewModel.swift in Sources */,
