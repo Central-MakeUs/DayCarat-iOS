@@ -40,6 +40,18 @@
 		DE5F41252B4B92CE00581075 /* tempDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41242B4B92CE00581075 /* tempDTO.swift */; };
 		DE5F41282B4B92DA00581075 /* tempService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41272B4B92DA00581075 /* tempService.swift */; };
 		DE5F412A2B4B953A00581075 /* IntroUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41292B4B953A00581075 /* IntroUseCase.swift */; };
+		DE5F412D2B4BC50100581075 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F412C2B4BC50100581075 /* Coordinator.swift */; };
+		DE5F41302B4BD24A00581075 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F412F2B4BD24A00581075 /* OnBoardingViewController.swift */; };
+		DE5F41322B4BD27000581075 /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41312B4BD27000581075 /* OnBoardingViewModel.swift */; };
+		DE5F41342B4BD2EB00581075 /* OnBoardingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41332B4BD2EB00581075 /* OnBoardingUseCase.swift */; };
+		DE5F41362B4BD2F500581075 /* OnBoardingInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41352B4BD2F500581075 /* OnBoardingInterface.swift */; };
+		DE5F41382B4BD30200581075 /* OnBoardingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41372B4BD30200581075 /* OnBoardingRepository.swift */; };
+		DE5F413B2B4BD43300581075 /* InputNameSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F413A2B4BD43300581075 /* InputNameSection.swift */; };
+		DE5F413D2B4BD7F200581075 /* JobSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F413C2B4BD7F200581075 /* JobSection.swift */; };
+		DE5F413F2B4BD80D00581075 /* StrengthSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F413E2B4BD80D00581075 /* StrengthSection.swift */; };
+		DE5F41422B4BE05200581075 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = DE5F41412B4BE05200581075 /* Differentiator */; };
+		DE5F41442B4BE05200581075 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = DE5F41432B4BE05200581075 /* RxDataSources */; };
+		DE5F41462B4BE39100581075 /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41452B4BE39100581075 /* OnBoardingCollectionViewCell.swift */; };
 		DE8479882B47907D00471B4F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8479872B47907D00471B4F /* LoginViewController.swift */; };
 		DE84798B2B4790B500471B4F /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = DE84798A2B4790B500471B4F /* RxBlocking */; };
 		DE84798D2B4790B500471B4F /* RxBlocking-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = DE84798C2B4790B500471B4F /* RxBlocking-Dynamic */; };
@@ -96,6 +108,16 @@
 		DE5F41242B4B92CE00581075 /* tempDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempDTO.swift; sourceTree = "<group>"; };
 		DE5F41272B4B92DA00581075 /* tempService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempService.swift; sourceTree = "<group>"; };
 		DE5F41292B4B953A00581075 /* IntroUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroUseCase.swift; sourceTree = "<group>"; };
+		DE5F412C2B4BC50100581075 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		DE5F412F2B4BD24A00581075 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		DE5F41312B4BD27000581075 /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
+		DE5F41332B4BD2EB00581075 /* OnBoardingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingUseCase.swift; sourceTree = "<group>"; };
+		DE5F41352B4BD2F500581075 /* OnBoardingInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingInterface.swift; sourceTree = "<group>"; };
+		DE5F41372B4BD30200581075 /* OnBoardingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingRepository.swift; sourceTree = "<group>"; };
+		DE5F413A2B4BD43300581075 /* InputNameSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNameSection.swift; sourceTree = "<group>"; };
+		DE5F413C2B4BD7F200581075 /* JobSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSection.swift; sourceTree = "<group>"; };
+		DE5F413E2B4BD80D00581075 /* StrengthSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthSection.swift; sourceTree = "<group>"; };
+		DE5F41452B4BE39100581075 /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE8479872B47907D00471B4F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DE8479A02B47912900471B4F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DE8479A32B47924200471B4F /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
@@ -115,9 +137,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE5F410F2B4B841500581075 /* SkeletonView in Frameworks */,
+				DE5F41442B4BE05200581075 /* RxDataSources in Frameworks */,
 				DE8479932B4790B500471B4F /* RxRelay in Frameworks */,
 				DE84799E2B47910C00471B4F /* Then in Frameworks */,
 				0967D8D22B4AE733009CFD0A /* RxGesture in Frameworks */,
+				DE5F41422B4BE05200581075 /* Differentiator in Frameworks */,
 				DE8479912B4790B500471B4F /* RxCocoa-Dynamic in Frameworks */,
 				DE8479962B4790D400471B4F /* Moya in Frameworks */,
 				DE84799B2B4790F000471B4F /* SnapKit-Dynamic in Frameworks */,
@@ -254,6 +278,7 @@
 		DE5F41172B4B90CE00581075 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				DE5F412C2B4BC50100581075 /* Coordinator.swift */,
 				DE5F41182B4B90E300581075 /* ViewModelType.swift */,
 			);
 			path = Protocol;
@@ -263,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				DE5F41292B4B953A00581075 /* IntroUseCase.swift */,
+				DE5F41332B4BD2EB00581075 /* OnBoardingUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -271,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				DE5F411E2B4B929800581075 /* tempInterface.swift */,
+				DE5F41352B4BD2F500581075 /* OnBoardingInterface.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -279,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				DE5F41212B4B92B500581075 /* tempRepository.swift */,
+				DE5F41372B4BD30200581075 /* OnBoardingRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -299,6 +327,26 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		DE5F412E2B4BD22E00581075 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				DE5F41392B4BD42100581075 /* Section */,
+				DE5F412F2B4BD24A00581075 /* OnBoardingViewController.swift */,
+				DE5F41312B4BD27000581075 /* OnBoardingViewModel.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		DE5F41392B4BD42100581075 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				DE5F413A2B4BD43300581075 /* InputNameSection.swift */,
+				DE5F413C2B4BD7F200581075 /* JobSection.swift */,
+				DE5F413E2B4BD80D00581075 /* StrengthSection.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
 		DE8479832B478E9D00471B4F /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +364,7 @@
 				DE8479D72B47DFCC00471B4F /* Login */,
 				0967D8B62B4A6117009CFD0A /* Agree */,
 				DE8479D82B47DFD300471B4F /* Intro */,
+				DE5F412E2B4BD22E00581075 /* OnBoarding */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -408,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				0967D8DC2B4AFB13009CFD0A /* IntroCollectionViewCell.swift */,
+				DE5F41452B4BE39100581075 /* OnBoardingCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -473,6 +523,8 @@
 				DE84799D2B47910C00471B4F /* Then */,
 				0967D8D12B4AE733009CFD0A /* RxGesture */,
 				DE5F410E2B4B841500581075 /* SkeletonView */,
+				DE5F41412B4BE05200581075 /* Differentiator */,
+				DE5F41432B4BE05200581075 /* RxDataSources */,
 			);
 			productName = "DayCarat-iOS";
 			productReference = 09073D322B46F87E00D840EC /* DayCarat-iOS.app */;
@@ -509,6 +561,7 @@
 				DE84799C2B47910C00471B4F /* XCRemoteSwiftPackageReference "Then" */,
 				0967D8D02B4AE733009CFD0A /* XCRemoteSwiftPackageReference "RxGesture" */,
 				DE5F410D2B4B841500581075 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				DE5F41402B4BE05200581075 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 09073D332B46F87E00D840EC /* Products */;
 			projectDirPath = "";
@@ -557,15 +610,24 @@
 				09073D382B46F87E00D840EC /* SceneDelegate.swift in Sources */,
 				0967D8DD2B4AFB13009CFD0A /* IntroCollectionViewCell.swift in Sources */,
 				DE5F411F2B4B929800581075 /* tempInterface.swift in Sources */,
+				DE5F413F2B4BD80D00581075 /* StrengthSection.swift in Sources */,
 				DE5F41222B4B92B500581075 /* tempRepository.swift in Sources */,
+				DE5F41342B4BD2EB00581075 /* OnBoardingUseCase.swift in Sources */,
 				DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */,
 				0967D8B52B4A60FE009CFD0A /* tempPage.swift in Sources */,
+				DE5F41362B4BD2F500581075 /* OnBoardingInterface.swift in Sources */,
+				DE5F41462B4BE39100581075 /* OnBoardingCollectionViewCell.swift in Sources */,
 				DE8479A82B479CB700471B4F /* Font+.swift in Sources */,
+				DE5F412D2B4BC50100581075 /* Coordinator.swift in Sources */,
 				DE8479E72B47E8BB00471B4F /* Image+.swift in Sources */,
 				DE5F41282B4B92DA00581075 /* tempService.swift in Sources */,
+				DE5F413D2B4BD7F200581075 /* JobSection.swift in Sources */,
 				DE8479A12B47912900471B4F /* BaseViewController.swift in Sources */,
 				DE8479E22B47E1F400471B4F /* CustomTabBarController.swift in Sources */,
+				DE5F41302B4BD24A00581075 /* OnBoardingViewController.swift in Sources */,
+				DE5F413B2B4BD43300581075 /* InputNameSection.swift in Sources */,
 				DE8479D42B47B7E500471B4F /* DayCaratBtn.swift in Sources */,
+				DE5F41382B4BD30200581075 /* OnBoardingRepository.swift in Sources */,
 				DE5F41122B4B883400581075 /* IntroModel.swift in Sources */,
 				DE8479D12B47A0FD00471B4F /* DayCaratLabel.swift in Sources */,
 				09073D512B46FEBA00D840EC /* tempData.swift in Sources */,
@@ -576,6 +638,7 @@
 				0967D8B82B4A6128009CFD0A /* AgreeViewController.swift in Sources */,
 				DE5F41192B4B90E300581075 /* ViewModelType.swift in Sources */,
 				DE5F412A2B4B953A00581075 /* IntroUseCase.swift in Sources */,
+				DE5F41322B4BD27000581075 /* OnBoardingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,6 +873,14 @@
 				minimumVersion = 1.30.4;
 			};
 		};
+		DE5F41402B4BE05200581075 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
 		DE8479892B4790B500471B4F /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -854,6 +925,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DE5F410D2B4B841500581075 /* XCRemoteSwiftPackageReference "SkeletonView" */;
 			productName = SkeletonView;
+		};
+		DE5F41412B4BE05200581075 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE5F41402B4BE05200581075 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		DE5F41432B4BE05200581075 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE5F41402B4BE05200581075 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 		DE84798A2B4790B500471B4F /* RxBlocking */ = {
 			isa = XCSwiftPackageProductDependency;

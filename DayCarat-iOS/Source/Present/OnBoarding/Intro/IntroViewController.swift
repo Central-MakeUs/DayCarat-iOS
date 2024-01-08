@@ -35,7 +35,7 @@ final class IntroViewController: BaseViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private let pageControl = CustomPageControlView(numberOfPages: 3)
+    private let pageControl = CustomPageControlView(numberOfPages: 3, width: 6, height: 6, spacing: 8, different: true)
     
     private let nextBtn = DayCaratBtn(type: .Default, text: "데이캐럿으로 커리어 관리 시작하기")
     
@@ -61,7 +61,6 @@ final class IntroViewController: BaseViewController {
         self.view.backgroundColor = .Gray50
         self.introCollectionView.delegate = self
         nextBtn.isHidden = true
-
     }
     
     override func addView() {
