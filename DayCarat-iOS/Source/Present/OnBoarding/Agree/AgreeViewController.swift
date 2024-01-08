@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import RxGesture
 
-class AgreeViewController: BaseViewController {
+final class AgreeViewController: BaseViewController {
     
     private let titleLabel = DayCaratLabel(type: .Header6, text: "약관에 동의해주세요", textColor: .black)
     private let desLabel = DayCaratLabel(type: .Body2, text: "어쩌구저쩌구\n설명", textColor: .gray500)
@@ -28,6 +28,7 @@ class AgreeViewController: BaseViewController {
         serviceAgreeView = DayCaratCheckBox(baggage: tempBaggage.asObservable(), text: "서비스 이용약관(필수)", textType: .Body3, btnType: .All)
         ageAgreeView = DayCaratCheckBox(baggage: tempBaggage.asObservable(), text: "만 14세 이상입니다.(필수)", textType: .Body3, btnType: .All)
         infoAgreeView = DayCaratCheckBox(baggage: tempBaggage.asObservable(), text: "개인정보 처리방침 동의(필수)", textType: .Body3, btnType: .All)
+        self.view.backgroundColor = .Gray50
     }
     
     override func addView() {
