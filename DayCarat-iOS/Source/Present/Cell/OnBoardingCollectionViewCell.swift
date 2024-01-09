@@ -10,7 +10,7 @@ import UIKit
 import RxGesture
 import RxSwift
 
-class OnBoardingCollectionViewCell: UICollectionViewCell {
+final class OnBoardingCollectionViewCell: UICollectionViewCell {
     static let identifier = "OnBoardingCollectionViewCell"
      let firstView = InputNameSection()
      let secondView = JobSection()

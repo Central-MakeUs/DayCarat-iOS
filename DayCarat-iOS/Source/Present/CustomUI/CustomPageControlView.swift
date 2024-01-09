@@ -46,6 +46,7 @@ final class CustomPageControlView: UIView {
                     $0.width.equalTo(indicatorWidth)
                     $0.height.equalTo(self.indicatorHeight)
                 }
+                indicatorView.layer.cornerRadius = indicatorHeight / 2
             }
             else {
                 indicatorView.layer.cornerRadius = indicatorHeight / 2

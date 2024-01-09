@@ -7,7 +7,7 @@
 
 import UIKit
 
-class JobCollectionViewCell: UICollectionViewCell {
+final class JobCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "JobCollectionViewCell"
     

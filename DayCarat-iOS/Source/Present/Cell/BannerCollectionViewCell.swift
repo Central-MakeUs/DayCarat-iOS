@@ -1,16 +1,16 @@
 //
-//  HelpCollectionViewCell.swift
+//  BannerCollectionViewCell.swift
 //  DayCarat-iOS
 //
-//  Created by Choi on 2024/01/09.
+//  Created by 최지철 on 1/9/24.
 //
 
 import UIKit
 
 import RxSwift
 
-final class HelpCollectionViewCell: UICollectionViewCell {
-    static let identifier = "HelpCollectionViewCell"
+final class BannerCollectionViewCell: UICollectionViewCell {
+    static let identifier = "BannerCollectionViewCell"
     var disposeBag = DisposeBag()
     
     private let Img = UIImageView().then {
@@ -19,15 +19,12 @@ final class HelpCollectionViewCell: UICollectionViewCell {
     
     func configureCell(img: String) {
         self.Img.image = UIImage(named: img)
-        self.backgroundColor = .clear
     }
 
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
         self.backgroundColor = .clear
-        self.layer.cornerRadius = 16
-        
         self.addSubview(Img)
         Img.snp.makeConstraints {
             $0.edges.equalToSuperview()

@@ -22,11 +22,12 @@ final class HomeViewModel: ViewModelType {
     }
     
     struct Output {
-        
+        let sectionData: Driver<CellModel>
     }
     
     func transform(input: Input) -> Output {
-        return Output()
+        let helpCellData = Driver.just(usecase.homeCellData())
+        return Output(sectionData: helpCellData)
     }
     
 }

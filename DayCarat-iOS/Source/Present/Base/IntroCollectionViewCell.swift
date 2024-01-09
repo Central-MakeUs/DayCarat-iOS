@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IntroCollectionViewCell: UICollectionViewCell {
+final class IntroCollectionViewCell: UICollectionViewCell {
     static let identifier = "IntroCollectionViewCell"
 
     private lazy var titleLabel = DayCaratLabel(type: .Header6, textColor: .black)

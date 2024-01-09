@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StrengthCollectionViewCell: UICollectionViewCell {
+final class StrengthCollectionViewCell: UICollectionViewCell {
     static let identifier = "StrengthCollectionViewCell"
     
     let text = DayCaratLabel(type: .Body2, text: "", textColor: .Gray700!).then {

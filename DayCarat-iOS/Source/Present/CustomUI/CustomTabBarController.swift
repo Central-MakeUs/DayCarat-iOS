@@ -9,18 +9,22 @@ import UIKit
 
 import Then
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class CustomTabBarController: UITabBarController {
     
     private let middleBtn = UIButton().then {
         $0.setImage(UIImage(named: "input"), for: .normal)
     }
+    private var disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTabBarAppearance()
         setMiddleBtn()
         setTabBarItems()
+        binding()
     }
     
     private func configureTabBarAppearance() {
@@ -45,7 +49,7 @@ final class CustomTabBarController: UITabBarController {
     }
     
     private func setTabBarItems() {
-        let homeVC = UINavigationController(rootViewController: HomeViewController())
+        let homeVC = UINavigationController(rootViewController: HomeViewController(viewModel: HomeViewModel(usecase: HomeUseCase())))
         homeVC.tabBarItem = UITabBarItem(title: "홈", image: UIImage(named: "basehome"), tag: 0)
         homeVC.navigationBar.isHidden = true
         
@@ -53,17 +57,17 @@ final class CustomTabBarController: UITabBarController {
         folderVC.tabBarItem = UITabBarItem(title: "에피소드", image: UIImage(named: "basefolder"), tag: 1)
         folderVC.navigationBar.isHidden = true
         
-        let episodeInputVC = UINavigationController(rootViewController: HomeViewController())
+        let episodeInputVC = UINavigationController(rootViewController: HomeViewController(viewModel: HomeViewModel(usecase: HomeUseCase())))
         episodeInputVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "plus"), tag: 2)
         episodeInputVC.navigationBar.isHidden = true
         episodeInputVC.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.main], for: .normal)
         episodeInputVC.tabBarItem.isEnabled = false
 
-        let jewelryBoxVC = UINavigationController(rootViewController: HomeViewController())
+        let jewelryBoxVC = UINavigationController(rootViewController: JewelryViewController())
         jewelryBoxVC.tabBarItem = UITabBarItem(title: "보석함", image: UIImage(named: "basejewelry"), tag: 3)
         jewelryBoxVC.navigationBar.isHidden = true
         
-        let myPageVC = UINavigationController(rootViewController: HomeViewController())
+        let myPageVC = UINavigationController(rootViewController: HomeViewController(viewModel: HomeViewModel(usecase: HomeUseCase())))
         myPageVC.tabBarItem = UITabBarItem(title: "마이페이지", image: UIImage(named: "baseuser"), tag: 4)
         myPageVC.navigationBar.isHidden = true
         
@@ -71,5 +75,14 @@ final class CustomTabBarController: UITabBarController {
         
         setViewControllers([homeVC, folderVC, episodeInputVC, jewelryBoxVC, myPageVC], animated: false)
 
+    }
+    
+    private func binding() {
+        middleBtn.rx.tap
+            .asDriver()
+            .drive(onNext: {
+                
+            })
+            .disposed(by: disposeBag)
     }
 }
