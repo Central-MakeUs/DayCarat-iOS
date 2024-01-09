@@ -40,6 +40,7 @@
 		09BDC1DB2B4D8DE600C07F34 /* NavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BDC1DA2B4D8DE600C07F34 /* NavigationController+.swift */; };
 		09BDC1DD2B4D966E00C07F34 /* JewelryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BDC1DC2B4D966E00C07F34 /* JewelryViewController.swift */; };
 		09BDC1DF2B4D96AF00C07F34 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BDC1DE2B4D96AF00C07F34 /* MyPageViewController.swift */; };
+		09BDC1E12B4D9E2900C07F34 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BDC1E02B4D9E2900C07F34 /* MyPageTableViewCell.swift */; };
 		DE5F410F2B4B841500581075 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = DE5F410E2B4B841500581075 /* SkeletonView */; };
 		DE5F41122B4B883400581075 /* IntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41112B4B883400581075 /* IntroModel.swift */; };
 		DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */; };
@@ -125,6 +126,7 @@
 		09BDC1DA2B4D8DE600C07F34 /* NavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+.swift"; sourceTree = "<group>"; };
 		09BDC1DC2B4D966E00C07F34 /* JewelryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JewelryViewController.swift; path = "DayCarat-iOS/Source/Extension/JewelryViewController.swift"; sourceTree = SOURCE_ROOT; };
 		09BDC1DE2B4D96AF00C07F34 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageViewController.swift; path = "DayCarat-iOS/Source/Extension/MyPageViewController.swift"; sourceTree = SOURCE_ROOT; };
+		09BDC1E02B4D9E2900C07F34 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
 		DE5F41112B4B883400581075 /* IntroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroModel.swift; sourceTree = "<group>"; };
 		DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControlView.swift; sourceTree = "<group>"; };
 		DE5F41152B4B90A700581075 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				09BDC1D22B4D7E1100C07F34 /* RecentEpiCollectionViewCell.swift */,
 				09BDC1D42B4D818200C07F34 /* BannerCollectionViewCell.swift */,
 				09BDC1D62B4D84F900C07F34 /* NewsCollectionViewCell.swift */,
+				09BDC1E02B4D9E2900C07F34 /* MyPageTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				DE5F41342B4BD2EB00581075 /* OnBoardingUseCase.swift in Sources */,
 				DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */,
 				09BDC1D52B4D818200C07F34 /* BannerCollectionViewCell.swift in Sources */,
+				09BDC1E12B4D9E2900C07F34 /* MyPageTableViewCell.swift in Sources */,
 				09BDC1DD2B4D966E00C07F34 /* JewelryViewController.swift in Sources */,
 				DE86A1B42B4D153300C206DE /* CollectionViewFlowLayout+.swift in Sources */,
 				09BDC1D92B4D8AF300C07F34 /* EpisodeInputViewController.swift in Sources */,

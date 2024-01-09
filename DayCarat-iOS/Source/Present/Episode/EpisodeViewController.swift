@@ -17,7 +17,7 @@ class EpisodeViewController: BaseViewController {
     private let desLabel = DayCaratLabel(type: .Body2,
                                          text: "사소한 에피소드도 다시 보면\n자소서에서 활용할 수 있는 보석 같은 경험일 수 있어요", textColor: .Gray700!)
     private let bottomView = UIView().then {
-        $0.backgroundColor = .white
+        $0.backgroundColor = .Gray50
         $0.layer.cornerRadius = 16
         $0.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }

@@ -67,7 +67,7 @@ final class CustomTabBarController: UITabBarController {
         jewelryBoxVC.tabBarItem = UITabBarItem(title: "보석함", image: UIImage(named: "basejewelry"), tag: 3)
         jewelryBoxVC.navigationBar.isHidden = true
         
-        let myPageVC = UINavigationController(rootViewController: HomeViewController(viewModel: HomeViewModel(usecase: HomeUseCase())))
+        let myPageVC = UINavigationController(rootViewController: MyPageViewController())
         myPageVC.tabBarItem = UITabBarItem(title: "마이페이지", image: UIImage(named: "baseuser"), tag: 4)
         myPageVC.navigationBar.isHidden = true
         
