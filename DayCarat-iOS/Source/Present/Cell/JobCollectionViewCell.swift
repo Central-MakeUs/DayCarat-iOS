@@ -11,7 +11,7 @@ class JobCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "JobCollectionViewCell"
     
-    private let text = DayCaratLabel(type: .Body1, text: "", textColor: .Gray500!)
+    let text = DayCaratLabel(type: .Body1, text: "", textColor: .Gray500!)
     
     func configureCell(item: String) {
         self.text.text = item

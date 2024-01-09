@@ -75,6 +75,13 @@
 		DE8479DE2B47E16600471B4F /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8479DD2B47E16600471B4F /* EpisodeViewController.swift */; };
 		DE8479E22B47E1F400471B4F /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8479E12B47E1F400471B4F /* CustomTabBarController.swift */; };
 		DE8479E72B47E8BB00471B4F /* Image+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8479E62B47E8BB00471B4F /* Image+.swift */; };
+		DE86A1B02B4CFFF700C206DE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A1AF2B4CFFF700C206DE /* LoginViewModel.swift */; };
+		DE86A1B22B4D03B900C206DE /* StrengthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A1B12B4D03B900C206DE /* StrengthCollectionViewCell.swift */; };
+		DE86A1B42B4D153300C206DE /* CollectionViewFlowLayout+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A1B32B4D153300C206DE /* CollectionViewFlowLayout+.swift */; };
+		DE86A1B62B4D1B5500C206DE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A1B52B4D1B5500C206DE /* HomeViewModel.swift */; };
+		DE86A1B82B4D1F4500C206DE /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A1B72B4D1F4500C206DE /* HomeUseCase.swift */; };
+		DE86A1BA2B4D31E800C206DE /* HelpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A1B92B4D31E800C206DE /* HelpCollectionViewCell.swift */; };
+		DE86A1BC2B4D357B00C206DE /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A1BB2B4D357B00C206DE /* CellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +142,13 @@
 		DE8479DD2B47E16600471B4F /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 		DE8479E12B47E1F400471B4F /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		DE8479E62B47E8BB00471B4F /* Image+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+.swift"; sourceTree = "<group>"; };
+		DE86A1AF2B4CFFF700C206DE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		DE86A1B12B4D03B900C206DE /* StrengthCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE86A1B32B4D153300C206DE /* CollectionViewFlowLayout+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewFlowLayout+.swift"; sourceTree = "<group>"; };
+		DE86A1B52B4D1B5500C206DE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		DE86A1B72B4D1F4500C206DE /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
+		DE86A1B92B4D31E800C206DE /* HelpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE86A1BB2B4D357B00C206DE /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +292,7 @@
 			children = (
 				DE5F41112B4B883400581075 /* IntroModel.swift */,
 				090143072B4C052D006EAE30 /* OnBoardingModel.swift */,
+				DE86A1BB2B4D357B00C206DE /* CellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +311,7 @@
 			children = (
 				DE5F41292B4B953A00581075 /* IntroUseCase.swift */,
 				DE5F41332B4BD2EB00581075 /* OnBoardingUseCase.swift */,
+				DE86A1B72B4D1F4500C206DE /* HomeUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -392,6 +408,7 @@
 				DE8479E62B47E8BB00471B4F /* Image+.swift */,
 				090143092B4C18B2006EAE30 /* TextField+.swift */,
 				0901430D2B4C3612006EAE30 /* CollectionView+.swift */,
+				DE86A1B32B4D153300C206DE /* CollectionViewFlowLayout+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -432,6 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8479872B47907D00471B4F /* LoginViewController.swift */,
+				DE86A1AF2B4CFFF700C206DE /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -449,6 +467,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8479DA2B47E0D000471B4F /* HomeViewController.swift */,
+				DE86A1B52B4D1B5500C206DE /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -467,6 +486,8 @@
 				0967D8DC2B4AFB13009CFD0A /* IntroCollectionViewCell.swift */,
 				DE5F41452B4BE39100581075 /* OnBoardingCollectionViewCell.swift */,
 				0901430B2B4C2E21006EAE30 /* JobCollectionViewCell.swift */,
+				DE86A1B12B4D03B900C206DE /* StrengthCollectionViewCell.swift */,
+				DE86A1B92B4D31E800C206DE /* HelpCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -615,6 +636,8 @@
 				DE8479D62B47DFB800471B4F /* IntroViewController.swift in Sources */,
 				DE5F41252B4B92CE00581075 /* tempDTO.swift in Sources */,
 				0967D8CD2B4A7417009CFD0A /* DayCaratCheckBox.swift in Sources */,
+				DE86A1B02B4CFFF700C206DE /* LoginViewModel.swift in Sources */,
+				DE86A1BA2B4D31E800C206DE /* HelpCollectionViewCell.swift in Sources */,
 				0967D8CF2B4AE19E009CFD0A /* AgreeViewModel.swift in Sources */,
 				09073D362B46F87E00D840EC /* AppDelegate.swift in Sources */,
 				09073D382B46F87E00D840EC /* SceneDelegate.swift in Sources */,
@@ -624,6 +647,8 @@
 				DE5F41342B4BD2EB00581075 /* OnBoardingUseCase.swift in Sources */,
 				DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */,
 				0967D8B52B4A60FE009CFD0A /* tempPage.swift in Sources */,
+				DE86A1B42B4D153300C206DE /* CollectionViewFlowLayout+.swift in Sources */,
+				DE86A1B62B4D1B5500C206DE /* HomeViewModel.swift in Sources */,
 				DE5F41362B4BD2F500581075 /* OnBoardingInterface.swift in Sources */,
 				0901430E2B4C3612006EAE30 /* CollectionView+.swift in Sources */,
 				DE5F41462B4BE39100581075 /* OnBoardingCollectionViewCell.swift in Sources */,
@@ -633,11 +658,13 @@
 				DE8479E72B47E8BB00471B4F /* Image+.swift in Sources */,
 				DE5F41282B4B92DA00581075 /* tempService.swift in Sources */,
 				DE5F413D2B4BD7F200581075 /* JobSection.swift in Sources */,
+				DE86A1B82B4D1F4500C206DE /* HomeUseCase.swift in Sources */,
 				DE8479A12B47912900471B4F /* BaseViewController.swift in Sources */,
 				DE8479E22B47E1F400471B4F /* CustomTabBarController.swift in Sources */,
 				DE5F41302B4BD24A00581075 /* OnBoardingViewController.swift in Sources */,
 				DE5F413B2B4BD43300581075 /* InputNameSection.swift in Sources */,
 				DE8479D42B47B7E500471B4F /* DayCaratBtn.swift in Sources */,
+				DE86A1B22B4D03B900C206DE /* StrengthCollectionViewCell.swift in Sources */,
 				DE5F41382B4BD30200581075 /* OnBoardingRepository.swift in Sources */,
 				DE5F41122B4B883400581075 /* IntroModel.swift in Sources */,
 				DE8479D12B47A0FD00471B4F /* DayCaratLabel.swift in Sources */,
@@ -651,6 +678,7 @@
 				DE5F41192B4B90E300581075 /* ViewModelType.swift in Sources */,
 				DE5F412A2B4B953A00581075 /* IntroUseCase.swift in Sources */,
 				DE5F41322B4BD27000581075 /* OnBoardingViewModel.swift in Sources */,
+				DE86A1BC2B4D357B00C206DE /* CellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,7 +822,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JA7UDVTQBU;
+				DEVELOPMENT_TEAM = 7H4FGGMZY7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DayCarat-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -808,7 +836,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Specker.DayCarat-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Specker.DayCarat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -823,7 +851,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JA7UDVTQBU;
+				DEVELOPMENT_TEAM = 7H4FGGMZY7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DayCarat-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -837,7 +865,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Specker.DayCarat-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Specker.DayCarat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -24,7 +24,7 @@ final class CustomTabBarController: UITabBarController {
     }
     
     private func configureTabBarAppearance() {
-        let tabBarBackgroundImage = UIImage.imageWithColor(color: UIColor.white.withAlphaComponent(0.5))
+        let tabBarBackgroundImage = UIImage.imageWithColor(color: UIColor.white.withAlphaComponent(0.8))
         tabBar.backgroundImage = tabBarBackgroundImage
         tabBar.shadowImage = UIImage()
         
@@ -49,7 +49,7 @@ final class CustomTabBarController: UITabBarController {
         homeVC.tabBarItem = UITabBarItem(title: "홈", image: UIImage(named: "basehome"), tag: 0)
         homeVC.navigationBar.isHidden = true
         
-        let folderVC = UINavigationController(rootViewController: HomeViewController())
+        let folderVC = UINavigationController(rootViewController: EpisodeViewController())
         folderVC.tabBarItem = UITabBarItem(title: "에피소드", image: UIImage(named: "basefolder"), tag: 1)
         folderVC.navigationBar.isHidden = true
         

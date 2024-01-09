@@ -12,9 +12,9 @@ import RxSwift
 
 class OnBoardingCollectionViewCell: UICollectionViewCell {
     static let identifier = "OnBoardingCollectionViewCell"
-    private let firstView = InputNameSection()
-    private let secondView = JobSection()
-    private let thirdView = StrengthSection()
+     let firstView = InputNameSection()
+     let secondView = JobSection()
+     let thirdView = StrengthSection()
     var onSubviewTapped: (() -> Void)?
     var inputNameSection: InputNameSection? {
         return firstView

@@ -15,30 +15,20 @@ final class OnBoardingViewModel:ViewModelType {
     var disposeBag = DisposeBag()
     
     private let usecase: OnBoardingUseCaseProtocol
-    let info = PublishSubject<OnBoardingModel>()
     init(usecase: OnBoardingUseCaseProtocol) {
         self.usecase = usecase
     }
     
     struct Input {
-        let inputText: Observable<String>
-
     }
     
     struct Output {
-        let isNextButtonEnabled: Driver<Bool>
+        let sectionData: Driver<OnBoardingModel>
     }
     
     func transform(input: Input) -> Output {
-        let isNextButtonEnabled = input.inputText
-            .map { $0.count <= 10 } // 최대 10글자까지만 허용
-            .startWith(true) // 초기 상태는 활성화로 시작
-            .asDriver(onErrorJustReturn: true)
+        let jobSectionData = Driver.just(usecase.processIntroCellData())
         
-        return Output(isNextButtonEnabled: isNextButtonEnabled)
-    }
-    
-    func updateInfo() {
-        info.onNext(usecase.processIntroCellData())
+        return Output(sectionData: jobSectionData)
     }
 }

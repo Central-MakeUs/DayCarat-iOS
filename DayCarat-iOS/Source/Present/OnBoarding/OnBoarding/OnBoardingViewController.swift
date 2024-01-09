@@ -8,6 +8,7 @@
 import UIKit
 
 import RxSwift
+import RxCocoa
 import RxGesture
 
 final class OnBoardingViewController: BaseViewController {
@@ -16,6 +17,7 @@ final class OnBoardingViewController: BaseViewController {
     private let disposeBag = DisposeBag()
     
     private let pageControl = CustomPageControlView(numberOfPages: 3, width: 87, height: 2, spacing: 4, different: false)
+    private let btnState = PublishSubject<Bool>()
     
     private let onBoardingCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.register(OnBoardingCollectionViewCell.self,
@@ -66,8 +68,6 @@ final class OnBoardingViewController: BaseViewController {
     override func configure() {
         jumpBtn.isHidden = true
         onBoardingCollectionView.delegate = self
-        viewModel.updateInfo()
-
     }
     
     override func addView() {
@@ -97,9 +97,15 @@ final class OnBoardingViewController: BaseViewController {
     }
     
     override func binding() {
+        let input = OnBoardingViewModel.Input()
+        let output = viewModel.transform(input: input)
+        
         Observable.just([0, 1, 2])
             .bind(to: onBoardingCollectionView.rx.items(cellIdentifier: OnBoardingCollectionViewCell.identifier, cellType: OnBoardingCollectionViewCell.self)){ index, data, cell in
                 cell.configureCell(index: index)
+                if index == 1 {
+                    
+                }
                 cell.inputNameSection?.textDidChangeSubject
                     .map { $0.count > 0 }
                     .asDriver(onErrorJustReturn: false)
@@ -107,21 +113,54 @@ final class OnBoardingViewController: BaseViewController {
                         self?.nextBtn.isEnabled = isEnabled
                     })
                     .disposed(by: cell.disposeBag)
+                
+                output.sectionData
+                    .asDriver(onErrorDriveWith: .empty())
+                    .map { $0.jobs }
+                    .drive(onNext: {  info in
+                        cell.secondView.jobData.onNext(info)
+                    })
+                    .disposed(by: cell.disposeBag)
+                
+                output.sectionData
+                    .asDriver(onErrorDriveWith: .empty())
+                    .map { $0.strengths }
+                    .drive(onNext: {  info in
+                        cell.thirdView.strengthData.accept(info)
+                    })
+                    .disposed(by: cell.disposeBag)
+                
+                cell.secondView.btnState
+                    .observe(on: MainScheduler.instance)
+                    .subscribe(onNext: {  state in
+                        self.nextBtn.isEnabled = state
+                    })
+                    .disposed(by: cell.disposeBag)
+                
             }
         .disposed(by: disposeBag)
+        
         
         nextBtn.rx.tap
             .subscribe(onNext: { [weak onBoardingCollectionView] in
                 guard let collectionView = onBoardingCollectionView else { return }
 
                 let currentIndex = collectionView.currentPageIndex()
-
+                
                 let nextIndex = min(currentIndex + 1, 2)
 
                 let nextIndexPath = IndexPath(item: nextIndex, section: 0)
                 collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
             })
             .disposed(by: disposeBag)
+        
+        btnState
+            .asDriver(onErrorJustReturn: false)
+            .drive(onNext: { [weak self] isEnabled in
+                self?.nextBtn.isEnabled = isEnabled
+            })
+            .disposed(by: disposeBag)
+        
     }
 }
 
@@ -135,12 +174,13 @@ extension OnBoardingViewController: UIScrollViewDelegate, UICollectionViewDelega
             
                 if currentIndex == 2 {
                     self.jumpBtn.isHidden = false
-                    
+                    btnState.onNext(true)
+
                 } else {
                     self.jumpBtn.isHidden = true
+                    btnState.onNext(false)
                 }
                 self.pageControl.setCurrentPage(currentIndex)
-            
         }
     }
 }

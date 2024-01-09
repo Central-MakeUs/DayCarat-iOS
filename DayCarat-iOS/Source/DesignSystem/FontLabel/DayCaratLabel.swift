@@ -18,7 +18,8 @@ enum DayCaratFontType {
     case Subhead2
     case Subhead3
     case Subhead4
-    
+    case Subhead6
+
     case Body1
     case Body2
     case Body3
@@ -49,6 +50,7 @@ final class DayCaratLabel:UILabel {
         self.text = text
         self.textColor = textColor
         self.numberOfLines = 0
+        self.sizeToFit()
         
         switch type {
         case .Header1:
@@ -87,6 +89,8 @@ final class DayCaratLabel:UILabel {
             self.font = .pretendard(.SemiBold, size: 10)
         case .Caption3:
             self.font = .pretendard(.Medium, size: 10)
+        case .Subhead6:
+            self.font = .pretendard(.SemiBold, size: 16)
         }
     }
 }
