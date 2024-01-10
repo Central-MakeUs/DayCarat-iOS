@@ -14,7 +14,8 @@ final class IntroViewController: BaseViewController {
     
     private let viewModel: IntroViewModel
     private let disposeBag = DisposeBag()
-    
+    weak var coordinator: IntroCoordinator?
+
     private let introCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.register(IntroCollectionViewCell.self,
                     forCellWithReuseIdentifier: IntroCollectionViewCell.identifier)
@@ -43,6 +44,10 @@ final class IntroViewController: BaseViewController {
     init(viewModel: IntroViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+    }
+    
+    deinit {
+        coordinator?.popVC()
     }
     
     required init?(coder: NSCoder) {
@@ -101,6 +106,13 @@ final class IntroViewController: BaseViewController {
                     cell.configureCell(titleLabel: data.0, desLabel: data.1, img: data.2)
             }
             .disposed(by: disposeBag)
+        
+        nextBtn.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.coordinator?.pushOnBoarding()
+            })
+            .disposed(by: disposeBag)
+        
     }
 }
 extension IntroViewController: UIScrollViewDelegate, UICollectionViewDelegate {

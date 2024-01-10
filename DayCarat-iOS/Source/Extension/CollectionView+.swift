@@ -8,6 +8,11 @@
 import UIKit
 
 extension UICollectionView {
+    static var reuseIdentifier: String {
+        return String(describing: Self.self)
+    }
+
+    
     func currentPageIndex() -> Int {
         let visibleRect = CGRect(origin: contentOffset, size: bounds.size)
         let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)

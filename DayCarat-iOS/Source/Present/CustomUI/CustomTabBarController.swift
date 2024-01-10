@@ -21,7 +21,7 @@ final class CustomTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTabBarAppearance()
+        self.tabBar.backgroundColor = .Gray50
         setMiddleBtn()
         setTabBarItems()
         binding()

@@ -7,7 +7,13 @@
 
 import UIKit
 
+import RxSwift
+import RxCocoa
+
 final class LoginViewController: BaseViewController {
+    
+    weak var coordinator: LoginCoordinator?
+    private var disposeBag = DisposeBag()
     
     private let backgroundImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
@@ -25,19 +31,21 @@ final class LoginViewController: BaseViewController {
     }
 
     override func configure() {
-        
+        kakaoBtn.isUserInteractionEnabled = true
+        appleBtn.isUserInteractionEnabled = true
+
     }
     
     override func addView() {
-        self.view.addSubview(backgroundImg)
-        [titleLabel, appleBtn, kakaoBtn].forEach {
-            self.backgroundImg.addSubview($0) }
+//        self.view.addSubview(backgroundImg)
+        [backgroundImg, titleLabel, appleBtn, kakaoBtn].forEach {
+            self.view.addSubview($0) }
     }
     
     override func layout() {
-        backgroundImg.snp.makeConstraints {
+       backgroundImg.snp.makeConstraints {
             $0.edges.equalToSuperview()
-        }
+       }
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(52)
             $0.leading.equalToSuperview().offset(16)
@@ -45,16 +53,30 @@ final class LoginViewController: BaseViewController {
         appleBtn.snp.makeConstraints {
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-70)
             $0.centerX.equalToSuperview()
+            $0.width.equalTo(368)
             $0.height.equalTo(44)
         }
         kakaoBtn.snp.makeConstraints {
             $0.bottom.equalTo(self.appleBtn.snp.top).offset(-20)
             $0.centerX.equalToSuperview()
+            $0.width.equalTo(368)
             $0.height.equalTo(44)
         }
     }
     
     override func binding() {
-        
+        appleBtn.rx.tap
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.coordinator?.pushIntro()
+            })
+            .disposed(by: disposeBag)
+
+        kakaoBtn.rx.tap
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                self?.coordinator?.pushIntro()
+            })
+            .disposed(by: disposeBag)
     }
 }

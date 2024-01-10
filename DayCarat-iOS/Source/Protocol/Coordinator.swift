@@ -13,18 +13,8 @@ protocol Coordinator: AnyObject {
     
     func start()
 }
-
-final class AppCoordinator: Coordinator {
-    var childCoordinators: [Coordinator] = []
-    
-    var navigationController: UINavigationController
-    
-    func start() {
-        
-    }
-    
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-    
+extension Coordinator {
+  func removeChildCoordinator(child: Coordinator) {
+    childCoordinators.removeAll { $0 === child }
+  }
 }

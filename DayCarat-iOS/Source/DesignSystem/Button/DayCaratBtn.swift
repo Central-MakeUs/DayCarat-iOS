@@ -9,6 +9,7 @@ import UIKit
 
 enum BtnState {
     case Default
+    case Sub
     case Disabled
     case Jump
 }
@@ -19,10 +20,6 @@ final class DayCaratBtn: UIButton {
         self.init(frame: .zero)
         configure(type: type, text: text)
         translatesAutoresizingMaskIntoConstraints = false
-        snp.makeConstraints {
-            $0.width.equalTo(360)
-            $0.height.equalTo(48)
-        }
     }
     
     override var isEnabled: Bool {
@@ -60,15 +57,34 @@ final class DayCaratBtn: UIButton {
         case .Default:
             self.backgroundColor = .Main
             self.setTitleColor(.white, for: .normal)
+            snp.makeConstraints {
+                $0.width.equalTo(360)
+                $0.height.equalTo(48)
+            }
         case .Disabled:
             self.backgroundColor = .Gray300
             self.setTitleColor(.Gray600, for: .normal)
             self.isEnabled = false
+            snp.makeConstraints {
+                $0.width.equalTo(360)
+                $0.height.equalTo(48)
+            }
         case .Jump:
             self.backgroundColor = .white
             self.setTitleColor(.Main, for: .normal)
             self.layer.borderWidth = 1
             self.layer.borderColor = UIColor.Main?.cgColor
+            snp.makeConstraints {
+                $0.width.equalTo(360)
+                $0.height.equalTo(48)
+            }
+        case .Sub:
+            self.backgroundColor = .Main
+            self.setTitleColor(.white, for: .normal)
+            snp.makeConstraints {
+                $0.width.equalTo(216)
+                $0.height.equalTo(48)
+            }
         }
     }
 }

@@ -22,7 +22,7 @@ final class StrengthSection: BaseView {
         $0.register(StrengthCollectionViewCell.self,
                     forCellWithReuseIdentifier: StrengthCollectionViewCell.identifier)
         let layout = LeftAlignedCollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets.zero
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 4)
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 3
         $0.collectionViewLayout = layout
@@ -83,7 +83,7 @@ final class StrengthSection: BaseView {
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: {  [weak self] selectedStrength in
                 if let selectedIndexPath = self?.strengthCollectionView.indexPathsForSelectedItems?.first,
-                   let selectedCell = self?.strengthCollectionView.cellForItem(at: selectedIndexPath) as? StrengthCollectionViewCell {
+                   let _ = self?.strengthCollectionView.cellForItem(at: selectedIndexPath) as? StrengthCollectionViewCell {
                     guard let self = self else { return }
 
                     if let previousSelectedIndexPath = self.selectedIndexPath,

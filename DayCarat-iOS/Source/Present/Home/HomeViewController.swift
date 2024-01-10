@@ -160,7 +160,7 @@ final class HomeViewController: BaseViewController {
             $0.height.equalTo(1500)
         }
         self.backgroundImg.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(-60)
+            $0.top.equalToSuperview().offset(-500)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(852)
         }

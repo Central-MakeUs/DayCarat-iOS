@@ -7,84 +7,81 @@
 
 import UIKit
 
-class JewelryViewController: BaseViewController {
-    private let searchBtn = UIButton().then {
-        $0.setImage(UIImage(named: "icon-search"), for: .normal)
-        $0.tintColor = UIColor(hexString: "#2D3648")
-    }
-    private let titleLabel = DayCaratLabel(type: .Header5, text: "보석함", textColor: .Gray900!)
-    
-    private let profileView = UIView().then {
-        $0.backgroundColor = .Main100
-        $0.layer.cornerRadius = 16
-    }
-    
-    private let nickNameLabel = DayCaratLabel(type: .Subhead6, text: "지철", textColor: .Main600!)
-    private let strengthLabel = DayCaratLabel(type: .Body4, text: "빙수폭격기", textColor: .Main600!)
+import RxSwift
+import RxCocoa
+import RxDataSources
 
-    private let jewelryView = UIView().then {
-        $0.backgroundColor = .Main400
-        $0.layer.cornerRadius = 16
+final class JewelryViewController: BaseViewController {
+    private var disposeBag = DisposeBag()
+    private var dataSource: RxCollectionViewSectionedReloadDataSource<SectionModel>!
+    private let jewelryCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+        $0.register(JewelryBodyCell.self, forCellWithReuseIdentifier: JewelryBodyCell.identifier)
+        $0.register(JewelryHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: JewelryHeaderView.identifier)
+        $0.isScrollEnabled = true
+        $0.backgroundColor = .clear
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 16, bottom: 10, right: 16)
+        layout.minimumLineSpacing = 16
+        layout.itemSize = CGSize(width: 168, height: 144)
+        layout.minimumInteritemSpacing = 0
+        layout.sectionInsetReference = .fromContentInset
+        $0.collectionViewLayout = layout
+        $0.decelerationRate = .fast
+        $0.alwaysBounceVertical = true
+        $0.showsHorizontalScrollIndicator = false
+        $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private let profileImg = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
-        $0.backgroundColor = .red
-        $0.layer.cornerRadius = 25
-        $0.layer.borderWidth = 1.5
-        $0.layer.borderColor = UIColor.Gray200?.cgColor
-    }
-
     override func configure() {
-        self.view.backgroundColor = .Gray50
+        jewelryCollectionView.delegate = self
+        setupDataSource()
     }
     
     override func addView() {
-        [searchBtn, titleLabel, profileView, jewelryView].forEach {
-            self.view.addSubview($0)
-        }
-        [nickNameLabel, strengthLabel, profileImg].forEach {
-            profileView.addSubview($0)
-        }
+        self.view.addSubview(jewelryCollectionView)
     }
     
     override func layout() {
-        searchBtn.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(18)
-            $0.trailing.equalToSuperview().offset(-16)
-        }
-        titleLabel.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(52)
-            $0.leading.equalToSuperview().offset(16)
-        }
-        profileView.snp.makeConstraints {
-            $0.top.equalTo(self.titleLabel.snp.bottom).offset(28)
-            $0.leading.equalToSuperview().offset(16)
-            $0.width.equalTo(174)
-            $0.height.equalTo(97)
-        }
-        jewelryView.snp.makeConstraints {
-            $0.top.equalTo(self.titleLabel.snp.bottom).offset(28)
-            $0.trailing.equalToSuperview().offset(-16)
-            $0.width.equalTo(174)
-            $0.height.equalTo(97)
-        }
-        profileImg.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(15)
-            $0.leading.equalToSuperview().offset(11)
-            $0.height.width.equalTo(49)
-        }
-        nickNameLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(14)
-            $0.leading.equalTo(profileImg.snp.trailing).offset(11)
-        }
-        strengthLabel.snp.makeConstraints {
-            $0.top.equalTo(nickNameLabel.snp.bottom).offset(1)
-            $0.leading.equalTo(profileImg.snp.trailing).offset(11)
+        jewelryCollectionView.snp.makeConstraints {
+            $0.top.equalTo(self.view.snp.top)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
         }
     }
     
     override func binding() {
+        let sections = [SectionModel(items: [0, 1, 2, 4,5,6,7,8,9])]
         
+        Observable.just(sections)
+            .bind(to: jewelryCollectionView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+    }
+
+    private func setupDataSource() {
+        dataSource = RxCollectionViewSectionedReloadDataSource<SectionModel>(
+            configureCell: { _, collectionView, indexPath, item in
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JewelryBodyCell.identifier, for: indexPath) as! JewelryBodyCell
+                
+                return cell
+            },
+            configureSupplementaryView: { _, collectionView, kind, indexPath in
+                let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: JewelryHeaderView.identifier, for: indexPath) as! JewelryHeaderView
+                
+                return headerView
+            }
+        )
+    }
+}
+extension JewelryViewController: UICollectionViewDelegateFlowLayout {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 0 {
+            return CGSize(width: view.frame.width, height: 439)
+        }
+        return CGSize(width: view.frame.width, height: 0)
     }
 }

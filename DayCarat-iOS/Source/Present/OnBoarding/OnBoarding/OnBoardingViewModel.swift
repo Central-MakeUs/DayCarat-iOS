@@ -20,6 +20,7 @@ final class OnBoardingViewModel:ViewModelType {
     }
     
     struct Input {
+        
     }
     
     struct Output {

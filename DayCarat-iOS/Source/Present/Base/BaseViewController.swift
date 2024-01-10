@@ -28,7 +28,7 @@ class BaseViewController: UIViewController {
         self.view.backgroundColor = .Gray50
         self.configure()
         self.addView()
-        self.binding()
         self.layout()
+        self.binding()
     }
 }

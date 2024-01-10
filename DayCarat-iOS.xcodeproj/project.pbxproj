@@ -89,6 +89,26 @@
 		DE86A1B82B4D1F4500C206DE /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A1B72B4D1F4500C206DE /* HomeUseCase.swift */; };
 		DE86A1BA2B4D31E800C206DE /* HelpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A1B92B4D31E800C206DE /* HelpCollectionViewCell.swift */; };
 		DE86A1BC2B4D357B00C206DE /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A1BB2B4D357B00C206DE /* CellModel.swift */; };
+		DEA544292B4E1F6200813CC6 /* EpisodeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA544282B4E1F6200813CC6 /* EpisodeHeaderCell.swift */; };
+		DEA5442B2B4E256100813CC6 /* EpisodeBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA5442A2B4E256100813CC6 /* EpisodeBodyCell.swift */; };
+		DEA544302B4E53A700813CC6 /* JewelryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA5442F2B4E53A700813CC6 /* JewelryHeaderView.swift */; };
+		DEA544322B4E59A900813CC6 /* JewelryBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA544312B4E59A900813CC6 /* JewelryBodyCell.swift */; };
+		DEA544342B4E5B4D00813CC6 /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA544332B4E5B4D00813CC6 /* dummy.swift */; };
+		DEA544372B4E678300813CC6 /* MyPageInfoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA544362B4E678300813CC6 /* MyPageInfoSection.swift */; };
+		DEA544392B4E6B4900813CC6 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA544382B4E6B4900813CC6 /* CompleteViewController.swift */; };
+		DEA5443B2B4E73C800813CC6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA5443A2B4E73C800813CC6 /* AppCoordinator.swift */; };
+		DEA5443D2B4E749200813CC6 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA5443C2B4E749200813CC6 /* LoginUseCase.swift */; };
+		DEA5443F2B4E74D200813CC6 /* LoginInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA5443E2B4E74D100813CC6 /* LoginInterface.swift */; };
+		DEA544412B4E74E700813CC6 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA544402B4E74E700813CC6 /* LoginRepository.swift */; };
+		DEA544432B4E751500813CC6 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA544422B4E751500813CC6 /* LoginService.swift */; };
+		DEA544452B4E763100813CC6 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA544442B4E763100813CC6 /* LoginCoordinator.swift */; };
+		DEA544472B4E7B6300813CC6 /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA544462B4E7B6300813CC6 /* IntroCoordinator.swift */; };
+		DEA544492B4E82D700813CC6 /* OnBoardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA544482B4E82D700813CC6 /* OnBoardingCoordinator.swift */; };
+		DEA5444C2B4E87D100813CC6 /* CompleteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA5444B2B4E87D100813CC6 /* CompleteCoordinator.swift */; };
+		DEA5444E2B4E88EF00813CC6 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA5444D2B4E88EF00813CC6 /* HomeCoordinator.swift */; };
+		DEA544502B4E89FF00813CC6 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA5444F2B4E89FF00813CC6 /* TabBarCoordinator.swift */; };
+		DEA544522B4E8A9A00813CC6 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA544512B4E8A9A00813CC6 /* MyPageViewModel.swift */; };
+		DEA544542B4E8B0100813CC6 /* MyPageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA544532B4E8B0100813CC6 /* MyPageUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,6 +183,26 @@
 		DE86A1B72B4D1F4500C206DE /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
 		DE86A1B92B4D31E800C206DE /* HelpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE86A1BB2B4D357B00C206DE /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		DEA544282B4E1F6200813CC6 /* EpisodeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeHeaderCell.swift; sourceTree = "<group>"; };
+		DEA5442A2B4E256100813CC6 /* EpisodeBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeBodyCell.swift; sourceTree = "<group>"; };
+		DEA5442F2B4E53A700813CC6 /* JewelryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JewelryHeaderView.swift; sourceTree = "<group>"; };
+		DEA544312B4E59A900813CC6 /* JewelryBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JewelryBodyCell.swift; sourceTree = "<group>"; };
+		DEA544332B4E5B4D00813CC6 /* dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummy.swift; sourceTree = "<group>"; };
+		DEA544362B4E678300813CC6 /* MyPageInfoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageInfoSection.swift; sourceTree = "<group>"; };
+		DEA544382B4E6B4900813CC6 /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
+		DEA5443A2B4E73C800813CC6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		DEA5443C2B4E749200813CC6 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		DEA5443E2B4E74D100813CC6 /* LoginInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterface.swift; sourceTree = "<group>"; };
+		DEA544402B4E74E700813CC6 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		DEA544422B4E751500813CC6 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		DEA544442B4E763100813CC6 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		DEA544462B4E7B6300813CC6 /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
+		DEA544482B4E82D700813CC6 /* OnBoardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCoordinator.swift; sourceTree = "<group>"; };
+		DEA5444B2B4E87D100813CC6 /* CompleteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteCoordinator.swift; sourceTree = "<group>"; };
+		DEA5444D2B4E88EF00813CC6 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		DEA5444F2B4E89FF00813CC6 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		DEA544512B4E8A9A00813CC6 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
+		DEA544532B4E8B0100813CC6 /* MyPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +261,7 @@
 			children = (
 				09073D352B46F87E00D840EC /* AppDelegate.swift */,
 				09073D372B46F87E00D840EC /* SceneDelegate.swift */,
+				DEA5443A2B4E73C800813CC6 /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -307,6 +348,7 @@
 				DE5F41112B4B883400581075 /* IntroModel.swift */,
 				090143072B4C052D006EAE30 /* OnBoardingModel.swift */,
 				DE86A1BB2B4D357B00C206DE /* CellModel.swift */,
+				DEA544332B4E5B4D00813CC6 /* dummy.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -326,6 +368,8 @@
 				DE5F41292B4B953A00581075 /* IntroUseCase.swift */,
 				DE5F41332B4BD2EB00581075 /* OnBoardingUseCase.swift */,
 				DE86A1B72B4D1F4500C206DE /* HomeUseCase.swift */,
+				DEA5443C2B4E749200813CC6 /* LoginUseCase.swift */,
+				DEA544532B4E8B0100813CC6 /* MyPageUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -334,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				DE5F41352B4BD2F500581075 /* OnBoardingInterface.swift */,
+				DEA5443E2B4E74D100813CC6 /* LoginInterface.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -343,6 +388,7 @@
 			children = (
 				DE5F41212B4B92B500581075 /* tempRepository.swift */,
 				DE5F41372B4BD30200581075 /* OnBoardingRepository.swift */,
+				DEA544402B4E74E700813CC6 /* LoginRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -359,6 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				DE5F41272B4B92DA00581075 /* tempService.swift */,
+				DEA544422B4E751500813CC6 /* LoginService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -367,8 +414,10 @@
 			isa = PBXGroup;
 			children = (
 				DE5F41392B4BD42100581075 /* Section */,
+				DEA5444A2B4E87BC00813CC6 /* Complete */,
 				DE5F412F2B4BD24A00581075 /* OnBoardingViewController.swift */,
 				DE5F41312B4BD27000581075 /* OnBoardingViewModel.swift */,
+				DEA544482B4E82D700813CC6 /* OnBoardingCoordinator.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -466,6 +515,7 @@
 			children = (
 				DE8479872B47907D00471B4F /* LoginViewController.swift */,
 				DE86A1AF2B4CFFF700C206DE /* LoginViewModel.swift */,
+				DEA544442B4E763100813CC6 /* LoginCoordinator.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -475,6 +525,7 @@
 			children = (
 				DE8479D52B47DFB800471B4F /* IntroViewController.swift */,
 				DE5F41152B4B90A700581075 /* IntroViewModel.swift */,
+				DEA544462B4E7B6300813CC6 /* IntroCoordinator.swift */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
@@ -484,6 +535,7 @@
 			children = (
 				DE8479DA2B47E0D000471B4F /* HomeViewController.swift */,
 				DE86A1B52B4D1B5500C206DE /* HomeViewModel.swift */,
+				DEA5444D2B4E88EF00813CC6 /* HomeCoordinator.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -491,6 +543,7 @@
 		DE8479DC2B47E12C00471B4F /* Episode */ = {
 			isa = PBXGroup;
 			children = (
+				DEA544272B4E1F5000813CC6 /* Section */,
 				DE8479DD2B47E16600471B4F /* EpisodeViewController.swift */,
 			);
 			path = Episode;
@@ -517,6 +570,7 @@
 			children = (
 				DE8479E12B47E1F400471B4F /* CustomTabBarController.swift */,
 				DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */,
+				DEA5444F2B4E89FF00813CC6 /* TabBarCoordinator.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -524,6 +578,7 @@
 		DE8479E32B47E35900471B4F /* JewelryBox */ = {
 			isa = PBXGroup;
 			children = (
+				DEA5442E2B4E537E00813CC6 /* Section */,
 				09BDC1DC2B4D966E00C07F34 /* JewelryViewController.swift */,
 			);
 			path = JewelryBox;
@@ -532,7 +587,9 @@
 		DE8479E42B47E36D00471B4F /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				DEA544352B4E676A00813CC6 /* Section */,
 				09BDC1DE2B4D96AF00C07F34 /* MyPageViewController.swift */,
+				DEA544512B4E8A9A00813CC6 /* MyPageViewModel.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -544,6 +601,41 @@
 				09BDC1D82B4D8AF300C07F34 /* EpisodeInputViewController.swift */,
 			);
 			path = EpisodeInput;
+			sourceTree = "<group>";
+		};
+		DEA544272B4E1F5000813CC6 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				DEA544282B4E1F6200813CC6 /* EpisodeHeaderCell.swift */,
+				DEA5442A2B4E256100813CC6 /* EpisodeBodyCell.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		DEA5442E2B4E537E00813CC6 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				DEA5442F2B4E53A700813CC6 /* JewelryHeaderView.swift */,
+				DEA544312B4E59A900813CC6 /* JewelryBodyCell.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		DEA544352B4E676A00813CC6 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				DEA544362B4E678300813CC6 /* MyPageInfoSection.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		DEA5444A2B4E87BC00813CC6 /* Complete */ = {
+			isa = PBXGroup;
+			children = (
+				DEA544382B4E6B4900813CC6 /* CompleteViewController.swift */,
+				DEA5444B2B4E87D100813CC6 /* CompleteCoordinator.swift */,
+			);
+			path = Complete;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -649,17 +741,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA5443B2B4E73C800813CC6 /* AppCoordinator.swift in Sources */,
 				0901430C2B4C2E21006EAE30 /* JobCollectionViewCell.swift in Sources */,
 				DE8479882B47907D00471B4F /* LoginViewController.swift in Sources */,
 				0967D8DB2B4AF04F009CFD0A /* BaseView.swift in Sources */,
 				DE8479A42B47924200471B4F /* Color+.swift in Sources */,
+				DEA544302B4E53A700813CC6 /* JewelryHeaderView.swift in Sources */,
 				DE5F41162B4B90A700581075 /* IntroViewModel.swift in Sources */,
+				DEA544452B4E763100813CC6 /* LoginCoordinator.swift in Sources */,
 				DE8479D62B47DFB800471B4F /* IntroViewController.swift in Sources */,
+				DEA544412B4E74E700813CC6 /* LoginRepository.swift in Sources */,
+				DEA544502B4E89FF00813CC6 /* TabBarCoordinator.swift in Sources */,
 				DE5F41252B4B92CE00581075 /* tempDTO.swift in Sources */,
 				0967D8CD2B4A7417009CFD0A /* DayCaratCheckBox.swift in Sources */,
 				DE86A1B02B4CFFF700C206DE /* LoginViewModel.swift in Sources */,
 				DE86A1BA2B4D31E800C206DE /* HelpCollectionViewCell.swift in Sources */,
 				0967D8CF2B4AE19E009CFD0A /* AgreeViewModel.swift in Sources */,
+				DEA5443D2B4E749200813CC6 /* LoginUseCase.swift in Sources */,
 				09073D362B46F87E00D840EC /* AppDelegate.swift in Sources */,
 				09073D382B46F87E00D840EC /* SceneDelegate.swift in Sources */,
 				0967D8DD2B4AFB13009CFD0A /* IntroCollectionViewCell.swift in Sources */,
@@ -670,12 +768,17 @@
 				DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */,
 				09BDC1D52B4D818200C07F34 /* BannerCollectionViewCell.swift in Sources */,
 				09BDC1E12B4D9E2900C07F34 /* MyPageTableViewCell.swift in Sources */,
+				DEA544372B4E678300813CC6 /* MyPageInfoSection.swift in Sources */,
 				09BDC1DD2B4D966E00C07F34 /* JewelryViewController.swift in Sources */,
+				DEA544432B4E751500813CC6 /* LoginService.swift in Sources */,
 				DE86A1B42B4D153300C206DE /* CollectionViewFlowLayout+.swift in Sources */,
 				09BDC1D92B4D8AF300C07F34 /* EpisodeInputViewController.swift in Sources */,
+				DEA544342B4E5B4D00813CC6 /* dummy.swift in Sources */,
+				DEA5444E2B4E88EF00813CC6 /* HomeCoordinator.swift in Sources */,
 				09BDC1DB2B4D8DE600C07F34 /* NavigationController+.swift in Sources */,
 				DE86A1B62B4D1B5500C206DE /* HomeViewModel.swift in Sources */,
 				DE5F41362B4BD2F500581075 /* OnBoardingInterface.swift in Sources */,
+				DEA5444C2B4E87D100813CC6 /* CompleteCoordinator.swift in Sources */,
 				0901430E2B4C3612006EAE30 /* CollectionView+.swift in Sources */,
 				DE5F41462B4BE39100581075 /* OnBoardingCollectionViewCell.swift in Sources */,
 				DE8479A82B479CB700471B4F /* Font+.swift in Sources */,
@@ -684,29 +787,38 @@
 				09BDC1D32B4D7E1100C07F34 /* RecentEpiCollectionViewCell.swift in Sources */,
 				DE8479E72B47E8BB00471B4F /* Image+.swift in Sources */,
 				DE5F41282B4B92DA00581075 /* tempService.swift in Sources */,
+				DEA544392B4E6B4900813CC6 /* CompleteViewController.swift in Sources */,
 				DE5F413D2B4BD7F200581075 /* JobSection.swift in Sources */,
 				DE86A1B82B4D1F4500C206DE /* HomeUseCase.swift in Sources */,
+				DEA544322B4E59A900813CC6 /* JewelryBodyCell.swift in Sources */,
 				DE8479A12B47912900471B4F /* BaseViewController.swift in Sources */,
 				DE8479E22B47E1F400471B4F /* CustomTabBarController.swift in Sources */,
 				DE5F41302B4BD24A00581075 /* OnBoardingViewController.swift in Sources */,
 				DE5F413B2B4BD43300581075 /* InputNameSection.swift in Sources */,
 				DE8479D42B47B7E500471B4F /* DayCaratBtn.swift in Sources */,
+				DEA5443F2B4E74D200813CC6 /* LoginInterface.swift in Sources */,
 				DE86A1B22B4D03B900C206DE /* StrengthCollectionViewCell.swift in Sources */,
 				DE5F41382B4BD30200581075 /* OnBoardingRepository.swift in Sources */,
 				DE5F41122B4B883400581075 /* IntroModel.swift in Sources */,
+				DEA544522B4E8A9A00813CC6 /* MyPageViewModel.swift in Sources */,
 				DE8479D12B47A0FD00471B4F /* DayCaratLabel.swift in Sources */,
 				09073D512B46FEBA00D840EC /* tempData.swift in Sources */,
+				DEA5442B2B4E256100813CC6 /* EpisodeBodyCell.swift in Sources */,
 				09BDC1DF2B4D96AF00C07F34 /* MyPageViewController.swift in Sources */,
 				DE8479DE2B47E16600471B4F /* EpisodeViewController.swift in Sources */,
 				0967D8B12B4A60F1009CFD0A /* tempInput.swift in Sources */,
 				DE8479DB2B47E0D000471B4F /* HomeViewController.swift in Sources */,
 				09BDC1D12B4D63F400C07F34 /* ScrollView+.swift in Sources */,
 				0967D8B82B4A6128009CFD0A /* AgreeViewController.swift in Sources */,
+				DEA544472B4E7B6300813CC6 /* IntroCoordinator.swift in Sources */,
 				0901430A2B4C18B2006EAE30 /* TextField+.swift in Sources */,
 				DE5F41192B4B90E300581075 /* ViewModelType.swift in Sources */,
 				DE5F412A2B4B953A00581075 /* IntroUseCase.swift in Sources */,
+				DEA544292B4E1F6200813CC6 /* EpisodeHeaderCell.swift in Sources */,
 				DE5F41322B4BD27000581075 /* OnBoardingViewModel.swift in Sources */,
 				DE86A1BC2B4D357B00C206DE /* CellModel.swift in Sources */,
+				DEA544542B4E8B0100813CC6 /* MyPageUseCase.swift in Sources */,
+				DEA544492B4E82D700813CC6 /* OnBoardingCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

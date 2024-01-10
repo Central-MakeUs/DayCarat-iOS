@@ -15,7 +15,8 @@ final class OnBoardingViewController: BaseViewController {
     
     private let viewModel: OnBoardingViewModel
     private let disposeBag = DisposeBag()
-    
+    weak var coordinator: OnBoardingCoordinator?
+
     private let pageControl = CustomPageControlView(numberOfPages: 3, width: 87, height: 2, spacing: 4, different: false)
     private let btnState = PublishSubject<Bool>()
     
@@ -66,6 +67,7 @@ final class OnBoardingViewController: BaseViewController {
     }
     
     override func configure() {
+        self.view.backgroundColor = .Gray50
         jumpBtn.isHidden = true
         onBoardingCollectionView.delegate = self
     }
@@ -140,6 +142,12 @@ final class OnBoardingViewController: BaseViewController {
             }
         .disposed(by: disposeBag)
         
+        jumpBtn.rx.tap
+            .subscribe(onNext: {  [weak self] _ in
+                self?.coordinator?.pushComplete()
+            })
+            .disposed(by: disposeBag)
+        
         
         nextBtn.rx.tap
             .subscribe(onNext: { [weak onBoardingCollectionView] in
@@ -148,6 +156,10 @@ final class OnBoardingViewController: BaseViewController {
                 let currentIndex = collectionView.currentPageIndex()
                 
                 let nextIndex = min(currentIndex + 1, 2)
+                
+                if currentIndex == 2 {
+                    self.coordinator?.pushComplete()
+                }
 
                 let nextIndexPath = IndexPath(item: nextIndex, section: 0)
                 collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
