@@ -33,7 +33,7 @@ final class JewelryHeaderView: UICollectionReusableView {
     }
     private let jewelryTitleLabel = DayCaratLabel(type: .Subhead3, text: "나의 보석", textColor: .Gray900!)
     private let reportTitleLabel = DayCaratLabel(type: .Subhead5, text: "이번달 보석함 리포트", textColor: .Gray50!)
-
+    
     private let jewelryView = UIView().then {
         $0.backgroundColor = .Main400
         $0.layer.cornerRadius = 16
@@ -52,14 +52,28 @@ final class JewelryHeaderView: UICollectionReusableView {
         $0.backgroundColor = .Gray50
         $0.layer.cornerRadius = 16
     }
+    private let reportJewelryTitel = DayCaratLabel(type: .Body4, text: "가장 많은 보석", textColor: .Main!)
+    private let reportJewelryImg = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.image = UIImage(named: "Jewelry")
+    }
+    private let reportJewelryName = DayCaratLabel(type: .Body5, text: "커뮤니케이션", textColor: .Gray700!)
     private let reportEpiView = UIView().then {
         $0.backgroundColor = .Gray50
         $0.layer.cornerRadius = 16
     }
+    private let reportEpiTitel = DayCaratLabel(type: .Body4, text: "가장 에피소드가\n많은 활동", textColor: .Main!).then {
+        $0.textAlignment = .center
+    }
+    private let reportEpiName = DayCaratLabel(type: .Subhead5, text: "CMC", textColor: .Main!)
+
     private let reportMonthView = UIView().then {
         $0.backgroundColor = .Gray50
         $0.layer.cornerRadius = 16
     }
+    private let reportMonthTitel = DayCaratLabel(type: .Body4, text: "이번달 보석", textColor: .Main!)
+    private let reportMonthCount = DayCaratLabel(type: .Subhead2, text: "12개", textColor: .Main!)
+
     private let profileImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.backgroundColor = .red
@@ -83,6 +97,15 @@ final class JewelryHeaderView: UICollectionReusableView {
         }
         [reportJewelryView, reportEpiView, reportMonthView].forEach {
             reportSV.addArrangedSubview($0)
+        }
+        [reportJewelryTitel, reportJewelryImg, reportJewelryName].forEach {
+            reportJewelryView.addSubview($0)
+        }
+        [reportEpiTitel, reportEpiName].forEach {
+            reportEpiView.addSubview($0)
+        }
+        [reportMonthTitel, reportMonthCount].forEach {
+            reportMonthView.addSubview($0)
         }
     }
     
@@ -145,13 +168,42 @@ final class JewelryHeaderView: UICollectionReusableView {
             $0.width.equalTo(104)
             $0.height.equalTo(96)
         }
+        reportEpiTitel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(10)
+            $0.centerX.equalToSuperview()
+        }
+        reportEpiName.snp.makeConstraints {
+            $0.bottom.equalToSuperview().inset(19)
+            $0.centerX.equalToSuperview()
+        }
         reportMonthView.snp.makeConstraints {
             $0.width.equalTo(104)
             $0.height.equalTo(96)
         }
+        reportMonthTitel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(10)
+            $0.centerX.equalToSuperview()
+        }
+        reportMonthCount.snp.makeConstraints {
+            $0.bottom.equalToSuperview().inset(22)
+            $0.centerX.equalToSuperview()
+        }
         reportJewelryView.snp.makeConstraints {
             $0.width.equalTo(104)
             $0.height.equalTo(96)
+        }
+        reportJewelryTitel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(10)
+            $0.centerX.equalToSuperview()
+        }
+        reportJewelryImg.snp.makeConstraints {
+            $0.centerX.centerY.equalToSuperview()
+            $0.width.equalTo(37.32)
+            $0.height.equalTo(30)
+        }
+        reportJewelryName.snp.makeConstraints {
+            $0.top.equalTo(reportJewelryImg.snp.bottom).offset(6)
+            $0.centerX.equalToSuperview()
         }
         reportSV.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)

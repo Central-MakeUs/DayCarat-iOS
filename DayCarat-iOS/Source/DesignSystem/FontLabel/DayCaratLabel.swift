@@ -81,7 +81,7 @@ final class DayCaratLabel:UILabel {
         case .Body3:
             self.font = .pretendard(.Regular, size: 14)
         case .Body4:
-            self.font = .pretendard(.Medium, size: 12)
+            self.font = .pretendard(.SemiBold, size: 12)
         case .Body5:
             self.font = .pretendard(.Regular, size: 12)
         case .Caption1:

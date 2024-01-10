@@ -72,7 +72,7 @@ class JobSection: BaseView {
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] selectedJob in
                 if let selectedIndexPath = self?.jobCollectionView.indexPathsForSelectedItems?.first,
-                   let selectedCell = self?.jobCollectionView.cellForItem(at: selectedIndexPath) as? JobCollectionViewCell {
+                   let _ = self?.jobCollectionView.cellForItem(at: selectedIndexPath) as? JobCollectionViewCell {
                     guard let self = self else { return }
 
                     if let previousSelectedIndexPath = self.selectedIndexPath,

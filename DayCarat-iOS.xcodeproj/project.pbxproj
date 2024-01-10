@@ -41,6 +41,12 @@
 		09BDC1DD2B4D966E00C07F34 /* JewelryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BDC1DC2B4D966E00C07F34 /* JewelryViewController.swift */; };
 		09BDC1DF2B4D96AF00C07F34 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BDC1DE2B4D96AF00C07F34 /* MyPageViewController.swift */; };
 		09BDC1E12B4D9E2900C07F34 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BDC1E02B4D9E2900C07F34 /* MyPageTableViewCell.swift */; };
+		09C5741A2B4EC2C000CCABCB /* EpisodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C574192B4EC2C000CCABCB /* EpisodeListViewController.swift */; };
+		09C5741D2B4EC4BA00CCABCB /* EpisodeListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C5741C2B4EC4BA00CCABCB /* EpisodeListCollectionViewCell.swift */; };
+		09C5741F2B4EC4EE00CCABCB /* EpisodeListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C5741E2B4EC4EE00CCABCB /* EpisodeListHeaderView.swift */; };
+		09C574212B4EC87600CCABCB /* EpisodeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C574202B4EC87600CCABCB /* EpisodeListViewModel.swift */; };
+		09C574232B4EC88200CCABCB /* EpisodeListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C574222B4EC88200CCABCB /* EpisodeListCoordinator.swift */; };
+		09C574252B4ED85B00CCABCB /* CustomNavigaitonBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C574242B4ED85B00CCABCB /* CustomNavigaitonBar.swift */; };
 		DE5F410F2B4B841500581075 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = DE5F410E2B4B841500581075 /* SkeletonView */; };
 		DE5F41122B4B883400581075 /* IntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41112B4B883400581075 /* IntroModel.swift */; };
 		DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */; };
@@ -147,6 +153,12 @@
 		09BDC1DC2B4D966E00C07F34 /* JewelryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JewelryViewController.swift; path = "DayCarat-iOS/Source/Extension/JewelryViewController.swift"; sourceTree = SOURCE_ROOT; };
 		09BDC1DE2B4D96AF00C07F34 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageViewController.swift; path = "DayCarat-iOS/Source/Extension/MyPageViewController.swift"; sourceTree = SOURCE_ROOT; };
 		09BDC1E02B4D9E2900C07F34 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
+		09C574192B4EC2C000CCABCB /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
+		09C5741C2B4EC4BA00CCABCB /* EpisodeListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListCollectionViewCell.swift; sourceTree = "<group>"; };
+		09C5741E2B4EC4EE00CCABCB /* EpisodeListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListHeaderView.swift; sourceTree = "<group>"; };
+		09C574202B4EC87600CCABCB /* EpisodeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewModel.swift; sourceTree = "<group>"; };
+		09C574222B4EC88200CCABCB /* EpisodeListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListCoordinator.swift; sourceTree = "<group>"; };
+		09C574242B4ED85B00CCABCB /* CustomNavigaitonBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigaitonBar.swift; sourceTree = "<group>"; };
 		DE5F41112B4B883400581075 /* IntroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroModel.swift; sourceTree = "<group>"; };
 		DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControlView.swift; sourceTree = "<group>"; };
 		DE5F41152B4B90A700581075 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
@@ -287,6 +299,7 @@
 				DE8479DC2B47E12C00471B4F /* Episode */,
 				DE8479E32B47E35900471B4F /* JewelryBox */,
 				DE8479E42B47E36D00471B4F /* MyPage */,
+				09C574182B4EC2A300CCABCB /* EpisodeList */,
 			);
 			path = Present;
 			sourceTree = "<group>";
@@ -340,6 +353,25 @@
 				0967D8CC2B4A7417009CFD0A /* DayCaratCheckBox.swift */,
 			);
 			path = CheckBox;
+			sourceTree = "<group>";
+		};
+		09C574182B4EC2A300CCABCB /* EpisodeList */ = {
+			isa = PBXGroup;
+			children = (
+				09C5741B2B4EC48E00CCABCB /* Section */,
+				09C574192B4EC2C000CCABCB /* EpisodeListViewController.swift */,
+				09C574202B4EC87600CCABCB /* EpisodeListViewModel.swift */,
+				09C574222B4EC88200CCABCB /* EpisodeListCoordinator.swift */,
+			);
+			path = EpisodeList;
+			sourceTree = "<group>";
+		};
+		09C5741B2B4EC48E00CCABCB /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				09C5741E2B4EC4EE00CCABCB /* EpisodeListHeaderView.swift */,
+			);
+			path = Section;
 			sourceTree = "<group>";
 		};
 		DE5F41102B4B854A00581075 /* Model */ = {
@@ -561,6 +593,7 @@
 				09BDC1D42B4D818200C07F34 /* BannerCollectionViewCell.swift */,
 				09BDC1D62B4D84F900C07F34 /* NewsCollectionViewCell.swift */,
 				09BDC1E02B4D9E2900C07F34 /* MyPageTableViewCell.swift */,
+				09C5741C2B4EC4BA00CCABCB /* EpisodeListCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -571,6 +604,7 @@
 				DE8479E12B47E1F400471B4F /* CustomTabBarController.swift */,
 				DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */,
 				DEA5444F2B4E89FF00813CC6 /* TabBarCoordinator.swift */,
+				09C574242B4ED85B00CCABCB /* CustomNavigaitonBar.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -745,6 +779,7 @@
 				0901430C2B4C2E21006EAE30 /* JobCollectionViewCell.swift in Sources */,
 				DE8479882B47907D00471B4F /* LoginViewController.swift in Sources */,
 				0967D8DB2B4AF04F009CFD0A /* BaseView.swift in Sources */,
+				09C574252B4ED85B00CCABCB /* CustomNavigaitonBar.swift in Sources */,
 				DE8479A42B47924200471B4F /* Color+.swift in Sources */,
 				DEA544302B4E53A700813CC6 /* JewelryHeaderView.swift in Sources */,
 				DE5F41162B4B90A700581075 /* IntroViewModel.swift in Sources */,
@@ -767,6 +802,8 @@
 				DE5F41342B4BD2EB00581075 /* OnBoardingUseCase.swift in Sources */,
 				DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */,
 				09BDC1D52B4D818200C07F34 /* BannerCollectionViewCell.swift in Sources */,
+				09C5741D2B4EC4BA00CCABCB /* EpisodeListCollectionViewCell.swift in Sources */,
+				09C574232B4EC88200CCABCB /* EpisodeListCoordinator.swift in Sources */,
 				09BDC1E12B4D9E2900C07F34 /* MyPageTableViewCell.swift in Sources */,
 				DEA544372B4E678300813CC6 /* MyPageInfoSection.swift in Sources */,
 				09BDC1DD2B4D966E00C07F34 /* JewelryViewController.swift in Sources */,
@@ -791,6 +828,8 @@
 				DE5F413D2B4BD7F200581075 /* JobSection.swift in Sources */,
 				DE86A1B82B4D1F4500C206DE /* HomeUseCase.swift in Sources */,
 				DEA544322B4E59A900813CC6 /* JewelryBodyCell.swift in Sources */,
+				09C5741F2B4EC4EE00CCABCB /* EpisodeListHeaderView.swift in Sources */,
+				09C574212B4EC87600CCABCB /* EpisodeListViewModel.swift in Sources */,
 				DE8479A12B47912900471B4F /* BaseViewController.swift in Sources */,
 				DE8479E22B47E1F400471B4F /* CustomTabBarController.swift in Sources */,
 				DE5F41302B4BD24A00581075 /* OnBoardingViewController.swift in Sources */,
@@ -812,6 +851,7 @@
 				0967D8B82B4A6128009CFD0A /* AgreeViewController.swift in Sources */,
 				DEA544472B4E7B6300813CC6 /* IntroCoordinator.swift in Sources */,
 				0901430A2B4C18B2006EAE30 /* TextField+.swift in Sources */,
+				09C5741A2B4EC2C000CCABCB /* EpisodeListViewController.swift in Sources */,
 				DE5F41192B4B90E300581075 /* ViewModelType.swift in Sources */,
 				DE5F412A2B4B953A00581075 /* IntroUseCase.swift in Sources */,
 				DEA544292B4E1F6200813CC6 /* EpisodeHeaderCell.swift in Sources */,
