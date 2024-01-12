@@ -69,6 +69,12 @@ final class EpisodeViewController: BaseViewController {
         Observable.just(sections)
             .bind(to: episodeCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
+        episodeCollectionView.rx.modelSelected(Int.self)
+            .subscribe(onNext: { [weak self] selectedIdx in
+                self?.pushList(idx: selectedIdx)
+            })
+            .disposed(by: disposeBag)
     }
 
     private func setupDataSource() {
@@ -97,5 +103,13 @@ extension EpisodeViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: view.frame.width, height: 286)
         }
         return CGSize(width: view.frame.width, height: 0)
+    }
+}
+extension EpisodeViewController {
+    private func pushList(idx: Int) {
+        let vc = EpisodeListViewController()
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

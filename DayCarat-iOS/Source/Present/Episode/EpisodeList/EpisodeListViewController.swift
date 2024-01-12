@@ -16,6 +16,7 @@ final class EpisodeListViewController: BaseViewController {
     private var disposeBag = DisposeBag()
     private var dataSource: RxCollectionViewSectionedReloadDataSource<SectionModel>!
 
+    private let naviBar = CustomNavigaitonBar(btnstate: false, rightBtnText: "", middleText: "")
     private let episodeListCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.register(EpisodeListCollectionViewCell.self, forCellWithReuseIdentifier: EpisodeListCollectionViewCell.identifier)
         $0.register(EpisodeListHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: EpisodeListHeaderView.identifier)
@@ -37,17 +38,24 @@ final class EpisodeListViewController: BaseViewController {
     
     override func configure() {
         setupDataSource()
+        naviBar.delegate = self
         episodeListCollectionView.delegate = self
         self.view.backgroundColor = UIColor(hexString: "#F9F9F9")
     }
     
     override func addView() {
+        self.view.addSubview(naviBar)
         self.view.addSubview(episodeListCollectionView)
     }
     
     override func layout() {
-        episodeListCollectionView.snp.makeConstraints {
+        naviBar.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(42)
+        }
+        episodeListCollectionView.snp.makeConstraints {
+            $0.top.equalTo(self.naviBar.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
         }
@@ -58,6 +66,12 @@ final class EpisodeListViewController: BaseViewController {
         
         Observable.just(sections)
             .bind(to: episodeListCollectionView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        
+        episodeListCollectionView.rx.modelSelected(Int.self)
+            .subscribe(onNext: { [weak self] selectedIdx in
+                self?.pushDetail(idx: selectedIdx)
+            })
             .disposed(by: disposeBag)
     }
 
@@ -86,5 +100,20 @@ extension EpisodeListViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: view.frame.width, height: 50)
         }
         return CGSize(width: view.frame.width, height: 0)
+    }
+}
+extension EpisodeListViewController: CustomNavigaitonBarDelegate {
+    func backBtnClick(_ navibar: CustomNavigaitonBar) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func rightBtnClick(_ navibar: CustomNavigaitonBar) {
+        
+    }
+    
+    private func pushDetail(idx: Int) {
+        let vc = DetailEpisodeViewController()
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

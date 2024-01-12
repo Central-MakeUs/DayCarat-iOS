@@ -16,7 +16,6 @@
 		09073D3F2B46F88200D840EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09073D3E2B46F88200D840EC /* Assets.xcassets */; };
 		09073D422B46F88200D840EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09073D402B46F88200D840EC /* LaunchScreen.storyboard */; };
 		09073D512B46FEBA00D840EC /* tempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09073D502B46FEBA00D840EC /* tempData.swift */; };
-		0967D8B12B4A60F1009CFD0A /* tempInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8B02B4A60F1009CFD0A /* tempInput.swift */; };
 		0967D8B82B4A6128009CFD0A /* AgreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8B72B4A6128009CFD0A /* AgreeViewController.swift */; };
 		0967D8C22B4A62CA009CFD0A /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0967D8B92B4A62C9009CFD0A /* Pretendard-ExtraBold.otf */; };
 		0967D8C32B4A62CA009CFD0A /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0967D8BA2B4A62C9009CFD0A /* Pretendard-SemiBold.otf */; };
@@ -45,7 +44,6 @@
 		09C5741D2B4EC4BA00CCABCB /* EpisodeListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C5741C2B4EC4BA00CCABCB /* EpisodeListCollectionViewCell.swift */; };
 		09C5741F2B4EC4EE00CCABCB /* EpisodeListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C5741E2B4EC4EE00CCABCB /* EpisodeListHeaderView.swift */; };
 		09C574212B4EC87600CCABCB /* EpisodeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C574202B4EC87600CCABCB /* EpisodeListViewModel.swift */; };
-		09C574232B4EC88200CCABCB /* EpisodeListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C574222B4EC88200CCABCB /* EpisodeListCoordinator.swift */; };
 		09C574252B4ED85B00CCABCB /* CustomNavigaitonBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C574242B4ED85B00CCABCB /* CustomNavigaitonBar.swift */; };
 		DE5F410F2B4B841500581075 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = DE5F410E2B4B841500581075 /* SkeletonView */; };
 		DE5F41122B4B883400581075 /* IntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41112B4B883400581075 /* IntroModel.swift */; };
@@ -115,6 +113,11 @@
 		DEA544502B4E89FF00813CC6 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA5444F2B4E89FF00813CC6 /* TabBarCoordinator.swift */; };
 		DEA544522B4E8A9A00813CC6 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA544512B4E8A9A00813CC6 /* MyPageViewModel.swift */; };
 		DEA544542B4E8B0100813CC6 /* MyPageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA544532B4E8B0100813CC6 /* MyPageUseCase.swift */; };
+		DEB20DF92B50F33A001D92B5 /* DetailEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB20DF82B50F33A001D92B5 /* DetailEpisodeViewController.swift */; };
+		DEB20DFB2B50F348001D92B5 /* DetailEpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB20DFA2B50F348001D92B5 /* DetailEpisodeViewModel.swift */; };
+		DEB20DFE2B50F4FB001D92B5 /* DetailEpiBodySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB20DFD2B50F4FB001D92B5 /* DetailEpiBodySection.swift */; };
+		DEB20E002B50F510001D92B5 /* DetailEpiHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB20DFF2B50F510001D92B5 /* DetailEpiHeaderView.swift */; };
+		DEB20E022B511058001D92B5 /* EpisodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB20E012B511058001D92B5 /* EpisodeUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,7 +132,6 @@
 		09073D412B46F88200D840EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09073D432B46F88200D840EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09073D502B46FEBA00D840EC /* tempData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempData.swift; sourceTree = "<group>"; };
-		0967D8B02B4A60F1009CFD0A /* tempInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = tempInput.swift; path = "DayCarat-iOS/tempInput.swift"; sourceTree = SOURCE_ROOT; };
 		0967D8B72B4A6128009CFD0A /* AgreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeViewController.swift; sourceTree = "<group>"; };
 		0967D8B92B4A62C9009CFD0A /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-ExtraBold.otf"; path = "DayCarat-iOS/Resource/Pretendard-ExtraBold.otf"; sourceTree = SOURCE_ROOT; };
 		0967D8BA2B4A62C9009CFD0A /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-SemiBold.otf"; path = "DayCarat-iOS/Resource/Pretendard-SemiBold.otf"; sourceTree = SOURCE_ROOT; };
@@ -157,7 +159,6 @@
 		09C5741C2B4EC4BA00CCABCB /* EpisodeListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListCollectionViewCell.swift; sourceTree = "<group>"; };
 		09C5741E2B4EC4EE00CCABCB /* EpisodeListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListHeaderView.swift; sourceTree = "<group>"; };
 		09C574202B4EC87600CCABCB /* EpisodeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewModel.swift; sourceTree = "<group>"; };
-		09C574222B4EC88200CCABCB /* EpisodeListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListCoordinator.swift; sourceTree = "<group>"; };
 		09C574242B4ED85B00CCABCB /* CustomNavigaitonBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigaitonBar.swift; sourceTree = "<group>"; };
 		DE5F41112B4B883400581075 /* IntroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroModel.swift; sourceTree = "<group>"; };
 		DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControlView.swift; sourceTree = "<group>"; };
@@ -215,6 +216,11 @@
 		DEA5444F2B4E89FF00813CC6 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		DEA544512B4E8A9A00813CC6 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		DEA544532B4E8B0100813CC6 /* MyPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageUseCase.swift; sourceTree = "<group>"; };
+		DEB20DF82B50F33A001D92B5 /* DetailEpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEpisodeViewController.swift; sourceTree = "<group>"; };
+		DEB20DFA2B50F348001D92B5 /* DetailEpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEpisodeViewModel.swift; sourceTree = "<group>"; };
+		DEB20DFD2B50F4FB001D92B5 /* DetailEpiBodySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEpiBodySection.swift; sourceTree = "<group>"; };
+		DEB20DFF2B50F510001D92B5 /* DetailEpiHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEpiHeaderView.swift; sourceTree = "<group>"; };
+		DEB20E012B511058001D92B5 /* EpisodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,7 +305,6 @@
 				DE8479DC2B47E12C00471B4F /* Episode */,
 				DE8479E32B47E35900471B4F /* JewelryBox */,
 				DE8479E42B47E36D00471B4F /* MyPage */,
-				09C574182B4EC2A300CCABCB /* EpisodeList */,
 			);
 			path = Present;
 			sourceTree = "<group>";
@@ -361,7 +366,6 @@
 				09C5741B2B4EC48E00CCABCB /* Section */,
 				09C574192B4EC2C000CCABCB /* EpisodeListViewController.swift */,
 				09C574202B4EC87600CCABCB /* EpisodeListViewModel.swift */,
-				09C574222B4EC88200CCABCB /* EpisodeListCoordinator.swift */,
 			);
 			path = EpisodeList;
 			sourceTree = "<group>";
@@ -402,6 +406,7 @@
 				DE86A1B72B4D1F4500C206DE /* HomeUseCase.swift */,
 				DEA5443C2B4E749200813CC6 /* LoginUseCase.swift */,
 				DEA544532B4E8B0100813CC6 /* MyPageUseCase.swift */,
+				DEB20E012B511058001D92B5 /* EpisodeUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -575,8 +580,9 @@
 		DE8479DC2B47E12C00471B4F /* Episode */ = {
 			isa = PBXGroup;
 			children = (
-				DEA544272B4E1F5000813CC6 /* Section */,
-				DE8479DD2B47E16600471B4F /* EpisodeViewController.swift */,
+				DEB20DF62B50F2FC001D92B5 /* Main */,
+				09C574182B4EC2A300CCABCB /* EpisodeList */,
+				DEB20DF72B50F328001D92B5 /* DetailEpisode */,
 			);
 			path = Episode;
 			sourceTree = "<group>";
@@ -602,8 +608,8 @@
 			isa = PBXGroup;
 			children = (
 				DE8479E12B47E1F400471B4F /* CustomTabBarController.swift */,
-				DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */,
 				DEA5444F2B4E89FF00813CC6 /* TabBarCoordinator.swift */,
+				DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */,
 				09C574242B4ED85B00CCABCB /* CustomNavigaitonBar.swift */,
 			);
 			path = CustomUI;
@@ -631,7 +637,6 @@
 		DE8479E52B47E5CC00471B4F /* EpisodeInput */ = {
 			isa = PBXGroup;
 			children = (
-				0967D8B02B4A60F1009CFD0A /* tempInput.swift */,
 				09BDC1D82B4D8AF300C07F34 /* EpisodeInputViewController.swift */,
 			);
 			path = EpisodeInput;
@@ -670,6 +675,34 @@
 				DEA5444B2B4E87D100813CC6 /* CompleteCoordinator.swift */,
 			);
 			path = Complete;
+			sourceTree = "<group>";
+		};
+		DEB20DF62B50F2FC001D92B5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DE8479DD2B47E16600471B4F /* EpisodeViewController.swift */,
+				DEA544272B4E1F5000813CC6 /* Section */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DEB20DF72B50F328001D92B5 /* DetailEpisode */ = {
+			isa = PBXGroup;
+			children = (
+				DEB20DFC2B50F4E6001D92B5 /* Section */,
+				DEB20DF82B50F33A001D92B5 /* DetailEpisodeViewController.swift */,
+				DEB20DFA2B50F348001D92B5 /* DetailEpisodeViewModel.swift */,
+			);
+			path = DetailEpisode;
+			sourceTree = "<group>";
+		};
+		DEB20DFC2B50F4E6001D92B5 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				DEB20DFF2B50F510001D92B5 /* DetailEpiHeaderView.swift */,
+				DEB20DFD2B50F4FB001D92B5 /* DetailEpiBodySection.swift */,
+			);
+			path = Section;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -788,6 +821,7 @@
 				DEA544412B4E74E700813CC6 /* LoginRepository.swift in Sources */,
 				DEA544502B4E89FF00813CC6 /* TabBarCoordinator.swift in Sources */,
 				DE5F41252B4B92CE00581075 /* tempDTO.swift in Sources */,
+				DEB20DF92B50F33A001D92B5 /* DetailEpisodeViewController.swift in Sources */,
 				0967D8CD2B4A7417009CFD0A /* DayCaratCheckBox.swift in Sources */,
 				DE86A1B02B4CFFF700C206DE /* LoginViewModel.swift in Sources */,
 				DE86A1BA2B4D31E800C206DE /* HelpCollectionViewCell.swift in Sources */,
@@ -803,12 +837,13 @@
 				DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */,
 				09BDC1D52B4D818200C07F34 /* BannerCollectionViewCell.swift in Sources */,
 				09C5741D2B4EC4BA00CCABCB /* EpisodeListCollectionViewCell.swift in Sources */,
-				09C574232B4EC88200CCABCB /* EpisodeListCoordinator.swift in Sources */,
 				09BDC1E12B4D9E2900C07F34 /* MyPageTableViewCell.swift in Sources */,
 				DEA544372B4E678300813CC6 /* MyPageInfoSection.swift in Sources */,
+				DEB20DFB2B50F348001D92B5 /* DetailEpisodeViewModel.swift in Sources */,
 				09BDC1DD2B4D966E00C07F34 /* JewelryViewController.swift in Sources */,
 				DEA544432B4E751500813CC6 /* LoginService.swift in Sources */,
 				DE86A1B42B4D153300C206DE /* CollectionViewFlowLayout+.swift in Sources */,
+				DEB20E002B50F510001D92B5 /* DetailEpiHeaderView.swift in Sources */,
 				09BDC1D92B4D8AF300C07F34 /* EpisodeInputViewController.swift in Sources */,
 				DEA544342B4E5B4D00813CC6 /* dummy.swift in Sources */,
 				DEA5444E2B4E88EF00813CC6 /* HomeCoordinator.swift in Sources */,
@@ -832,6 +867,7 @@
 				09C574212B4EC87600CCABCB /* EpisodeListViewModel.swift in Sources */,
 				DE8479A12B47912900471B4F /* BaseViewController.swift in Sources */,
 				DE8479E22B47E1F400471B4F /* CustomTabBarController.swift in Sources */,
+				DEB20E022B511058001D92B5 /* EpisodeUseCase.swift in Sources */,
 				DE5F41302B4BD24A00581075 /* OnBoardingViewController.swift in Sources */,
 				DE5F413B2B4BD43300581075 /* InputNameSection.swift in Sources */,
 				DE8479D42B47B7E500471B4F /* DayCaratBtn.swift in Sources */,
@@ -845,11 +881,11 @@
 				DEA5442B2B4E256100813CC6 /* EpisodeBodyCell.swift in Sources */,
 				09BDC1DF2B4D96AF00C07F34 /* MyPageViewController.swift in Sources */,
 				DE8479DE2B47E16600471B4F /* EpisodeViewController.swift in Sources */,
-				0967D8B12B4A60F1009CFD0A /* tempInput.swift in Sources */,
 				DE8479DB2B47E0D000471B4F /* HomeViewController.swift in Sources */,
 				09BDC1D12B4D63F400C07F34 /* ScrollView+.swift in Sources */,
 				0967D8B82B4A6128009CFD0A /* AgreeViewController.swift in Sources */,
 				DEA544472B4E7B6300813CC6 /* IntroCoordinator.swift in Sources */,
+				DEB20DFE2B50F4FB001D92B5 /* DetailEpiBodySection.swift in Sources */,
 				0901430A2B4C18B2006EAE30 /* TextField+.swift in Sources */,
 				09C5741A2B4EC2C000CCABCB /* EpisodeListViewController.swift in Sources */,
 				DE5F41192B4B90E300581075 /* ViewModelType.swift in Sources */,
