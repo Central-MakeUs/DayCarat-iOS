@@ -47,12 +47,21 @@ final class DayCaratLabel:UILabel {
         super.init(coder: coder)
     }
     
+    private func adjustKerning(_ value: CGFloat) {
+        guard let attributedText = self.attributedText else { return }
+        let newAttributedText = NSMutableAttributedString(attributedString: attributedText)
+        newAttributedText.addAttribute(NSAttributedString.Key.kern, value: value, range: NSRange(location: 0, length: newAttributedText.length))
+        self.attributedText = newAttributedText
+    }
+
+    
     private func configure(type: DayCaratFontType, text: String, textColor: UIColor) {
         self.text = text
         self.textColor = textColor
         self.numberOfLines = 0
         self.sizeToFit()
-        
+        self.adjustKerning(-0.2)
+
         switch type {
         case .Header1:
             self.font = .pretendard(.Bold, size: 64)

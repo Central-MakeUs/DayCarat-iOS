@@ -9,11 +9,14 @@ import UIKit
 
 import RxSwift
 import RxCocoa
+import KakaoSDKUser
+import RxKakaoSDKAuth
 
 final class LoginViewController: BaseViewController {
     
     weak var coordinator: LoginCoordinator?
     private var disposeBag = DisposeBag()
+    private let viewModel: LoginViewModel
     
     private let backgroundImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
@@ -29,7 +32,16 @@ final class LoginViewController: BaseViewController {
     private let appleBtn = UIButton().then {
         $0.setImage(UIImage(named: "AppleLoginBtn"), for: .normal)
     }
-
+    
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func configure() {
         kakaoBtn.isUserInteractionEnabled = true
         appleBtn.isUserInteractionEnabled = true
@@ -37,7 +49,6 @@ final class LoginViewController: BaseViewController {
     }
     
     override func addView() {
-//        self.view.addSubview(backgroundImg)
         [backgroundImg, titleLabel, appleBtn, kakaoBtn].forEach {
             self.view.addSubview($0) }
     }
@@ -75,8 +86,15 @@ final class LoginViewController: BaseViewController {
         kakaoBtn.rx.tap
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
-                self?.coordinator?.pushIntro()
+                self?.viewModel.signInWithKakao()
+//                self?.coordinator?.pushIntro()
             })
             .disposed(by: disposeBag)
+        
+        self.viewModel.kakaoLoginCompleteSubject.subscribe(onNext: { [weak self] in
+            self?.coordinator?.pushIntro()
+        })
+        .disposed(by: disposeBag)
     }
 }
+

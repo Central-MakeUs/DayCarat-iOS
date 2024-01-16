@@ -8,7 +8,15 @@
 import UIKit
 
 final class LoginCoordinator: Coordinator {
-    var childCoordinators = [Coordinator]()
+    
+    enum Action {
+        case first
+        case notFirst
+    }
+    
+    var delegate: CoordinatorDelegate?
+    
+    var childCoordinators = [any Coordinator]()
 
     var navigationController: UINavigationController
     
@@ -18,7 +26,7 @@ final class LoginCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = LoginViewController()
+        let vc = LoginViewController(viewModel: LoginViewModel(usecase: LoginUseCase(repository: LoginRepository(service: LoginService())), coordinator: self))
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
@@ -28,5 +36,19 @@ final class LoginCoordinator: Coordinator {
         navigationController.isNavigationBarHidden = true
         childCoordinators.append(introVC)
         introVC.start()
+    }
+    
+    func pushMain() {
+        self.navigationController.isNavigationBarHidden = true
+        let tabBarCoordinator = TabBarCoordinator(navigationController: navigationController)
+        tabBarCoordinator.start()
+    }
+    func setAction(_ action: Action) {
+//        switch action {
+//        case .first:
+//            
+//        case .notFirst:
+//            
+//        }
     }
 }

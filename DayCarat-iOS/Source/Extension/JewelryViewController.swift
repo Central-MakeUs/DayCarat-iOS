@@ -12,8 +12,11 @@ import RxCocoa
 import RxDataSources
 
 final class JewelryViewController: BaseViewController {
+    
     private var disposeBag = DisposeBag()
     private var dataSource: RxCollectionViewSectionedReloadDataSource<SectionModel>!
+    private let viewModel: JewelryBoxViewModel
+    
     private let jewelryCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.register(JewelryBodyCell.self, forCellWithReuseIdentifier: JewelryBodyCell.identifier)
         $0.register(JewelryHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: JewelryHeaderView.identifier)
@@ -31,6 +34,15 @@ final class JewelryViewController: BaseViewController {
         $0.alwaysBounceVertical = true
         $0.showsHorizontalScrollIndicator = false
         $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    init( viewModel: JewelryBoxViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func configure() {

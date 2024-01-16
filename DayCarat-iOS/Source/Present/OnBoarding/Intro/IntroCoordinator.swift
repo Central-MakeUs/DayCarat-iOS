@@ -8,9 +8,16 @@
 import UIKit
 
 final class IntroCoordinator: Coordinator {
-    private var parentCoordinator: Coordinator?
+
+    struct Action {
+        
+    }
+    
+    var delegate: CoordinatorDelegate?
+    
+    private var parentCoordinator: (any Coordinator)?
     var navigationController: UINavigationController
-    var childCoordinators = [Coordinator]()
+    var childCoordinators = [any Coordinator]()
 
     init(parentCoordinator: LoginCoordinator?, navigationController: UINavigationController) {
         self.parentCoordinator = parentCoordinator
@@ -23,14 +30,14 @@ final class IntroCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
+    func setAction(_ action: Action) {
+        
+    }
+    
     func pushOnBoarding() {
         let vc = OnBoardingCoordinator(parentCoordinator: self, navigationController: navigationController)
         navigationController.isNavigationBarHidden = true
         childCoordinators.append(vc)
         vc.start()
-    }
-    
-    func popVC() {
-        parentCoordinator?.removeChildCoordinator(child: self)
     }
 }

@@ -23,9 +23,7 @@ class CompleteViewController: BaseViewController {
     private let desLabel = DayCaratLabel(type: .Body1, text: "데이캐럿과 함께\n하루하루 보석을 캐고 다듬어 나가요!", textColor: .Gray600!)
     private let completBtn = DayCaratBtn(type: .Sub, text: "메인 홈으로 이동")
     
-    deinit {
-        coordinator?.popVC()
-    }
+
     
     override func configure() {
         desLabel.textAlignment = .center

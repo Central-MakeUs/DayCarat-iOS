@@ -13,6 +13,7 @@ import RxCocoa
 final class MyPageViewController: BaseViewController {
     
     private var disposeBag = DisposeBag()
+    private let viewModel: MyPageViewModel
     
     private let profileImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
@@ -33,6 +34,15 @@ final class MyPageViewController: BaseViewController {
         $0.layer.cornerRadius = 18
         $0.backgroundColor = .Main
         $0.setImage(UIImage(named: "icon-edit-3"), for: .normal)
+    }
+    
+    init(viewModel: MyPageViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func configure() {

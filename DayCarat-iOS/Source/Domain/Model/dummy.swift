@@ -18,3 +18,4 @@ extension SectionModel: SectionModelType {
         self.items = items
     }
 }
+

@@ -7,8 +7,25 @@
 
 import UIKit
 
+
+
 final class AppCoordinator: Coordinator {
-    var childCoordinators: [Coordinator] = []
+    
+    enum Action {
+      case auth
+      case tabBar
+    }
+    
+    func setAction(_ action: Action) {
+        
+    }
+    
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    var delegate: CoordinatorDelegate?
+    var childCoordinators: [any Coordinator] = []
     var navigationController: UINavigationController
     
     func start() {
@@ -16,9 +33,5 @@ final class AppCoordinator: Coordinator {
         navigationController.isNavigationBarHidden = true
         childCoordinators.append(loginCoordinator)
         loginCoordinator.start()
-    }
-    
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
     }
 }

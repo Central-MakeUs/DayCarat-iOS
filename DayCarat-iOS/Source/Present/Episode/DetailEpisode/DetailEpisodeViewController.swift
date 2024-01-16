@@ -14,6 +14,9 @@ import RxDataSources
 final class DetailEpisodeViewController: BaseViewController {
     private var dataSource: RxCollectionViewSectionedReloadDataSource<SectionModel>!
     private var disposeBag = DisposeBag()
+    private let viewModel: DetailEpisodeViewModel
+    private let epiData = BehaviorRelay<[String]>(value: [])
+    private let input = DetailEpisodeViewModel.Input()
 
     private let naviBar = CustomNavigaitonBar(btnstate: true, rightBtnText: "편집", middleText: "")
     private let detailCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
@@ -23,33 +26,50 @@ final class DetailEpisodeViewController: BaseViewController {
         $0.backgroundColor = .clear
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 24, left: 0, bottom: 10, right: 0)
-        layout.minimumLineSpacing = 20
-//        layout.itemSize = CGSize(width: 175, height: 184)
-        layout.minimumInteritemSpacing = 0
+        layout.sectionInset = UIEdgeInsets(top: 24, left: 16, bottom: 60, right: 16)
+        layout.minimumInteritemSpacing = 20
         layout.sectionInsetReference = .fromContentInset
         $0.collectionViewLayout = layout
         $0.decelerationRate = .fast
         $0.alwaysBounceVertical = true
-        $0.showsHorizontalScrollIndicator = false
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private let trimBtn = DayCaratBtn(type: .Default, text: "경험 다듬기")
     
     private func setupDataSource() {
-        dataSource = RxCollectionViewSectionedReloadDataSource<SectionModel>(
-            configureCell: { _, collectionView, indexPath, item in
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailEpiBodySection.identifier, for: indexPath) as! DetailEpiBodySection
-                
-                return cell
-            },
-            configureSupplementaryView: { _, collectionView, kind, indexPath in
-                let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DetailEpiHeaderView.identifier, for: indexPath) as! DetailEpiHeaderView
-                
-                return headerView
-            }
-        )
+        let output = viewModel.transform(input: input)
+
+        output.dummy
+            .drive(onNext: { [weak self] dummyModel in
+                let stringData: [String] = [dummyModel.learned, dummyModel.disappoint]
+                self?.epiData.accept(stringData)
+                self?.dataSource = RxCollectionViewSectionedReloadDataSource<SectionModel>(
+                    configureCell: { _, collectionView, indexPath, item in
+                        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailEpiBodySection.identifier, for: indexPath) as! DetailEpiBodySection
+                        if indexPath.row == 0 {
+                            cell.configure(title: "배운점", des: dummyModel.learned)
+                        } else {
+                            cell.configure(title: "아쉬운점", des: dummyModel.disappoint)
+                        }
+                        return cell
+                    },
+                    configureSupplementaryView: { _, collectionView, kind, indexPath in
+                        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DetailEpiHeaderView.identifier, for: indexPath) as! DetailEpiHeaderView
+
+                        return headerView
+                    }
+                )
+            })
+            .disposed(by: disposeBag)
+    }
+    init(viewModel: DetailEpisodeViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func configure() {
@@ -84,6 +104,7 @@ final class DetailEpisodeViewController: BaseViewController {
     }
     
     override func binding() {
+        
         let sections = [SectionModel(items: [0, 1])]
         
         Observable.just(sections)
@@ -101,6 +122,17 @@ extension DetailEpisodeViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: view.frame.width, height: 90)
         }
         return CGSize(width: view.frame.width, height: 0)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let items = epiData.value
+        let item = items[indexPath.item]
+        let cell = DetailEpiBodySection()
+        cell.configureDes(des: item)
+        cell.layoutIfNeeded()
+        let cellWidth = cell.desLabel.intrinsicContentSize.height + 32
+        print(cellWidth)
+
+        return CGSize(width: UIScreen.main.bounds.width, height: cellWidth)
     }
 }
 extension DetailEpisodeViewController: CustomNavigaitonBarDelegate {

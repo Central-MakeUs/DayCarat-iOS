@@ -15,6 +15,7 @@ final class EpisodeListViewController: BaseViewController {
     
     private var disposeBag = DisposeBag()
     private var dataSource: RxCollectionViewSectionedReloadDataSource<SectionModel>!
+    private let viewModel: EpisodeListViewModel
 
     private let naviBar = CustomNavigaitonBar(btnstate: false, rightBtnText: "", middleText: "")
     private let episodeListCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
@@ -34,6 +35,15 @@ final class EpisodeListViewController: BaseViewController {
         $0.alwaysBounceVertical = true
         $0.showsHorizontalScrollIndicator = false
         $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    init(viewModel: EpisodeListViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func configure() {
@@ -70,7 +80,7 @@ final class EpisodeListViewController: BaseViewController {
         
         episodeListCollectionView.rx.modelSelected(Int.self)
             .subscribe(onNext: { [weak self] selectedIdx in
-                self?.pushDetail(idx: selectedIdx)
+                self?.viewModel.coordinator?.start()
             })
             .disposed(by: disposeBag)
     }
@@ -104,16 +114,10 @@ extension EpisodeListViewController: UICollectionViewDelegateFlowLayout {
 }
 extension EpisodeListViewController: CustomNavigaitonBarDelegate {
     func backBtnClick(_ navibar: CustomNavigaitonBar) {
-        self.navigationController?.popViewController(animated: true)
+        self.viewModel.coordinator?.popupViewController(animated: true)
     }
     
     func rightBtnClick(_ navibar: CustomNavigaitonBar) {
         
-    }
-    
-    private func pushDetail(idx: Int) {
-        let vc = DetailEpisodeViewController()
-        vc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

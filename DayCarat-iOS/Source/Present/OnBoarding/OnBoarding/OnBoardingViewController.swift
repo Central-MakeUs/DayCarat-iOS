@@ -41,7 +41,6 @@ final class OnBoardingViewController: BaseViewController {
         $0.isScrollEnabled = false
     }
     
-    private let jumpBtn = DayCaratBtn(type: .Jump, text: "건너뛰기")
     private var nextBtn = DayCaratBtn(type: .Disabled, text: "다음으로")
     private let btnSV = UIStackView().then {
         $0.axis = .vertical
@@ -68,12 +67,11 @@ final class OnBoardingViewController: BaseViewController {
     
     override func configure() {
         self.view.backgroundColor = .Gray50
-        jumpBtn.isHidden = true
         onBoardingCollectionView.delegate = self
     }
     
     override func addView() {
-        [jumpBtn ,nextBtn].forEach {
+        [nextBtn].forEach {
             self.btnSV.addArrangedSubview($0)
         }
         [pageControl, onBoardingCollectionView, btnSV].forEach {
@@ -142,12 +140,6 @@ final class OnBoardingViewController: BaseViewController {
             }
         .disposed(by: disposeBag)
         
-        jumpBtn.rx.tap
-            .subscribe(onNext: {  [weak self] _ in
-                self?.coordinator?.pushComplete()
-            })
-            .disposed(by: disposeBag)
-        
         
         nextBtn.rx.tap
             .subscribe(onNext: { [weak onBoardingCollectionView] in
@@ -185,11 +177,9 @@ extension OnBoardingViewController: UIScrollViewDelegate, UICollectionViewDelega
             let currentIndex = indexPath.item
             
                 if currentIndex == 2 {
-                    self.jumpBtn.isHidden = false
                     btnState.onNext(true)
 
                 } else {
-                    self.jumpBtn.isHidden = true
                     btnState.onNext(false)
                 }
                 self.pageControl.setCurrentPage(currentIndex)

@@ -8,10 +8,21 @@
 import UIKit
 
 final class OnBoardingCoordinator: Coordinator {
-    var childCoordinators = [Coordinator]()
-    private var parentCoordinator: Coordinator?
+    
+    struct Action {
+        
+    }
+    
+    var delegate: CoordinatorDelegate?
+    
+    var childCoordinators = [any Coordinator]()
+    private var parentCoordinator: (any Coordinator)?
 
     var navigationController: UINavigationController
+    
+    func setAction(_ action: Action) {
+        
+    }
     
     init(parentCoordinator: IntroCoordinator ,navigationController: UINavigationController) {
         self.navigationController = navigationController

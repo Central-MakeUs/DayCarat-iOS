@@ -25,6 +25,14 @@ final class NewsCollectionViewCell: UICollectionViewCell {
     func configureCell(img: String) {
         self.Img.image = UIImage(named: img)
     }
+    
+    private func applyShadow() {
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.Gray600?.cgColor
+        self.layer.shadowOpacity = 0.4
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.layer.shadowRadius = 3
+    }
 
     
     override init(frame: CGRect) {
@@ -33,7 +41,7 @@ final class NewsCollectionViewCell: UICollectionViewCell {
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.gray100.cgColor
         self.layer.cornerRadius = 8
-
+        applyShadow()
         self.addSubview(Img)
         self.addSubview(textLabel)
 

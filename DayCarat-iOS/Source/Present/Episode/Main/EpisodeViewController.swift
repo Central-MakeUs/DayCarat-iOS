@@ -12,7 +12,15 @@ import RxCocoa
 import RxDataSources
 
 final class EpisodeViewController: BaseViewController {
+    
+    // MARK: Properties
+
     private var disposeBag = DisposeBag()
+    private let viewModel: EpisodeViewModel
+    private var dataSource: RxCollectionViewSectionedReloadDataSource<SectionModel>!
+
+    // MARK: UI
+
     private let bottomView = UIView().then {
         $0.backgroundColor = .Gray50
     }
@@ -34,8 +42,19 @@ final class EpisodeViewController: BaseViewController {
         $0.showsHorizontalScrollIndicator = false
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    // MARK: init
 
-    private var dataSource: RxCollectionViewSectionedReloadDataSource<SectionModel>!
+    init(viewModel: EpisodeViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Methods
 
     override func configure() {
         self.view.backgroundColor = .Main100
@@ -72,7 +91,7 @@ final class EpisodeViewController: BaseViewController {
         
         episodeCollectionView.rx.modelSelected(Int.self)
             .subscribe(onNext: { [weak self] selectedIdx in
-                self?.pushList(idx: selectedIdx)
+                self?.viewModel.coordinator?.pushList()
             })
             .disposed(by: disposeBag)
     }
@@ -105,11 +124,4 @@ extension EpisodeViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: view.frame.width, height: 0)
     }
 }
-extension EpisodeViewController {
-    private func pushList(idx: Int) {
-        let vc = EpisodeListViewController()
-        vc.hidesBottomBarWhenPushed = true
-        self.navigationController?.isNavigationBarHidden = true
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-}
+

@@ -10,3 +10,4 @@ import Foundation
 struct CellModel {
     let helpCell: [String] = ["helpcell1", "helpcell2", "helpcell1"]
 }
+

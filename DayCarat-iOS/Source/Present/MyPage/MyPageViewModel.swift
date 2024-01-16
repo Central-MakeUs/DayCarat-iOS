@@ -10,8 +10,14 @@ import RxCocoa
 
 final class MyPageViewModel: ViewModelType {
 
-    
+    private let usecase: MyPageUseCaseProtocol
+    private let coordinator: MyPageCoordinator?
     var disposeBag = DisposeBag()
+    
+    init(usecase: MyPageUseCaseProtocol, coordinator: MyPageCoordinator?) {
+        self.usecase = usecase
+        self.coordinator = coordinator
+    }
     
     struct Input {
         

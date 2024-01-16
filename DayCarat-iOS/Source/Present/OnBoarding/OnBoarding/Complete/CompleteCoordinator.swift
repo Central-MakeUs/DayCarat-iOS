@@ -7,13 +7,25 @@
 
 import UIKit
 
-final class CompleteCoordinator: Coordinator {
-    var childCoordinators =  [Coordinator]()
-    private var parentCoordinator: Coordinator?
-
-    var navigationController: UINavigationController
+final class CompleteCoordinator: Coordinator, CoordinatorDelegate {
+    func didFinish(childCoordinator: any Coordinator) {
+        
+    }
     
-    init(parentCoordinator: Coordinator? = nil, navigationController: UINavigationController) {
+    func setAction(_ action: Action) {
+        
+    }
+    
+    struct Action {
+        
+    }
+    
+    var childCoordinators: [any Coordinator] = []
+    var navigationController: UINavigationController
+    var delegate: CoordinatorDelegate?
+    private var parentCoordinator: (any Coordinator)?
+    
+    init(parentCoordinator: (any Coordinator)? = nil, navigationController: UINavigationController) {
         self.parentCoordinator = parentCoordinator
         self.navigationController = navigationController
     }
@@ -25,12 +37,8 @@ final class CompleteCoordinator: Coordinator {
     }
     
     func pushMain() {
-        let vc = CustomTabBarController()
-        navigationController.isNavigationBarHidden = true
-        navigationController.pushViewController(vc, animated: false)
-    }
-    
-    func popVC() {
-        parentCoordinator?.removeChildCoordinator(child: self)
+        self.navigationController.isNavigationBarHidden = true
+        let tabBarCoordinator = TabBarCoordinator(navigationController: navigationController)
+        tabBarCoordinator.start()
     }
 }

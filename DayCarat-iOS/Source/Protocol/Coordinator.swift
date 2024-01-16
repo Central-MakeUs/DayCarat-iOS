@@ -7,14 +7,32 @@
 
 import UIKit
 
+protocol CoordinatorDelegate: AnyObject {
+    func didFinish(childCoordinator: any Coordinator)
+}
 protocol Coordinator: AnyObject {
-    var childCoordinators: [Coordinator] { get set }
+    
+    associatedtype Action
+    
+    var childCoordinators: [any Coordinator] { get set }
     var navigationController: UINavigationController { get set }
+    var delegate: CoordinatorDelegate? { get set }
     
     func start()
+    func setAction(_ action: Action)
+    func finish()
 }
 extension Coordinator {
-  func removeChildCoordinator(child: Coordinator) {
-    childCoordinators.removeAll { $0 === child }
-  }
+    func finish() {
+        childCoordinators.removeAll()
+        delegate?.didFinish(childCoordinator: self)
+    }
+    
+    func dismiss(animated: Bool = false) {
+        navigationController.presentedViewController?.dismiss(animated: animated)
+    }
+    
+    func popupViewController(animated: Bool = false) {
+        navigationController.popViewController(animated: animated)
+    }
 }

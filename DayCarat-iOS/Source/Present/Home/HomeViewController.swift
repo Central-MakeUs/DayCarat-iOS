@@ -35,7 +35,11 @@ final class HomeViewController: BaseViewController {
         $0.image = UIImage(named: "splashLogo")
     }
     private let titleLabel = DayCaratLabel(type: .Subhead1, text: "지철님,\n새로운 에피소드를 캐볼까요?",textColor: .Gray900!)
-    
+    private let folderImg = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.backgroundColor = .clear
+        $0.image = UIImage(named: "backFolder")
+    }
     private let countView = UIView().then {
         $0.backgroundColor = .Main
         $0.layer.cornerRadius = 37
@@ -143,6 +147,7 @@ final class HomeViewController: BaseViewController {
     override func addView() {
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(contentView)
+        self.backgroundImg.addSubview(folderImg)
         [backgroundImg,bottomView, logoImg, bellBtn,titleLabel, countView, helpCollectioView, recentEpisodeLabel,
          recentEpisodeCollectioView, bannerCollectioView, newsLabel, newsDesLabel,
          newsCollectioView, pageControl].forEach {
@@ -154,6 +159,12 @@ final class HomeViewController: BaseViewController {
     }
     
     override func layout() {
+        self.folderImg.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom)
+            $0.trailing.equalToSuperview()
+            $0.width.equalTo(171.67)
+            $0.height.equalTo(260.77)
+        }
         self.contentView.snp.makeConstraints {
             $0.width.equalToSuperview()
             $0.edges.equalToSuperview()
@@ -277,6 +288,13 @@ final class HomeViewController: BaseViewController {
         }
         .disposed(by: disposeBag)
         
+        recentEpisodeCollectioView.rx
+            .modelSelected(Int.self)
+            .subscribe(onNext: {  [weak self]  info in
+
+            })
+            .disposed(by: disposeBag)
+        
         Observable.just([0, 1, 2])
             .bind(to: bannerCollectioView.rx.items(cellIdentifier: BannerCollectionViewCell.identifier, cellType:BannerCollectionViewCell.self))
         {  index, item, cell in
@@ -304,3 +322,4 @@ extension HomeViewController: UIScrollViewDelegate, UICollectionViewDelegate {
         }
     }
 }
+

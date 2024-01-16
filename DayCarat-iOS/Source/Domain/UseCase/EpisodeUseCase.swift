@@ -9,8 +9,10 @@ import RxSwift
 import RxCocoa
 
 protocol EpisodeUseCaseProtocol {
-    
+    func getDummy() -> DetailEpiModel
 }
 final class EpisodeUseCase: EpisodeUseCaseProtocol {
-    
+    func getDummy() -> DetailEpiModel {
+        return DetailEpiModel()
+    }
 }
