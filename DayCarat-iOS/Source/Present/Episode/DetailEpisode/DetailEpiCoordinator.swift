@@ -9,7 +9,6 @@ import UIKit
 
 final class DetailEpiCoordinator: Coordinator {
     
-    
     struct Action {
         
     }
@@ -22,11 +21,17 @@ final class DetailEpiCoordinator: Coordinator {
         self.navigationController.isNavigationBarHidden = true
     }
     
-    func start() {
-        let vm = DetailEpisodeViewModel(usecase: EpisodeUseCase(), coordinator: self)
+    func startDetail(id: Int) {
+        let vm = DetailEpisodeViewModel(usecase: EpisodeUseCase(), coordinator: self, epiId: id)
         let vc = DetailEpisodeViewController(viewModel: vm)
+        vc.hidesBottomBarWhenPushed = true
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func start() {
+
+    }
+
     
     func setAction(_ action: Action) {
         

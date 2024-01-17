@@ -63,6 +63,11 @@ final class DetailEpisodeViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+
+    }
+    
     init(viewModel: DetailEpisodeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)

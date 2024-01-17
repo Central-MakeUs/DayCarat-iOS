@@ -9,21 +9,24 @@ import UIKit
 
 import RxSwift
 import RxCocoa
+import Kingfisher
 
-final class MyPageViewController: BaseViewController {
+final class MyPageViewController: BaseViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     private var disposeBag = DisposeBag()
     private let viewModel: MyPageViewModel
     
+    private let imgPickerController = UIImagePickerController()
     private let profileImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
-        $0.backgroundColor = .red
+        $0.backgroundColor = .clear
         $0.layer.cornerRadius = 35
         $0.layer.borderWidth = 1.5
+        $0.clipsToBounds = true
         $0.layer.borderColor = UIColor.Gray200?.cgColor
     }
-    private let nickNameLabel = DayCaratLabel(type: .Subhead3, text: "지철", textColor: .black)
-    private let emailLabel = DayCaratLabel(type: .Body5, text: "sksk02zja@naver.com", textColor: .Gray600!)
+    private let nickNameLabel = DayCaratLabel(type: .Subhead3, text: "", textColor: .black)
+    private let emailLabel = DayCaratLabel(type: .Body5, text: "", textColor: .Gray600!)
     private let infoTableView = UITableView(frame: CGRect.zero, style: .grouped).then{
         $0.backgroundColor = .clear
         $0.register(MyPageInfoSection.self, forCellReuseIdentifier: MyPageInfoSection.identifier)
@@ -43,6 +46,11 @@ final class MyPageViewController: BaseViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.fetchInfo()
+
     }
     
     override func configure() {
@@ -90,6 +98,25 @@ final class MyPageViewController: BaseViewController {
             
         }
         .disposed(by: disposeBag)
+        
+        viewModel.userData
+            .bind(onNext: {  [weak self] info in
+                self?.nickNameLabel.text = info.nickname
+                self?.emailLabel.text = info.email
+                if let imageURL = URL(string: info.profileImage) {
+                    self?.profileImg.kf.setImage(with: imageURL)
+                }
+            })
+            .disposed(by: disposeBag)
+        editBtn.rx
+            .tap
+            .bind(onNext: {
+                self.imgPickerController.delegate = self
+                self.imgPickerController.sourceType = .photoLibrary
+                self.present(self.imgPickerController, animated: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
+    
     }
 }
 extension MyPageViewController: UITableViewDelegate {

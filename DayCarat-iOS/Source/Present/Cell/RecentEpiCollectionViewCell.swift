@@ -21,7 +21,9 @@ final class RecentEpiCollectionViewCell: UICollectionViewCell {
         $0.tintColor = .Gray800
     }
 
-    func configureCell(img: String) {
+    func configureCell(title: String, date: String) {
+        self.nameLabel.text = title
+        self.desLabel.text = date
         self.backgroundColor = .clear
     }
 

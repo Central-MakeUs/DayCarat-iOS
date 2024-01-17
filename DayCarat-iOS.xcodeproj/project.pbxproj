@@ -82,6 +82,16 @@
 		09DC3F0A2B5690910026B857 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 09DC3F092B5690910026B857 /* RxMoya */; };
 		09DC3F0C2B56B3B30026B857 /* TokenManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F0B2B56B3B30026B857 /* TokenManger.swift */; };
 		09DC3F0F2B56C14F0026B857 /* EpiInputHeadrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F0E2B56C14F0026B857 /* EpiInputHeadrView.swift */; };
+		09DC3F112B57D9660026B857 /* EpiInputCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F102B57D9660026B857 /* EpiInputCollectionViewCell.swift */; };
+		09DC3F132B57F3D60026B857 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F122B57F3D60026B857 /* HomeService.swift */; };
+		09DC3F152B57F4330026B857 /* EpiDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F142B57F4330026B857 /* EpiDTO.swift */; };
+		09DC3F172B57F5A30026B857 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F162B57F5A30026B857 /* HomeRepository.swift */; };
+		09DC3F192B57FFBA0026B857 /* EpisodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F182B57FFBA0026B857 /* EpisodeService.swift */; };
+		09DC3F1B2B5809D50026B857 /* UserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F1A2B5809D50026B857 /* UserInfoService.swift */; };
+		09DC3F1D2B580A730026B857 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F1C2B580A730026B857 /* UserDTO.swift */; };
+		09DC3F1F2B580B8F0026B857 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F1E2B580B8F0026B857 /* UserRepository.swift */; };
+		09DC3F212B580B9E0026B857 /* UserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F202B580B9E0026B857 /* UserInterface.swift */; };
+		09DC3F242B580E3C0026B857 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 09DC3F232B580E3C0026B857 /* Kingfisher */; };
 		DE5F410F2B4B841500581075 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = DE5F410E2B4B841500581075 /* SkeletonView */; };
 		DE5F41122B4B883400581075 /* IntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41112B4B883400581075 /* IntroModel.swift */; };
 		DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */; };
@@ -228,6 +238,15 @@
 		09DC3F012B5689180026B857 /* Moya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moya.swift; sourceTree = "<group>"; };
 		09DC3F0B2B56B3B30026B857 /* TokenManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManger.swift; sourceTree = "<group>"; };
 		09DC3F0E2B56C14F0026B857 /* EpiInputHeadrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EpiInputHeadrView.swift; path = "DayCarat-iOS/Source/Domain/Model/EpiInputHeadrView.swift"; sourceTree = SOURCE_ROOT; };
+		09DC3F102B57D9660026B857 /* EpiInputCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EpiInputCollectionViewCell.swift; path = "DayCarat-iOS/Source/Domain/Model/EpiInputCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		09DC3F122B57F3D60026B857 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		09DC3F142B57F4330026B857 /* EpiDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpiDTO.swift; sourceTree = "<group>"; };
+		09DC3F162B57F5A30026B857 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		09DC3F182B57FFBA0026B857 /* EpisodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeService.swift; sourceTree = "<group>"; };
+		09DC3F1A2B5809D50026B857 /* UserInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoService.swift; sourceTree = "<group>"; };
+		09DC3F1C2B580A730026B857 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		09DC3F1E2B580B8F0026B857 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		09DC3F202B580B9E0026B857 /* UserInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterface.swift; sourceTree = "<group>"; };
 		DE5F41112B4B883400581075 /* IntroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroModel.swift; sourceTree = "<group>"; };
 		DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControlView.swift; sourceTree = "<group>"; };
 		DE5F41152B4B90A700581075 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
@@ -303,6 +322,7 @@
 				09DC3F0A2B5690910026B857 /* RxMoya in Frameworks */,
 				DE8479932B4790B500471B4F /* RxRelay in Frameworks */,
 				09339BED2B52256F00820896 /* KakaoSDKCommon in Frameworks */,
+				09DC3F242B580E3C0026B857 /* Kingfisher in Frameworks */,
 				09339BE92B52256F00820896 /* KakaoSDKCert in Frameworks */,
 				09339BF02B522A9300820896 /* RxKakaoSDK in Frameworks */,
 				DE84799E2B47910C00471B4F /* Then in Frameworks */,
@@ -481,6 +501,7 @@
 			isa = PBXGroup;
 			children = (
 				09DC3F0E2B56C14F0026B857 /* EpiInputHeadrView.swift */,
+				09DC3F102B57D9660026B857 /* EpiInputCollectionViewCell.swift */,
 			);
 			name = Section;
 			path = "DayCarat-iOS/Source/Present/EpisodeInput/Section";
@@ -531,6 +552,7 @@
 				09B9726F2B54129700205087 /* EpisodeInterface.swift */,
 				09B972712B54129F00205087 /* HomeInterface.swift */,
 				09B972732B5412A900205087 /* MyPageInterface.swift */,
+				09DC3F202B580B9E0026B857 /* UserInterface.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -541,6 +563,8 @@
 				DE5F41212B4B92B500581075 /* tempRepository.swift */,
 				DE5F41372B4BD30200581075 /* OnBoardingRepository.swift */,
 				DEA544402B4E74E700813CC6 /* LoginRepository.swift */,
+				09DC3F162B57F5A30026B857 /* HomeRepository.swift */,
+				09DC3F1E2B580B8F0026B857 /* UserRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -549,7 +573,9 @@
 			isa = PBXGroup;
 			children = (
 				09B9727B2B54256200205087 /* LoginDTO.swift */,
+				09DC3F142B57F4330026B857 /* EpiDTO.swift */,
 				09B9727D2B5425AE00205087 /* BaseResponse.swift */,
+				09DC3F1C2B580A730026B857 /* UserDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -559,6 +585,9 @@
 			children = (
 				DE5F41272B4B92DA00581075 /* tempService.swift */,
 				DEA544422B4E751500813CC6 /* LoginService.swift */,
+				09DC3F122B57F3D60026B857 /* HomeService.swift */,
+				09DC3F182B57FFBA0026B857 /* EpisodeService.swift */,
+				09DC3F1A2B5809D50026B857 /* UserInfoService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -870,6 +899,7 @@
 				09DC3F052B5690910026B857 /* Moya */,
 				09DC3F072B5690910026B857 /* ReactiveMoya */,
 				09DC3F092B5690910026B857 /* RxMoya */,
+				09DC3F232B580E3C0026B857 /* Kingfisher */,
 			);
 			productName = "DayCarat-iOS";
 			productReference = 09073D322B46F87E00D840EC /* DayCarat-iOS.app */;
@@ -909,6 +939,7 @@
 				DE5F41402B4BE05200581075 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				09339BE32B52256F00820896 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 				09339BEE2B522A9300820896 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */,
+				09DC3F222B580E3C0026B857 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 09073D332B46F87E00D840EC /* Products */;
 			projectDirPath = "";
@@ -953,14 +984,17 @@
 				0967D8DB2B4AF04F009CFD0A /* BaseView.swift in Sources */,
 				09C574252B4ED85B00CCABCB /* CustomNavigaitonBar.swift in Sources */,
 				DE8479A42B47924200471B4F /* Color+.swift in Sources */,
+				09DC3F172B57F5A30026B857 /* HomeRepository.swift in Sources */,
 				DEA544302B4E53A700813CC6 /* JewelryHeaderView.swift in Sources */,
 				DE5F41162B4B90A700581075 /* IntroViewModel.swift in Sources */,
 				DEA544452B4E763100813CC6 /* LoginCoordinator.swift in Sources */,
 				DE8479D62B47DFB800471B4F /* IntroViewController.swift in Sources */,
 				DEA544412B4E74E700813CC6 /* LoginRepository.swift in Sources */,
 				DEA544502B4E89FF00813CC6 /* TabBarCoordinator.swift in Sources */,
+				09DC3F192B57FFBA0026B857 /* EpisodeService.swift in Sources */,
 				DEB20DF92B50F33A001D92B5 /* DetailEpisodeViewController.swift in Sources */,
 				0967D8CD2B4A7417009CFD0A /* DayCaratCheckBox.swift in Sources */,
+				09DC3F1D2B580A730026B857 /* UserDTO.swift in Sources */,
 				DE86A1B02B4CFFF700C206DE /* LoginViewModel.swift in Sources */,
 				DE86A1BA2B4D31E800C206DE /* HelpCollectionViewCell.swift in Sources */,
 				0967D8CF2B4AE19E009CFD0A /* AgreeViewModel.swift in Sources */,
@@ -973,6 +1007,7 @@
 				DE5F41222B4B92B500581075 /* tempRepository.swift in Sources */,
 				DE5F41342B4BD2EB00581075 /* OnBoardingUseCase.swift in Sources */,
 				DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */,
+				09DC3F152B57F4330026B857 /* EpiDTO.swift in Sources */,
 				09BDC1D52B4D818200C07F34 /* BannerCollectionViewCell.swift in Sources */,
 				09C5741D2B4EC4BA00CCABCB /* EpisodeListCollectionViewCell.swift in Sources */,
 				09BDC1E12B4D9E2900C07F34 /* MyPageTableViewCell.swift in Sources */,
@@ -984,7 +1019,9 @@
 				DEB20E002B50F510001D92B5 /* DetailEpiHeaderView.swift in Sources */,
 				09BDC1D92B4D8AF300C07F34 /* EpisodeInputViewController.swift in Sources */,
 				DEA544342B4E5B4D00813CC6 /* dummy.swift in Sources */,
+				09DC3F1B2B5809D50026B857 /* UserInfoService.swift in Sources */,
 				09BDC1DB2B4D8DE600C07F34 /* NavigationController+.swift in Sources */,
+				09DC3F112B57D9660026B857 /* EpiInputCollectionViewCell.swift in Sources */,
 				0957F9102B52D1130031B291 /* JewelryBoxViewModel.swift in Sources */,
 				DE86A1B62B4D1B5500C206DE /* HomeViewModel.swift in Sources */,
 				DE5F41362B4BD2F500581075 /* OnBoardingInterface.swift in Sources */,
@@ -1018,6 +1055,7 @@
 				DEB20E022B511058001D92B5 /* EpisodeUseCase.swift in Sources */,
 				09B972802B54273600205087 /* APIConstant.swift in Sources */,
 				DE5F41302B4BD24A00581075 /* OnBoardingViewController.swift in Sources */,
+				09DC3F132B57F3D60026B857 /* HomeService.swift in Sources */,
 				DE5F413B2B4BD43300581075 /* InputNameSection.swift in Sources */,
 				DE8479D42B47B7E500471B4F /* DayCaratBtn.swift in Sources */,
 				DEA5443F2B4E74D200813CC6 /* LoginInterface.swift in Sources */,
@@ -1035,6 +1073,7 @@
 				DE8479DE2B47E16600471B4F /* EpisodeViewController.swift in Sources */,
 				DE8479DB2B47E0D000471B4F /* HomeViewController.swift in Sources */,
 				09BDC1D12B4D63F400C07F34 /* ScrollView+.swift in Sources */,
+				09DC3F212B580B9E0026B857 /* UserInterface.swift in Sources */,
 				0967D8B82B4A6128009CFD0A /* AgreeViewController.swift in Sources */,
 				DEA544472B4E7B6300813CC6 /* IntroCoordinator.swift in Sources */,
 				09B972762B54133700205087 /* DetailEpiCoordinator.swift in Sources */,
@@ -1044,6 +1083,7 @@
 				DE5F41192B4B90E300581075 /* ViewModelType.swift in Sources */,
 				0957F90E2B52D0F20031B291 /* EpisodeCoordinator.swift in Sources */,
 				DE5F412A2B4B953A00581075 /* IntroUseCase.swift in Sources */,
+				09DC3F1F2B580B8F0026B857 /* UserRepository.swift in Sources */,
 				DEA544292B4E1F6200813CC6 /* EpisodeHeaderCell.swift in Sources */,
 				DE5F41322B4BD27000581075 /* OnBoardingViewModel.swift in Sources */,
 				09B972722B54129F00205087 /* HomeInterface.swift in Sources */,
@@ -1299,6 +1339,14 @@
 				minimumVersion = 4.0.4;
 			};
 		};
+		09DC3F222B580E3C0026B857 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.2;
+			};
+		};
 		DE5F410D2B4B841500581075 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Juanpe/SkeletonView";
@@ -1424,6 +1472,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DE8479942B4790D400471B4F /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
+		};
+		09DC3F232B580E3C0026B857 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09DC3F222B580E3C0026B857 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		DE5F410E2B4B841500581075 /* SkeletonView */ = {
 			isa = XCSwiftPackageProductDependency;

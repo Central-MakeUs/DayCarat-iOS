@@ -28,8 +28,11 @@ final class EpisodeListCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func pushList(idx: Int) {
-        
+    func pushDetail(idx: Int) {
+        let vc = DetailEpiCoordinator(navigationController: navigationController)
+        navigationController.isNavigationBarHidden = true
+        childCoordinators.append(vc)
+        vc.startDetail(id: idx)
     }
     
     func setAction(_ action: Action) {

@@ -12,6 +12,7 @@ final class MyPageViewModel: ViewModelType {
 
     private let usecase: MyPageUseCaseProtocol
     private let coordinator: MyPageCoordinator?
+    let userData = PublishSubject<UserDTO>()
     var disposeBag = DisposeBag()
     
     init(usecase: MyPageUseCaseProtocol, coordinator: MyPageCoordinator?) {
@@ -29,5 +30,15 @@ final class MyPageViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         return Output()
+    }
+    
+    func fetchInfo() {
+        usecase.fetchUserInfo()
+            .subscribe(onSuccess: {  [weak self]  res in
+                self?.userData.onNext(res.result!)
+            }, onFailure: {  error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
     }
 }

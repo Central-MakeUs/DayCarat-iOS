@@ -23,7 +23,7 @@ final class MyPageCoordinator: Coordinator {
     }
     
     func start() {
-        let vm = MyPageViewModel(usecase: MyPageUseCase(), coordinator: self)
+        let vm = MyPageViewModel(usecase: MyPageUseCase(repository: UserRepository(service: UserInfoService())), coordinator: self)
         let vc = MyPageViewController(viewModel: vm)
         navigationController.pushViewController(vc, animated: false)
     }

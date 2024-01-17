@@ -50,7 +50,6 @@ class EpisodeInputViewController: BaseViewController {
         [naviBar].forEach {
             self.view.addSubview($0)
         }
-
     }
     
     override func layout() {
