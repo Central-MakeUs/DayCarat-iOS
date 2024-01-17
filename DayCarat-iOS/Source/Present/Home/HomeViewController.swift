@@ -11,7 +11,12 @@ import RxSwift
 import RxCocoa
 
 final class HomeViewController: BaseViewController {
+    // MARK: - Properties
+
     private let viewModel: HomeViewModel
+    
+    // MARK: - UI
+
     private let contentView = UIView().then {
         $0.backgroundColor = .clear
     }
@@ -129,7 +134,12 @@ final class HomeViewController: BaseViewController {
         $0.showsHorizontalScrollIndicator = false
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
+    // MARK: - Life Cycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.fetchHomeData()
+    }
+
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -139,6 +149,8 @@ final class HomeViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Method
+
     override func configure() {
         self.bannerCollectioView.delegate = self
 
@@ -281,17 +293,18 @@ final class HomeViewController: BaseViewController {
         }
         .disposed(by: disposeBag)
         
-        Observable.just([0, 1, 2])
+        viewModel.recentEpi
             .bind(to: recentEpisodeCollectioView.rx.items(cellIdentifier: RecentEpiCollectionViewCell.identifier, cellType:RecentEpiCollectionViewCell.self))
-        {  index, item, cell in
-            
+        { index, item, cell in
+            cell.configureCell(title: item.title, date: item.time)
         }
         .disposed(by: disposeBag)
+
         
         recentEpisodeCollectioView.rx
-            .modelSelected(Int.self)
+            .modelSelected(recentEPi.self)
             .subscribe(onNext: {  [weak self]  info in
-
+                self?.viewModel.coordinator?.pushDetail(idx: info.id)
             })
             .disposed(by: disposeBag)
         
@@ -308,9 +321,19 @@ final class HomeViewController: BaseViewController {
 
         }
         .disposed(by: disposeBag)
+        
+        viewModel.monthEpiCount
+            .asDriver(onErrorJustReturn: 0)
+            .drive(onNext: {  [weak self] count in
+                self?.countNumLabel.text = String(count)
+            })
+            .disposed(by: disposeBag)
+        
 
     }
 }
+// MARK: - Extension
+
 extension HomeViewController: UIScrollViewDelegate, UICollectionViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let visibleRect = CGRect(origin: bannerCollectioView.contentOffset, size: bannerCollectioView.bounds.size)

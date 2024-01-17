@@ -17,7 +17,8 @@ final class LoginViewController: BaseViewController {
     weak var coordinator: LoginCoordinator?
     private var disposeBag = DisposeBag()
     private let viewModel: LoginViewModel
-    
+    private let tokenManager = TokenManager()
+
     private let backgroundImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.image = UIImage(named: "LoginBackground")
@@ -79,7 +80,11 @@ final class LoginViewController: BaseViewController {
         appleBtn.rx.tap
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
-                self?.coordinator?.pushIntro()
+                
+                self?.tokenManager.saveToken("eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtdXNocm9vbTEzMjRAbmF2ZXIuY29tIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE3MDU0MTE5MTAsImV4cCI6MTcxNDA1MTkxMH0._qYlVOQKnYwQtUXetaVRftc0E4BJZ99-r9iu6kztdv4")
+                self?.coordinator?.pushMain()
+
+                //self?.coordinator?.pushIntro()
             })
             .disposed(by: disposeBag)
 

@@ -13,6 +13,7 @@ final class HomeCoordinator: Coordinator {
     struct Action {
         
     }
+    
     var childCoordinators: [any Coordinator] = []
     var navigationController: UINavigationController
     var delegate: CoordinatorDelegate?
@@ -23,9 +24,16 @@ final class HomeCoordinator: Coordinator {
     }
     
     func start() {
-        let vm = HomeViewModel(usecase: HomeUseCase(), coordinator: self)
+        let vm = HomeViewModel(usecase: HomeUseCase(repository: HomeRepository(serivce: HomeService())), coordinator: self)
         let vc = HomeViewController(viewModel: vm)
         navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func pushDetail(idx: Int) {
+        let vc = DetailEpiCoordinator(navigationController: navigationController)
+        navigationController.isNavigationBarHidden = true
+        childCoordinators.append(vc)
+        vc.startDetail(id: idx)
     }
     
     func setAction(_ action: Action) {

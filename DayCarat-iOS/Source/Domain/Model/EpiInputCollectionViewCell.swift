@@ -1,19 +1,14 @@
 //
-//  EpiInputHeadrView.swift
+//  EpiInputCollectionViewCell.swift
 //  DayCarat-iOS
 //
-//  Created by 최지철 on 1/16/24.
+//  Created by 최지철 on 1/17/24.
 //
 
 import UIKit
 
-import SnapKit
-import Then
-import RxSwift
-import RxCocoa
-
-final class EpiInputHeadrView: UICollectionReusableView {
-    static let identifier = "EpiInputHeadrView"
+class EpiInputCollectionViewCell: UICollectionViewCell {
+    static let identifier = "EpiInputCollectionViewCell"
     
     private let titleLabel = DayCaratLabel(type: .Body1, text: "제목", textColor: .black)
     private let titleInput = UITextField().then {
@@ -80,5 +75,4 @@ final class EpiInputHeadrView: UICollectionReusableView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
