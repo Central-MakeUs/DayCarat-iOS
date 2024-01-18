@@ -276,7 +276,11 @@ final class HomeViewController: BaseViewController {
         let input = HomeViewModel.Input()
         let output = viewModel.transform(input: input)
         
-    
+        viewModel.userInfo
+            .bind(onNext: {  [weak self] data in
+                self?.titleLabel.text = "\(data.nickname)님,\n새로운 에피소드를 캐볼까요?"
+            })
+            .disposed(by: disposeBag)
         
         Observable.just([0, 1, 2])
             .bind(to: helpCollectioView.rx.items(cellIdentifier: HelpCollectionViewCell.identifier, cellType: HelpCollectionViewCell.self))

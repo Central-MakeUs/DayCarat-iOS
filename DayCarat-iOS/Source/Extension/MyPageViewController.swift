@@ -118,6 +118,17 @@ final class MyPageViewController: BaseViewController, UIImagePickerControllerDel
             .disposed(by: disposeBag)
     
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage]
+            as? UIImage {
+            DispatchQueue.main.async {
+                self.profileImg.image = image
+            }
+        }
+        self.dismiss(animated: true)
+    }
+    
 }
 extension MyPageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -15,6 +15,7 @@ final class HomeViewModel: ViewModelType {
     weak var coordinator: HomeCoordinator?
     let monthEpiCount = PublishSubject<Int>()
     let recentEpi = PublishSubject<[recentEPi]>()
+    let userInfo = PublishSubject<UserDTO>()
     
     init(usecase: HomeUseCaseeProtocol, coordinator: HomeCoordinator) {
         self.usecase = usecase
@@ -46,6 +47,14 @@ final class HomeViewModel: ViewModelType {
             .subscribe(onSuccess: {  [weak self] res in
                 self?.recentEpi.onNext(res.result!)
             }, onFailure: { error in
+                
+            })
+            .disposed(by: disposeBag)
+        
+        usecase.fetchUserInfo()
+            .subscribe(onSuccess: {  [weak self]  res in
+                self?.userInfo.onNext(res.result!)
+            }, onFailure: {  error in
                 
             })
             .disposed(by: disposeBag)
