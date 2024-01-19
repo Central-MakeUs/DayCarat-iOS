@@ -45,6 +45,11 @@ final class HomeViewController: BaseViewController {
         $0.backgroundColor = .clear
         $0.image = UIImage(named: "homeBlueCircle")
     }
+    private let noEpiImg = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.backgroundColor = .clear
+        $0.image = UIImage(named: "noEpi")
+    }
     private let pinkCircle = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.backgroundColor = .clear
@@ -163,6 +168,7 @@ final class HomeViewController: BaseViewController {
 
     override func configure() {
         self.bannerCollectioView.delegate = self
+        //noEpiImg.isHidden = true
 
     }
     
@@ -180,6 +186,7 @@ final class HomeViewController: BaseViewController {
         [countIntroLabel, countNumLabel, countLabel].forEach {
             countView.addSubview($0)
         }
+        self.recentEpisodeCollectioView.addSubview(noEpiImg)
     }
     
     override func layout() {
@@ -290,7 +297,11 @@ final class HomeViewController: BaseViewController {
             $0.horizontalEdges.equalToSuperview().inset(16)
             $0.height.equalTo(364)
         }
-
+        self.noEpiImg.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.height.equalTo(117)
+            $0.width.equalTo(250)
+        }
     }
     
     override func binding() {
@@ -322,14 +333,26 @@ final class HomeViewController: BaseViewController {
         viewModel.recentEpi
             .bind(to: recentEpisodeCollectioView.rx.items(cellIdentifier: RecentEpiCollectionViewCell.identifier, cellType:RecentEpiCollectionViewCell.self))
         { index, item, cell in
+        
             cell.configureCell(title: item.title, date: item.time)
         }
         .disposed(by: disposeBag)
+        
+        viewModel.recentEpi
+            .subscribe(onNext: {  [weak self]  items in
+                if items.isEmpty {
+                    self?.noEpiImg.isHidden = false  
+                } else {
+                    self?.noEpiImg.isHidden = true
+                }
+            })
+            .disposed(by: disposeBag)
 
         
         recentEpisodeCollectioView.rx
             .modelSelected(recentEPi.self)
             .subscribe(onNext: {  [weak self]  info in
+                
                 self?.viewModel.coordinator?.pushDetail(idx: info.id)
             })
             .disposed(by: disposeBag)
