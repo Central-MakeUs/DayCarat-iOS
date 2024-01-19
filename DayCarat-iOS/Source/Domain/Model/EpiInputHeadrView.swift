@@ -19,56 +19,71 @@ final class EpiInputHeadrView: UICollectionReusableView {
     private let titleInput = UITextField().then {
         $0.backgroundColor = .white
         $0.placeholder = " 내용을 입력해주세요."
+        $0.layer.cornerRadius = 8
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor.Gray300?.cgColor
     }
-    private let dateLabel = DayCaratLabel(type: .Body1, text: "날짜", textColor: .black)
+    private let titleSV = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 16
+    }
+    private let datetitleLabel = DayCaratLabel(type: .Body1, text: "날짜", textColor: .black)
+    private let dateLabel = DayCaratLabel(type: .Subhead6, text: "213123", textColor: .black)
     private let tagLabel = DayCaratLabel(type: .Body1, text: "활동 태그", textColor: .black)
     private let tagInput = UITextField().then {
         $0.backgroundColor = .white
         $0.placeholder = " ex. 동아리, 인턴"
+        $0.layer.cornerRadius = 8
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor.Gray300?.cgColor
     }
-    private let writeLabel = DayCaratLabel(type: .Body1, text: "작성 항목", textColor: .black)
-    private let writeInput = UITextField().then {
-        $0.backgroundColor = .white
-        $0.placeholder = " 작성항목을 선택해주세요"
+    private let tagSV = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 16
+    }
+    private let calendarBtn = UIButton().then {
+        $0.setImage(UIImage(named: "icon-calendar"), for: .normal)
+        $0.tintColor = .black
     }
     
     private func layout() {
-        [titleLabel, titleInput, dateLabel, tagLabel, tagInput, writeInput, writeLabel].forEach {
+        [titleLabel, titleInput].forEach {
+            self.titleSV.addArrangedSubview($0)
+        }
+        [tagLabel,tagInput].forEach {
+            self.tagSV.addArrangedSubview($0)
+        }
+        [titleSV, tagSV, datetitleLabel, dateLabel, calendarBtn].forEach {
             self.addSubview($0)
         }
-        titleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(46)
-            $0.leading.equalToSuperview().offset(28)
-        }
         titleInput.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(46)
-            $0.leading.equalTo(titleLabel.snp.trailing).offset(16)
-            $0.trailing.equalToSuperview().inset(16)
+            $0.width.equalTo(281)
             $0.height.equalTo(48)
         }
-        dateLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(39)
-            $0.leading.equalToSuperview().offset(28)
+        titleSV.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(34)
+            $0.trailing.equalToSuperview().inset(16)
         }
-        tagLabel.snp.makeConstraints {
-            $0.top.equalTo(dateLabel.snp.bottom).offset(38)
-            $0.leading.equalToSuperview().offset(22)
+        datetitleLabel.snp.makeConstraints {
+            $0.top.equalTo(titleSV.snp.bottom).offset(26)
+            $0.leading.equalToSuperview().offset(52)
+        }
+        tagSV.snp.makeConstraints {
+            $0.top.equalTo(dateLabel.snp.bottom).offset(24)
+            $0.trailing.equalToSuperview().inset(16)
         }
         tagInput.snp.makeConstraints {
-            $0.top.equalTo(dateLabel.snp.bottom).offset(25)
-            $0.leading.equalTo(tagLabel.snp.trailing).offset(16)
-            $0.trailing.equalToSuperview().inset(16)
+            $0.width.equalTo(281)
             $0.height.equalTo(48)
         }
-        writeLabel.snp.makeConstraints {
-            $0.top.equalTo(tagLabel.snp.bottom).offset(43)
-            $0.leading.equalToSuperview().offset(22)
+        calendarBtn.snp.makeConstraints {
+            $0.top.equalTo(titleSV.snp.bottom).offset(24)
+            $0.trailing.equalToSuperview().inset(28)
+            $0.width.height.equalTo(24)
         }
-        writeInput.snp.makeConstraints {
-            $0.top.equalTo(tagInput.snp.bottom).offset(16)
-            $0.leading.equalTo(tagLabel.snp.trailing).offset(16)
-            $0.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(48)
+        dateLabel.snp.makeConstraints {
+            $0.top.equalTo(titleSV.snp.bottom).offset(26)
+            $0.leading.equalTo(datetitleLabel.snp.trailing).offset(26)
         }
     }
     

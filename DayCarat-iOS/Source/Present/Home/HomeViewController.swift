@@ -43,7 +43,17 @@ final class HomeViewController: BaseViewController {
     private let folderImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.backgroundColor = .clear
-        $0.image = UIImage(named: "backFolder")
+        $0.image = UIImage(named: "homeBlueCircle")
+    }
+    private let pinkCircle = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.backgroundColor = .clear
+        $0.image = UIImage(named: "homePinkCircle")
+    }
+    private let subCircle = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.backgroundColor = .clear
+        $0.image = UIImage(named: "subCircle")
     }
     private let countView = UIView().then {
         $0.backgroundColor = .Main
@@ -159,7 +169,9 @@ final class HomeViewController: BaseViewController {
     override func addView() {
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(contentView)
-        self.backgroundImg.addSubview(folderImg)
+        [pinkCircle, folderImg, subCircle].forEach {
+            backgroundImg.addSubview($0)
+        }
         [backgroundImg,bottomView, logoImg, bellBtn,titleLabel, countView, helpCollectioView, recentEpisodeLabel,
          recentEpisodeCollectioView, bannerCollectioView, newsLabel, newsDesLabel,
          newsCollectioView, pageControl].forEach {
@@ -171,11 +183,21 @@ final class HomeViewController: BaseViewController {
     }
     
     override func layout() {
+        subCircle.snp.makeConstraints {
+            $0.width.equalTo(122)
+            $0.height.equalTo(90)
+            $0.trailing.equalToSuperview().inset(21.5)
+            $0.bottom.equalTo(folderImg.snp.top).inset(21.6)
+        }
+        pinkCircle.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(16)
+            $0.leading.equalToSuperview().offset(-59)
+            $0.width.height.equalTo(252)
+        }
         self.folderImg.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom)
-            $0.trailing.equalToSuperview()
-            $0.width.equalTo(171.67)
-            $0.height.equalTo(260.77)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(80)
+            $0.leading.equalTo(countView.snp.trailing)
+            $0.width.height.equalTo(252)
         }
         self.contentView.snp.makeConstraints {
             $0.width.equalToSuperview()
