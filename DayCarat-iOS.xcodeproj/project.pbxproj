@@ -136,6 +136,7 @@
 		DE86A1B82B4D1F4500C206DE /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A1B72B4D1F4500C206DE /* HomeUseCase.swift */; };
 		DE86A1BA2B4D31E800C206DE /* HelpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A1B92B4D31E800C206DE /* HelpCollectionViewCell.swift */; };
 		DE86A1BC2B4D357B00C206DE /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A1BB2B4D357B00C206DE /* CellModel.swift */; };
+		DE9038772B5E68DB003860A7 /* SOARAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9038762B5E68DB003860A7 /* SOARAViewController.swift */; };
 		DEA544292B4E1F6200813CC6 /* EpisodeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA544282B4E1F6200813CC6 /* EpisodeHeaderCell.swift */; };
 		DEA5442B2B4E256100813CC6 /* EpisodeBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA5442A2B4E256100813CC6 /* EpisodeBodyCell.swift */; };
 		DEA544302B4E53A700813CC6 /* JewelryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA5442F2B4E53A700813CC6 /* JewelryHeaderView.swift */; };
@@ -282,6 +283,7 @@
 		DE86A1B72B4D1F4500C206DE /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
 		DE86A1B92B4D31E800C206DE /* HelpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE86A1BB2B4D357B00C206DE /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		DE9038762B5E68DB003860A7 /* SOARAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOARAViewController.swift; sourceTree = "<group>"; };
 		DEA544282B4E1F6200813CC6 /* EpisodeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeHeaderCell.swift; sourceTree = "<group>"; };
 		DEA5442A2B4E256100813CC6 /* EpisodeBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeBodyCell.swift; sourceTree = "<group>"; };
 		DEA5442F2B4E53A700813CC6 /* JewelryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JewelryHeaderView.swift; sourceTree = "<group>"; };
@@ -728,6 +730,7 @@
 				DEB20DF62B50F2FC001D92B5 /* Main */,
 				09C574182B4EC2A300CCABCB /* EpisodeList */,
 				DEB20DF72B50F328001D92B5 /* DetailEpisode */,
+				DE9038752B5E68D1003860A7 /* SOARA */,
 			);
 			path = Episode;
 			sourceTree = "<group>";
@@ -789,6 +792,14 @@
 				09B972792B5413B100205087 /* EpisodeInputCoordinator.swift */,
 			);
 			path = EpisodeInput;
+			sourceTree = "<group>";
+		};
+		DE9038752B5E68D1003860A7 /* SOARA */ = {
+			isa = PBXGroup;
+			children = (
+				DE9038762B5E68DB003860A7 /* SOARAViewController.swift */,
+			);
+			path = SOARA;
 			sourceTree = "<group>";
 		};
 		DEA544272B4E1F5000813CC6 /* Section */ = {
@@ -1061,6 +1072,7 @@
 				DEA5443F2B4E74D200813CC6 /* LoginInterface.swift in Sources */,
 				09B9727A2B5413B100205087 /* EpisodeInputCoordinator.swift in Sources */,
 				DE86A1B22B4D03B900C206DE /* StrengthCollectionViewCell.swift in Sources */,
+				DE9038772B5E68DB003860A7 /* SOARAViewController.swift in Sources */,
 				DE5F41382B4BD30200581075 /* OnBoardingRepository.swift in Sources */,
 				DE5F41122B4B883400581075 /* IntroModel.swift in Sources */,
 				DEA544522B4E8A9A00813CC6 /* MyPageViewModel.swift in Sources */,
