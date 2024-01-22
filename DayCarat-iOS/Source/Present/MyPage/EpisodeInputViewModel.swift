@@ -13,7 +13,11 @@ final class EpisodeInputViewModel: ViewModelType {
     private let usecase: EpisodeUseCase
     let coordinator: EpisodeInputCoordinator?
     var disposeBag = DisposeBag()
-    
+    let selectedDate = PublishSubject<String>()
+    let title = PublishSubject<String>()
+    let activityTag = PublishSubject<String>()
+    let episodeContents = PublishSubject<[EpisodeInputContent]>()
+
     init(usecase: EpisodeUseCase, coordinator: EpisodeInputCoordinator?) {
         self.usecase = usecase
         self.coordinator = coordinator

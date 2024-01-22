@@ -17,7 +17,7 @@ enum DayCaratTarget {
     case activtyEpi //에피소드 조회: 활동순
     case userInfo  // 유저정보 조회
     case activityTag //활동 태그조회
-    case epiRegister(episodeContentType: String, content: String) // 에피소드 등록
+    case epiRegister(title: String, date: String, activityTag: String, episodeContents: [EpisodeInputContent]) // 에피소드 등록
 }
 
 extension DayCaratTarget: TargetType {
@@ -72,9 +72,20 @@ extension DayCaratTarget: TargetType {
         case .lastestEpi(let year):
             let parameters: [String: Any] = ["year": year]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-        case .epiRegister(let episodeContentType, let content):
-            let parameters: [String: Any] = ["episodeContentType": episodeContentType, "content": content]
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+        case .epiRegister(let title, let date, let activityTag, let episodeContents):
+            let contentsArray = episodeContents.map { content in
+                     return [
+                         "episodeContentType": content.episodeContentType,
+                         "content": content.content
+                     ]
+                 }
+                 let parameters: [String: Any] = [
+                     "title": title,
+                     "date": date,
+                     "activityTag": activityTag,
+                     "episodeContents": contentsArray
+                 ]
+                 return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         default:
             return .requestPlain
         }

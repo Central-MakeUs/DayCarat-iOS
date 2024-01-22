@@ -5,4 +5,8 @@
 //  Created by 최지철 on 1/14/24.
 //
 
-import Foundation
+import RxSwift
+
+protocol EpisodeInterface {
+    func registerEpi(title: String, date: String, activityTag: String, episodeContents: [EpisodeInputContent]) -> Single<BaseResponse<Bool>>
+}

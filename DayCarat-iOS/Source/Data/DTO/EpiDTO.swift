@@ -30,3 +30,8 @@ struct DetailEpisodeContentDTO: Decodable {
     let episodeContentType: String
     let content: String
 }
+
+struct EpisodeInputContent {
+    let episodeContentType: String
+    let content: String
+}

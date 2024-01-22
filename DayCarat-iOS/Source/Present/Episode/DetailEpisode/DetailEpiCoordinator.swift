@@ -22,7 +22,7 @@ final class DetailEpiCoordinator: Coordinator {
     }
     
     func startDetail(id: Int) {
-        let vm = DetailEpisodeViewModel(usecase: EpisodeUseCase(), coordinator: self, epiId: id)
+        let vm = DetailEpisodeViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService())), coordinator: self, epiId: id)
         let vc = DetailEpisodeViewController(viewModel: vm)
         vc.hidesBottomBarWhenPushed = true
         navigationController.pushViewController(vc, animated: true)

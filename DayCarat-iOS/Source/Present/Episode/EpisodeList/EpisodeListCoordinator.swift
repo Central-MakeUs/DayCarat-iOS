@@ -23,7 +23,7 @@ final class EpisodeListCoordinator: Coordinator {
     }
     
     func start() {
-        let vm = EpisodeListViewModel(usecase: EpisodeUseCase(), coordinator: self)
+        let vm = EpisodeListViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService())), coordinator: self)
         let vc = EpisodeListViewController(viewModel: vm)
         navigationController.pushViewController(vc, animated: true)
     }
