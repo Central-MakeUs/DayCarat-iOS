@@ -35,7 +35,7 @@ final class DetailEpisodeViewController: BaseViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private let trimBtn = DayCaratBtn(type: .Default, text: "경험 다듬기")
+    private let trimBtn = DayCaratBtn(type: .Jump, text: "에피소드 다듬기")
     
     private func setupDataSource() {
         let output = viewModel.transform(input: input)
@@ -114,6 +114,14 @@ final class DetailEpisodeViewController: BaseViewController {
         
         Observable.just(sections)
             .bind(to: detailCollectionView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        
+        trimBtn.rx
+            .tap
+            .asDriver()
+            .drive(onNext: {  [weak self] _ in
+                
+            })
             .disposed(by: disposeBag)
     }
 }

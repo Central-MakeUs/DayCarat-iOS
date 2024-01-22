@@ -17,6 +17,10 @@
 		09073D422B46F88200D840EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09073D402B46F88200D840EC /* LaunchScreen.storyboard */; };
 		09073D512B46FEBA00D840EC /* tempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09073D502B46FEBA00D840EC /* tempData.swift */; };
 		0908E47C2B5E9B8F0095D016 /* SoaraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E47B2B5E9B8F0095D016 /* SoaraViewController.swift */; };
+		0908E47E2B5EA13D0095D016 /* SoaraCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E47D2B5EA13D0095D016 /* SoaraCoordinator.swift */; };
+		0908E4802B5EA1460095D016 /* SoaraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E47F2B5EA1460095D016 /* SoaraViewModel.swift */; };
+		0908E4832B5EA49A0095D016 /* EpiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E4822B5EA49A0095D016 /* EpiCollectionViewCell.swift */; };
+		0908E4852B5EA6770095D016 /* SoaraCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E4842B5EA6770095D016 /* SoaraCollectionViewCell.swift */; };
 		09099A522B5CCC51009A2C1C /* DropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09099A512B5CCC51009A2C1C /* DropDownTableViewCell.swift */; };
 		09099A542B5CCC72009A2C1C /* EpiInputFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09099A532B5CCC72009A2C1C /* EpiInputFooterView.swift */; };
 		09339BE52B52256F00820896 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 09339BE42B52256F00820896 /* KakaoSDK */; };
@@ -195,6 +199,10 @@
 		09073D432B46F88200D840EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09073D502B46FEBA00D840EC /* tempData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempData.swift; sourceTree = "<group>"; };
 		0908E47B2B5E9B8F0095D016 /* SoaraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraViewController.swift; sourceTree = "<group>"; };
+		0908E47D2B5EA13D0095D016 /* SoaraCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraCoordinator.swift; sourceTree = "<group>"; };
+		0908E47F2B5EA1460095D016 /* SoaraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraViewModel.swift; sourceTree = "<group>"; };
+		0908E4822B5EA49A0095D016 /* EpiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpiCollectionViewCell.swift; sourceTree = "<group>"; };
+		0908E4842B5EA6770095D016 /* SoaraCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraCollectionViewCell.swift; sourceTree = "<group>"; };
 		09099A512B5CCC51009A2C1C /* DropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DropDownTableViewCell.swift; path = "DayCarat-iOS/Source/Data/DTO/DropDownTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		09099A532B5CCC72009A2C1C /* EpiInputFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EpiInputFooterView.swift; path = "DayCarat-iOS/Source/Data/DTO/EpiInputFooterView.swift"; sourceTree = SOURCE_ROOT; };
 		0957F9072B52CA1C0031B291 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
@@ -457,9 +465,21 @@
 		0908E47A2B5E9B860095D016 /* Soara */ = {
 			isa = PBXGroup;
 			children = (
+				0908E4812B5EA4820095D016 /* Section */,
 				0908E47B2B5E9B8F0095D016 /* SoaraViewController.swift */,
+				0908E47F2B5EA1460095D016 /* SoaraViewModel.swift */,
+				0908E47D2B5EA13D0095D016 /* SoaraCoordinator.swift */,
 			);
 			path = Soara;
+			sourceTree = "<group>";
+		};
+		0908E4812B5EA4820095D016 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				0908E4822B5EA49A0095D016 /* EpiCollectionViewCell.swift */,
+				0908E4842B5EA6770095D016 /* SoaraCollectionViewCell.swift */,
+			);
+			path = Section;
 			sourceTree = "<group>";
 		};
 		0957F9062B52CA0B0031B291 /* TabBar */ = {
@@ -749,10 +769,10 @@
 		DE8479DC2B47E12C00471B4F /* Episode */ = {
 			isa = PBXGroup;
 			children = (
-				0908E47A2B5E9B860095D016 /* Soara */,
 				DEB20DF62B50F2FC001D92B5 /* Main */,
 				09C574182B4EC2A300CCABCB /* EpisodeList */,
 				DEB20DF72B50F328001D92B5 /* DetailEpisode */,
+				0908E47A2B5E9B860095D016 /* Soara */,
 			);
 			path = Episode;
 			sourceTree = "<group>";
@@ -1005,6 +1025,7 @@
 			files = (
 				DEA5443B2B4E73C800813CC6 /* AppCoordinator.swift in Sources */,
 				0957F9142B52D12F0031B291 /* MyPageCoordinator.swift in Sources */,
+				0908E4832B5EA49A0095D016 /* EpiCollectionViewCell.swift in Sources */,
 				0901430C2B4C2E21006EAE30 /* JobCollectionViewCell.swift in Sources */,
 				09DC3F0F2B56C14F0026B857 /* EpiInputHeadrView.swift in Sources */,
 				DE8479882B47907D00471B4F /* LoginViewController.swift in Sources */,
@@ -1105,12 +1126,14 @@
 				DE8479DB2B47E0D000471B4F /* HomeViewController.swift in Sources */,
 				09BDC1D12B4D63F400C07F34 /* ScrollView+.swift in Sources */,
 				09DC3F212B580B9E0026B857 /* UserInterface.swift in Sources */,
+				0908E47E2B5EA13D0095D016 /* SoaraCoordinator.swift in Sources */,
 				0967D8B82B4A6128009CFD0A /* AgreeViewController.swift in Sources */,
 				DEA544472B4E7B6300813CC6 /* IntroCoordinator.swift in Sources */,
 				09B972762B54133700205087 /* DetailEpiCoordinator.swift in Sources */,
 				DEB20DFE2B50F4FB001D92B5 /* DetailEpiBodySection.swift in Sources */,
 				09099A542B5CCC72009A2C1C /* EpiInputFooterView.swift in Sources */,
 				0901430A2B4C18B2006EAE30 /* TextField+.swift in Sources */,
+				0908E4802B5EA1460095D016 /* SoaraViewModel.swift in Sources */,
 				09C5741A2B4EC2C000CCABCB /* EpisodeListViewController.swift in Sources */,
 				DE5F41192B4B90E300581075 /* ViewModelType.swift in Sources */,
 				0957F90E2B52D0F20031B291 /* EpisodeCoordinator.swift in Sources */,
@@ -1123,6 +1146,7 @@
 				0957F9122B52D1230031B291 /* JewelryBoxCoordinator.swift in Sources */,
 				DEA544542B4E8B0100813CC6 /* MyPageUseCase.swift in Sources */,
 				0957F90C2B52D0E50031B291 /* EpisodeViewModel.swift in Sources */,
+				0908E4852B5EA6770095D016 /* SoaraCollectionViewCell.swift in Sources */,
 				DEA544492B4E82D700813CC6 /* OnBoardingCoordinator.swift in Sources */,
 				09B9727E2B5425AE00205087 /* BaseResponse.swift in Sources */,
 			);
