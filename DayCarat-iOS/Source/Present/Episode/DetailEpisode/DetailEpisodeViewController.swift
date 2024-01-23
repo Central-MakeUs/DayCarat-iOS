@@ -115,6 +115,14 @@ final class DetailEpisodeViewController: BaseViewController {
         Observable.just(sections)
             .bind(to: detailCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
+        trimBtn.rx
+            .tap
+            .asDriver()
+            .drive(onNext: {  [weak self] _ in
+                
+            })
+            .disposed(by: disposeBag)
     }
 }
 extension DetailEpisodeViewController: UICollectionViewDelegateFlowLayout {

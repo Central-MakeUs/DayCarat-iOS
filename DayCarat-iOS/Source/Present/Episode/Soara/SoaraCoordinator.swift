@@ -1,13 +1,13 @@
 //
-//  DetailEpiCoordinator.swift
+//  SoaraCoordinator.swift
 //  DayCarat-iOS
 //
-//  Created by 최지철 on 1/14/24.
+//  Created by 최지철 on 1/22/24.
 //
 
 import UIKit
 
-final class DetailEpiCoordinator: Coordinator {
+final class SoaraCoordinator: Coordinator {
     
     struct Action {
         
@@ -21,11 +21,11 @@ final class DetailEpiCoordinator: Coordinator {
         self.navigationController.isNavigationBarHidden = true
     }
     
-    func startDetail(id: Int) {
-        let vm = DetailEpisodeViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService())), coordinator: self, epiId: id)
-        let vc = DetailEpisodeViewController(viewModel: vm)
-        vc.hidesBottomBarWhenPushed = true
-        navigationController.pushViewController(vc, animated: true)
+    func startSoara(id: Int) {
+//        let vm = DetailEpisodeViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService())), coordinator: self, epiId: id)
+//        let vc = DetailEpisodeViewController(viewModel: vm)
+//        vc.hidesBottomBarWhenPushed = true
+//        navigationController.pushViewController(vc, animated: true)
     }
     
     func start() {

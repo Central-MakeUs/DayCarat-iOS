@@ -11,10 +11,18 @@
 		0901430A2B4C18B2006EAE30 /* TextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090143092B4C18B2006EAE30 /* TextField+.swift */; };
 		0901430C2B4C2E21006EAE30 /* JobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901430B2B4C2E21006EAE30 /* JobCollectionViewCell.swift */; };
 		0901430E2B4C3612006EAE30 /* CollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901430D2B4C3612006EAE30 /* CollectionView+.swift */; };
+		09058FBB2B5BFA7300DA5E74 /* EpisodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09058FBA2B5BFA7300DA5E74 /* EpisodeRepository.swift */; };
 		09073D362B46F87E00D840EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09073D352B46F87E00D840EC /* AppDelegate.swift */; };
 		09073D382B46F87E00D840EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09073D372B46F87E00D840EC /* SceneDelegate.swift */; };
 		09073D422B46F88200D840EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09073D402B46F88200D840EC /* LaunchScreen.storyboard */; };
 		09073D512B46FEBA00D840EC /* tempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09073D502B46FEBA00D840EC /* tempData.swift */; };
+		0908E47C2B5E9B8F0095D016 /* SoaraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E47B2B5E9B8F0095D016 /* SoaraViewController.swift */; };
+		0908E47E2B5EA13D0095D016 /* SoaraCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E47D2B5EA13D0095D016 /* SoaraCoordinator.swift */; };
+		0908E4802B5EA1460095D016 /* SoaraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E47F2B5EA1460095D016 /* SoaraViewModel.swift */; };
+		0908E4832B5EA49A0095D016 /* EpiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E4822B5EA49A0095D016 /* EpiCollectionViewCell.swift */; };
+		0908E4852B5EA6770095D016 /* SoaraCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E4842B5EA6770095D016 /* SoaraCollectionViewCell.swift */; };
+		09099A522B5CCC51009A2C1C /* DropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09099A512B5CCC51009A2C1C /* DropDownTableViewCell.swift */; };
+		09099A542B5CCC72009A2C1C /* EpiInputFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09099A532B5CCC72009A2C1C /* EpiInputFooterView.swift */; };
 		09339BE52B52256F00820896 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 09339BE42B52256F00820896 /* KakaoSDK */; };
 		09339BE72B52256F00820896 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 09339BE62B52256F00820896 /* KakaoSDKAuth */; };
 		09339BE92B52256F00820896 /* KakaoSDKCert in Frameworks */ = {isa = PBXBuildFile; productRef = 09339BE82B52256F00820896 /* KakaoSDKCert */; };
@@ -32,6 +40,8 @@
 		0957F9102B52D1130031B291 /* JewelryBoxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957F90F2B52D1130031B291 /* JewelryBoxViewModel.swift */; };
 		0957F9122B52D1230031B291 /* JewelryBoxCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957F9112B52D1230031B291 /* JewelryBoxCoordinator.swift */; };
 		0957F9142B52D12F0031B291 /* MyPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957F9132B52D12F0031B291 /* MyPageCoordinator.swift */; };
+		096546092B5AC19100CDF4CC /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 096546082B5AC19100CDF4CC /* PanModal */; };
+		0965460B2B5AC1F800CDF4CC /* CalnderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0965460A2B5AC1F800CDF4CC /* CalnderViewController.swift */; };
 		0967D8B82B4A6128009CFD0A /* AgreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8B72B4A6128009CFD0A /* AgreeViewController.swift */; };
 		0967D8C22B4A62CA009CFD0A /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0967D8B92B4A62C9009CFD0A /* Pretendard-ExtraBold.otf */; };
 		0967D8C32B4A62CA009CFD0A /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0967D8BA2B4A62C9009CFD0A /* Pretendard-SemiBold.otf */; };
@@ -181,6 +191,7 @@
 		090143092B4C18B2006EAE30 /* TextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+.swift"; sourceTree = "<group>"; };
 		0901430B2B4C2E21006EAE30 /* JobCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCollectionViewCell.swift; sourceTree = "<group>"; };
 		0901430D2B4C3612006EAE30 /* CollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+.swift"; sourceTree = "<group>"; };
+		09058FBA2B5BFA7300DA5E74 /* EpisodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRepository.swift; sourceTree = "<group>"; };
 		09073D322B46F87E00D840EC /* DayCarat-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DayCarat-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09073D352B46F87E00D840EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09073D372B46F87E00D840EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +199,13 @@
 		09073D412B46F88200D840EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09073D432B46F88200D840EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09073D502B46FEBA00D840EC /* tempData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempData.swift; sourceTree = "<group>"; };
+		0908E47B2B5E9B8F0095D016 /* SoaraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraViewController.swift; sourceTree = "<group>"; };
+		0908E47D2B5EA13D0095D016 /* SoaraCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraCoordinator.swift; sourceTree = "<group>"; };
+		0908E47F2B5EA1460095D016 /* SoaraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraViewModel.swift; sourceTree = "<group>"; };
+		0908E4822B5EA49A0095D016 /* EpiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpiCollectionViewCell.swift; sourceTree = "<group>"; };
+		0908E4842B5EA6770095D016 /* SoaraCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraCollectionViewCell.swift; sourceTree = "<group>"; };
+		09099A512B5CCC51009A2C1C /* DropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DropDownTableViewCell.swift; path = "DayCarat-iOS/Source/Data/DTO/DropDownTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		09099A532B5CCC72009A2C1C /* EpiInputFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EpiInputFooterView.swift; path = "DayCarat-iOS/Source/Data/DTO/EpiInputFooterView.swift"; sourceTree = SOURCE_ROOT; };
 		0957F9072B52CA1C0031B291 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		0957F9092B52D0CB0031B291 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		0957F90B2B52D0E50031B291 /* EpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewModel.swift; sourceTree = "<group>"; };
@@ -195,6 +213,7 @@
 		0957F90F2B52D1130031B291 /* JewelryBoxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JewelryBoxViewModel.swift; sourceTree = "<group>"; };
 		0957F9112B52D1230031B291 /* JewelryBoxCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JewelryBoxCoordinator.swift; sourceTree = "<group>"; };
 		0957F9132B52D12F0031B291 /* MyPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCoordinator.swift; sourceTree = "<group>"; };
+		0965460A2B5AC1F800CDF4CC /* CalnderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalnderViewController.swift; path = "DayCarat-iOS/Source/Domain/Interface/CalnderViewController.swift"; sourceTree = SOURCE_ROOT; };
 		0967D8B72B4A6128009CFD0A /* AgreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeViewController.swift; sourceTree = "<group>"; };
 		0967D8B92B4A62C9009CFD0A /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-ExtraBold.otf"; path = "DayCarat-iOS/Resource/Pretendard-ExtraBold.otf"; sourceTree = SOURCE_ROOT; };
 		0967D8BA2B4A62C9009CFD0A /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-SemiBold.otf"; path = "DayCarat-iOS/Resource/Pretendard-SemiBold.otf"; sourceTree = SOURCE_ROOT; };
@@ -317,6 +336,7 @@
 			files = (
 				DE5F410F2B4B841500581075 /* SkeletonView in Frameworks */,
 				09339BF62B522A9300820896 /* RxKakaoSDKFriend in Frameworks */,
+				096546092B5AC19100CDF4CC /* PanModal in Frameworks */,
 				09339BEB2B52256F00820896 /* KakaoSDKCertCore in Frameworks */,
 				DE5F41442B4BE05200581075 /* RxDataSources in Frameworks */,
 				09339BF42B522A9300820896 /* RxKakaoSDKCommon in Frameworks */,
@@ -444,6 +464,26 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		0908E47A2B5E9B860095D016 /* Soara */ = {
+			isa = PBXGroup;
+			children = (
+				0908E4812B5EA4820095D016 /* Section */,
+				0908E47B2B5E9B8F0095D016 /* SoaraViewController.swift */,
+				0908E47F2B5EA1460095D016 /* SoaraViewModel.swift */,
+				0908E47D2B5EA13D0095D016 /* SoaraCoordinator.swift */,
+			);
+			path = Soara;
+			sourceTree = "<group>";
+		};
+		0908E4812B5EA4820095D016 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				0908E4822B5EA49A0095D016 /* EpiCollectionViewCell.swift */,
+				0908E4842B5EA6770095D016 /* SoaraCollectionViewCell.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
 		0957F9062B52CA0B0031B291 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,6 +544,9 @@
 			children = (
 				09DC3F0E2B56C14F0026B857 /* EpiInputHeadrView.swift */,
 				09DC3F102B57D9660026B857 /* EpiInputCollectionViewCell.swift */,
+				09099A532B5CCC72009A2C1C /* EpiInputFooterView.swift */,
+				0965460A2B5AC1F800CDF4CC /* CalnderViewController.swift */,
+				09099A512B5CCC51009A2C1C /* DropDownTableViewCell.swift */,
 			);
 			name = Section;
 			path = "DayCarat-iOS/Source/Present/EpisodeInput/Section";
@@ -567,6 +610,7 @@
 				DEA544402B4E74E700813CC6 /* LoginRepository.swift */,
 				09DC3F162B57F5A30026B857 /* HomeRepository.swift */,
 				09DC3F1E2B580B8F0026B857 /* UserRepository.swift */,
+				09058FBA2B5BFA7300DA5E74 /* EpisodeRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -730,7 +774,7 @@
 				DEB20DF62B50F2FC001D92B5 /* Main */,
 				09C574182B4EC2A300CCABCB /* EpisodeList */,
 				DEB20DF72B50F328001D92B5 /* DetailEpisode */,
-				DE9038752B5E68D1003860A7 /* SOARA */,
+				0908E47A2B5E9B860095D016 /* Soara */,
 			);
 			path = Episode;
 			sourceTree = "<group>";
@@ -911,6 +955,7 @@
 				09DC3F072B5690910026B857 /* ReactiveMoya */,
 				09DC3F092B5690910026B857 /* RxMoya */,
 				09DC3F232B580E3C0026B857 /* Kingfisher */,
+				096546082B5AC19100CDF4CC /* PanModal */,
 			);
 			productName = "DayCarat-iOS";
 			productReference = 09073D322B46F87E00D840EC /* DayCarat-iOS.app */;
@@ -951,6 +996,7 @@
 				09339BE32B52256F00820896 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 				09339BEE2B522A9300820896 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */,
 				09DC3F222B580E3C0026B857 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				096546072B5AC19100CDF4CC /* XCRemoteSwiftPackageReference "PanModal" */,
 			);
 			productRefGroup = 09073D332B46F87E00D840EC /* Products */;
 			projectDirPath = "";
@@ -989,12 +1035,14 @@
 			files = (
 				DEA5443B2B4E73C800813CC6 /* AppCoordinator.swift in Sources */,
 				0957F9142B52D12F0031B291 /* MyPageCoordinator.swift in Sources */,
+				0908E4832B5EA49A0095D016 /* EpiCollectionViewCell.swift in Sources */,
 				0901430C2B4C2E21006EAE30 /* JobCollectionViewCell.swift in Sources */,
 				09DC3F0F2B56C14F0026B857 /* EpiInputHeadrView.swift in Sources */,
 				DE8479882B47907D00471B4F /* LoginViewController.swift in Sources */,
 				0967D8DB2B4AF04F009CFD0A /* BaseView.swift in Sources */,
 				09C574252B4ED85B00CCABCB /* CustomNavigaitonBar.swift in Sources */,
 				DE8479A42B47924200471B4F /* Color+.swift in Sources */,
+				09058FBB2B5BFA7300DA5E74 /* EpisodeRepository.swift in Sources */,
 				09DC3F172B57F5A30026B857 /* HomeRepository.swift in Sources */,
 				DEA544302B4E53A700813CC6 /* JewelryHeaderView.swift in Sources */,
 				DE5F41162B4B90A700581075 /* IntroViewModel.swift in Sources */,
@@ -1032,6 +1080,7 @@
 				DEA544342B4E5B4D00813CC6 /* dummy.swift in Sources */,
 				09DC3F1B2B5809D50026B857 /* UserInfoService.swift in Sources */,
 				09BDC1DB2B4D8DE600C07F34 /* NavigationController+.swift in Sources */,
+				09099A522B5CCC51009A2C1C /* DropDownTableViewCell.swift in Sources */,
 				09DC3F112B57D9660026B857 /* EpiInputCollectionViewCell.swift in Sources */,
 				0957F9102B52D1130031B291 /* JewelryBoxViewModel.swift in Sources */,
 				DE86A1B62B4D1B5500C206DE /* HomeViewModel.swift in Sources */,
@@ -1050,6 +1099,7 @@
 				DE8479E72B47E8BB00471B4F /* Image+.swift in Sources */,
 				DE5F41282B4B92DA00581075 /* tempService.swift in Sources */,
 				DEA544392B4E6B4900813CC6 /* CompleteViewController.swift in Sources */,
+				0908E47C2B5E9B8F0095D016 /* SoaraViewController.swift in Sources */,
 				DE5F413D2B4BD7F200581075 /* JobSection.swift in Sources */,
 				DE86A1B82B4D1F4500C206DE /* HomeUseCase.swift in Sources */,
 				09DC3F022B5689180026B857 /* Moya.swift in Sources */,
@@ -1071,6 +1121,7 @@
 				DE8479D42B47B7E500471B4F /* DayCaratBtn.swift in Sources */,
 				DEA5443F2B4E74D200813CC6 /* LoginInterface.swift in Sources */,
 				09B9727A2B5413B100205087 /* EpisodeInputCoordinator.swift in Sources */,
+				0965460B2B5AC1F800CDF4CC /* CalnderViewController.swift in Sources */,
 				DE86A1B22B4D03B900C206DE /* StrengthCollectionViewCell.swift in Sources */,
 				DE9038772B5E68DB003860A7 /* SOARAViewController.swift in Sources */,
 				DE5F41382B4BD30200581075 /* OnBoardingRepository.swift in Sources */,
@@ -1086,11 +1137,14 @@
 				DE8479DB2B47E0D000471B4F /* HomeViewController.swift in Sources */,
 				09BDC1D12B4D63F400C07F34 /* ScrollView+.swift in Sources */,
 				09DC3F212B580B9E0026B857 /* UserInterface.swift in Sources */,
+				0908E47E2B5EA13D0095D016 /* SoaraCoordinator.swift in Sources */,
 				0967D8B82B4A6128009CFD0A /* AgreeViewController.swift in Sources */,
 				DEA544472B4E7B6300813CC6 /* IntroCoordinator.swift in Sources */,
 				09B972762B54133700205087 /* DetailEpiCoordinator.swift in Sources */,
 				DEB20DFE2B50F4FB001D92B5 /* DetailEpiBodySection.swift in Sources */,
+				09099A542B5CCC72009A2C1C /* EpiInputFooterView.swift in Sources */,
 				0901430A2B4C18B2006EAE30 /* TextField+.swift in Sources */,
+				0908E4802B5EA1460095D016 /* SoaraViewModel.swift in Sources */,
 				09C5741A2B4EC2C000CCABCB /* EpisodeListViewController.swift in Sources */,
 				DE5F41192B4B90E300581075 /* ViewModelType.swift in Sources */,
 				0957F90E2B52D0F20031B291 /* EpisodeCoordinator.swift in Sources */,
@@ -1103,6 +1157,7 @@
 				0957F9122B52D1230031B291 /* JewelryBoxCoordinator.swift in Sources */,
 				DEA544542B4E8B0100813CC6 /* MyPageUseCase.swift in Sources */,
 				0957F90C2B52D0E50031B291 /* EpisodeViewModel.swift in Sources */,
+				0908E4852B5EA6770095D016 /* SoaraCollectionViewCell.swift in Sources */,
 				DEA544492B4E82D700813CC6 /* OnBoardingCoordinator.swift in Sources */,
 				09B9727E2B5425AE00205087 /* BaseResponse.swift in Sources */,
 			);
@@ -1343,6 +1398,14 @@
 				minimumVersion = 2.20.0;
 			};
 		};
+		096546072B5AC19100CDF4CC /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.7;
+			};
+		};
 		0967D8D02B4AE733009CFD0A /* XCRemoteSwiftPackageReference "RxGesture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture";
@@ -1459,6 +1522,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09339BEE2B522A9300820896 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */;
 			productName = RxKakaoSDKShare;
+		};
+		096546082B5AC19100CDF4CC /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 096546072B5AC19100CDF4CC /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
 		};
 		0967D8D12B4AE733009CFD0A /* RxGesture */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -11,10 +11,19 @@ import SnapKit
 import Then
 import RxSwift
 import RxCocoa
+import PanModal
 
 final class EpiInputHeadrView: UICollectionReusableView {
-    static let identifier = "EpiInputHeadrView"
     
+    static let identifier = "EpiInputHeadrView"
+    private var disposeBag = DisposeBag()
+    private var viewModel = EpisodeInputViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService())), coordinator: nil)
+
+    let calendarButtonTap = PublishSubject<Void>()
+    let date = PublishRelay<String>()
+    let tagSubject = PublishSubject<String>()
+    let titleSubject = PublishSubject<String>()
+
     private let titleLabel = DayCaratLabel(type: .Body1, text: "제목", textColor: .black)
     private let titleInput = UITextField().then {
         $0.backgroundColor = .white
@@ -22,13 +31,14 @@ final class EpiInputHeadrView: UICollectionReusableView {
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.Gray300?.cgColor
+        $0.addLeftPadding()
     }
     private let titleSV = UIStackView().then {
         $0.axis = .horizontal
         $0.spacing = 16
     }
     private let datetitleLabel = DayCaratLabel(type: .Body1, text: "날짜", textColor: .black)
-    private let dateLabel = DayCaratLabel(type: .Subhead6, text: "213123", textColor: .black)
+    private let dateLabel = DayCaratLabel(type: .Subhead6, text: "", textColor: .black)
     private let tagLabel = DayCaratLabel(type: .Body1, text: "활동 태그", textColor: .black)
     private let tagInput = UITextField().then {
         $0.backgroundColor = .white
@@ -36,6 +46,7 @@ final class EpiInputHeadrView: UICollectionReusableView {
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.Gray300?.cgColor
+        $0.addLeftPadding()
     }
     private let tagSV = UIStackView().then {
         $0.axis = .horizontal
@@ -47,6 +58,10 @@ final class EpiInputHeadrView: UICollectionReusableView {
     }
     
     private func layout() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd (E)"
+        let todayDateString = dateFormatter.string(from: Date())
+        dateLabel.text = todayDateString
         [titleLabel, titleInput].forEach {
             self.titleSV.addArrangedSubview($0)
         }
@@ -87,9 +102,45 @@ final class EpiInputHeadrView: UICollectionReusableView {
         }
     }
     
+    private func binding() {
+        calendarBtn.rx
+            .tap
+            .asDriver()
+            .drive(onNext: { [weak self] _ in
+                self?.calendarButtonTap.onNext(())
+            })
+            .disposed(by: disposeBag)
+        
+        date
+            .bind(onNext: { [weak self]  date in
+                self?.dateLabel.text = date
+            })
+            .disposed(by: disposeBag)
+        
+        titleInput.rx.text
+             .orEmpty
+             .filter { !$0.isEmpty }
+             .bind(onNext: {  [weak self]  title  in
+                 self?.titleSubject.onNext(title)
+                 self?.titleInput.layer.borderColor = UIColor.Main?.cgColor
+             })
+             .disposed(by: disposeBag)
+        
+        tagInput.rx.text
+             .orEmpty
+             .filter { !$0.isEmpty }
+             .bind(onNext: {  [weak self]  tag  in
+                 self?.tagSubject.onNext(tag)
+                 self?.tagInput.layer.borderColor = UIColor.Main?.cgColor
+             })
+             .disposed(by: disposeBag)
+
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         layout()
+        binding()
     }
 
     required init?(coder: NSCoder) {
