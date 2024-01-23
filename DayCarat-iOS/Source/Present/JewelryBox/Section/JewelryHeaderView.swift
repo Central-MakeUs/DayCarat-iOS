@@ -23,10 +23,10 @@ final class JewelryHeaderView: UICollectionReusableView {
         $0.layer.cornerRadius = 16
     }
     
-    private let nickNameLabel = DayCaratLabel(type: .Subhead6, text: "지철", textColor: .Main600!)
-    private let strengthLabel = DayCaratLabel(type: .Body4, text: "빙수폭격기", textColor: .Main600!)
+    private let nickNameLabel = DayCaratLabel(type: .Subhead6, text: "", textColor: .Main600!)
+    private let strengthLabel = DayCaratLabel(type: .Body4, text: "", textColor: .Main600!)
     private let jewelryViewTitleLabel = DayCaratLabel(type: .Subhead5, text: "나의 보석", textColor: .white)
-    private let myJewelryCountLabel = DayCaratLabel(type: .Header2, text: "100", textColor: .white)
+    private let myJewelryCountLabel = DayCaratLabel(type: .Header2, text: "0", textColor: .white)
     private let myJewelryImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.image = UIImage(named: "whiteJewerly")
@@ -72,7 +72,7 @@ final class JewelryHeaderView: UICollectionReusableView {
         $0.layer.cornerRadius = 16
     }
     private let reportMonthTitel = DayCaratLabel(type: .Body4, text: "이번달 보석", textColor: .Main!)
-    private let reportMonthCount = DayCaratLabel(type: .Subhead2, text: "12개", textColor: .Main!)
+    private let reportMonthCount = DayCaratLabel(type: .Subhead2, text: "0개", textColor: .Main!)
 
     private let profileImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
