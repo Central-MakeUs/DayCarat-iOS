@@ -120,7 +120,7 @@ final class DetailEpisodeViewController: BaseViewController {
             .tap
             .asDriver()
             .drive(onNext: {  [weak self] _ in
-                
+                self?.viewModel.coordinator?.pushSoara()
             })
             .disposed(by: disposeBag)
     }

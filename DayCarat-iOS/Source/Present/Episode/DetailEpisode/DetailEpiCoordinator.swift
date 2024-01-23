@@ -28,6 +28,13 @@ final class DetailEpiCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
+    func pushSoara() {
+        let vc = SoaraCoordinator(navigationController: navigationController)
+        navigationController.isNavigationBarHidden = true
+        childCoordinators.append(vc)
+        vc.startSoara(id: 0)
+    }
+    
     func start() {
 
     }

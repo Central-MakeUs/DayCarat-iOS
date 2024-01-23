@@ -22,10 +22,8 @@ final class SoaraCoordinator: Coordinator {
     }
     
     func startSoara(id: Int) {
-//        let vm = DetailEpisodeViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService())), coordinator: self, epiId: id)
-//        let vc = DetailEpisodeViewController(viewModel: vm)
-//        vc.hidesBottomBarWhenPushed = true
-//        navigationController.pushViewController(vc, animated: true)
+        let vc = SoaraViewController(viewModel: SoaraViewModel())
+        navigationController.pushViewController(vc, animated: true)
     }
     
     func start() {
