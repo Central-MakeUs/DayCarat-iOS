@@ -102,6 +102,9 @@
 		09DC3F1F2B580B8F0026B857 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F1E2B580B8F0026B857 /* UserRepository.swift */; };
 		09DC3F212B580B9E0026B857 /* UserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F202B580B9E0026B857 /* UserInterface.swift */; };
 		09DC3F242B580E3C0026B857 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 09DC3F232B580E3C0026B857 /* Kingfisher */; };
+		DE4DD7042B60A7D00033EAB4 /* SoaraInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */; };
+		DE4DD7062B60A7EA0033EAB4 /* SoaraInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7052B60A7EA0033EAB4 /* SoaraInputCoordinator.swift */; };
+		DE4DD7082B60A8F30033EAB4 /* SoaraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7072B60A8F30033EAB4 /* SoaraModel.swift */; };
 		DE5F410F2B4B841500581075 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = DE5F410E2B4B841500581075 /* SkeletonView */; };
 		DE5F41122B4B883400581075 /* IntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41112B4B883400581075 /* IntroModel.swift */; };
 		DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */; };
@@ -266,6 +269,9 @@
 		09DC3F1C2B580A730026B857 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		09DC3F1E2B580B8F0026B857 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		09DC3F202B580B9E0026B857 /* UserInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterface.swift; sourceTree = "<group>"; };
+		DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraInputViewController.swift; sourceTree = "<group>"; };
+		DE4DD7052B60A7EA0033EAB4 /* SoaraInputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraInputCoordinator.swift; sourceTree = "<group>"; };
+		DE4DD7072B60A8F30033EAB4 /* SoaraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraModel.swift; sourceTree = "<group>"; };
 		DE5F41112B4B883400581075 /* IntroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroModel.swift; sourceTree = "<group>"; };
 		DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControlView.swift; sourceTree = "<group>"; };
 		DE5F41152B4B90A700581075 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
@@ -467,10 +473,8 @@
 		0908E47A2B5E9B860095D016 /* Soara */ = {
 			isa = PBXGroup;
 			children = (
-				0908E4812B5EA4820095D016 /* Section */,
-				0908E47B2B5E9B8F0095D016 /* SoaraViewController.swift */,
-				0908E47F2B5EA1460095D016 /* SoaraViewModel.swift */,
-				0908E47D2B5EA13D0095D016 /* SoaraCoordinator.swift */,
+				DE4DD7022B60A7C40033EAB4 /* Input */,
+				DE4DD7012B60A7B20033EAB4 /* Main */,
 			);
 			path = Soara;
 			sourceTree = "<group>";
@@ -560,6 +564,26 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		DE4DD7012B60A7B20033EAB4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0908E4812B5EA4820095D016 /* Section */,
+				0908E47B2B5E9B8F0095D016 /* SoaraViewController.swift */,
+				0908E47F2B5EA1460095D016 /* SoaraViewModel.swift */,
+				0908E47D2B5EA13D0095D016 /* SoaraCoordinator.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DE4DD7022B60A7C40033EAB4 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */,
+				DE4DD7052B60A7EA0033EAB4 /* SoaraInputCoordinator.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
 		DE5F41102B4B854A00581075 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,6 +593,7 @@
 				DEA544332B4E5B4D00813CC6 /* dummy.swift */,
 				09A67D952B515FE8003EDABE /* DetailEpiModel.swift */,
 				09DC3F0B2B56B3B30026B857 /* TokenManger.swift */,
+				DE4DD7072B60A8F30033EAB4 /* SoaraModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1033,6 +1058,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE4DD7062B60A7EA0033EAB4 /* SoaraInputCoordinator.swift in Sources */,
 				DEA5443B2B4E73C800813CC6 /* AppCoordinator.swift in Sources */,
 				0957F9142B52D12F0031B291 /* MyPageCoordinator.swift in Sources */,
 				0908E4832B5EA49A0095D016 /* EpiCollectionViewCell.swift in Sources */,
@@ -1133,6 +1159,7 @@
 				DEA5442B2B4E256100813CC6 /* EpisodeBodyCell.swift in Sources */,
 				09BDC1DF2B4D96AF00C07F34 /* MyPageViewController.swift in Sources */,
 				DE8479DE2B47E16600471B4F /* EpisodeViewController.swift in Sources */,
+				DE4DD7082B60A8F30033EAB4 /* SoaraModel.swift in Sources */,
 				DE8479DB2B47E0D000471B4F /* HomeViewController.swift in Sources */,
 				09BDC1D12B4D63F400C07F34 /* ScrollView+.swift in Sources */,
 				09DC3F212B580B9E0026B857 /* UserInterface.swift in Sources */,
@@ -1159,6 +1186,7 @@
 				0908E4852B5EA6770095D016 /* SoaraCollectionViewCell.swift in Sources */,
 				DEA544492B4E82D700813CC6 /* OnBoardingCoordinator.swift in Sources */,
 				09B9727E2B5425AE00205087 /* BaseResponse.swift in Sources */,
+				DE4DD7042B60A7D00033EAB4 /* SoaraInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

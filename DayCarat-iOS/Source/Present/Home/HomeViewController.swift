@@ -136,10 +136,11 @@ final class HomeViewController: BaseViewController {
         $0.isScrollEnabled = true
         $0.backgroundColor = .clear
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 175, height: 175)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2.3, height: 175)
         layout.sectionInset = UIEdgeInsets.zero
         layout.minimumLineSpacing = 14
-        layout.minimumInteritemSpacing = 0
+        layout.minimumInteritemSpacing = 12
+//        layout.
         layout.sectionInsetReference = .fromContentInset
         $0.collectionViewLayout = layout
         $0.decelerationRate = .fast

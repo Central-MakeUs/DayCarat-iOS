@@ -27,8 +27,8 @@ final class EpisodeListViewController: BaseViewController {
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 20, left: 16, bottom: 10, right: 16)
         layout.minimumLineSpacing = 16
-        layout.itemSize = CGSize(width: 361, height: 128)
-        layout.minimumInteritemSpacing = 0
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2.3, height: 128)
+        layout.minimumInteritemSpacing = 12
         layout.sectionInsetReference = .fromContentInset
         $0.collectionViewLayout = layout
         $0.decelerationRate = .fast

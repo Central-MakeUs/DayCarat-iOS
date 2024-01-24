@@ -11,16 +11,22 @@ import RxCocoa
 final class SoaraViewModel: ViewModelType {
 
     var disposeBag = DisposeBag()
+    private let usecase: EpisodeUseCaseProtocol
+    
+    init(usecase: EpisodeUseCaseProtocol) {
+        self.usecase = usecase
+    }
     
     struct Input {
         
     }
     
     struct Output {
-        
+        let soaraData: Driver<[SoaraType]>
     }
     
     func transform(input: Input) -> Output {
-        return Output()
+        let soaraData = usecase.getSoara()
+        return Output(soaraData: soaraData)
     }
 }

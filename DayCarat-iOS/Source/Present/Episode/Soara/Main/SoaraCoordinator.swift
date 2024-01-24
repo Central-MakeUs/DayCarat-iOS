@@ -22,8 +22,15 @@ final class SoaraCoordinator: Coordinator {
     }
     
     func startSoara(id: Int) {
-        let vc = SoaraViewController(viewModel: SoaraViewModel())
+        let vc = SoaraViewController(viewModel: SoaraViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService()))), coordinator: self)
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func pushInputSoara(title: String, type: SoaraType) {
+        let vc = SoaraInputCoordinator(navigationController: navigationController)
+        navigationController.isNavigationBarHidden = true
+        childCoordinators.append(vc)
+        vc.start(title: title, type: type)
     }
     
     func start() {

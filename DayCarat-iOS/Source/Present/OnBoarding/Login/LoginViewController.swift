@@ -20,7 +20,7 @@ final class LoginViewController: BaseViewController {
     private let tokenManager = TokenManager()
 
     private let backgroundImg = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
+        $0.contentMode = .scaleAspectFill
         $0.image = UIImage(named: "LoginBackground")
     }
     

@@ -9,11 +9,12 @@ import RxSwift
 import RxCocoa
 
 protocol EpisodeUseCaseProtocol {
+    func getSoara() -> Driver<[SoaraType]>
     func getDummy() -> DetailEpiModel
     func registerEpi(title: String, date: String, activityTag: String, episodeContents: [EpisodeInputContent]) -> Single<BaseResponse<Bool>>
 }
 final class EpisodeUseCase: EpisodeUseCaseProtocol {
- 
+
     private let epiRepository: EpisodeRepository
     
     init(epiRepository: EpisodeRepository) {
@@ -26,5 +27,10 @@ final class EpisodeUseCase: EpisodeUseCaseProtocol {
     
     func getDummy() -> DetailEpiModel {
         return DetailEpiModel()
+    }
+    
+    func getSoara() -> Driver<[SoaraType]> {
+        return Driver.just(SoaraType.allCases)
+            .asDriver(onErrorDriveWith: Driver.empty())
     }
 }
