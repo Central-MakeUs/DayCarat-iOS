@@ -32,8 +32,19 @@ final class EpisodeHeaderView: UICollectionReusableView {
         [titleLabel, desLabel, bottomView, searchBtn].forEach {
             self.addSubview($0)
         }
+        [activityBtn, dateBtn].forEach {
+            self.bottomView.addSubview($0)
+        }
     }
     
+    let dateBtn = DayCaratToggleBtn(text: "날짜별").then {
+        $0.isEnabled = true
+    }
+    let activityBtn = DayCaratToggleBtn(text: "활동별").then {
+        $0.isEnabled = true
+    }
+    
+
     private func layout() {
         searchBtn.snp.makeConstraints {
             $0.top.equalTo(self.snp.top).offset(18)
@@ -50,6 +61,18 @@ final class EpisodeHeaderView: UICollectionReusableView {
         bottomView.snp.makeConstraints {
             $0.bottom.leading.trailing.equalToSuperview()
             $0.height.equalTo(56)
+        }
+        activityBtn.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(12)
+            $0.leading.equalToSuperview().offset(16.5)
+            $0.width.equalTo(66)
+            $0.height.equalTo(36)
+        }
+        dateBtn.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(12)
+            $0.leading.equalTo(activityBtn.snp.trailing).offset(8)
+            $0.width.equalTo(66)
+            $0.height.equalTo(36)
         }
     }
     

@@ -12,7 +12,8 @@ final class SoaraViewModel: ViewModelType {
 
     var disposeBag = DisposeBag()
     private let usecase: EpisodeUseCaseProtocol
-    
+    let inputData = BehaviorRelay<(String, SoaraType)?>(value: nil)
+
     init(usecase: EpisodeUseCaseProtocol) {
         self.usecase = usecase
     }

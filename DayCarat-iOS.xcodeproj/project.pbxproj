@@ -173,6 +173,7 @@
 		DEB20DFE2B50F4FB001D92B5 /* DetailEpiBodySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB20DFD2B50F4FB001D92B5 /* DetailEpiBodySection.swift */; };
 		DEB20E002B50F510001D92B5 /* DetailEpiHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB20DFF2B50F510001D92B5 /* DetailEpiHeaderView.swift */; };
 		DEB20E022B511058001D92B5 /* EpisodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB20E012B511058001D92B5 /* EpisodeUseCase.swift */; };
+		DECD33F42B61FC9E005C223F /* DayCaratToggleBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD33F32B61FC9E005C223F /* DayCaratToggleBtn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -332,6 +333,7 @@
 		DEB20DFD2B50F4FB001D92B5 /* DetailEpiBodySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEpiBodySection.swift; sourceTree = "<group>"; };
 		DEB20DFF2B50F510001D92B5 /* DetailEpiHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEpiHeaderView.swift; sourceTree = "<group>"; };
 		DEB20E012B511058001D92B5 /* EpisodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeUseCase.swift; sourceTree = "<group>"; };
+		DECD33F32B61FC9E005C223F /* DayCaratToggleBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCaratToggleBtn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -767,6 +769,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8479D32B47B7E500471B4F /* DayCaratBtn.swift */,
+				DECD33F32B61FC9E005C223F /* DayCaratToggleBtn.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -1081,6 +1084,7 @@
 				0967D8CD2B4A7417009CFD0A /* DayCaratCheckBox.swift in Sources */,
 				09DC3F1D2B580A730026B857 /* UserDTO.swift in Sources */,
 				DE86A1B02B4CFFF700C206DE /* LoginViewModel.swift in Sources */,
+				DECD33F42B61FC9E005C223F /* DayCaratToggleBtn.swift in Sources */,
 				DE86A1BA2B4D31E800C206DE /* HelpCollectionViewCell.swift in Sources */,
 				0967D8CF2B4AE19E009CFD0A /* AgreeViewModel.swift in Sources */,
 				DEA5443D2B4E749200813CC6 /* LoginUseCase.swift in Sources */,

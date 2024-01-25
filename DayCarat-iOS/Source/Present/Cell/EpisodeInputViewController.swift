@@ -122,11 +122,14 @@ final class EpisodeInputViewController: BaseViewController {
                     footerView.addBtn.rx
                         .tap
                         .asDriver()
-                        .drive(onNext: {  [weak self]  data in
-                            var currentSections = self?.sectionsRelay.value ?? []
-                            currentSections[0].items.append(currentSections[0].items.count)
-                            self?.sectionsRelay.accept(currentSections)
-                            self?.updateFooterViewVisibility(cellCount: currentSections[0].items.count)
+                        .drive(onNext: { [weak self] in
+                            guard let self = self else { return }
+                            var currentSections = self.sectionsRelay.value
+                            if currentSections[0].items.count < 4 {
+                                currentSections[0].items.append(currentSections[0].items.count)
+                                self.sectionsRelay.accept(currentSections)
+                            }
+                            self.updateFooterViewVisibility(cellCount: currentSections[0].items.count)
                         })
                         .disposed(by: self.disposeBag)
                     

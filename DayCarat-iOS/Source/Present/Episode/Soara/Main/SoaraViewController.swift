@@ -188,6 +188,11 @@ final class SoaraViewController: BaseViewController {
         })
     }
     
+    private func findIndexOfSoaraType(_ type: SoaraType) -> Int? {
+        let allTypes: [SoaraType] = [.S, .O, .A, .R, .LastA]
+        return allTypes.firstIndex(of: type)
+    }
+    
     override func binding() {
         
         let input = SoaraViewModel.Input()
@@ -221,6 +226,25 @@ final class SoaraViewController: BaseViewController {
                 }).disposed(by: self!.disposeBag)
             })
             .disposed(by: disposeBag)
+        
+        viewModel.inputData
+            .bind(onNext: {  text in
+                print("뷰컨에서에서\(text)")
+            })
+            .disposed(by: disposeBag)
+        
+//        viewModel.inputData
+//            .bind(onNext: { [weak self] (text, type) in
+//                print("뷰컨에서\(text)")
+//                guard let self = self else { return }
+//                if let index = self.findIndexOfSoaraType(type) {
+//                    let indexPath = IndexPath(item: index, section: 0)
+//                    if let cell = self.soaraCollectionView.cellForItem(at: indexPath) as? SoaraCollectionViewCell {
+//                        cell.backgroundColor = .green
+//                    }
+//                }
+//            })
+//            .disposed(by: disposeBag)
     }
 }
 extension SoaraViewController: CustomNavigaitonBarDelegate {

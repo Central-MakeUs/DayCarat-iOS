@@ -17,6 +17,7 @@ final class SoaraInputViewController: BaseViewController {
     private let viewModel: SoaraViewModel
     private var disposeBag = DisposeBag()
     private let epiData = BehaviorRelay<[String]>(value: [])
+    private let type: SoaraType
 
     //MARK: - UI
     
@@ -36,6 +37,7 @@ final class SoaraInputViewController: BaseViewController {
     
     init(viewModel: SoaraViewModel, title: String, type: SoaraType) {
         self.viewModel = viewModel
+        self.type = type
         super.init(nibName: nil, bundle: nil)
         titleLabel.text = title
     }
@@ -94,6 +96,8 @@ final class SoaraInputViewController: BaseViewController {
                 if text.count < 200 {
                     self?.textCountLabel.text = String("\(text.count)/200")
                     self?.textCountLabel.textColor = .Gray600
+                    self?.viewModel.inputData.accept((text, self?.type) as? (String, SoaraType))
+                    
                 } else {
                     self?.textCountLabel.text = "200/200"
                     self?.textCountLabel.textColor = .red
@@ -107,6 +111,8 @@ final class SoaraInputViewController: BaseViewController {
                 }
             })
             .disposed(by: disposeBag)
+        
+ 
     }
 }
 //MARK: - Extension
