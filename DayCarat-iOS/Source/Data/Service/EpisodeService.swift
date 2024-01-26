@@ -30,4 +30,21 @@ class EpisodeService {
             }
         }
     }
+    
+    func fetchDetailEpi(episodeId: Int) -> Single<BaseResponse<DetailEpisodeDTO>> {
+        return Single.create {  single in
+            let disposable = self.provider.rx
+                .request(.detailEpi(episodeId: episodeId))
+                .filterSuccessfulStatusCodes()
+                .map(BaseResponse<DetailEpisodeDTO>.self)
+                .subscribe(onSuccess: { response in
+                    single(.success(response))
+                }, onFailure: { error in
+                    single(.failure(error))
+                })
+            return Disposables.create {
+                disposable.dispose()
+            }
+        }
+    }
 }

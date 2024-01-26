@@ -12,8 +12,10 @@ protocol EpisodeUseCaseProtocol {
     func getSoara() -> Driver<[SoaraType]>
     func getDummy() -> DetailEpiModel
     func registerEpi(title: String, date: String, activityTag: String, episodeContents: [EpisodeInputContent]) -> Single<BaseResponse<Bool>>
+    func fetchDetailEpi(episodeId: Int) -> RxSwift.Single<BaseResponse<DetailEpisodeDTO>>
 }
 final class EpisodeUseCase: EpisodeUseCaseProtocol {
+    
 
     private let epiRepository: EpisodeRepository
     
@@ -23,6 +25,10 @@ final class EpisodeUseCase: EpisodeUseCaseProtocol {
     
     func registerEpi(title: String, date: String, activityTag: String, episodeContents: [EpisodeInputContent]) -> RxSwift.Single<BaseResponse<Bool>> {
         return epiRepository.registerEpi(title: title, date: date, activityTag: activityTag, episodeContents: episodeContents)
+    }
+    
+    func fetchDetailEpi(episodeId: Int) -> RxSwift.Single<BaseResponse<DetailEpisodeDTO>> {
+        return epiRepository.fetchDetailEpi(episodeId: episodeId)
     }
     
     func getDummy() -> DetailEpiModel {

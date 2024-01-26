@@ -23,7 +23,7 @@ final class JewelryBoxCoordinator: Coordinator {
     }
     
     func start() {
-        let vm = JewelryBoxViewModel(usecase: JewelryUseCase(), coordinator: self)
+        let vm = JewelryBoxViewModel(usecase: JewelryUseCase(repositoy: GemRepository(service: GemService())), coordinator: self)
         let vc = JewelryViewController(viewModel: vm)
         navigationController.pushViewController(vc, animated: false)
     }

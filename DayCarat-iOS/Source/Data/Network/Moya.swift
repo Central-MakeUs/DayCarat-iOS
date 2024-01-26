@@ -18,6 +18,11 @@ enum DayCaratTarget {
     case userInfo  // 유저정보 조회
     case activityTag //활동 태그조회
     case epiRegister(title: String, date: String, activityTag: String, episodeContents: [EpisodeInputContent]) // 에피소드 등록
+    case monthGem  //한달 보석갯수
+    case totalGemCount  // 총 보석갯수
+    case keywordMostGem // 가장 보석 많은 키워드
+    case activityMostGem  //가장 보석 많은 활동
+    case kewortSortGemCount // 키워드별 보석갯수
 }
 
 extension DayCaratTarget: TargetType {
@@ -45,6 +50,16 @@ extension DayCaratTarget: TargetType {
             return "episode/\(episodeId)"
         case .epiRegister:
             return "episode/register"
+        case .monthGem:
+            return "gem/report/month-count"
+        case .totalGemCount:
+            return "gem/count"
+        case .keywordMostGem:
+            return "gem/report/keyword"
+        case .activityMostGem:
+            return "gem/report/activity"
+        case .kewortSortGemCount:
+            return "gem/keyword"
         }
     }
     
@@ -57,7 +72,12 @@ extension DayCaratTarget: TargetType {
          .lastestEpi,
          .activtyEpi,
          .userInfo,
-         .activityTag:
+         .activityTag,
+         .monthGem,
+         .totalGemCount,
+         .keywordMostGem,
+         .activityMostGem,
+         .kewortSortGemCount:
             return .get
         case .epiRegister:
             return .post

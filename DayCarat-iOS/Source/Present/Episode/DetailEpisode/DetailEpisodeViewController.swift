@@ -40,6 +40,12 @@ final class DetailEpisodeViewController: BaseViewController {
     private func setupDataSource() {
         let output = viewModel.transform(input: input)
 
+        viewModel.episodeContents
+            .bind(onNext: {  [weak self]  res in
+                
+            })
+            .disposed(by: disposeBag)
+        
         output.dummy
             .drive(onNext: { [weak self] dummyModel in
                 let stringData: [String] = [dummyModel.learned, dummyModel.disappoint]
@@ -68,9 +74,10 @@ final class DetailEpisodeViewController: BaseViewController {
 
     }
     
-    init(viewModel: DetailEpisodeViewModel) {
+    init(viewModel: DetailEpisodeViewModel, id: Int) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        viewModel.updateData(id: id)
     }
     
     required init?(coder: NSCoder) {

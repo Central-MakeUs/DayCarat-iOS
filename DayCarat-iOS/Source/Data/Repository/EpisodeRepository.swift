@@ -15,6 +15,10 @@ final class EpisodeRepository: EpisodeInterface {
         self.service = service
     }
     
+    func fetchDetailEpi(episodeId: Int) -> RxSwift.Single<BaseResponse<DetailEpisodeDTO>> {
+        return service.fetchDetailEpi(episodeId: episodeId)
+    }
+    
     func registerEpi(title: String, date: String, activityTag: String, episodeContents: [EpisodeInputContent]) -> RxSwift.Single<BaseResponse<Bool>> {
         return service.registerEpi(title: title, date: date, activityTag: activityTag, episodeContents: episodeContents)
     }

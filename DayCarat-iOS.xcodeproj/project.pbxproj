@@ -15,7 +15,6 @@
 		09073D362B46F87E00D840EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09073D352B46F87E00D840EC /* AppDelegate.swift */; };
 		09073D382B46F87E00D840EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09073D372B46F87E00D840EC /* SceneDelegate.swift */; };
 		09073D422B46F88200D840EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09073D402B46F88200D840EC /* LaunchScreen.storyboard */; };
-		09073D512B46FEBA00D840EC /* tempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09073D502B46FEBA00D840EC /* tempData.swift */; };
 		0908E47C2B5E9B8F0095D016 /* SoaraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E47B2B5E9B8F0095D016 /* SoaraViewController.swift */; };
 		0908E47E2B5EA13D0095D016 /* SoaraCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E47D2B5EA13D0095D016 /* SoaraCoordinator.swift */; };
 		0908E4802B5EA1460095D016 /* SoaraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E47F2B5EA1460095D016 /* SoaraViewModel.swift */; };
@@ -105,6 +104,9 @@
 		DE0F13652B633D7F0059BCD5 /* CreateSoaraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F13642B633D7F0059BCD5 /* CreateSoaraViewController.swift */; };
 		DE0F136A2B634A0F0059BCD5 /* CreationSoaraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F13692B634A0F0059BCD5 /* CreationSoaraViewModel.swift */; };
 		DE0F136C2B634A1A0059BCD5 /* CreationSoaraCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F136B2B634A1A0059BCD5 /* CreationSoaraCoordinator.swift */; };
+		DE0F136E2B6390E50059BCD5 /* GemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F136D2B6390E50059BCD5 /* GemDTO.swift */; };
+		DE0F13702B6393D40059BCD5 /* GemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F136F2B6393D40059BCD5 /* GemService.swift */; };
+		DE0F13722B6397450059BCD5 /* GemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F13712B6397450059BCD5 /* GemRepository.swift */; };
 		DE4DD7042B60A7D00033EAB4 /* SoaraInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */; };
 		DE4DD7062B60A7EA0033EAB4 /* SoaraInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7052B60A7EA0033EAB4 /* SoaraInputCoordinator.swift */; };
 		DE4DD7082B60A8F30033EAB4 /* SoaraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7072B60A8F30033EAB4 /* SoaraModel.swift */; };
@@ -114,7 +116,6 @@
 		DE5F41162B4B90A700581075 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41152B4B90A700581075 /* IntroViewModel.swift */; };
 		DE5F41192B4B90E300581075 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41182B4B90E300581075 /* ViewModelType.swift */; };
 		DE5F41222B4B92B500581075 /* tempRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41212B4B92B500581075 /* tempRepository.swift */; };
-		DE5F41282B4B92DA00581075 /* tempService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41272B4B92DA00581075 /* tempService.swift */; };
 		DE5F412A2B4B953A00581075 /* IntroUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41292B4B953A00581075 /* IntroUseCase.swift */; };
 		DE5F412D2B4BC50100581075 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F412C2B4BC50100581075 /* Coordinator.swift */; };
 		DE5F41302B4BD24A00581075 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F412F2B4BD24A00581075 /* OnBoardingViewController.swift */; };
@@ -204,7 +205,6 @@
 		09073D3E2B46F88200D840EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09073D412B46F88200D840EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09073D432B46F88200D840EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09073D502B46FEBA00D840EC /* tempData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempData.swift; sourceTree = "<group>"; };
 		0908E47B2B5E9B8F0095D016 /* SoaraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraViewController.swift; sourceTree = "<group>"; };
 		0908E47D2B5EA13D0095D016 /* SoaraCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraCoordinator.swift; sourceTree = "<group>"; };
 		0908E47F2B5EA1460095D016 /* SoaraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraViewModel.swift; sourceTree = "<group>"; };
@@ -276,6 +276,9 @@
 		DE0F13642B633D7F0059BCD5 /* CreateSoaraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSoaraViewController.swift; sourceTree = "<group>"; };
 		DE0F13692B634A0F0059BCD5 /* CreationSoaraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationSoaraViewModel.swift; sourceTree = "<group>"; };
 		DE0F136B2B634A1A0059BCD5 /* CreationSoaraCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationSoaraCoordinator.swift; sourceTree = "<group>"; };
+		DE0F136D2B6390E50059BCD5 /* GemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemDTO.swift; sourceTree = "<group>"; };
+		DE0F136F2B6393D40059BCD5 /* GemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemService.swift; sourceTree = "<group>"; };
+		DE0F13712B6397450059BCD5 /* GemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemRepository.swift; sourceTree = "<group>"; };
 		DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraInputViewController.swift; sourceTree = "<group>"; };
 		DE4DD7052B60A7EA0033EAB4 /* SoaraInputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraInputCoordinator.swift; sourceTree = "<group>"; };
 		DE4DD7072B60A8F30033EAB4 /* SoaraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraModel.swift; sourceTree = "<group>"; };
@@ -284,7 +287,6 @@
 		DE5F41152B4B90A700581075 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		DE5F41182B4B90E300581075 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		DE5F41212B4B92B500581075 /* tempRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempRepository.swift; sourceTree = "<group>"; };
-		DE5F41272B4B92DA00581075 /* tempService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempService.swift; sourceTree = "<group>"; };
 		DE5F41292B4B953A00581075 /* IntroUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroUseCase.swift; sourceTree = "<group>"; };
 		DE5F412C2B4BC50100581075 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DE5F412F2B4BD24A00581075 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
@@ -460,7 +462,6 @@
 				DE5F41262B4B92D100581075 /* Service */,
 				DE5F41232B4B92C600581075 /* DTO */,
 				DE5F41202B4B929E00581075 /* Repository */,
-				09073D502B46FEBA00D840EC /* tempData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -673,6 +674,7 @@
 				09DC3F162B57F5A30026B857 /* HomeRepository.swift */,
 				09DC3F1E2B580B8F0026B857 /* UserRepository.swift */,
 				09058FBA2B5BFA7300DA5E74 /* EpisodeRepository.swift */,
+				DE0F13712B6397450059BCD5 /* GemRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -684,6 +686,7 @@
 				09DC3F142B57F4330026B857 /* EpiDTO.swift */,
 				09B9727D2B5425AE00205087 /* BaseResponse.swift */,
 				09DC3F1C2B580A730026B857 /* UserDTO.swift */,
+				DE0F136D2B6390E50059BCD5 /* GemDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -691,11 +694,11 @@
 		DE5F41262B4B92D100581075 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				DE5F41272B4B92DA00581075 /* tempService.swift */,
 				DEA544422B4E751500813CC6 /* LoginService.swift */,
 				09DC3F122B57F3D60026B857 /* HomeService.swift */,
 				09DC3F182B57FFBA0026B857 /* EpisodeService.swift */,
 				09DC3F1A2B5809D50026B857 /* UserInfoService.swift */,
+				DE0F136F2B6393D40059BCD5 /* GemService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1138,6 +1141,7 @@
 				09DC3F1B2B5809D50026B857 /* UserInfoService.swift in Sources */,
 				09BDC1DB2B4D8DE600C07F34 /* NavigationController+.swift in Sources */,
 				09099A522B5CCC51009A2C1C /* DropDownTableViewCell.swift in Sources */,
+				DE0F136E2B6390E50059BCD5 /* GemDTO.swift in Sources */,
 				09DC3F112B57D9660026B857 /* EpiInputCollectionViewCell.swift in Sources */,
 				0957F9102B52D1130031B291 /* JewelryBoxViewModel.swift in Sources */,
 				DE86A1B62B4D1B5500C206DE /* HomeViewModel.swift in Sources */,
@@ -1154,7 +1158,6 @@
 				09BDC1D32B4D7E1100C07F34 /* RecentEpiCollectionViewCell.swift in Sources */,
 				09A67D962B515FE8003EDABE /* DetailEpiModel.swift in Sources */,
 				DE8479E72B47E8BB00471B4F /* Image+.swift in Sources */,
-				DE5F41282B4B92DA00581075 /* tempService.swift in Sources */,
 				DEA544392B4E6B4900813CC6 /* CompleteViewController.swift in Sources */,
 				0908E47C2B5E9B8F0095D016 /* SoaraViewController.swift in Sources */,
 				DE5F413D2B4BD7F200581075 /* JobSection.swift in Sources */,
@@ -1166,6 +1169,7 @@
 				09C5741F2B4EC4EE00CCABCB /* EpisodeListHeaderView.swift in Sources */,
 				09C574212B4EC87600CCABCB /* EpisodeListViewModel.swift in Sources */,
 				DE8479A12B47912900471B4F /* BaseViewController.swift in Sources */,
+				DE0F13702B6393D40059BCD5 /* GemService.swift in Sources */,
 				09B972782B54134800205087 /* EpisodeListCoordinator.swift in Sources */,
 				09B972702B54129700205087 /* EpisodeInterface.swift in Sources */,
 				DE8479E22B47E1F400471B4F /* CustomTabBarController.swift in Sources */,
@@ -1184,7 +1188,6 @@
 				DE5F41122B4B883400581075 /* IntroModel.swift in Sources */,
 				DEA544522B4E8A9A00813CC6 /* MyPageViewModel.swift in Sources */,
 				DE8479D12B47A0FD00471B4F /* DayCaratLabel.swift in Sources */,
-				09073D512B46FEBA00D840EC /* tempData.swift in Sources */,
 				0957F9082B52CA1C0031B291 /* TabBarItem.swift in Sources */,
 				09B9727C2B54256200205087 /* LoginDTO.swift in Sources */,
 				DEA5442B2B4E256100813CC6 /* EpisodeBodyCell.swift in Sources */,
@@ -1201,6 +1204,7 @@
 				DEB20DFE2B50F4FB001D92B5 /* DetailEpiBodySection.swift in Sources */,
 				09099A542B5CCC72009A2C1C /* EpiInputFooterView.swift in Sources */,
 				0901430A2B4C18B2006EAE30 /* TextField+.swift in Sources */,
+				DE0F13722B6397450059BCD5 /* GemRepository.swift in Sources */,
 				0908E4802B5EA1460095D016 /* SoaraViewModel.swift in Sources */,
 				09C5741A2B4EC2C000CCABCB /* EpisodeListViewController.swift in Sources */,
 				DE5F41192B4B90E300581075 /* ViewModelType.swift in Sources */,

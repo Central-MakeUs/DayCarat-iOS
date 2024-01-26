@@ -45,6 +45,10 @@ final class JewelryViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.upadetGemData()
+    }
+    
     override func configure() {
         jewelryCollectionView.delegate = self
         setupDataSource()
@@ -86,7 +90,11 @@ final class JewelryViewController: BaseViewController {
             },
             configureSupplementaryView: { _, collectionView, kind, indexPath in
                 let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: JewelryHeaderView.identifier, for: indexPath) as! JewelryHeaderView
-                
+                self.viewModel.headerData
+                    .bind(onNext: {  data in
+                        headerView.configure(month: data.month.gemCount, total: data.total.gemCount, tag: data.mostActivity.activityTag, keyword: data.mostKeyword.episodeKeyword)
+                    })
+                    .disposed(by: self.disposeBag)
                 return headerView
             }
         )

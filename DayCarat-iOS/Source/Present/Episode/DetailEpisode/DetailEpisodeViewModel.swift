@@ -14,12 +14,12 @@ final class DetailEpisodeViewModel: ViewModelType {
     var disposeBag = DisposeBag()
     private let usecase: EpisodeUseCaseProtocol
     let coordinator: DetailEpiCoordinator?
-    private let epiId : Int
+    let detailData = PublishRelay<DetailEpisodeDTO>()
+    let episodeContents = PublishRelay<[DetailEpisodeContentDTO]>()
     
-    init(usecase: EpisodeUseCaseProtocol, coordinator: DetailEpiCoordinator?, epiId: Int) {
+    init(usecase: EpisodeUseCaseProtocol, coordinator: DetailEpiCoordinator?) {
         self.usecase = usecase
         self.coordinator = coordinator
-        self.epiId = epiId
     }
     struct Input {
         
@@ -32,5 +32,16 @@ final class DetailEpisodeViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         let data = Driver.just(usecase.getDummy())
         return Output(dummy: data)
+    }
+    
+    func updateData(id: Int) {
+        usecase.fetchDetailEpi(episodeId: id)
+            .subscribe(onSuccess: {  [weak self]  res in
+                self?.detailData.accept(res.result!)
+                self?.episodeContents.accept(res.result!.episodeContents)
+            }, onFailure: {  error in
+                
+            })
+            .disposed(by: disposeBag)
     }
 }

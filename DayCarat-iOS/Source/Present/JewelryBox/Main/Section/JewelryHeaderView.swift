@@ -38,7 +38,6 @@ final class JewelryHeaderView: UICollectionReusableView {
         $0.backgroundColor = .Main400
         $0.layer.cornerRadius = 16
     }
-    
     private let reportView = UIView().then {
         $0.backgroundColor = .Main200
         $0.layer.cornerRadius = 16
@@ -80,6 +79,13 @@ final class JewelryHeaderView: UICollectionReusableView {
         $0.layer.cornerRadius = 25
         $0.layer.borderWidth = 1.5
         $0.layer.borderColor = UIColor.Gray200?.cgColor
+    }
+    
+    func configure(month: Int, total: Int, tag: String, keyword: String) {
+        reportMonthCount.text = "\(month)개"
+        myJewelryCountLabel.text = String(total)
+        reportEpiName.text = tag
+        reportJewelryName.text = keyword
     }
     
     private func addView() {
