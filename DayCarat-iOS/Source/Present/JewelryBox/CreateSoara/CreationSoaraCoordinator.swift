@@ -1,15 +1,13 @@
 //
-//  JewelryBoxCoordinator.swift
+//  CreationSoaraCoordinator.swift
 //  DayCarat-iOS
 //
-//  Created by 최지철 on 1/13/24.
+//  Created by Choi on 1/26/24.
 //
 
 import UIKit
 
-final class JewelryBoxCoordinator: Coordinator {
-    
-    
+final class CreationSoaraCoordinator: Coordinator {
     struct Action {
         
     }
@@ -23,12 +21,13 @@ final class JewelryBoxCoordinator: Coordinator {
     }
     
     func start() {
-        let vm = JewelryBoxViewModel(usecase: JewelryUseCase(), coordinator: self)
-        let vc = JewelryViewController(viewModel: vm)
-        navigationController.pushViewController(vc, animated: false)
+        let vc = CreateSoaraViewController()
+        navigationController.pushViewController(vc, animated: true)
     }
+
     
     func setAction(_ action: Action) {
         
     }
+
 }

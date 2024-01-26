@@ -102,6 +102,9 @@
 		09DC3F1F2B580B8F0026B857 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F1E2B580B8F0026B857 /* UserRepository.swift */; };
 		09DC3F212B580B9E0026B857 /* UserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F202B580B9E0026B857 /* UserInterface.swift */; };
 		09DC3F242B580E3C0026B857 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 09DC3F232B580E3C0026B857 /* Kingfisher */; };
+		DE0F13652B633D7F0059BCD5 /* CreateSoaraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F13642B633D7F0059BCD5 /* CreateSoaraViewController.swift */; };
+		DE0F136A2B634A0F0059BCD5 /* CreationSoaraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F13692B634A0F0059BCD5 /* CreationSoaraViewModel.swift */; };
+		DE0F136C2B634A1A0059BCD5 /* CreationSoaraCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F136B2B634A1A0059BCD5 /* CreationSoaraCoordinator.swift */; };
 		DE4DD7042B60A7D00033EAB4 /* SoaraInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */; };
 		DE4DD7062B60A7EA0033EAB4 /* SoaraInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7052B60A7EA0033EAB4 /* SoaraInputCoordinator.swift */; };
 		DE4DD7082B60A8F30033EAB4 /* SoaraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7072B60A8F30033EAB4 /* SoaraModel.swift */; };
@@ -250,7 +253,7 @@
 		09BDC1D62B4D84F900C07F34 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		09BDC1D82B4D8AF300C07F34 /* EpisodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EpisodeInputViewController.swift; path = "DayCarat-iOS/Source/Present/Cell/EpisodeInputViewController.swift"; sourceTree = SOURCE_ROOT; };
 		09BDC1DA2B4D8DE600C07F34 /* NavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+.swift"; sourceTree = "<group>"; };
-		09BDC1DC2B4D966E00C07F34 /* JewelryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JewelryViewController.swift; path = "DayCarat-iOS/Source/Extension/JewelryViewController.swift"; sourceTree = SOURCE_ROOT; };
+		09BDC1DC2B4D966E00C07F34 /* JewelryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JewelryViewController.swift; path = "DayCarat-iOS/Source/Present/JewelryBox/Main/JewelryViewController.swift"; sourceTree = SOURCE_ROOT; };
 		09BDC1DE2B4D96AF00C07F34 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageViewController.swift; path = "DayCarat-iOS/Source/Extension/MyPageViewController.swift"; sourceTree = SOURCE_ROOT; };
 		09BDC1E02B4D9E2900C07F34 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
 		09C574192B4EC2C000CCABCB /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +273,9 @@
 		09DC3F1C2B580A730026B857 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		09DC3F1E2B580B8F0026B857 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		09DC3F202B580B9E0026B857 /* UserInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterface.swift; sourceTree = "<group>"; };
+		DE0F13642B633D7F0059BCD5 /* CreateSoaraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSoaraViewController.swift; sourceTree = "<group>"; };
+		DE0F13692B634A0F0059BCD5 /* CreationSoaraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationSoaraViewModel.swift; sourceTree = "<group>"; };
+		DE0F136B2B634A1A0059BCD5 /* CreationSoaraCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationSoaraCoordinator.swift; sourceTree = "<group>"; };
 		DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraInputViewController.swift; sourceTree = "<group>"; };
 		DE4DD7052B60A7EA0033EAB4 /* SoaraInputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraInputCoordinator.swift; sourceTree = "<group>"; };
 		DE4DD7072B60A8F30033EAB4 /* SoaraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraModel.swift; sourceTree = "<group>"; };
@@ -558,6 +564,27 @@
 			path = "DayCarat-iOS/Source/Present/EpisodeInput/Section";
 			sourceTree = "<group>";
 		};
+		DE0F13622B633D640059BCD5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DEA5442E2B4E537E00813CC6 /* Section */,
+				09BDC1DC2B4D966E00C07F34 /* JewelryViewController.swift */,
+				0957F90F2B52D1130031B291 /* JewelryBoxViewModel.swift */,
+				0957F9112B52D1230031B291 /* JewelryBoxCoordinator.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DE0F13632B633D700059BCD5 /* CreateSoara */ = {
+			isa = PBXGroup;
+			children = (
+				DE0F13642B633D7F0059BCD5 /* CreateSoaraViewController.swift */,
+				DE0F13692B634A0F0059BCD5 /* CreationSoaraViewModel.swift */,
+				DE0F136B2B634A1A0059BCD5 /* CreationSoaraCoordinator.swift */,
+			);
+			path = CreateSoara;
+			sourceTree = "<group>";
+		};
 		DE1E94EE2B5FB464008FFC8B /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -844,10 +871,8 @@
 		DE8479E32B47E35900471B4F /* JewelryBox */ = {
 			isa = PBXGroup;
 			children = (
-				DEA5442E2B4E537E00813CC6 /* Section */,
-				09BDC1DC2B4D966E00C07F34 /* JewelryViewController.swift */,
-				0957F90F2B52D1130031B291 /* JewelryBoxViewModel.swift */,
-				0957F9112B52D1230031B291 /* JewelryBoxCoordinator.swift */,
+				DE0F13632B633D700059BCD5 /* CreateSoara */,
+				DE0F13622B633D640059BCD5 /* Main */,
 			);
 			path = JewelryBox;
 			sourceTree = "<group>";
@@ -1063,8 +1088,10 @@
 			files = (
 				DE4DD7062B60A7EA0033EAB4 /* SoaraInputCoordinator.swift in Sources */,
 				DEA5443B2B4E73C800813CC6 /* AppCoordinator.swift in Sources */,
+				DE0F136A2B634A0F0059BCD5 /* CreationSoaraViewModel.swift in Sources */,
 				0957F9142B52D12F0031B291 /* MyPageCoordinator.swift in Sources */,
 				0908E4832B5EA49A0095D016 /* EpiCollectionViewCell.swift in Sources */,
+				DE0F13652B633D7F0059BCD5 /* CreateSoaraViewController.swift in Sources */,
 				0901430C2B4C2E21006EAE30 /* JobCollectionViewCell.swift in Sources */,
 				09DC3F0F2B56C14F0026B857 /* EpiInputHeadrView.swift in Sources */,
 				DE8479882B47907D00471B4F /* LoginViewController.swift in Sources */,
@@ -1181,6 +1208,7 @@
 				DE5F412A2B4B953A00581075 /* IntroUseCase.swift in Sources */,
 				09DC3F1F2B580B8F0026B857 /* UserRepository.swift in Sources */,
 				DEA544292B4E1F6200813CC6 /* EpisodeHeaderCell.swift in Sources */,
+				DE0F136C2B634A1A0059BCD5 /* CreationSoaraCoordinator.swift in Sources */,
 				DE5F41322B4BD27000581075 /* OnBoardingViewModel.swift in Sources */,
 				09B972722B54129F00205087 /* HomeInterface.swift in Sources */,
 				DE86A1BC2B4D357B00C206DE /* CellModel.swift in Sources */,

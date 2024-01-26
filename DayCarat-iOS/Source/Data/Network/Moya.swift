@@ -93,7 +93,7 @@ extension DayCaratTarget: TargetType {
     
     var headers: [String: String]? {
         switch self {
-        case .login(let accessToken):
+        case .login(_):
             return ["Content-Type": "application/json"]
         default:
             guard let accessToken = UserDefaults.standard.string(forKey: "accessToken") else {

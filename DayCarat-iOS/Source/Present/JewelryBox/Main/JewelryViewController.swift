@@ -68,6 +68,13 @@ final class JewelryViewController: BaseViewController {
         Observable.just(sections)
             .bind(to: jewelryCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
+        jewelryCollectionView.rx
+            .itemSelected
+            .bind(onNext: {  [weak self] _ in
+                self?.viewModel.coordinator?.pushSoaraCreation()
+            })
+            .disposed(by: disposeBag)
     }
 
     private func setupDataSource() {

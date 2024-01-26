@@ -12,7 +12,7 @@ import RxSwift
 final class JewelryBoxViewModel:ViewModelType {
     var disposeBag = DisposeBag()
     private let usecase: JewelryUseCaseProtocol
-    private let coordinator: JewelryBoxCoordinator?
+    let coordinator: JewelryBoxCoordinator?
     
     init(usecase: JewelryUseCaseProtocol, coordinator: JewelryBoxCoordinator?) {
         self.usecase = usecase
