@@ -8,7 +8,9 @@
 import UIKit
 
 final class EpisodeListCoordinator: Coordinator {
-    
+    func start() {
+        
+    }
     
     struct Action {
         
@@ -22,9 +24,10 @@ final class EpisodeListCoordinator: Coordinator {
         self.navigationController.isNavigationBarHidden = true
     }
     
-    func start() {
-        let vm = EpisodeListViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService())), coordinator: self)
+    func startList(title: String, count: String) {
+        let vm = EpisodeListViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService())), coordinator: self, title: title, count: count, gemUsecase: JewelryUseCase(repositoy: GemRepository(service: GemService())))
         let vc = EpisodeListViewController(viewModel: vm)
+        vc.hidesBottomBarWhenPushed = true
         navigationController.pushViewController(vc, animated: true)
     }
     

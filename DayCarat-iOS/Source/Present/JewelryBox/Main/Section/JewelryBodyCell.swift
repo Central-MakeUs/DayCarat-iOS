@@ -18,6 +18,12 @@ final class JewelryBodyCell: UICollectionViewCell {
     private let titleLabel = DayCaratLabel(type: .Subhead5, text: "활동명", textColor: .Gray900!)
     private let countLabel = DayCaratLabel(type: .Subhead6, text: "24", textColor: .Main!)
     
+    func configure(title: String, count: String, img: UIImage?) {
+        titleLabel.text = title
+        countLabel.text = count
+        self.img.image = img
+    }
+    
     private func applyShadow() {
         self.layer.masksToBounds = false
         self.layer.shadowColor = UIColor.Gray600?.cgColor
@@ -27,15 +33,16 @@ final class JewelryBodyCell: UICollectionViewCell {
     }
 
     private func addView() {
-        self.addSubview(img)
-        [titleLabel, countLabel].forEach {
-            img.addSubview($0)
+        [titleLabel, countLabel, img].forEach {
+            self.addSubview($0)
         }
     }
     
     private func layout() {
         img.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.width.height.equalTo(71)
+            $0.bottom.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview().inset(20)
         }
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(16)
@@ -53,6 +60,9 @@ final class JewelryBodyCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        self.backgroundColor = .white
+        self.layer.cornerRadius = 16
+        self.layer.borderColor = UIColor.Gray200?.cgColor
         addView()
         layout()
         applyShadow()

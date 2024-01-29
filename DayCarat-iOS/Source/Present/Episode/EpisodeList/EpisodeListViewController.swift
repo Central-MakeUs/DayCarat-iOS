@@ -14,7 +14,7 @@ import RxDataSources
 final class EpisodeListViewController: BaseViewController {
     
     private var disposeBag = DisposeBag()
-    private var dataSource: RxCollectionViewSectionedReloadDataSource<SectionModel>!
+    private var dataSource: RxCollectionViewSectionedReloadDataSource<GemKeywordSection>!
     private let viewModel: EpisodeListViewModel
 
     private let naviBar = CustomNavigaitonBar(btnstate: false, rightBtnText: "", middleText: "")
@@ -72,29 +72,29 @@ final class EpisodeListViewController: BaseViewController {
     }
     
     override func binding() {
-        let sections = [SectionModel(items: [0, 1, 2, 4,5,6,7,8,9])]
         
-        Observable.just(sections)
+        viewModel.keywordGemList
+            .map { [GemKeywordSection(items: $0)] }
             .bind(to: episodeListCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
-        episodeListCollectionView.rx.modelSelected(Int.self)
-            .subscribe(onNext: { [weak self] selectedIdx in
-                self?.viewModel.coordinator?.start()
-            })
-            .disposed(by: disposeBag)
+//        episodeListCollectionView.rx.modelSelected(Int.self)
+//            .subscribe(onNext: { [weak self] selectedIdx in
+//                self?.viewModel.coordinator?.start()
+//            })
+//            .disposed(by: disposeBag)
     }
 
     private func setupDataSource() {
-        dataSource = RxCollectionViewSectionedReloadDataSource<SectionModel>(
+        dataSource = RxCollectionViewSectionedReloadDataSource<GemKeywordSection>(
             configureCell: { _, collectionView, indexPath, item in
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpisodeListCollectionViewCell.identifier, for: indexPath) as! EpisodeListCollectionViewCell
-                
+                cell.configure(title: item.title, date: item.date, des: item.content)
                 return cell
             },
             configureSupplementaryView: { _, collectionView, kind, indexPath in
                 let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: EpisodeListHeaderView.identifier, for: indexPath) as! EpisodeListHeaderView
-                
+                headerView.configure(title: self.viewModel.headerTitle, count: self.viewModel.headerCount)
                 return headerView
             }
         )

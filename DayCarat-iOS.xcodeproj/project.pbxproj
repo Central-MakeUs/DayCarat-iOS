@@ -107,6 +107,8 @@
 		DE0F136E2B6390E50059BCD5 /* GemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F136D2B6390E50059BCD5 /* GemDTO.swift */; };
 		DE0F13702B6393D40059BCD5 /* GemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F136F2B6393D40059BCD5 /* GemService.swift */; };
 		DE0F13722B6397450059BCD5 /* GemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F13712B6397450059BCD5 /* GemRepository.swift */; };
+		DE2E7D9F2B6741160016D9F2 /* KeywordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2E7D9E2B6741160016D9F2 /* KeywordModel.swift */; };
+		DE2E7DA12B6798CC0016D9F2 /* EpiListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2E7DA02B6798CC0016D9F2 /* EpiListModel.swift */; };
 		DE4DD7042B60A7D00033EAB4 /* SoaraInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */; };
 		DE4DD7062B60A7EA0033EAB4 /* SoaraInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7052B60A7EA0033EAB4 /* SoaraInputCoordinator.swift */; };
 		DE4DD7082B60A8F30033EAB4 /* SoaraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7072B60A8F30033EAB4 /* SoaraModel.swift */; };
@@ -279,6 +281,8 @@
 		DE0F136D2B6390E50059BCD5 /* GemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemDTO.swift; sourceTree = "<group>"; };
 		DE0F136F2B6393D40059BCD5 /* GemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemService.swift; sourceTree = "<group>"; };
 		DE0F13712B6397450059BCD5 /* GemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemRepository.swift; sourceTree = "<group>"; };
+		DE2E7D9E2B6741160016D9F2 /* KeywordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordModel.swift; sourceTree = "<group>"; };
+		DE2E7DA02B6798CC0016D9F2 /* EpiListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpiListModel.swift; sourceTree = "<group>"; };
 		DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraInputViewController.swift; sourceTree = "<group>"; };
 		DE4DD7052B60A7EA0033EAB4 /* SoaraInputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraInputCoordinator.swift; sourceTree = "<group>"; };
 		DE4DD7072B60A8F30033EAB4 /* SoaraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraModel.swift; sourceTree = "<group>"; };
@@ -624,6 +628,8 @@
 				09A67D952B515FE8003EDABE /* DetailEpiModel.swift */,
 				09DC3F0B2B56B3B30026B857 /* TokenManger.swift */,
 				DE4DD7072B60A8F30033EAB4 /* SoaraModel.swift */,
+				DE2E7D9E2B6741160016D9F2 /* KeywordModel.swift */,
+				DE2E7DA02B6798CC0016D9F2 /* EpiListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1161,6 +1167,7 @@
 				DEA544392B4E6B4900813CC6 /* CompleteViewController.swift in Sources */,
 				0908E47C2B5E9B8F0095D016 /* SoaraViewController.swift in Sources */,
 				DE5F413D2B4BD7F200581075 /* JobSection.swift in Sources */,
+				DE2E7DA12B6798CC0016D9F2 /* EpiListModel.swift in Sources */,
 				DE86A1B82B4D1F4500C206DE /* HomeUseCase.swift in Sources */,
 				09DC3F022B5689180026B857 /* Moya.swift in Sources */,
 				DEA544322B4E59A900813CC6 /* JewelryBodyCell.swift in Sources */,
@@ -1211,6 +1218,7 @@
 				0957F90E2B52D0F20031B291 /* EpisodeCoordinator.swift in Sources */,
 				DE5F412A2B4B953A00581075 /* IntroUseCase.swift in Sources */,
 				09DC3F1F2B580B8F0026B857 /* UserRepository.swift in Sources */,
+				DE2E7D9F2B6741160016D9F2 /* KeywordModel.swift in Sources */,
 				DEA544292B4E1F6200813CC6 /* EpisodeHeaderCell.swift in Sources */,
 				DE0F136C2B634A1A0059BCD5 /* CreationSoaraCoordinator.swift in Sources */,
 				DE5F41322B4BD27000581075 /* OnBoardingViewModel.swift in Sources */,

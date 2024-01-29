@@ -29,7 +29,7 @@ final class HomeViewController: BaseViewController {
     }
     private let backgroundImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
-        $0.image = UIImage(named: "BackGround")
+        $0.backgroundColor = .Main100
     }
     private let bellBtn = UIButton().then {
         $0.setImage(UIImage(named: "icon-bell"), for: .normal)
@@ -43,7 +43,7 @@ final class HomeViewController: BaseViewController {
     private let folderImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.backgroundColor = .clear
-        $0.image = UIImage(named: "homeBlueCircle")
+        $0.image = UIImage(named: "homeIcon2")
     }
     private let noEpiImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
@@ -53,12 +53,7 @@ final class HomeViewController: BaseViewController {
     private let pinkCircle = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.backgroundColor = .clear
-        $0.image = UIImage(named: "homePinkCircle")
-    }
-    private let subCircle = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
-        $0.backgroundColor = .clear
-        $0.image = UIImage(named: "subCircle")
+        $0.image = UIImage(named: "homeIcon1")
     }
     private let countView = UIView().then {
         $0.backgroundColor = .Main
@@ -176,7 +171,7 @@ final class HomeViewController: BaseViewController {
     override func addView() {
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(contentView)
-        [pinkCircle, folderImg, subCircle].forEach {
+        [pinkCircle, folderImg].forEach {
             backgroundImg.addSubview($0)
         }
         [backgroundImg,bottomView, logoImg, bellBtn,titleLabel, countView, helpCollectioView, recentEpisodeLabel,
@@ -191,21 +186,15 @@ final class HomeViewController: BaseViewController {
     }
     
     override func layout() {
-        subCircle.snp.makeConstraints {
-            $0.width.equalTo(122)
-            $0.height.equalTo(90)
-            $0.trailing.equalToSuperview().inset(21.5)
-            $0.bottom.equalTo(folderImg.snp.top).inset(21.6)
-        }
         pinkCircle.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(16)
-            $0.leading.equalToSuperview().offset(-59)
-            $0.width.height.equalTo(252)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(-30)
+            $0.leading.equalToSuperview().offset(-73)
+            $0.width.height.equalTo(310)
         }
         self.folderImg.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(80)
-            $0.leading.equalTo(countView.snp.trailing)
-            $0.width.height.equalTo(252)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(-10)
+            $0.trailing.equalToSuperview().offset(30)
+            $0.width.height.equalTo(200)
         }
         self.contentView.snp.makeConstraints {
             $0.width.equalToSuperview()

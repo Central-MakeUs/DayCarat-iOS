@@ -24,7 +24,7 @@ final class JewelryHeaderView: UICollectionReusableView {
     }
     
     private let nickNameLabel = DayCaratLabel(type: .Subhead6, text: "", textColor: .Main600!)
-    private let strengthLabel = DayCaratLabel(type: .Body4, text: "", textColor: .Main600!)
+    private let strengthLabel = DayCaratLabel(type: .Body4, text: "", textColor: .Main300!)
     private let jewelryViewTitleLabel = DayCaratLabel(type: .Subhead5, text: "나의 보석", textColor: .white)
     private let myJewelryCountLabel = DayCaratLabel(type: .Header2, text: "0", textColor: .white)
     private let myJewelryImg = UIImageView().then {
@@ -74,11 +74,20 @@ final class JewelryHeaderView: UICollectionReusableView {
     private let reportMonthCount = DayCaratLabel(type: .Subhead2, text: "0개", textColor: .Main!)
 
     private let profileImg = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
-        $0.backgroundColor = .red
+        $0.contentMode = .scaleAspectFill
+        $0.backgroundColor = .clear
         $0.layer.cornerRadius = 25
         $0.layer.borderWidth = 1.5
         $0.layer.borderColor = UIColor.Gray200?.cgColor
+        $0.clipsToBounds = true
+    }
+    
+    func userConfigure(name: String, strength: String, img: String) {
+        nickNameLabel.text = name
+        strengthLabel.text = strength
+        if let imageURL = URL(string: img) {
+            self.profileImg.kf.setImage(with: imageURL)
+        }
     }
     
     func configure(month: Int, total: Int, tag: String, keyword: String) {

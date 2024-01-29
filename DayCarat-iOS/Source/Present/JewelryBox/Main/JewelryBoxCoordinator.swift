@@ -23,9 +23,16 @@ final class JewelryBoxCoordinator: Coordinator {
     }
     
     func start() {
-        let vm = JewelryBoxViewModel(usecase: JewelryUseCase(repositoy: GemRepository(service: GemService())), coordinator: self)
+        let vm = JewelryBoxViewModel(usecase: JewelryUseCase(repositoy: GemRepository(service: GemService())), coordinator: self, userInfoUseCase: MyPageUseCase(repository: UserRepository(service: UserInfoService())))
         let vc = JewelryViewController(viewModel: vm)
         navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func pushGemKeywordList(keyword: String, count: String) {
+        let vc = EpisodeListCoordinator(navigationController: navigationController)
+        navigationController.isNavigationBarHidden = true
+        childCoordinators.append(vc)
+        vc.startList(title: keyword, count: count)
     }
     
     func pushSoaraCreation() {

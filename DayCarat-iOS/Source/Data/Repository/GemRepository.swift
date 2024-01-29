@@ -9,6 +9,13 @@ import RxSwift
 import RxCocoa
 
 final class GemRepository: JewelryInterface {
+    func fetchKeywordGemList(keyword: String) -> RxSwift.Single<BaseArrayResponse<GemKeywordEpi>> {
+        return service.fetchKeywordGemList(keyword: keyword)
+    }
+    
+    func fetchGemKeywordCount() -> RxSwift.Single<BaseResponse<GemKeywordDTO>> {
+        return service.fetchGemKeywordCount()
+    }
     
     func fetchMonthGemCount() -> RxSwift.Single<BaseResponse<GemCountDTO>> {
         return service.fetchMonthGemCount()

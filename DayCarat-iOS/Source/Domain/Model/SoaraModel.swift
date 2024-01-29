@@ -7,6 +7,7 @@
 
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 enum SoaraType {
     case S
@@ -37,10 +38,6 @@ extension SoaraType {
 }
 
 struct SoaraModel {
-//    var type: SoaraType
-//    var title: Driver<String> {
-//        return type.title
-//    }
     let soaraCells: Driver<[String]> = Driver.just([
         "어떤 상황 또는 어떤 문제였나요?",
         "당시 무엇을 성취하는 것이 목표였나요?",

@@ -15,6 +15,12 @@ class EpisodeListCollectionViewCell: UICollectionViewCell {
         $0.numberOfLines = 0
     }
     
+    func configure(title: String, date: String, des: String) {
+        titleLabel.text = title
+        dateLabel.text = date
+        desLabel.text = des
+    }
+    
     private func addView() {
         [titleLabel, dateLabel, desLabel].forEach {
             self.addSubview($0)

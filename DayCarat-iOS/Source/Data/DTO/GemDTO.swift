@@ -13,12 +13,11 @@ struct GemCountDTO: Decodable {
 
 struct GemKeywordDTO: Decodable {
     let communication: Int
-    let conflictResolution: Int
-    let passion: Int
-    let diligence: Int
-    let collaboration: Int
-    let leadership: Int
-    let feedback: Int
+    let problemSolving: Int
+    let creativity: Int
+    let challengeSpirit: Int
+    let proficiency: Int
+    let execution: Int
     let unset: Int
 }
 
@@ -28,4 +27,11 @@ struct GemMostActivityDTO: Decodable {
 
 struct GemMostKeyword: Decodable {
     let episodeKeyword: String
+}
+
+struct GemKeywordEpi: Decodable {
+    let episodeId: Int
+    let title: String
+    let date: String
+    let content: String
 }

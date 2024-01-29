@@ -229,7 +229,7 @@ final class SoaraViewController: BaseViewController {
         
         viewModel.inputData
             .bind(onNext: {  text in
-                print("뷰컨에서에서\(text)")
+                //print("뷰컨에서에서\(text)")
             })
             .disposed(by: disposeBag)
         

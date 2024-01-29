@@ -13,4 +13,6 @@ protocol JewelryInterface {
     func fetchTotalGemCount() -> Single<BaseResponse<GemCountDTO>>
     func fetchGemMostKeyword() -> Single<BaseResponse<GemMostKeyword>>
     func fetchGemMostActivityTag() -> Single<BaseResponse<GemMostActivityDTO>>
+    func fetchKeywordGemList(keyword: String) -> Single<BaseArrayResponse<GemKeywordEpi>>
+    func fetchGemKeywordCount() -> Single<BaseResponse<GemKeywordDTO>>
 }

@@ -82,4 +82,42 @@ class GemService {
             }
         }
     }
+    
+    func fetchGemKeywordCount() -> Single<BaseResponse<GemKeywordDTO>> {
+        return Single.create {  single in
+            let disposable = self.provider.rx
+                .request(.kewortSortGemCount)
+                .filterSuccessfulStatusCodes()
+                .map(BaseResponse<GemKeywordDTO>.self)
+                .subscribe(onSuccess: {  res in
+                    single(.success(res))
+                }, onFailure: {  error in
+                    print("api요청에러 보석 키워드 \(error)")
+                    single(.failure(error))
+                })
+            return Disposables.create {
+                disposable.dispose()
+            }
+        }
+    }
+    
+    func fetchKeywordGemList(keyword: String) -> Single<BaseArrayResponse<GemKeywordEpi>> {
+        return Single.create {  single in
+            let disposable = self.provider.rx
+                .request(.keywordGemInfo(keyword: keyword))
+                .filterSuccessfulStatusCodes()
+                .map(BaseArrayResponse<GemKeywordEpi>.self)
+                .subscribe(onSuccess: {  res in
+                    print(res)
+                    single(.success(res))
+                }, onFailure: {  error in
+                    print("api요청에러 보석 키워드별 리스트 \(error)")
+                    single(.failure(error))
+                })
+            return Disposables.create {
+                disposable.dispose()
+            }
+        }
+    }
+    
 }

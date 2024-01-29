@@ -23,6 +23,7 @@ enum DayCaratTarget {
     case keywordMostGem // 가장 보석 많은 키워드
     case activityMostGem  //가장 보석 많은 활동
     case kewortSortGemCount // 키워드별 보석갯수
+    case keywordGemInfo(keyword: String) //키워드별 보석리스트 조회
 }
 
 extension DayCaratTarget: TargetType {
@@ -60,6 +61,8 @@ extension DayCaratTarget: TargetType {
             return "gem/report/activity"
         case .kewortSortGemCount:
             return "gem/keyword"
+        case .keywordGemInfo(keyword: let keyword):
+            return "gem/keyword/\(keyword)"
         }
     }
     
@@ -77,7 +80,8 @@ extension DayCaratTarget: TargetType {
          .totalGemCount,
          .keywordMostGem,
          .activityMostGem,
-         .kewortSortGemCount:
+         .kewortSortGemCount,
+         .keywordGemInfo:
             return .get
         case .epiRegister:
             return .post
