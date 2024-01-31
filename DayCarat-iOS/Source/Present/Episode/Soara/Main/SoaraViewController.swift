@@ -227,12 +227,6 @@ final class SoaraViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel.inputData
-            .bind(onNext: {  text in
-                //print("뷰컨에서에서\(text)")
-            })
-            .disposed(by: disposeBag)
-        
 //        viewModel.inputData
 //            .bind(onNext: { [weak self] (text, type) in
 //                print("뷰컨에서\(text)")

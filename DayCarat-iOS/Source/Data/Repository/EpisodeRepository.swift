@@ -8,7 +8,7 @@
 import RxSwift
 
 final class EpisodeRepository: EpisodeInterface {
-    
+
     private let service: EpisodeService
     
     init(service: EpisodeService) {
@@ -21,5 +21,9 @@ final class EpisodeRepository: EpisodeInterface {
     
     func registerEpi(title: String, date: String, activityTag: String, episodeContents: [EpisodeInputContent]) -> RxSwift.Single<BaseResponse<Bool>> {
         return service.registerEpi(title: title, date: date, activityTag: activityTag, episodeContents: episodeContents)
+    }
+    
+    func fetchEpiAllCount() -> RxSwift.Single<BaseResponse<epiCount>> {
+        return service.fetchEpiAllCount()
     }
 }

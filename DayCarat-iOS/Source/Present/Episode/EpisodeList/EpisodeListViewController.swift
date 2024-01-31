@@ -18,6 +18,10 @@ final class EpisodeListViewController: BaseViewController {
     private let viewModel: EpisodeListViewModel
 
     private let naviBar = CustomNavigaitonBar(btnstate: false, rightBtnText: "", middleText: "")
+    private let emptyImg = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.image = UIImage(named: "emptyBox")
+    }
     private let episodeListCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.register(EpisodeListCollectionViewCell.self, forCellWithReuseIdentifier: EpisodeListCollectionViewCell.identifier)
         $0.register(EpisodeListHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: EpisodeListHeaderView.identifier)
@@ -56,6 +60,7 @@ final class EpisodeListViewController: BaseViewController {
     override func addView() {
         self.view.addSubview(naviBar)
         self.view.addSubview(episodeListCollectionView)
+        self.episodeListCollectionView.addSubview(emptyImg)
     }
     
     override func layout() {
@@ -68,6 +73,10 @@ final class EpisodeListViewController: BaseViewController {
             $0.top.equalTo(self.naviBar.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+        }
+        emptyImg.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.height.equalTo(235)
         }
     }
     
@@ -89,6 +98,11 @@ final class EpisodeListViewController: BaseViewController {
         dataSource = RxCollectionViewSectionedReloadDataSource<GemKeywordSection>(
             configureCell: { _, collectionView, indexPath, item in
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpisodeListCollectionViewCell.identifier, for: indexPath) as! EpisodeListCollectionViewCell
+                if indexPath.count == 0 {
+                    self.emptyImg.isHidden = false
+                } else {
+                    self.emptyImg.isHidden = true
+                }
                 cell.configure(title: item.title, date: item.date, des: item.content)
                 return cell
             },

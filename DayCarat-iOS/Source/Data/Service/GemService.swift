@@ -120,4 +120,21 @@ class GemService {
         }
     }
     
+    func patchSoara(episodeId: Int, content1: String? = nil, content2: String? = nil, content3: String? = nil, content4: String? = nil, content5: String? = nil) -> Single<BaseResponse<Bool>> {
+        return Single.create {  single in
+            let disposable = self.provider.rx
+                .request(.patchSoara(episodeId: episodeId, content1: content1, content2: content2, content3: content3, content4: content4, content5: content5))
+                .filterSuccessfulStatusCodes()
+                .map(BaseResponse<Bool>.self)
+                .subscribe(onSuccess: {  res in
+                    single(.success(res))
+                }, onFailure: {  error in
+                    print("api요청에러 소아라 입력 \(error)")
+                    single(.failure(error))
+                })
+            return Disposables.create {
+                disposable.dispose()
+            }
+        }
+    }
 }

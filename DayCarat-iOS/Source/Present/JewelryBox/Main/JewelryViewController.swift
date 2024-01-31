@@ -83,13 +83,6 @@ final class JewelryViewController: BaseViewController {
                 self?.viewModel.coordinator?.pushGemKeywordList(keyword: keyword.title, count: String(keyword.count))
             })
             .disposed(by: disposeBag)
-        
-//        jewelryCollectionView.rx
-//            .itemSelected
-//            .bind(onNext: {  [weak self] _ in
-//                self?.viewModel.coordinator?.pushSoaraCreation()
-//            })
-//            .disposed(by: disposeBag)
     }
 
     private func setupDataSource() {

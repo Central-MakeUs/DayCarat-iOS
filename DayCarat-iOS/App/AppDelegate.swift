@@ -9,9 +9,12 @@ import UIKit
 
 import RxKakaoSDKCommon
 import KakaoSDKAuth
+import FirebaseCore
+import FirebaseMessaging
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
+    
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         if (AuthApi.isKakaoTalkLoginUrl(url)) {
@@ -23,7 +26,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         RxKakaoSDK.initSDK(appKey: "de909f10bb5f9eea10806f013137db09")
-        // Override point for customization after application launch.
+        FirebaseApp.configure()
+        
+        UNUserNotificationCenter.current().delegate = self
+
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(
+          options: authOptions,
+          completionHandler: { _, _ in }
+        )
+
+        application.registerForRemoteNotifications()
+        Messaging.messaging().delegate = self
         return true
     }
 

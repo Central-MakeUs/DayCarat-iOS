@@ -13,6 +13,7 @@ protocol EpisodeUseCaseProtocol {
     func getDummy() -> DetailEpiModel
     func registerEpi(title: String, date: String, activityTag: String, episodeContents: [EpisodeInputContent]) -> Single<BaseResponse<Bool>>
     func fetchDetailEpi(episodeId: Int) -> RxSwift.Single<BaseResponse<DetailEpisodeDTO>>
+    func fetchEpiAllCount() -> Single<BaseResponse<epiCount>>
 }
 final class EpisodeUseCase: EpisodeUseCaseProtocol {
     
@@ -22,7 +23,8 @@ final class EpisodeUseCase: EpisodeUseCaseProtocol {
     init(epiRepository: EpisodeRepository) {
         self.epiRepository = epiRepository
     }
-    
+    //MARK: - Metod to Network
+
     func registerEpi(title: String, date: String, activityTag: String, episodeContents: [EpisodeInputContent]) -> RxSwift.Single<BaseResponse<Bool>> {
         return epiRepository.registerEpi(title: title, date: date, activityTag: activityTag, episodeContents: episodeContents)
     }
@@ -31,6 +33,11 @@ final class EpisodeUseCase: EpisodeUseCaseProtocol {
         return epiRepository.fetchDetailEpi(episodeId: episodeId)
     }
     
+    func fetchEpiAllCount() -> RxSwift.Single<BaseResponse<epiCount>> {
+        return epiRepository.fetchEpiAllCount()
+    }
+    //MARK: - Metod to Model
+
     func getDummy() -> DetailEpiModel {
         return DetailEpiModel()
     }

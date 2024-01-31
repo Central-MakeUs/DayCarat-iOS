@@ -56,7 +56,7 @@ final class JewelryHeaderView: UICollectionReusableView {
         $0.contentMode = .scaleAspectFit
         $0.image = UIImage(named: "Jewelry")
     }
-    private let reportJewelryName = DayCaratLabel(type: .Body5, text: "커뮤니케이션", textColor: .Gray700!)
+    private let reportJewelryName = DayCaratLabel(type: .Body5, text: "", textColor: .Gray700!)
     private let reportEpiView = UIView().then {
         $0.backgroundColor = .Gray50
         $0.layer.cornerRadius = 16
@@ -64,7 +64,7 @@ final class JewelryHeaderView: UICollectionReusableView {
     private let reportEpiTitel = DayCaratLabel(type: .Body4, text: "가장 에피소드가\n많은 활동", textColor: .Main!).then {
         $0.textAlignment = .center
     }
-    private let reportEpiName = DayCaratLabel(type: .Subhead5, text: "CMC", textColor: .Main!)
+    private let reportEpiName = DayCaratLabel(type: .Subhead5, text: "", textColor: .Main!)
 
     private let reportMonthView = UIView().then {
         $0.backgroundColor = .Gray50

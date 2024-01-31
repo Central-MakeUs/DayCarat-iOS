@@ -5,8 +5,9 @@
 //  Created by 최지철 on 1/16/24.
 //
 
-import Moya
 import Foundation
+
+import Moya
 
 enum DayCaratTarget {
     case login(accessToken: String)
@@ -24,6 +25,13 @@ enum DayCaratTarget {
     case activityMostGem  //가장 보석 많은 활동
     case kewortSortGemCount // 키워드별 보석갯수
     case keywordGemInfo(keyword: String) //키워드별 보석리스트 조회
+    case episodeClipboard(episodeId: Int)  // 에피소드 복붙
+    case episodeSoara(episodeId: Int)  //에피소드 소아라 조회 -> 보석만들기전 소아라만 입력
+    case aiRecommend(episodeId: Int)  // AI추천 문장 및 키워드 조회
+    case patchEpiKeyword(episodeId: Int, keyword: String) // 에피소드 키워드 수정
+    case patchSoara(episodeId: Int, content1: String? = nil, content2: String? = nil, content3: String? = nil, content4: String? = nil, content5: String? = nil) // 소아라 입력
+    case gemRegister(episodeId: Int) // 보석등록
+    case allEpiCount // 전체 에피소드 갯수
 }
 
 extension DayCaratTarget: TargetType {
@@ -63,28 +71,50 @@ extension DayCaratTarget: TargetType {
             return "gem/keyword"
         case .keywordGemInfo(keyword: let keyword):
             return "gem/keyword/\(keyword)"
+        case .episodeClipboard(episodeId: let episodeId):
+            return "gem/episode/\(episodeId)"
+        case .episodeSoara(episodeId: let episodeId):
+            return "gem/soara/\(episodeId)"
+        case .patchEpiKeyword(episodeId: let episodeId, keyword: let keyword):
+            return "episode/keyword"
+        case .aiRecommend(episodeId: let episodeId):
+            return "gem/recommend/\(episodeId)"
+        case .patchSoara:
+            return "gem/soara"
+        case .gemRegister(episodeId: let episodeId):
+            return "gem/register"
+        case .allEpiCount:
+            return "episode/count/all"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .login,
-         .monthEpiCount,
-         .detailEpi,
-         .recentEpi,
-         .lastestEpi,
-         .activtyEpi,
-         .userInfo,
-         .activityTag,
-         .monthGem,
-         .totalGemCount,
-         .keywordMostGem,
-         .activityMostGem,
-         .kewortSortGemCount,
-         .keywordGemInfo:
-            return .get
-        case .epiRegister:
+//        case .login,
+//         .monthEpiCount,
+//         .detailEpi,
+//         .recentEpi,
+//         .lastestEpi,
+//         .activtyEpi,
+//         .userInfo,
+//         .activityTag,
+//         .monthGem,
+//         .totalGemCount,
+//         .keywordMostGem,
+//         .activityMostGem,
+//         .kewortSortGemCount,
+//         .keywordGemInfo,
+//         .episodeClipboard,
+//         .episodeSoara:
+//            return .get
+        case .epiRegister,
+             .gemRegister:
             return .post
+        case .patchEpiKeyword,
+             .patchSoara:
+            return .patch
+        default:
+            return .get
         }
     }
     
@@ -110,6 +140,24 @@ extension DayCaratTarget: TargetType {
                      "episodeContents": contentsArray
                  ]
                  return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .patchSoara(let episodeId, let content1, let content2, let content3, let content4, let content5):
+            var parameters: [String: Any] = ["episodeId": episodeId]
+            if let content1 = content1 {
+                parameters["content1"] = content1
+            }
+            if let content2 = content2 {
+                parameters["content2"] = content2
+            }
+            if let content3 = content3 {
+                parameters["content3"] = content3
+            }
+            if let content4 = content4 {
+                parameters["content4"] = content4
+            }
+            if let content5 = content5 {
+                parameters["content5"] = content5
+            }
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         default:
             return .requestPlain
         }

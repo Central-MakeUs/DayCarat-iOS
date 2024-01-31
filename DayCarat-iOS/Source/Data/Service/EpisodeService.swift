@@ -47,4 +47,21 @@ class EpisodeService {
             }
         }
     }
+    
+    func fetchEpiAllCount() -> Single<BaseResponse<epiCount>> {
+        return Single.create {  single in
+            let disposable = self.provider.rx
+                .request(.allEpiCount)
+                .filterSuccessfulStatusCodes()
+                .map(BaseResponse<epiCount>.self)
+                .subscribe(onSuccess: { response in
+                    single(.success(response))
+                }, onFailure: { error in
+                    single(.failure(error))
+                })
+            return Disposables.create {
+                disposable.dispose()
+            }
+        }
+    }
 }
