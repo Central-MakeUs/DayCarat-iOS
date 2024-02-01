@@ -13,16 +13,16 @@ import RxDataSources
 
 final class EpisodeViewController: BaseViewController {
     
-    // MARK: Properties
+    // MARK: - Properties
 
     private var disposeBag = DisposeBag()
     private let viewModel: EpisodeViewModel
-    private var dataSource: RxCollectionViewSectionedReloadDataSource<SectionModel>!
+    private var dataSource: RxCollectionViewSectionedReloadDataSource<EpisodeSection>!
 
-    // MARK: UI
+    // MARK: -  UI
 
     private let bottomView = UIView().then {
-        $0.backgroundColor = .Gray50
+        $0.backgroundColor = .white
     }
     private let episodeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.register(EpisodeBodyCell.self, forCellWithReuseIdentifier: EpisodeBodyCell.identifier)
@@ -33,7 +33,7 @@ final class EpisodeViewController: BaseViewController {
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         layout.minimumLineSpacing = 16
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2.3, height: 128)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2.3, height: 90)
         layout.minimumInteritemSpacing = 0
         layout.sectionInsetReference = .fromContentInset
         $0.collectionViewLayout = layout
@@ -43,7 +43,7 @@ final class EpisodeViewController: BaseViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    // MARK: init
+    // MARK: - init
 
     init(viewModel: EpisodeViewModel) {
         self.viewModel = viewModel
@@ -54,12 +54,13 @@ final class EpisodeViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: Methods
+    // MARK: -  Methods
 
     override func configure() {
-        self.view.backgroundColor = .Main100
+        self.view.backgroundColor = .Main50
         self.episodeCollectionView.delegate = self
         setupDataSource()
+        self.viewModel.updateData()
     }
 
     override func addView() {
@@ -83,9 +84,8 @@ final class EpisodeViewController: BaseViewController {
     }
 
     override func binding() {
-        let sections = [SectionModel(items: [0, 1, 2, 4,5,6,7,8,9])]
-        
-        Observable.just(sections)
+        viewModel.activityEpi
+            .map { [EpisodeSection(items: $0)] }
             .bind(to: episodeCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
@@ -97,20 +97,26 @@ final class EpisodeViewController: BaseViewController {
     }
 
     private func setupDataSource() {
-        dataSource = RxCollectionViewSectionedReloadDataSource<SectionModel>(
+        dataSource = RxCollectionViewSectionedReloadDataSource<EpisodeSection>(
             configureCell: { _, collectionView, indexPath, item in
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpisodeBodyCell.identifier, for: indexPath) as! EpisodeBodyCell
-                
+                cell.configure(title: item.activityTagName, count: String(item.quantity))
                 return cell
             },
             configureSupplementaryView: { _, collectionView, kind, indexPath in
                 let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: EpisodeHeaderView.identifier, for: indexPath) as! EpisodeHeaderView
-                
+                self.viewModel.allCount
+                    .bind(onNext: {  count in
+                        print(count)
+                        headerView.configure(count: String(count.episodeCount))
+                    })
+                    .disposed(by: self.disposeBag)
                 return headerView
             }
         )
     }
 }
+//MARK: - Extension
 
 extension EpisodeViewController: UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -31,6 +31,25 @@ class EpisodeService {
         }
     }
     
+    func fetchActivityEpiList() -> Single<BaseArrayResponse<ActivityEpiQuantityDTO>> {
+        return Single.create {  single in
+            let disposable = self.provider.rx
+                .request(.activtyEpi)
+                .filterSuccessfulStatusCodes()
+                .map(BaseArrayResponse<ActivityEpiQuantityDTO>.self)
+                .subscribe(onSuccess: { response in
+                    print(response)
+                    single(.success(response))
+                }, onFailure: { error in
+                    print(error)
+                    single(.failure(error))
+                })
+            return Disposables.create {
+                disposable.dispose()
+            }
+        }
+    }
+    
     func fetchDetailEpi(episodeId: Int) -> Single<BaseResponse<DetailEpisodeDTO>> {
         return Single.create {  single in
             let disposable = self.provider.rx

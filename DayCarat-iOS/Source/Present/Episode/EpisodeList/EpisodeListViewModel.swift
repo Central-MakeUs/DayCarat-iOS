@@ -17,7 +17,6 @@ final class EpisodeListViewModel: ViewModelType {
     let headerTitle: String
     let headerCount: String
     let keywordGemList = PublishRelay<[GemKeywordEpi]>()
-    let allCount = PublishRelay<epiCount>()
     
     init(usecase: EpisodeUseCaseProtocol, coordinator: EpisodeListCoordinator?, title: String, count: String, gemUsecase: JewelryUseCaseProtocol) {
         self.usecase = usecase
@@ -46,12 +45,6 @@ final class EpisodeListViewModel: ViewModelType {
                 self?.keywordGemList.accept(res.result!)
             }, onFailure: {  error in
                 print("키워드별 보석리스트 뷰모델 에러\(error)")
-            })
-            .disposed(by: disposeBag)
-        
-        usecase.fetchEpiAllCount()
-            .subscribe(onSuccess: {  [weak self]  res in
-                self?.allCount.accept(res.result!)
             })
             .disposed(by: disposeBag)
     }

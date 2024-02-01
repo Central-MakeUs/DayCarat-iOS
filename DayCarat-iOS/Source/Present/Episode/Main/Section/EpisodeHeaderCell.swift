@@ -19,17 +19,22 @@ final class EpisodeHeaderView: UICollectionReusableView {
         $0.setImage(UIImage(named: "icon-search"), for: .normal)
         $0.tintColor = UIColor(hexString: "#2D3648")
     }
-    private let titleLabel = DayCaratLabel(type: .Header5, text: "123개의\n원석이 있어요.", textColor: .Gray900!)
+    private let titleLabel = DayCaratLabel(type: .Header5, text: "개의\n원석이 있어요.", textColor: .Gray900!)
     private let desLabel = DayCaratLabel(type: .Body2,
                                          text: "사소한 에피소드도 다시 보면\n자소서에서 활용할 수 있는 보석 같은 경험일 수 있어요", textColor: .Gray700!)
+    private let backgroundImg = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.image = UIImage(named: "epiBack")
+    }
+    
     private let bottomView = UIView().then {
-        $0.backgroundColor = .Gray50
+        $0.backgroundColor = .white
         $0.layer.cornerRadius = 16
         $0.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     private func addView() {
-        self.backgroundColor = .Main100
-        [titleLabel, desLabel, bottomView, searchBtn].forEach {
+        self.backgroundColor = .Main50
+        [backgroundImg, titleLabel, desLabel, bottomView, searchBtn].forEach {
             self.addSubview($0)
         }
         [activityBtn, dateBtn].forEach {
@@ -44,8 +49,18 @@ final class EpisodeHeaderView: UICollectionReusableView {
         $0.isEnabled = true
     }
     
+    func configure(count: String) {
+        titleLabel.text = "\(count)개의\n원석이 있어요."
+    }
+    
 
     private func layout() {
+        backgroundImg.snp.makeConstraints {
+            $0.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(30)
+            $0.trailing.equalToSuperview().offset(57)
+            $0.width.equalTo(197)
+            $0.height.equalTo(211)
+        }
         searchBtn.snp.makeConstraints {
             $0.top.equalTo(self.snp.top).offset(18)
             $0.trailing.equalToSuperview().offset(-16)

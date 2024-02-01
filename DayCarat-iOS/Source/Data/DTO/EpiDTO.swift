@@ -35,3 +35,8 @@ struct EpisodeInputContent {
     let episodeContentType: String
     let content: String
 }
+
+struct ActivityEpiQuantityDTO: Decodable {
+    let activityTagName: String
+    let quantity: Int
+}

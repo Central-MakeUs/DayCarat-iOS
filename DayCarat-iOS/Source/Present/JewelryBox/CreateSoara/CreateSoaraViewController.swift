@@ -81,6 +81,7 @@ final class CreateSoaraViewController: BaseViewController {
         self.view.addSubview(naviBar)
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(contentView)
+
         [titleLabel, dateLabel, creationKeywordView, epiCollectionView, dividerView, creationAIRecommandView, soaraTitleLabel, soaraImg, copyBtn, soaraCollectionView, divider2View]
             .forEach {
                 self.contentView.addSubview($0)

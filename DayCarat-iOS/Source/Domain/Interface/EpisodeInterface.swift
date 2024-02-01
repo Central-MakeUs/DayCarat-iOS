@@ -10,5 +10,6 @@ import RxSwift
 protocol EpisodeInterface {
     func registerEpi(title: String, date: String, activityTag: String, episodeContents: [EpisodeInputContent]) -> Single<BaseResponse<Bool>>
     func fetchDetailEpi(episodeId: Int) -> Single<BaseResponse<DetailEpisodeDTO>>
+    func fetchActivityEpiList() -> Single<BaseArrayResponse<ActivityEpiQuantityDTO>>
     func fetchEpiAllCount() -> Single<BaseResponse<epiCount>>
 }

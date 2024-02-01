@@ -23,6 +23,10 @@ final class EpisodeRepository: EpisodeInterface {
         return service.registerEpi(title: title, date: date, activityTag: activityTag, episodeContents: episodeContents)
     }
     
+    func fetchActivityEpiList() -> RxSwift.Single<BaseArrayResponse<ActivityEpiQuantityDTO>> {
+        return service.fetchActivityEpiList()
+    }
+    
     func fetchEpiAllCount() -> RxSwift.Single<BaseResponse<epiCount>> {
         return service.fetchEpiAllCount()
     }

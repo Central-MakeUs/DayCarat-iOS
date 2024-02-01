@@ -22,7 +22,6 @@ class UserInfoService {
                 .filterSuccessfulStatusCodes()
                 .map(BaseResponse<UserDTO>.self)
                 .subscribe(onSuccess: { response in
-                    print(response)
                     single(.success(response))
                 }, onFailure: { error in
                     single(.failure(error))

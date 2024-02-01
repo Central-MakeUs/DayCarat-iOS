@@ -10,24 +10,21 @@ import UIKit
 final class EpisodeBodyCell: UICollectionViewCell {
     static let identifier = "EpisodeBodyCell"
     
-    private let img = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
-        $0.image = UIImage(named: "EpisodeBodyCell")
-    }
-    private let titleLabel = DayCaratLabel(type: .Subhead5, text: "활동명", textColor: .Gray900!)
-    private let countLabel = DayCaratLabel(type: .Subhead6, text: "10", textColor: .Main!)
+    private let titleLabel = DayCaratLabel(type: .Subhead5, text: "", textColor: .Gray900!)
+    private let countLabel = DayCaratLabel(type: .Subhead6, text: "", textColor: .Main!)
 
     private func addView() {
-        self.addSubview(img)
         [titleLabel, countLabel].forEach {
-            img.addSubview($0)
+            self.addSubview($0)
         }
     }
     
+    func configure(title: String, count: String) {
+        titleLabel.text = title
+        countLabel.text = count
+    }
+    
     private func layout() {
-        img.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(16)
             $0.leading.equalToSuperview().offset(17.4)
@@ -44,6 +41,10 @@ final class EpisodeBodyCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        self.layer.cornerRadius = 8
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.Gray300?.cgColor
+        self.backgroundColor = .Gray50
         addView()
         layout()
         binding()

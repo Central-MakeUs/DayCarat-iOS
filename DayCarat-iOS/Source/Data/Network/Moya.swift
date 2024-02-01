@@ -75,13 +75,13 @@ extension DayCaratTarget: TargetType {
             return "gem/episode/\(episodeId)"
         case .episodeSoara(episodeId: let episodeId):
             return "gem/soara/\(episodeId)"
-        case .patchEpiKeyword(episodeId: let episodeId, keyword: let keyword):
+        case .patchEpiKeyword:
             return "episode/keyword"
         case .aiRecommend(episodeId: let episodeId):
             return "gem/recommend/\(episodeId)"
         case .patchSoara:
             return "gem/soara"
-        case .gemRegister(episodeId: let episodeId):
+        case .gemRegister:
             return "gem/register"
         case .allEpiCount:
             return "episode/count/all"
@@ -90,23 +90,6 @@ extension DayCaratTarget: TargetType {
     
     var method: Moya.Method {
         switch self {
-//        case .login,
-//         .monthEpiCount,
-//         .detailEpi,
-//         .recentEpi,
-//         .lastestEpi,
-//         .activtyEpi,
-//         .userInfo,
-//         .activityTag,
-//         .monthGem,
-//         .totalGemCount,
-//         .keywordMostGem,
-//         .activityMostGem,
-//         .kewortSortGemCount,
-//         .keywordGemInfo,
-//         .episodeClipboard,
-//         .episodeSoara:
-//            return .get
         case .epiRegister,
              .gemRegister:
             return .post
