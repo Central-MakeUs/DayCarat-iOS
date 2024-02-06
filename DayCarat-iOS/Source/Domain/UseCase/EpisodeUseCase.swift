@@ -10,7 +10,6 @@ import RxCocoa
 
 protocol EpisodeUseCaseProtocol {
     func getSoara() -> Driver<[SoaraType]>
-    func getDummy() -> DetailEpiModel
     func registerEpi(title: String, date: String, activityTag: String, episodeContents: [EpisodeInputContent]) -> Single<BaseResponse<Bool>>
     func fetchDetailEpi(episodeId: Int) -> RxSwift.Single<BaseResponse<DetailEpisodeDTO>>
     func fetchActivityEpiList() -> RxSwift.Single<BaseArrayResponse<ActivityEpiQuantityDTO>>
@@ -41,10 +40,6 @@ final class EpisodeUseCase: EpisodeUseCaseProtocol {
         return epiRepository.fetchActivityEpiList()
     }
     //MARK: - Metod to Model
-
-    func getDummy() -> DetailEpiModel {
-        return DetailEpiModel()
-    }
     
     func getSoara() -> Driver<[SoaraType]> {
         return Driver.just(SoaraType.allCases)

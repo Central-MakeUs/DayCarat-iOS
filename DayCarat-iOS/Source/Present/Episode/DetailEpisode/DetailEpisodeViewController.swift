@@ -12,7 +12,7 @@ import RxCocoa
 import RxDataSources
 
 final class DetailEpisodeViewController: BaseViewController {
-    private var dataSource: RxCollectionViewSectionedReloadDataSource<SectionModel>!
+    private var dataSource: RxCollectionViewSectionedReloadDataSource<DetailEpiSection>!
     private var disposeBag = DisposeBag()
     private let viewModel: DetailEpisodeViewModel
     private let epiData = BehaviorRelay<[String]>(value: [])
@@ -36,39 +36,6 @@ final class DetailEpisodeViewController: BaseViewController {
     }
     
     private let trimBtn = DayCaratBtn(type: .Jump, text: "에피소드 다듬기")
-    
-    private func setupDataSource() {
-        let output = viewModel.transform(input: input)
-
-        viewModel.episodeContents
-            .bind(onNext: {  [weak self]  res in
-                
-            })
-            .disposed(by: disposeBag)
-        
-        output.dummy
-            .drive(onNext: { [weak self] dummyModel in
-                let stringData: [String] = [dummyModel.learned, dummyModel.disappoint]
-                self?.epiData.accept(stringData)
-                self?.dataSource = RxCollectionViewSectionedReloadDataSource<SectionModel>(
-                    configureCell: { _, collectionView, indexPath, item in
-                        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailEpiBodySection.identifier, for: indexPath) as! DetailEpiBodySection
-                        if indexPath.row == 0 {
-                            cell.configure(title: "배운점", des: dummyModel.learned)
-                        } else {
-                            cell.configure(title: "아쉬운점", des: dummyModel.disappoint)
-                        }
-                        return cell
-                    },
-                    configureSupplementaryView: { _, collectionView, kind, indexPath in
-                        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DetailEpiHeaderView.identifier, for: indexPath) as! DetailEpiHeaderView
-
-                        return headerView
-                    }
-                )
-            })
-            .disposed(by: disposeBag)
-    }
     
     override func viewWillAppear(_ animated: Bool) {
 
@@ -117,9 +84,8 @@ final class DetailEpisodeViewController: BaseViewController {
     
     override func binding() {
         
-        let sections = [SectionModel(items: [0, 1])]
-        
-        Observable.just(sections)
+        viewModel.episodeContents
+            .map { [DetailEpiSection(items: $0)] }
             .bind(to: detailCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
@@ -127,9 +93,31 @@ final class DetailEpisodeViewController: BaseViewController {
             .tap
             .asDriver()
             .drive(onNext: {  [weak self] _ in
-                self?.viewModel.coordinator?.pushSoara()
+               
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func setupDataSource() {
+        let output = viewModel.transform(input: input)
+
+        dataSource = RxCollectionViewSectionedReloadDataSource<DetailEpiSection>(
+            configureCell: { _, collectionView, indexPath, item in
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailEpiBodySection.identifier, for: indexPath) as! DetailEpiBodySection
+                cell.configure(title: item.episodeContentType, des: item.content)
+                return cell
+            },
+            configureSupplementaryView: { _, collectionView, kind, indexPath in
+                let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DetailEpiHeaderView.identifier, for: indexPath) as! DetailEpiHeaderView
+                self.viewModel.episodeContents
+                    .bind(onNext: {  res in
+//                        headerView.configure(title: , date: <#T##String#>, tag: <#T##String#>)
+                    })
+                    .disposed(by: self.disposeBag)
+                return headerView
+            }
+        )
+
     }
 }
 extension DetailEpisodeViewController: UICollectionViewDelegateFlowLayout {
