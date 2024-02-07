@@ -15,8 +15,9 @@ final class EpisodeListViewController: BaseViewController {
     
     private var disposeBag = DisposeBag()
     private var dataSource: RxCollectionViewSectionedReloadDataSource<GemKeywordSection>!
+    private var activityDataSource: RxCollectionViewSectionedReloadDataSource<ActivityEpisodeSection>!
     private let viewModel: EpisodeListViewModel
-
+    private let type: EpiListType
     private let naviBar = CustomNavigaitonBar(btnstate: false, rightBtnText: "", middleText: "")
     private let emptyImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
@@ -31,7 +32,7 @@ final class EpisodeListViewController: BaseViewController {
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 20, left: 16, bottom: 10, right: 16)
         layout.minimumLineSpacing = 16
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2.3, height: 128)
+        layout.itemSize = CGSize(width: 328, height: 128)
         layout.minimumInteritemSpacing = 12
         layout.sectionInsetReference = .fromContentInset
         $0.collectionViewLayout = layout
@@ -41,8 +42,9 @@ final class EpisodeListViewController: BaseViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    init(viewModel: EpisodeListViewModel) {
+    init(viewModel: EpisodeListViewModel, type: EpiListType) {
         self.viewModel = viewModel
+        self.type = type
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -51,7 +53,15 @@ final class EpisodeListViewController: BaseViewController {
     }
     
     override func configure() {
-        setupDataSource()
+        
+        switch type {
+            
+        case .epi:
+            activitydataSource()
+        case .gem:
+            setupDataSource()
+        }
+        
         naviBar.delegate = self
         episodeListCollectionView.delegate = self
         self.view.backgroundColor = UIColor(hexString: "#F9F9F9")
@@ -82,20 +92,45 @@ final class EpisodeListViewController: BaseViewController {
     
     override func binding() {
         
-        viewModel.keywordGemList
-            .map { [GemKeywordSection(items: $0)] }
-            .bind(to: episodeListCollectionView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
-        
-//        episodeListCollectionView.rx.modelSelected(Int.self)
-//            .subscribe(onNext: { [weak self] selectedIdx in
-//                self?.viewModel.coordinator?.start()
-//            })
-//            .disposed(by: disposeBag)
+        switch type {
+        case .epi:
+            
+        case .gem:
+            viewModel.keywordGemList
+                    .map { [GemKeywordSection(items: $0)] }
+                    .bind(to: episodeListCollectionView.rx.items(dataSource: dataSource))
+                    .disposed(by: disposeBag)
+                
+            episodeListCollectionView.rx.modelSelected(GemKeywordEpi.self)
+                    .subscribe(onNext: { [weak self] res in
+                        
+                    })
+                    .disposed(by: disposeBag)
+        }
     }
 
     private func setupDataSource() {
         dataSource = RxCollectionViewSectionedReloadDataSource<GemKeywordSection>(
+            configureCell: { _, collectionView, indexPath, item in
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpisodeListCollectionViewCell.identifier, for: indexPath) as! EpisodeListCollectionViewCell
+                if indexPath.count == 0 {
+                    self.emptyImg.isHidden = false
+                } else {
+                    self.emptyImg.isHidden = true
+                }
+                cell.configure(title: item.title, date: item.date, des: item.content)
+                return cell
+            },
+            configureSupplementaryView: { _, collectionView, kind, indexPath in
+                let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: EpisodeListHeaderView.identifier, for: indexPath) as! EpisodeListHeaderView
+                headerView.configure(title: self.viewModel.headerTitle, count: self.viewModel.headerCount)
+                return headerView
+            }
+        )
+    }
+    
+    private func activitydataSource() {
+        activityDataSource = RxCollectionViewSectionedReloadDataSource<ActivityEpisodeSection>(
             configureCell: { _, collectionView, indexPath, item in
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpisodeListCollectionViewCell.identifier, for: indexPath) as! EpisodeListCollectionViewCell
                 if indexPath.count == 0 {

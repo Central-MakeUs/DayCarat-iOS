@@ -19,9 +19,24 @@ struct EpisodeSection {
 }
 
 extension EpisodeSection: SectionModelType {
+
     typealias Item = ActivityEpiQuantityDTO
 
     init(original: EpisodeSection, items: [Item]) {
+        self = original
+        self.items = items
+    }
+}
+
+struct ActivityEpisodeSection {
+    var items: [Item]
+}
+
+extension ActivityEpisodeSection: SectionModelType {
+
+    typealias Item = ActivityEpisodeList
+
+    init(original: ActivityEpisodeSection, items: [Item]) {
         self = original
         self.items = items
     }

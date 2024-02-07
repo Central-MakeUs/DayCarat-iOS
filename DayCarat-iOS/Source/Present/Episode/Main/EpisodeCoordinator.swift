@@ -28,9 +28,9 @@ final class EpisodeCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
-    func pushList() {
+    func startList(title: String, count: String, type: EpiListType) {
         let epiListCoordinator = EpisodeListCoordinator(navigationController: navigationController)
-        epiListCoordinator.start()
+        epiListCoordinator.startList(title: title, count: count, type: type)
         childCoordinators.append(epiListCoordinator)
     }
     

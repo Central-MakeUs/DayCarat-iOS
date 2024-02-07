@@ -30,4 +30,8 @@ final class EpisodeRepository: EpisodeInterface {
     func fetchEpiAllCount() -> RxSwift.Single<BaseResponse<epiCount>> {
         return service.fetchEpiAllCount()
     }
+    
+    func fetchActivityEpiList(activity: String) -> RxSwift.Single<BaseArrayResponse<ActivityEpisodeList>> {
+        return service.fetchActivityEpiList(activity: activity)
+    }
 }

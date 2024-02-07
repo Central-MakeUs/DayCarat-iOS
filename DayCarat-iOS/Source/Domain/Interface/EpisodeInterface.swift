@@ -12,4 +12,5 @@ protocol EpisodeInterface {
     func fetchDetailEpi(episodeId: Int) -> Single<BaseResponse<DetailEpisodeDTO>>
     func fetchActivityEpiList() -> Single<BaseArrayResponse<ActivityEpiQuantityDTO>>
     func fetchEpiAllCount() -> Single<BaseResponse<epiCount>>
+    func fetchActivityEpiList(activity: String) -> Single<BaseArrayResponse<ActivityEpisodeList>>
 }

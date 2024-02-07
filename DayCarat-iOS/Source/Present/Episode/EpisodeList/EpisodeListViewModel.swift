@@ -17,6 +17,7 @@ final class EpisodeListViewModel: ViewModelType {
     let headerTitle: String
     let headerCount: String
     let keywordGemList = PublishRelay<[GemKeywordEpi]>()
+    let activityEpiList = PublishRelay<[ActivityEpisodeList]>()
     
     init(usecase: EpisodeUseCaseProtocol, coordinator: EpisodeListCoordinator?, title: String, count: String, gemUsecase: JewelryUseCaseProtocol) {
         self.usecase = usecase

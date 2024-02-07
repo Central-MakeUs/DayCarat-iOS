@@ -80,7 +80,7 @@ final class JewelryViewController: BaseViewController {
         jewelryCollectionView.rx
             .modelSelected(GemKeywordInfo.self)
             .bind(onNext: {  [weak self]  keyword in
-                self?.viewModel.coordinator?.pushGemKeywordList(keyword: keyword.title, count: String(keyword.count))
+                self?.viewModel.coordinator?.pushGemKeywordList(keyword: keyword.title, count: String(keyword.count), type: .gem)
             })
             .disposed(by: disposeBag)
     }

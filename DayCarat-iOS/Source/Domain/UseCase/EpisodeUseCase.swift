@@ -14,6 +14,7 @@ protocol EpisodeUseCaseProtocol {
     func fetchDetailEpi(episodeId: Int) -> RxSwift.Single<BaseResponse<DetailEpisodeDTO>>
     func fetchActivityEpiList() -> RxSwift.Single<BaseArrayResponse<ActivityEpiQuantityDTO>>
     func fetchEpiAllCount() -> Single<BaseResponse<epiCount>>
+    func fetchActivityEpiList(activity: String) -> Single<BaseArrayResponse<ActivityEpisodeList>>
 }
 final class EpisodeUseCase: EpisodeUseCaseProtocol {
 
@@ -38,6 +39,10 @@ final class EpisodeUseCase: EpisodeUseCaseProtocol {
     
     func fetchActivityEpiList() -> RxSwift.Single<BaseArrayResponse<ActivityEpiQuantityDTO>> {
         return epiRepository.fetchActivityEpiList()
+    }
+    
+    func fetchActivityEpiList(activity: String) -> RxSwift.Single<BaseArrayResponse<ActivityEpisodeList>> {
+        return epiRepository.fetchActivityEpiList(activity: activity)
     }
     //MARK: - Metod to Model
     

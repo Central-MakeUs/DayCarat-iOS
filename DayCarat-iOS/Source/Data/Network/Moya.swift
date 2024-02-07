@@ -34,6 +34,7 @@ enum DayCaratTarget {
     case gemRegister(episodeId: Int) // 보석등록
     case allEpiCount // 전체 에피소드 갯수
     case userImg(img: UIImage) // 유저 프사등록
+    case epiActivityTag(tag: String) // 활동별 에피소드 리스트 조회
 }
 
 extension DayCaratTarget: TargetType {
@@ -89,6 +90,8 @@ extension DayCaratTarget: TargetType {
             return "episode/count/all"
         case .userImg:
             return "user/profile"
+        case .epiActivityTag(tag: let tag):
+            return "episode/count/activity/\(tag)?pageSize=12"
         }
     }
     

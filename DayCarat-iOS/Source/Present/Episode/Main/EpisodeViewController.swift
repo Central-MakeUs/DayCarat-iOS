@@ -18,6 +18,7 @@ final class EpisodeViewController: BaseViewController {
     private var disposeBag = DisposeBag()
     private let viewModel: EpisodeViewModel
     private var dataSource: RxCollectionViewSectionedReloadDataSource<EpisodeSection>!
+    private var allEpisodeCount: epiCount?
 
     // MARK: -  UI
 
@@ -59,8 +60,8 @@ final class EpisodeViewController: BaseViewController {
     override func configure() {
         self.view.backgroundColor = .Main50
         self.episodeCollectionView.delegate = self
-        setupDataSource()
         self.viewModel.updateData()
+        setupDataSource()
     }
 
     override func addView() {
@@ -89,9 +90,16 @@ final class EpisodeViewController: BaseViewController {
             .bind(to: episodeCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
-        episodeCollectionView.rx.modelSelected(Int.self)
-            .subscribe(onNext: { [weak self] selectedIdx in
-                self?.viewModel.coordinator?.pushList()
+        episodeCollectionView.rx.modelSelected(ActivityEpiQuantityDTO.self)
+            .subscribe(onNext: { [weak self] select in
+                self?.viewModel.coordinator?.startList(title: select.activityTagName, count: String(select.quantity), type: .gem)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.allCount
+            .bind(onNext: { [weak self] count in
+                self?.allEpisodeCount = count
+                self?.episodeCollectionView.reloadData()
             })
             .disposed(by: disposeBag)
     }
@@ -105,12 +113,9 @@ final class EpisodeViewController: BaseViewController {
             },
             configureSupplementaryView: { _, collectionView, kind, indexPath in
                 let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: EpisodeHeaderView.identifier, for: indexPath) as! EpisodeHeaderView
-                self.viewModel.allCount
-                    .bind(onNext: {  count in
-                        print(count)
-                        headerView.configure(count: String(count.episodeCount))
-                    })
-                    .disposed(by: self.disposeBag)
+                if let count = self.allEpisodeCount {
+                    headerView.configure(count: String(count.episodeCount))
+                }
                 return headerView
             }
         )

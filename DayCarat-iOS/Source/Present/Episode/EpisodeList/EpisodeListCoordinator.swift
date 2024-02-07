@@ -24,9 +24,9 @@ final class EpisodeListCoordinator: Coordinator {
         self.navigationController.isNavigationBarHidden = true
     }
     
-    func startList(title: String, count: String) {
+    func startList(title: String, count: String, type: EpiListType) {
         let vm = EpisodeListViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService())), coordinator: self, title: title, count: count, gemUsecase: JewelryUseCase(repositoy: GemRepository(service: GemService())))
-        let vc = EpisodeListViewController(viewModel: vm)
+        let vc = EpisodeListViewController(viewModel: vm, type: type)
         vc.hidesBottomBarWhenPushed = true
         navigationController.pushViewController(vc, animated: true)
     }

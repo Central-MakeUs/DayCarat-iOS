@@ -83,4 +83,21 @@ class EpisodeService {
             }
         }
     }
+    
+    func fetchActivityEpiList(activity: String) -> Single<BaseArrayResponse<ActivityEpisodeList>> {
+        return Single.create {  single in
+            let disposable = self.provider.rx
+                .request(.epiActivityTag(tag: activity))
+                .filterSuccessfulStatusCodes()
+                .map(BaseArrayResponse<ActivityEpisodeList>.self)
+                .subscribe(onSuccess: { response in
+                    single(.success(response))
+                }, onFailure: { error in
+                    single(.failure(error))
+                })
+            return Disposables.create {
+                disposable.dispose()
+            }
+        }
+    }
 }
