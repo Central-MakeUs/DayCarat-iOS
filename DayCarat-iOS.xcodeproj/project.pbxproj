@@ -107,6 +107,8 @@
 		DE0F136E2B6390E50059BCD5 /* GemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F136D2B6390E50059BCD5 /* GemDTO.swift */; };
 		DE0F13702B6393D40059BCD5 /* GemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F136F2B6393D40059BCD5 /* GemService.swift */; };
 		DE0F13722B6397450059BCD5 /* GemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F13712B6397450059BCD5 /* GemRepository.swift */; };
+		DE28449D2B71E732009E18A1 /* KeywordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28449C2B71E732009E18A1 /* KeywordView.swift */; };
+		DE28449F2B71EA9A009E18A1 /* MyPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28449E2B71EA9A009E18A1 /* MyPageModel.swift */; };
 		DE2E7D9F2B6741160016D9F2 /* KeywordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2E7D9E2B6741160016D9F2 /* KeywordModel.swift */; };
 		DE2E7DA12B6798CC0016D9F2 /* EpiListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2E7DA02B6798CC0016D9F2 /* EpiListModel.swift */; };
 		DE4DD7042B60A7D00033EAB4 /* SoaraInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */; };
@@ -309,6 +311,8 @@
 		DE0F136D2B6390E50059BCD5 /* GemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemDTO.swift; sourceTree = "<group>"; };
 		DE0F136F2B6393D40059BCD5 /* GemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemService.swift; sourceTree = "<group>"; };
 		DE0F13712B6397450059BCD5 /* GemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemRepository.swift; sourceTree = "<group>"; };
+		DE28449C2B71E732009E18A1 /* KeywordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordView.swift; sourceTree = "<group>"; };
+		DE28449E2B71EA9A009E18A1 /* MyPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageModel.swift; sourceTree = "<group>"; };
 		DE2E7D9E2B6741160016D9F2 /* KeywordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordModel.swift; sourceTree = "<group>"; };
 		DE2E7DA02B6798CC0016D9F2 /* EpiListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpiListModel.swift; sourceTree = "<group>"; };
 		DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraInputViewController.swift; sourceTree = "<group>"; };
@@ -657,6 +661,14 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		DE28449B2B71E724009E18A1 /* KeywordView */ = {
+			isa = PBXGroup;
+			children = (
+				DE28449C2B71E732009E18A1 /* KeywordView.swift */,
+			);
+			path = KeywordView;
+			sourceTree = "<group>";
+		};
 		DE4DD7012B60A7B20033EAB4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -689,6 +701,7 @@
 				DE4DD7072B60A8F30033EAB4 /* SoaraModel.swift */,
 				DE2E7D9E2B6741160016D9F2 /* KeywordModel.swift */,
 				DE2E7DA02B6798CC0016D9F2 /* EpiListModel.swift */,
+				DE28449E2B71EA9A009E18A1 /* MyPageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -793,6 +806,7 @@
 		DE8479832B478E9D00471B4F /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				DE28449B2B71E724009E18A1 /* KeywordView */,
 				0967D8CB2B4A7404009CFD0A /* CheckBox */,
 				DE8479D22B47B7DA00471B4F /* Button */,
 				DE8479CF2B47A0ED00471B4F /* FontLabel */,
@@ -1185,6 +1199,7 @@
 			files = (
 				DE4DD7062B60A7EA0033EAB4 /* SoaraInputCoordinator.swift in Sources */,
 				DEA5443B2B4E73C800813CC6 /* AppCoordinator.swift in Sources */,
+				DE28449D2B71E732009E18A1 /* KeywordView.swift in Sources */,
 				DE0F136A2B634A0F0059BCD5 /* CreationSoaraViewModel.swift in Sources */,
 				0957F9142B52D12F0031B291 /* MyPageCoordinator.swift in Sources */,
 				0908E4832B5EA49A0095D016 /* EpiCollectionViewCell.swift in Sources */,
@@ -1286,6 +1301,7 @@
 				0957F9082B52CA1C0031B291 /* TabBarItem.swift in Sources */,
 				09B9727C2B54256200205087 /* LoginDTO.swift in Sources */,
 				DEA5442B2B4E256100813CC6 /* EpisodeBodyCell.swift in Sources */,
+				DE28449F2B71EA9A009E18A1 /* MyPageModel.swift in Sources */,
 				09BDC1DF2B4D96AF00C07F34 /* MyPageViewController.swift in Sources */,
 				DE8479DE2B47E16600471B4F /* EpisodeViewController.swift in Sources */,
 				DE4DD7082B60A8F30033EAB4 /* SoaraModel.swift in Sources */,

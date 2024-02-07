@@ -28,6 +28,10 @@ final class MyPageInfoSection: UITableViewCell {
         }
     }
     
+    func configure(title: String) {
+        titleLabel.text = title
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.backgroundColor = .clear

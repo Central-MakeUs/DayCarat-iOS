@@ -18,7 +18,7 @@ final class MyPageViewController: BaseViewController, UIImagePickerControllerDel
     
     private let imgPickerController = UIImagePickerController()
     private let profileImg = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
+        $0.contentMode = .scaleAspectFill
         $0.backgroundColor = .clear
         $0.layer.cornerRadius = 35
         $0.layer.borderWidth = 1.5
@@ -92,10 +92,12 @@ final class MyPageViewController: BaseViewController, UIImagePickerControllerDel
         infoTableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
         
-        Observable.just([0, 1])
+        
+        
+        Observable.just(["로그아웃", "회원탈퇴"])
             .bind(to: infoTableView.rx.items(cellIdentifier: MyPageInfoSection.identifier, cellType:MyPageInfoSection.self))
         {  index, item, cell in
-            
+            cell.configure(title: item)
         }
         .disposed(by: disposeBag)
         
@@ -108,6 +110,7 @@ final class MyPageViewController: BaseViewController, UIImagePickerControllerDel
                 }
             })
             .disposed(by: disposeBag)
+        
         editBtn.rx
             .tap
             .bind(onNext: {

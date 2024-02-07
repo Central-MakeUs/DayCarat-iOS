@@ -26,7 +26,7 @@ final class DetailEpisodeViewController: BaseViewController {
         $0.backgroundColor = .clear
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 24, left: 16, bottom: 60, right: 16)
+        layout.sectionInset = UIEdgeInsets(top: 24, left: 36, bottom: 60, right: 16)
         layout.minimumInteritemSpacing = 20
         layout.sectionInsetReference = .fromContentInset
         $0.collectionViewLayout = layout
@@ -88,6 +88,13 @@ final class DetailEpisodeViewController: BaseViewController {
             .map { [DetailEpiSection(items: $0)] }
             .bind(to: detailCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+
+        viewModel.episodeContents
+            .map { $0.map { $0.content } }
+            .subscribe(onNext: {  [weak self]  res in
+                self?.epiData.accept(res)
+            })
+            .disposed(by: disposeBag)
         
         trimBtn.rx
             .tap
@@ -99,7 +106,6 @@ final class DetailEpisodeViewController: BaseViewController {
     }
     
     private func setupDataSource() {
-        let output = viewModel.transform(input: input)
 
         dataSource = RxCollectionViewSectionedReloadDataSource<DetailEpiSection>(
             configureCell: { _, collectionView, indexPath, item in
@@ -109,9 +115,9 @@ final class DetailEpisodeViewController: BaseViewController {
             },
             configureSupplementaryView: { _, collectionView, kind, indexPath in
                 let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DetailEpiHeaderView.identifier, for: indexPath) as! DetailEpiHeaderView
-                self.viewModel.episodeContents
+                self.viewModel.detailData
                     .bind(onNext: {  res in
-//                        headerView.configure(title: , date: <#T##String#>, tag: <#T##String#>)
+                        headerView.configure(title: res.title , date: res.selectedDate, tag: res.activityTagName)
                     })
                     .disposed(by: self.disposeBag)
                 return headerView

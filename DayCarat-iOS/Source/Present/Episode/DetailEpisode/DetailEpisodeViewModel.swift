@@ -15,7 +15,7 @@ final class DetailEpisodeViewModel: ViewModelType {
     private let usecase: EpisodeUseCaseProtocol
     let coordinator: DetailEpiCoordinator?
     let detailData = PublishRelay<DetailEpisodeDTO>()
-    let episodeContents = PublishRelay<DetailEpisodeDTO>()
+    let episodeContents = PublishRelay<[DetailEpisodeContentDTO]>()
     
     init(usecase: EpisodeUseCaseProtocol, coordinator: DetailEpiCoordinator?) {
         self.usecase = usecase
@@ -36,7 +36,8 @@ final class DetailEpisodeViewModel: ViewModelType {
         usecase.fetchDetailEpi(episodeId: id)
             .subscribe(onSuccess: {  [weak self]  res in
                 self?.detailData.accept(res.result!)
-                self?.episodeContents.accept(res.result!)
+                self?.episodeContents.accept(res.result!.episodeContents)
+                print("뷰모델=====\(res.result!.episodeContents)")
             }, onFailure: {  error in
                 
             })
