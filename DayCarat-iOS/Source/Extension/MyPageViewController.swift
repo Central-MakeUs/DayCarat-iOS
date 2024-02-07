@@ -126,6 +126,7 @@ final class MyPageViewController: BaseViewController, UIImagePickerControllerDel
         if let image = info[UIImagePickerController.InfoKey.originalImage]
             as? UIImage {
             DispatchQueue.main.async {
+                self.viewModel.registerImg(img: image)
                 self.profileImg.image = image
             }
         }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 import Moya
 
@@ -32,6 +33,7 @@ enum DayCaratTarget {
     case patchSoara(episodeId: Int, content1: String? = nil, content2: String? = nil, content3: String? = nil, content4: String? = nil, content5: String? = nil) // 소아라 입력
     case gemRegister(episodeId: Int) // 보석등록
     case allEpiCount // 전체 에피소드 갯수
+    case userImg(img: UIImage) // 유저 프사등록
 }
 
 extension DayCaratTarget: TargetType {
@@ -85,13 +87,16 @@ extension DayCaratTarget: TargetType {
             return "gem/register"
         case .allEpiCount:
             return "episode/count/all"
+        case .userImg:
+            return "user/profile"
         }
     }
     
     var method: Moya.Method {
         switch self {
         case .epiRegister,
-             .gemRegister:
+             .gemRegister,
+             .userImg:
             return .post
         case .patchEpiKeyword,
              .patchSoara:
@@ -103,6 +108,12 @@ extension DayCaratTarget: TargetType {
     
     var task: Task {
         switch self {
+        case .userImg(let img):
+            let jpegData = img.jpegData(compressionQuality: 1.0)!
+            let formData: [MultipartFormData] = [
+                .init(provider: .data(jpegData), name: "multipartFile", fileName: "filename.jpeg", mimeType: "image/jpeg")
+            ]
+            return .uploadMultipart(formData)
         case .login(let accessToken):
             let parameters: [String: Any] = ["accessToken": accessToken]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
@@ -148,6 +159,11 @@ extension DayCaratTarget: TargetType {
     
     var headers: [String: String]? {
         switch self {
+        case .userImg:
+            guard let accessToken = UserDefaults.standard.string(forKey: "accessToken") else {
+                return nil
+            }
+            return ["Authorization": "Bearer \(accessToken)", "Content-Type": "multipart/form-data"]
         case .login(_):
             return ["Content-Type": "application/json"]
         default:

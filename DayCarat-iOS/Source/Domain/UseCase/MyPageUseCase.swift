@@ -4,11 +4,13 @@
 //
 //  Created by Choi on 2024/01/10.
 //
+import UIKit
 
 import RxSwift
 
 protocol MyPageUseCaseProtocol {
     func fetchUserInfo() -> Single<BaseResponse<UserDTO>>
+    func uploadUserProfileImg(img: UIImage) -> Single<BaseResponse<Bool>>
 }
 final class MyPageUseCase: MyPageUseCaseProtocol {
     
@@ -20,5 +22,9 @@ final class MyPageUseCase: MyPageUseCaseProtocol {
     
     func fetchUserInfo() -> RxSwift.Single<BaseResponse<UserDTO>> {
         return repository.fetchUserInfo()
+    }
+    
+    func uploadUserProfileImg(img: UIImage) -> RxSwift.Single<BaseResponse<Bool>> {
+        return repository.uploadUserProfileImg(img: img)
     }
 }

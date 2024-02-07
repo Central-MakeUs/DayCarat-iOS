@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 import RxSwift
 
@@ -19,5 +20,9 @@ final class UserRepository: UserInterface {
     
     func fetchUserInfo() -> RxSwift.Single<BaseResponse<UserDTO>> {
         return service.fetchUserInfo()
+    }
+    
+    func uploadUserProfileImg(img: UIImage) -> RxSwift.Single<BaseResponse<Bool>> {
+        return service.uploadUserProfileImg(img: img)
     }
 }

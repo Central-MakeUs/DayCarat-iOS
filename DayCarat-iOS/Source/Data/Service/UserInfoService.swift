@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 import RxSwift
 import Moya
@@ -13,7 +14,7 @@ import Moya
 class UserInfoService {
     
     private let disposeBag = DisposeBag()
-    private let provider = MoyaProvider<DayCaratTarget>()
+    private let provider = MoyaProvider<DayCaratTarget>(plugins: [NetworkLoggerPlugin()])
     
     func fetchUserInfo() -> Single<BaseResponse<UserDTO>> {
         return Single.create { single in
@@ -33,4 +34,22 @@ class UserInfoService {
         }
         .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
     }
+    
+    func uploadUserProfileImg(img: UIImage) -> Single<BaseResponse<Bool>> {
+        return Single.create {  single in
+            let disposable = self.provider.rx
+                .request(.userImg(img: img))
+                .filterSuccessfulStatusCodes()
+                .map(BaseResponse<Bool>.self)
+                .subscribe(onSuccess: { response in
+                    single(.success(response))
+                }, onFailure: { error in
+                    single(.failure(error))
+                })
+            return Disposables.create {
+                disposable.dispose()
+            }
+        }
+    }
+    
 }

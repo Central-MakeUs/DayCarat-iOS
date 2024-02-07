@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 import RxSwift
  
 protocol UserInterface {
     func fetchUserInfo() -> Single<BaseResponse<UserDTO>>
+    func uploadUserProfileImg(img: UIImage) -> Single<BaseResponse<Bool>>
 }
