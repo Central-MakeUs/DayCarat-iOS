@@ -98,6 +98,11 @@ final class EpisodeListViewController: BaseViewController {
                 .map{ [ActivityEpisodeSection(items: $0)] }
                 .bind(to: episodeListCollectionView.rx.items(dataSource: activityDataSource))
                 .disposed(by: disposeBag)
+            episodeListCollectionView.rx.modelSelected(ActivityEpisodeList.self)
+                    .subscribe(onNext: { [weak self] res in
+                        
+                    })
+                    .disposed(by: disposeBag)
         case .gem:
             viewModel.keywordGemList
                     .map { [GemKeywordSection(items: $0)] }

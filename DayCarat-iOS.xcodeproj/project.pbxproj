@@ -119,7 +119,6 @@
 		DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */; };
 		DE5F41162B4B90A700581075 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41152B4B90A700581075 /* IntroViewModel.swift */; };
 		DE5F41192B4B90E300581075 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41182B4B90E300581075 /* ViewModelType.swift */; };
-		DE5F41222B4B92B500581075 /* tempRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41212B4B92B500581075 /* tempRepository.swift */; };
 		DE5F412A2B4B953A00581075 /* IntroUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41292B4B953A00581075 /* IntroUseCase.swift */; };
 		DE5F412D2B4BC50100581075 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F412C2B4BC50100581075 /* Coordinator.swift */; };
 		DE5F41302B4BD24A00581075 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F412F2B4BD24A00581075 /* OnBoardingViewController.swift */; };
@@ -322,7 +321,6 @@
 		DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControlView.swift; sourceTree = "<group>"; };
 		DE5F41152B4B90A700581075 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		DE5F41182B4B90E300581075 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
-		DE5F41212B4B92B500581075 /* tempRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempRepository.swift; sourceTree = "<group>"; };
 		DE5F41292B4B953A00581075 /* IntroUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroUseCase.swift; sourceTree = "<group>"; };
 		DE5F412C2B4BC50100581075 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DE5F412F2B4BD24A00581075 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
@@ -746,7 +744,6 @@
 		DE5F41202B4B929E00581075 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				DE5F41212B4B92B500581075 /* tempRepository.swift */,
 				DE5F41372B4BD30200581075 /* OnBoardingRepository.swift */,
 				DEA544402B4E74E700813CC6 /* LoginRepository.swift */,
 				09DC3F162B57F5A30026B857 /* HomeRepository.swift */,
@@ -1232,7 +1229,6 @@
 				0967D8DD2B4AFB13009CFD0A /* IntroCollectionViewCell.swift in Sources */,
 				09BDC1D72B4D84F900C07F34 /* NewsCollectionViewCell.swift in Sources */,
 				DE5F413F2B4BD80D00581075 /* StrengthSection.swift in Sources */,
-				DE5F41222B4B92B500581075 /* tempRepository.swift in Sources */,
 				DE5F41342B4BD2EB00581075 /* OnBoardingUseCase.swift in Sources */,
 				DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */,
 				09DC3F152B57F4330026B857 /* EpiDTO.swift in Sources */,

@@ -35,6 +35,7 @@ enum DayCaratTarget {
     case allEpiCount // 전체 에피소드 갯수
     case userImg(img: UIImage) // 유저 프사등록
     case epiActivityTag(tag: String) // 활동별 에피소드 리스트 조회
+    case patchUserInfo(nickname: String? = nil, jobTitle: String? = nil , strength: String? = nil, pushAllow: Bool? = nil, fcmToken: String? = nil)
 }
 
 extension DayCaratTarget: TargetType {
@@ -91,7 +92,9 @@ extension DayCaratTarget: TargetType {
         case .userImg:
             return "user/profile"
         case .epiActivityTag(tag: let tag):
-            return "episode/count/activity/\(tag)?pageSize=12"
+            return "episode/activity/\(tag)"
+        case .patchUserInfo:
+            return "https://www.daycarat.shop/api/user/userInfo"
         }
     }
     

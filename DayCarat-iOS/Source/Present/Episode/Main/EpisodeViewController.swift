@@ -92,7 +92,7 @@ final class EpisodeViewController: BaseViewController {
         
         episodeCollectionView.rx.modelSelected(ActivityEpiQuantityDTO.self)
             .subscribe(onNext: { [weak self] select in
-                self?.viewModel.coordinator?.startList(title: select.activityTagName, count: String(select.quantity), type: .gem)
+                self?.viewModel.coordinator?.startList(title: select.activityTagName, count: String(select.quantity), type: .epi)
             })
             .disposed(by: disposeBag)
         

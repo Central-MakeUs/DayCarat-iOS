@@ -41,11 +41,13 @@ final class EpisodeListViewModel: ViewModelType {
     }
     
     func updateList(keyword: String) {
+        
         gemUsecase.fetchKeywordGemList(keyword: keyword)
             .subscribe(onSuccess: {  [weak self]  res in
                 self?.keywordGemList.accept(res.result!)
             })
             .disposed(by: disposeBag)
+        
         usecase.fetchActivityEpiList(activity: keyword)
             .subscribe(onSuccess: {   [weak  self] res in
                 self?.activityEpiList.accept(res.result!)
