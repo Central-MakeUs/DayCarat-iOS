@@ -94,7 +94,10 @@ final class EpisodeListViewController: BaseViewController {
         
         switch type {
         case .epi:
-            
+            viewModel.activityEpiList
+                .map{ [ActivityEpisodeSection(items: $0)] }
+                .bind(to: episodeListCollectionView.rx.items(dataSource: activityDataSource))
+                .disposed(by: disposeBag)
         case .gem:
             viewModel.keywordGemList
                     .map { [GemKeywordSection(items: $0)] }

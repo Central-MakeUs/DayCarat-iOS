@@ -93,6 +93,7 @@ class EpisodeService {
                 .subscribe(onSuccess: { response in
                     single(.success(response))
                 }, onFailure: { error in
+                    print("Debug=====\(error)")
                     single(.failure(error))
                 })
             return Disposables.create {

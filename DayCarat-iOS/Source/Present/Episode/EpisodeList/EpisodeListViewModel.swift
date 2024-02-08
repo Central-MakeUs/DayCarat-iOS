@@ -44,8 +44,11 @@ final class EpisodeListViewModel: ViewModelType {
         gemUsecase.fetchKeywordGemList(keyword: keyword)
             .subscribe(onSuccess: {  [weak self]  res in
                 self?.keywordGemList.accept(res.result!)
-            }, onFailure: {  error in
-                print("키워드별 보석리스트 뷰모델 에러\(error)")
+            })
+            .disposed(by: disposeBag)
+        usecase.fetchActivityEpiList(activity: keyword)
+            .subscribe(onSuccess: {   [weak  self] res in
+                self?.activityEpiList.accept(res.result!)
             })
             .disposed(by: disposeBag)
     }
