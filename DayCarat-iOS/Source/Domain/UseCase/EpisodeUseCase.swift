@@ -15,14 +15,22 @@ protocol EpisodeUseCaseProtocol {
     func fetchActivityEpiList() -> RxSwift.Single<BaseArrayResponse<ActivityEpiQuantityDTO>>
     func fetchEpiAllCount() -> Single<BaseResponse<epiCount>>
     func fetchActivityEpiList(activity: String) -> Single<BaseArrayResponse<ActivityEpisodeList>>
+    func completeSoaraInput(type: SoaraType)
+    func soaraInputObservable() -> Observable<SoaraType>
+    func fetchSoaraData(episodeId: Int) -> Single<[SoaraType]>
+    func getSoaraDetailData(episodeId: Int) -> Single<BaseResponse<SoaraInputDTO>>
 }
 final class EpisodeUseCase: EpisodeUseCaseProtocol {
 
     private let epiRepository: EpisodeRepository
+    private let soaraInputSubject = PublishRelay<SoaraType>()
+    private let gemRepository: GemRepository
     
-    init(epiRepository: EpisodeRepository) {
+    init(epiRepository: EpisodeRepository, gemRepository: GemRepository) {
         self.epiRepository = epiRepository
+        self.gemRepository = gemRepository
     }
+    
     //MARK: - Metod to Network
 
     func registerEpi(title: String, date: String, activityTag: String, episodeContents: [EpisodeInputContent]) -> RxSwift.Single<BaseResponse<Bool>> {
@@ -44,10 +52,32 @@ final class EpisodeUseCase: EpisodeUseCaseProtocol {
     func fetchActivityEpiList(activity: String) -> RxSwift.Single<BaseArrayResponse<ActivityEpisodeList>> {
         return epiRepository.fetchActivityEpiList(activity: activity)
     }
+    
+    func fetchSoaraData(episodeId: Int) -> Single<[SoaraType]> {
+        return gemRepository.fetchSoaraData(episodeId: episodeId)
+            .map({  res in
+                return res.result!.nonNullSoaraTypes
+            })
+    }
+    
+    func getSoaraDetailData(episodeId: Int) -> Single<BaseResponse<SoaraInputDTO>> {
+        return gemRepository.fetchSoaraData(episodeId: episodeId)
+    }
     //MARK: - Metod to Model
     
     func getSoara() -> Driver<[SoaraType]> {
         return Driver.just(SoaraType.allCases)
             .asDriver(onErrorDriveWith: Driver.empty())
     }
+    
+    func completeSoaraInput(type: SoaraType) {
+        soaraInputSubject.accept(type)
+    }
+    
+    func soaraInputObservable() -> Observable<SoaraType> {
+        return soaraInputSubject.asObservable()
+    }
+    
+    // MARK: - Private Method
+
 }

@@ -17,10 +17,12 @@ final class SoaraViewController: BaseViewController {
     private var disposeBag = DisposeBag()
     private let epiData = BehaviorRelay<[String]>(value: [])
     weak var coordinator: SoaraCoordinator?
+    private var allCellHeight: CGFloat = 0
+    private let id: Int
 
     //MARK: - UI
     private let naviBar = CustomNavigaitonBar(btnstate: true, rightBtnText: "", middleText: "")
-    
+    private var collectionViewHeightConstraint: NSLayoutConstraint?
     private let scrollView = UIScrollView()
     private let contentSV = UIStackView().then {
         $0.axis = .vertical
@@ -42,10 +44,10 @@ final class SoaraViewController: BaseViewController {
     private let epiCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.register(DetailEpiBodySection.self, forCellWithReuseIdentifier: DetailEpiBodySection.identifier)
         $0.isScrollEnabled = true
-        $0.backgroundColor = .red
+        $0.backgroundColor = .clear
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 24, left: 16, bottom: 60, right: 16)
+        layout.sectionInset = UIEdgeInsets(top: 24, left: 20, bottom: 60, right: 16)
         layout.minimumInteritemSpacing = 20
         layout.sectionInsetReference = .fromContentInset
         $0.collectionViewLayout = layout
@@ -74,17 +76,24 @@ final class SoaraViewController: BaseViewController {
         $0.alwaysBounceVertical = true
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
+    private let makeGemBtn = DayCaratBtn(type: .Default, text: "보석 가공하기")
     
     //MARK: - LifeCycle
     
-    init(viewModel: SoaraViewModel, coordinator: SoaraCoordinator) {
+    init(viewModel: SoaraViewModel, coordinator: SoaraCoordinator, id: Int) {
         self.viewModel = viewModel
         self.coordinator = coordinator
+        self.id = id
+        self.viewModel.updateDate(id: id)
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.viewModel.updateDate(id: self.id)
     }
     
     
@@ -94,6 +103,7 @@ final class SoaraViewController: BaseViewController {
         epiCollectionView.isHidden = true
         naviBar.delegate = self
         epiCollectionView.delegate = self
+        makeGemBtn.isHidden = true
     }
     
     override func addView() {
@@ -103,7 +113,7 @@ final class SoaraViewController: BaseViewController {
         [titleLabel, dateLabel, epiLabel, epiBtn].forEach {
             self.topView.addSubview($0)
         }
-        [topView, epiCollectionView, lineView, soaraView].forEach {
+        [topView, epiCollectionView, lineView, soaraView, makeGemBtn].forEach {
             self.contentSV.addArrangedSubview($0)
         }
         [soaraImg, soaraTitleLabel, soaraCollectionView].forEach {
@@ -171,7 +181,11 @@ final class SoaraViewController: BaseViewController {
         }
         epiCollectionView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(300)
+            self.collectionViewHeightConstraint = $0.height.equalTo(300).constraint.layoutConstraints.first
+        }
+        makeGemBtn.snp.makeConstraints {
+            $0.bottom.equalTo(self.scrollView.safeAreaLayoutGuide.snp.bottom).inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(16)
         }
     }
     
@@ -209,36 +223,75 @@ final class SoaraViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        output.soaraData
-            .drive(soaraCollectionView.rx.items(cellIdentifier: SoaraCollectionViewCell.identifier, cellType: SoaraCollectionViewCell.self))
-        {  index, soaraType, cell in
+        Observable.combineLatest(
+            output.soaraData.asObservable(),
+            viewModel.selectedSoara.asObservable().startWith([])
+        ) { soaraData, selectedSoara in
+            return soaraData.map { soaraType -> (SoaraType, Bool) in
+                let isSelected = selectedSoara.contains(where: { $0 == soaraType })
+                return (soaraType, isSelected)
+            }
+        }
+        .bind(to: soaraCollectionView.rx.items(cellIdentifier: SoaraCollectionViewCell.identifier, cellType: SoaraCollectionViewCell.self)) { index, model, cell in
+            let (soaraType, isSelected) = model
             soaraType.title.drive(onNext: { title in
-                cell.configureCell(text: title)
+                cell.configureCell(text: title, isSelected: isSelected)
             }).disposed(by: self.disposeBag)
         }
         .disposed(by: disposeBag)
+        
+        viewModel.selectedSoara
+            .bind(onNext: {  [weak self]  res in
+                print("뷰컨========\(res)")
+                if res.count == 5 {
+                    self?.makeGemBtn.isHidden = false
+                }
+            })
+            .disposed(by: disposeBag)
 
         soaraCollectionView.rx
-            .modelSelected(SoaraType.self)
-            .subscribe(onNext: {  [weak self]  soaraType in
+            .modelSelected((SoaraType, Bool).self)
+            .subscribe(onNext: { [weak self] soaraType, isSelected in
                 soaraType.title.drive(onNext: { title in
-                    self?.coordinator?.pushInputSoara(title: title, type: soaraType)
+                    self?.coordinator?.pushInputSoara(title: title, type: soaraType, id: self?.id ?? 0)
                 }).disposed(by: self!.disposeBag)
             })
             .disposed(by: disposeBag)
         
-//        viewModel.inputData
-//            .bind(onNext: { [weak self] (text, type) in
-//                print("뷰컨에서\(text)")
-//                guard let self = self else { return }
-//                if let index = self.findIndexOfSoaraType(type) {
-//                    let indexPath = IndexPath(item: index, section: 0)
-//                    if let cell = self.soaraCollectionView.cellForItem(at: indexPath) as? SoaraCollectionViewCell {
-//                        cell.backgroundColor = .green
-//                    }
-//                }
-//            })
-//            .disposed(by: disposeBag)
+        viewModel.epiData
+            .bind(onNext: {  [weak self]  res in
+                self?.titleLabel.text = res.title
+                self?.dateLabel.text = res.selectedDate
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.episodeContents
+            .map { $0.map { $0.content } }
+            .subscribe(onNext: {  [weak self]  res in
+                self?.epiData.accept(res)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.episodeContents
+            .bind(to: self.epiCollectionView.rx.items(cellIdentifier: DetailEpiBodySection.identifier, cellType: DetailEpiBodySection.self))
+        {   index, item, cell in
+            cell.configure(title: item.episodeContentType, des: item.content)
+        }
+        .disposed(by: disposeBag)
+        
+        makeGemBtn.rx
+            .tap
+            .subscribe(onNext: { [weak self] _ in
+                print("asdsad")
+                self?.coordinator?.registerGem(id: self?.id ?? 0)
+            })
+            .disposed(by: disposeBag)
+        
+    }
+
+    func updateCollectionViewHeight() {
+        collectionViewHeightConstraint?.constant = allCellHeight + 40
+        self.epiCollectionView.layoutIfNeeded()
     }
 }
 extension SoaraViewController: CustomNavigaitonBarDelegate {
@@ -258,7 +311,8 @@ extension SoaraViewController: UICollectionViewDelegateFlowLayout {
         cell.configureDes(des: item)
         cell.layoutIfNeeded()
         let cellHeight = cell.desLabel.intrinsicContentSize.height + 32
-
+        allCellHeight += cellHeight
+        self.updateCollectionViewHeight()
         return CGSize(width: UIScreen.main.bounds.width, height: cellHeight)
     }
 }

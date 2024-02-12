@@ -12,8 +12,10 @@ import RxCocoa
 
 final class EpiInputCollectionViewCell: UICollectionViewCell {
     static let identifier = "EpiInputCollectionViewCell"
-    
-    private var disposeBag = DisposeBag()
+    var textFieldInput = PublishSubject<String>()
+    var textType = PublishSubject<String>()
+    let cellContents = PublishSubject<EpisodeInputContent>()
+    var disposeBag = DisposeBag()
     private let drowDownItem = BehaviorSubject<[String]>(value: ["자유롭게 작성", "배운 점", "아쉬운 점", "보완할 점"])
     private let writeSV = UIStackView().then {
         $0.axis = .horizontal
@@ -113,6 +115,12 @@ final class EpiInputCollectionViewCell: UICollectionViewCell {
         }
         .disposed(by: disposeBag)
         
+        inputTextField.rx.text.orEmpty
+            .bind(onNext: { [weak self] text in
+                self?.textFieldInput.onNext(text)
+            })
+            .disposed(by: disposeBag)
+        
         dropDwonTabelView.rx
             .modelSelected(String.self)
             .asDriver()
@@ -121,8 +129,21 @@ final class EpiInputCollectionViewCell: UICollectionViewCell {
                 self?.dropDwonTabelView.isHidden = true
                 self?.writeItmesLabel.text = data
                 self?.writeItmesLabel.textColor = .black
+                self?.textType.onNext(data)
+                
             })
             .disposed(by: disposeBag)
+        
+        Observable.combineLatest(textType, textFieldInput) { type, text -> EpisodeInputContent in
+            return EpisodeInputContent(episodeContentType: type, content: text)
+        }
+        .bind(to: cellContents)
+        .disposed(by: disposeBag)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.dropDwonTabelView.isHidden = true
+        self.endEditing(true)
     }
     
     override init(frame: CGRect) {

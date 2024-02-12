@@ -10,8 +10,9 @@ import Foundation
 struct UserDTO: Decodable {
     let email: String
     let nickname: String
-    let profileImage: String
+    let profileImage: String?
     let jobTitle: String
     let strength: String
     let pushAllow: Bool
+    let userClass: String
 }

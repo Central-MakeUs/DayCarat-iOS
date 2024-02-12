@@ -9,12 +9,16 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-enum SoaraType {
+enum SoaraType: CaseIterable {
     case S
     case O
     case A
     case R
     case LastA
+    
+    static func from(index: Int) -> SoaraType? {
+        return self.allCases.indices.contains(index) ? self.allCases[index] : nil
+    }
     
     var title: Driver<String> {
         switch self {
@@ -47,3 +51,15 @@ struct SoaraModel {
     ])
 }
 
+struct SoaraSection {
+    var items: [Item]
+}
+
+extension SoaraSection: SectionModelType {
+    typealias Item = DetailEpisodeContentDTO
+
+    init(original: SoaraSection, items: [Item]) {
+        self = original
+        self.items = items
+    }
+}

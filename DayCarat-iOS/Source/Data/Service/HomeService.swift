@@ -16,23 +16,22 @@ class HomeService {
     private let provider = MoyaProvider<DayCaratTarget>()
 
     func requestMontEpi() -> Single<BaseResponse<epiCount>> {
-        return provider.rx
-            .request(.monthEpiCount)
-            .filterSuccessfulStatusCodes()
-            .map(BaseResponse<epiCount>.self)
-            .do(onSuccess: { response in
-                print(response)
-            }, onError: { error in
-                if let moyaError = error as? MoyaError,
-                   case let .statusCode(response) = moyaError {
-                    let data = response.data
-                    if let errorMessage = String(data: data, encoding: .utf8) {
-                        print("Alamofire Error: \(errorMessage)")
-                    }
-                } else {
-                    print("Moya Error: \(error)")
-                }
-            })
+        return Single.create { single in
+            let disposable = self.provider.rx
+                .request(.monthEpiCount)
+                .filterSuccessfulStatusCodes()
+                .map(BaseResponse<epiCount>.self)
+                .subscribe(onSuccess: { response in
+                    single(.success(response))
+                }, onFailure: { error in
+                    print("이번달갯수=======\(error)")
+                    single(.failure(error))
+                })
+
+            return Disposables.create {
+                disposable.dispose()
+            }
+        }
     }
     
     func fetchRecentEpi() -> Single<BaseArrayResponse<recentEPi>> {

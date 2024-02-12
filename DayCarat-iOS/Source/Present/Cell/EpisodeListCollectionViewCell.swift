@@ -9,16 +9,27 @@ import UIKit
 
 class EpisodeListCollectionViewCell: UICollectionViewCell {
     static let identifier = "EpisodeListCollectionViewCell"
-    private let titleLabel = DayCaratLabel(type: .Subhead4, text: "기획회의", textColor: .black)
-    private let dateLabel = DayCaratLabel(type: .Body3, text: "12/15", textColor: .Gray500!)
-    private let desLabel = DayCaratLabel(type: .Body3, text: "배운 점 / 팀원 간의 소통에 있어 부족한 부분이 많이 보여 PM으로서 이를 해결하는 방법에 대한 ...", textColor: .Gray500!).then {
+    private let titleLabel = DayCaratLabel(type: .Subhead4, text: "불러오는중..", textColor: .black)
+    private let dateLabel = DayCaratLabel(type: .Body3, text: "...", textColor: .Gray500!)
+    private let desLabel = DayCaratLabel(type: .Body3, text: "불러오는중...", textColor: .Gray800!).then {
         $0.numberOfLines = 0
     }
+    private let gemImg = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.image = UIImage(named: "purpleGem")
+    }
+    private var keywordView = KeywordView()
     
-    func configure(title: String, date: String, des: String) {
+    func configure(title: String, date: String, des: String, gem: Bool, type: KeywordViewType, keywordTitle: String) {
         titleLabel.text = title
         dateLabel.text = date
         desLabel.text = des
+        if gem {
+            gemImg.isHidden = false
+            self.keywordView = KeywordView(title: keywordTitle, type: type)
+        } else {
+            gemImg.isHidden = true
+        }
     }
     
     private func addView() {

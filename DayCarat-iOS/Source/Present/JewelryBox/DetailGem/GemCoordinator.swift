@@ -7,7 +7,11 @@
 
 import UIKit
 
-final class CreationSoaraCoordinator: Coordinator {
+final class GemCoordinator: Coordinator {
+    func start() {
+        
+    }
+    
     struct Action {
         
     }
@@ -20,8 +24,9 @@ final class CreationSoaraCoordinator: Coordinator {
         self.navigationController.isNavigationBarHidden = true
     }
     
-    func start() {
-        let vc = CreateSoaraViewController()
+    func start(id: Int, type: KeywordEnum) {
+        let vm = GemViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService()), gemRepository: GemRepository(service: GemService())), gemUsecase: JewelryUseCase(repositoy: GemRepository(service: GemService())), coordinator: self)
+        let vc = GemViewController(viewModel: vm, id: id, type: type)
         navigationController.pushViewController(vc, animated: true)
     }
 

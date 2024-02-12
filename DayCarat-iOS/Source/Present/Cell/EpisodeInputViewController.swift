@@ -11,15 +11,22 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 import PanModal
+import RxKeyboard
 
 final class EpisodeInputViewController: BaseViewController {
     private let viewModel: EpisodeInputViewModel
     private var dataSource: RxCollectionViewSectionedReloadDataSource<SectionModel>!
     private var disposeBag = DisposeBag()
     private var sectionsRelay = BehaviorRelay<[SectionModel]>(value: [SectionModel(items: [0, 1])])
-
     private let sections = [SectionModel(items: [0, 1])]
-
+    private var cellContents: [EpisodeInputContent] = []
+    let selectedDate = PublishRelay<String>()
+    let titleStr = PublishRelay<String>()
+    let activityTag = PublishRelay<String>()
+    private var currentTitle: String?
+       private var currentDate: String?
+       private var currentActivityTag: String?
+    
     private let naviBar = CustomNavigaitonBar(btnstate: true, rightBtnText: "저장", middleText: "에피소드 입력")
     private let epiInputCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.register(EpiInputCollectionViewCell.self, forCellWithReuseIdentifier: EpiInputCollectionViewCell.identifier)
@@ -46,7 +53,6 @@ final class EpisodeInputViewController: BaseViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         sectionsRelay = BehaviorRelay<[SectionModel]>(value: [SectionModel(items: [0, 1])])
-
     }
     
     required init?(coder: NSCoder) {
@@ -78,7 +84,14 @@ final class EpisodeInputViewController: BaseViewController {
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
         }
     }
-    
+    func updateCellContent(at index: Int, content: EpisodeInputContent) {
+        if cellContents.indices.contains(index) {
+            cellContents[index] = content
+        } else {
+            cellContents.append(content)
+        }
+        print(cellContents)
+    }
     override func binding() {
         
         sectionsRelay
@@ -86,14 +99,50 @@ final class EpisodeInputViewController: BaseViewController {
             .bind(to: epiInputCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     
+        RxKeyboard.instance.visibleHeight
+            .drive(onNext: { [weak self] keyboardVisibleHeight in
+                guard let self = self else { return }
+                
+                var insets = self.epiInputCollectionView.contentInset
+                insets.bottom = keyboardVisibleHeight
+                
+                self.epiInputCollectionView.contentInset = insets
+                self.epiInputCollectionView.scrollIndicatorInsets = insets
+                
+                if keyboardVisibleHeight > 0 {
+                    
+                }
+            })
+            .disposed(by: self.disposeBag)
+        
+        titleStr
+            .subscribe(onNext: { [weak self] title in
+                self?.currentTitle = title
+            })
+            .disposed(by: disposeBag)
 
+        selectedDate
+            .subscribe(onNext: { [weak self] date in
+                self?.currentDate = date
+            })
+            .disposed(by: disposeBag)
+
+        activityTag
+            .subscribe(onNext: { [weak self] tag in
+                self?.currentActivityTag = tag
+            })
+            .disposed(by: disposeBag)
     }
     
     private func setupDataSource() {
         dataSource = RxCollectionViewSectionedReloadDataSource<SectionModel>(
             configureCell: { _, collectionView, indexPath, item in
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpiInputCollectionViewCell.identifier, for: indexPath) as! EpiInputCollectionViewCell
-                
+                cell.cellContents
+                    .subscribe(onNext: { [weak self] newContent in
+                        self?.updateCellContent(at: indexPath.row, content: newContent)
+                    })
+                    .disposed(by: cell.disposeBag)
                 return cell
             },
             configureSupplementaryView: { dataSource, collectionView, kind, indexPath in
@@ -101,11 +150,11 @@ final class EpisodeInputViewController: BaseViewController {
                     let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: EpiInputHeadrView.identifier, for: indexPath) as! EpiInputHeadrView
                     headerView.calendarButtonTap
                         .subscribe(onNext: { [weak self] _ in
-                            let vc = CalnderViewController(viewModel: EpisodeInputViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService())), coordinator: nil))
+                            let vc = CalnderViewController(viewModel: EpisodeInputViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService()), gemRepository: GemRepository(service: GemService())), coordinator: nil))
                             vc.strDate
                                 .subscribe(onNext: { [weak self] date in
                                     headerView.date.accept(date)
-                                    self?.viewModel.selectedDate.onNext(date)
+                                    self?.selectedDate.accept(date)
                                 })
                                 .disposed(by: vc.disposeBag)
                             self?.presentPanModal(vc)
@@ -113,7 +162,7 @@ final class EpisodeInputViewController: BaseViewController {
                         .disposed(by: self.disposeBag)
                     headerView.titleSubject
                         .subscribe(onNext: { [weak self] title in
-                            self?.viewModel.title.onNext(title)
+                            self?.titleStr.accept(title)
                         })
                         .disposed(by: self.disposeBag)
                     return headerView
@@ -155,7 +204,9 @@ extension EpisodeInputViewController: CustomNavigaitonBarDelegate {
     }
     
     func rightBtnClick(_ navibar: CustomNavigaitonBar) {
-        
+            print("asdsa")
+        self.viewModel.registerEpi(title: currentTitle ?? "", date: self.currentDate ?? "2024-01-01", activityTag: currentActivityTag ?? "CMC", episodeContents: self.cellContents )
+            
     }
 }
 extension EpisodeInputViewController: UICollectionViewDelegateFlowLayout {

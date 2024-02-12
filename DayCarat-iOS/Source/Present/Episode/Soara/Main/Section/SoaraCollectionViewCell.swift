@@ -32,8 +32,21 @@ final class SoaraCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configureCell(text: String) {
+    func configureCell(text: String, isSelected: Bool) {
         self.titleLabel.text = text
+        
+        if isSelected {
+            self.backgroundColor = .Main50
+            self.layer.borderColor = UIColor.Main?.cgColor
+            self.img.image = UIImage(systemName: "checkmark")
+            self.img.tintColor = .Main
+        }
+        else {
+            self.backgroundColor = .clear
+            self.img.tintColor = .Gray800
+            self.layer.borderColor = UIColor.Gray300?.cgColor
+            self.img.image = UIImage(named: "icon-chevron-right")
+        }
     }
     
     override init(frame: CGRect) {

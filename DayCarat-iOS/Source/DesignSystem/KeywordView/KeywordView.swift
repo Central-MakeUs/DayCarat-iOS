@@ -5,23 +5,28 @@
 //  Created by Choi on 2/6/24.
 //
 
-import Foundation
 import UIKit
 
 enum KeywordViewType {
  case primary
  case keyword
 }
+
 final class KeywordView: UIView {
-    private let title = UILabel().then {
-        $0.text = ""
-        $0.font = .pretendard(.Medium, size: 12)
-        $0.sizeToFit()
-    }
     
-    init() {
-        super.init(frame: .zero)
+    private let title = UILabel().then {
+         $0.text = ""
+         $0.font = .pretendard(.Medium, size: 12)
+         $0.sizeToFit()
+     }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         layout()
+    }
+
+    convenience init(title: String, type: KeywordViewType) {
+        self.init()
+        configure(title: title, type: type) 
     }
     
     required init?(coder: NSCoder) {
@@ -29,23 +34,23 @@ final class KeywordView: UIView {
     }
     
     private func layout() {
-        self.addSubview(title)
-        title.snp.makeConstraints {
-            $0.center.equalToSuperview()
+        addSubview(title)
+        title.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
     }
     
     func configure(title: String, type: KeywordViewType) {
         self.title.text = title
-        self.title.textColor = .Main
-        self.layer.cornerRadius = 4
-        switch type {
-        case .primary:
-            self.layer.borderWidth = 1
-            self.layer.borderColor = UIColor.Main?.cgColor
-            self.backgroundColor = .white
-        case .keyword:
-            self.backgroundColor = .Main100
-        }
-    }
+         self.title.textColor = .Main
+         self.layer.cornerRadius = 4
+         switch type {
+         case .primary:
+             self.layer.borderWidth = 1
+             self.layer.borderColor = UIColor.Main?.cgColor
+             self.backgroundColor = .white
+         case .keyword:
+             self.backgroundColor = .Main100
+         }
+     }
 }

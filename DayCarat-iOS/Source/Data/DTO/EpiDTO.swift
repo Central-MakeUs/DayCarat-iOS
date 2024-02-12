@@ -41,6 +41,11 @@ struct ActivityEpiQuantityDTO: Decodable {
     let quantity: Int
 }
 
+struct DateEpiQuantityDTO: Decodable {
+    let activityTagName: String
+    let quantity: Int
+}
+
 struct ActivityEpisodeList: Decodable {
     let id: Int
     let title: String

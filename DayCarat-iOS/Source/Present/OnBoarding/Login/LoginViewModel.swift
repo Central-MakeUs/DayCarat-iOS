@@ -47,6 +47,20 @@ final class LoginViewModel: ViewModelType {
         }
         
     }
+    func signInApple(token: String) {
+        usecase.requestAppleLogin(id_token: token)
+            .subscribe(onSuccess: {  [weak self] res in
+                print("===========\(res)")
+                self?.tokenManager.saveToken(res.result!.accessToken)
+                if res.statusCode == 200 {
+                    self?.coordinator?.pushMain()
+                }
+                else {
+                    self?.coordinator?.pushIntro()
+                }
+            })
+            .disposed(by: disposeBag)
+    }
     
     func signInWithKakao() {
        UserApi.shared.logout() { _ in }

@@ -13,7 +13,7 @@ import RxCocoa
 final class JewelryHeaderView: UICollectionReusableView {
     static let identifier = "JewelryHeaderView"
     private let searchBtn = UIButton().then {
-        $0.setImage(UIImage(named: "icon-search"), for: .normal)
+        $0.setImage(UIImage(named: ""), for: .normal)
         $0.tintColor = UIColor(hexString: "#2D3648")
     }
     private let titleLabel = DayCaratLabel(type: .Header5, text: "보석함", textColor: .Gray900!)
@@ -51,7 +51,7 @@ final class JewelryHeaderView: UICollectionReusableView {
         $0.backgroundColor = .Gray50
         $0.layer.cornerRadius = 16
     }
-    private let reportJewelryTitel = DayCaratLabel(type: .Body4, text: "가장 많은 보석", textColor: .Main!)
+    private let reportJewelryTitel = DayCaratLabel(type: .Body4, text: "가장 많은 보석", textColor: .Gray800!)
     private let reportJewelryImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.image = UIImage(named: "Jewelry")
@@ -61,7 +61,7 @@ final class JewelryHeaderView: UICollectionReusableView {
         $0.backgroundColor = .Gray50
         $0.layer.cornerRadius = 16
     }
-    private let reportEpiTitel = DayCaratLabel(type: .Body4, text: "가장 에피소드가\n많은 활동", textColor: .Main!).then {
+    private let reportEpiTitel = DayCaratLabel(type: .Body4, text: "가장 에피소드가\n많은 활동", textColor: .Gray800!).then {
         $0.textAlignment = .center
     }
     private let reportEpiName = DayCaratLabel(type: .Subhead5, text: "", textColor: .Main!)
@@ -70,21 +70,23 @@ final class JewelryHeaderView: UICollectionReusableView {
         $0.backgroundColor = .Gray50
         $0.layer.cornerRadius = 16
     }
-    private let reportMonthTitel = DayCaratLabel(type: .Body4, text: "이번달 보석", textColor: .Main!)
+    private let reportMonthTitel = DayCaratLabel(type: .Body4, text: "이번달 보석", textColor: .Gray800!)
     private let reportMonthCount = DayCaratLabel(type: .Subhead2, text: "0개", textColor: .Main!)
 
     private let profileImg = UIImageView().then {
         $0.contentMode = .scaleAspectFill
-        $0.backgroundColor = .clear
+        $0.backgroundColor = .white
         $0.layer.cornerRadius = 25
         $0.layer.borderWidth = 1.5
         $0.layer.borderColor = UIColor.Gray200?.cgColor
         $0.clipsToBounds = true
     }
+    private var stregnthView = KeywordView(title: "", type: .primary)
     
-    func userConfigure(name: String, strength: String, img: String) {
+    func userConfigure(name: String, strength: String, img: String, classStr: String) {
         nickNameLabel.text = name
         strengthLabel.text = strength
+        stregnthView.configure(title: classStr, type: .primary)
         if let imageURL = URL(string: img) {
             self.profileImg.kf.setImage(with: imageURL)
         }
@@ -101,7 +103,7 @@ final class JewelryHeaderView: UICollectionReusableView {
         [searchBtn, titleLabel, profileView, jewelryView, jewelryTitleLabel, reportView].forEach {
             self.addSubview($0)
         }
-        [nickNameLabel, strengthLabel, profileImg].forEach {
+        [nickNameLabel, strengthLabel, profileImg, stregnthView].forEach {
             profileView.addSubview($0)
         }
         [myJewelryImg, jewelryViewTitleLabel, myJewelryCountLabel].forEach {
@@ -227,6 +229,12 @@ final class JewelryHeaderView: UICollectionReusableView {
         jewelryTitleLabel.snp.makeConstraints {
             $0.top.equalTo(reportView.snp.bottom).offset(35)
             $0.leading.equalToSuperview().offset(16)
+        }
+        stregnthView.snp.makeConstraints {
+            $0.bottom.equalToSuperview().inset(16)
+            $0.trailing.equalToSuperview().inset(41)
+            $0.width.equalTo(58)
+            $0.height.equalTo(24)
         }
     }
     

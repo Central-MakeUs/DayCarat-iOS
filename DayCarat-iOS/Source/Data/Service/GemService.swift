@@ -137,4 +137,57 @@ class GemService {
             }
         }
     }
+    
+    func fetchSoaraData(episodeId: Int) -> Single<BaseResponse<SoaraInputDTO>> {
+        return Single.create {  single in
+            let disposable = self.provider.rx
+                .request(.fetchSoara(episodeId: episodeId))
+                .filterSuccessfulStatusCodes()
+                .map(BaseResponse<SoaraInputDTO>.self)
+                .subscribe(onSuccess: {  res in
+                    single(.success(res))
+                }, onFailure: {  error in
+                    single(.failure(error))
+                })
+            return Disposables.create {
+                disposable.dispose()
+            }
+        }
+    }
+    
+    func registerGem(episodeId: Int) -> Single<BaseResponse<Bool>> {
+        return Single.create {  single in
+            let disposable = self.provider.rx
+                .request(.gemRegister(episodeId: episodeId))
+                .filterSuccessfulStatusCodes()
+                .map(BaseResponse<Bool>.self)
+                .subscribe(onSuccess: {  res in
+                    single(.success(res))
+                }, onFailure: {  error in
+                    print("보석등록에러===============\(error)")
+                    single(.failure(error))
+                })
+            return Disposables.create {
+                disposable.dispose()
+            }
+        }
+    }
+    
+    func fetchAiRecommand(episodeId: Int) -> Single<BaseResponse<AiRecommandDTO>> {
+        return Single.create {  single in
+            let disposable = self.provider.rx
+                .request(.aiRecommend(episodeId: episodeId))
+                .filterSuccessfulStatusCodes()
+                .map(BaseResponse<AiRecommandDTO>.self)
+                .subscribe(onSuccess: {  res in
+                    single(.success(res))
+                }, onFailure: {  error in
+                    print("Ai추천문장에러======\(error)")
+                    single(.failure(error))
+                })
+            return Disposables.create {
+                disposable.dispose()
+            }
+        }
+    }
 }

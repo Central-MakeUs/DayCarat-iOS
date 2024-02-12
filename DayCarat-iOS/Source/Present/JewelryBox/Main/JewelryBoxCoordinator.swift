@@ -28,18 +28,18 @@ final class JewelryBoxCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
-    func pushGemKeywordList(keyword: String, count: String, type: EpiListType) {
+    func pushGemKeywordList(keyword: String, count: String, type: EpiListType, keywordtype: KeywordEnum) {
         let vc = EpisodeListCoordinator(navigationController: navigationController)
         navigationController.isNavigationBarHidden = true
         childCoordinators.append(vc)
-        vc.startList(title: keyword, count: count, type: type)
+        vc.startList(title: keyword, count: count, type: type, keywordType: keywordtype)
     }
     
-    func pushSoaraCreation() {
-        let vc = CreationSoaraCoordinator(navigationController: navigationController)
+    func pushSoaraCreation(id:Int, type: KeywordEnum) {
+        let vc = GemCoordinator(navigationController: navigationController)
         navigationController.isNavigationBarHidden = true
         childCoordinators.append(vc)
-        vc.start()
+        vc.start(id: id, type: type)
     }
     
     func setAction(_ action: Action) {

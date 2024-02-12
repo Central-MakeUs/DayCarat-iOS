@@ -13,4 +13,6 @@ import RxSwift
 protocol UserInterface {
     func fetchUserInfo() -> Single<BaseResponse<UserDTO>>
     func uploadUserProfileImg(img: UIImage) -> Single<BaseResponse<Bool>>
+    func deleteUser() ->  Single<BaseResponse<Bool>>
+    func patchUser(nickname: String?, jobTitle: String?, strength: String?, pushAllow: Bool?, fcmToken: String?) ->  Single<BaseResponse<Bool>>
 }

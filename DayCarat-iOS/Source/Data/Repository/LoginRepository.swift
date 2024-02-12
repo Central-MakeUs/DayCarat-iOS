@@ -8,6 +8,9 @@
 import RxSwift
 
 final class LoginRepository: LoginInterface {
+    func requestAppleLogin(id_token: String) -> RxSwift.Single<BaseResponse<LoginResponse>> {
+        return service.requestAppleLogin(id_token: id_token)
+    }
     
     let service: LoginService
     

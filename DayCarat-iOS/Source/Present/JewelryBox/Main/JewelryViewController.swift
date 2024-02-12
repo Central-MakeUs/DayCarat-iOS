@@ -80,7 +80,8 @@ final class JewelryViewController: BaseViewController {
         jewelryCollectionView.rx
             .modelSelected(GemKeywordInfo.self)
             .bind(onNext: {  [weak self]  keyword in
-                self?.viewModel.coordinator?.pushGemKeywordList(keyword: keyword.title, count: String(keyword.count), type: .gem)
+                self?.viewModel.coordinator?.pushGemKeywordList(keyword: keyword.title, count: String(keyword.count), type: .gem
+                                                                , keywordtype: keyword.keyword)
             })
             .disposed(by: disposeBag)
     }
@@ -98,7 +99,7 @@ final class JewelryViewController: BaseViewController {
                 self.viewModel.userData
                     .bind(onNext: {  data in
                         print(data)
-                        headerView.userConfigure(name: data.nickname, strength: data.strength, img: data.profileImage)
+                        headerView.userConfigure(name: data.nickname, strength: data.strength, img: data.profileImage ?? "", classStr: data.userClass)
                     })
                     .disposed(by: self.disposeBag)
                 

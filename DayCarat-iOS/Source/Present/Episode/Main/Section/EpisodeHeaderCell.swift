@@ -42,15 +42,35 @@ final class EpisodeHeaderView: UICollectionReusableView {
         }
     }
     
-    let dateBtn = DayCaratToggleBtn(text: "날짜별").then {
+    var dateBtn = DayCaratToggleBtn(text: "날짜별", state: false).then {
         $0.isEnabled = true
     }
-    let activityBtn = DayCaratToggleBtn(text: "활동별").then {
+    var activityBtn = DayCaratToggleBtn(text: "활동별", state: true).then {
         $0.isEnabled = true
     }
     
-    func configure(count: String) {
+    func configure(count: String, btnState: Bool) {
         titleLabel.text = "\(count)개의\n원석이 있어요."
+    }
+    
+    func configureBtn(btnState: Bool) {
+        if btnState == true {
+            activityBtn.backgroundColor = .white
+            activityBtn.layer.borderColor = UIColor.Main?.cgColor
+            activityBtn.layer.borderWidth = 1
+            activityBtn.setTitleColor(.Main, for: .normal)
+            dateBtn.backgroundColor = .Gray100
+            dateBtn.layer.borderWidth = 0
+            dateBtn.setTitleColor(.Gray400, for: .normal)
+        } else {
+            dateBtn.backgroundColor = .white
+            dateBtn.layer.borderColor = UIColor.Main?.cgColor
+            dateBtn.layer.borderWidth = 1
+            dateBtn.setTitleColor(.Main, for: .normal)
+            activityBtn.backgroundColor = .Gray100
+            activityBtn.layer.borderWidth = 0
+            activityBtn.setTitleColor(.Gray400, for: .normal)
+        }
     }
     
 
@@ -91,15 +111,10 @@ final class EpisodeHeaderView: UICollectionReusableView {
         }
     }
     
-    private func binding() {
-        
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         addView()
         layout()
-        binding()
     }
 
     required init?(coder: NSCoder) {

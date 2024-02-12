@@ -15,11 +15,13 @@ final class OnBoardingViewController: BaseViewController {
     
     private let viewModel: OnBoardingViewModel
     private let disposeBag = DisposeBag()
-    weak var coordinator: OnBoardingCoordinator?
 
     private let pageControl = CustomPageControlView(numberOfPages: 3, width: 87, height: 2, spacing: 4, different: false)
     private let btnState = PublishSubject<Bool>()
-    
+    private var strength : String = ""
+    private var job: String = ""
+    private var name: String = ""
+    private let tokenManger = TokenManager()
     private let onBoardingCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.register(OnBoardingCollectionViewCell.self,
                     forCellWithReuseIdentifier: OnBoardingCollectionViewCell.identifier)
@@ -114,6 +116,29 @@ final class OnBoardingViewController: BaseViewController {
                     })
                     .disposed(by: cell.disposeBag)
                 
+                cell.inputNameSection?.textDidChangeSubject
+                    .subscribe(onNext: {  [weak self]  text in
+                        print(text)
+
+                        self?.name = text
+                    })
+                    .disposed(by: cell.disposeBag)
+                
+                cell.secondView.choiceJob
+                    .subscribe(onNext: { [weak self]  res in
+                        print(res)
+                        self?.job = res
+                    })
+                    .disposed(by: cell.disposeBag)
+                
+                cell.thirdView.choiceStrength
+                    .subscribe(onNext: { [weak self]  res in
+                        print(res)
+                        self?.strength = res
+                    })
+                    .disposed(by: cell.disposeBag)
+                
+                
                 output.sectionData
                     .asDriver(onErrorDriveWith: .empty())
                     .map { $0.jobs }
@@ -150,7 +175,9 @@ final class OnBoardingViewController: BaseViewController {
                 let nextIndex = min(currentIndex + 1, 2)
                 
                 if currentIndex == 2 {
-                    self.coordinator?.pushComplete()
+                    print(self.name, self.job, self.strength)
+                    self.viewModel.inputData(nickname: self.name, jobTitle: self.job, strength: self.strength, fcmToken: self.tokenManger.getFcmToken())
+                    
                 }
 
                 let nextIndexPath = IndexPath(item: nextIndex, section: 0)

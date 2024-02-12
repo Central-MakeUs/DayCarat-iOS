@@ -13,10 +13,7 @@ final class EpisodeInputViewModel: ViewModelType {
     private let usecase: EpisodeUseCase
     let coordinator: EpisodeInputCoordinator?
     var disposeBag = DisposeBag()
-    let selectedDate = PublishSubject<String>()
-    let title = PublishSubject<String>()
-    let activityTag = PublishSubject<String>()
-    let episodeContents = PublishSubject<[EpisodeInputContent]>()
+    var episodeContents = PublishRelay<[EpisodeInputContent]>()
 
     init(usecase: EpisodeUseCase, coordinator: EpisodeInputCoordinator?) {
         self.usecase = usecase
@@ -33,5 +30,24 @@ final class EpisodeInputViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         return Output()
+    }
+    
+    func registerEpi(title: String, date: String, activityTag: String, episodeContents: [EpisodeInputContent]) {
+        usecase.registerEpi(title: title, date: date, activityTag: activityTag, episodeContents: episodeContents)
+            .subscribe(onSuccess: {  [weak self]_ in
+                self?.coordinator?.popupViewController()
+            })
+            .disposed(by: disposeBag)
+    }
+    func addEpisodeContent(_ newContent: EpisodeInputContent) {
+        episodeContents
+            .take(1)
+            .subscribe(onNext: { [weak self] currentContents in
+                var updatedContents = currentContents
+                updatedContents.append(newContent)
+                self?.episodeContents.accept(updatedContents)
+                print("asasd")
+            })
+            .disposed(by: disposeBag)
     }
 }

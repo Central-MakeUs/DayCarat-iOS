@@ -16,6 +16,9 @@ protocol JewelryUseCaseProtocol {
     func fetchKeywordGemList(keyword: String) -> Single<BaseArrayResponse<GemKeywordEpi>>
     func fetchGemKeywordCount() -> Single<[GemKeywordInfo]>
     func getGemKeywordData() -> Driver<[KeywordEnum]>
+    func patchSoara(episodeId: Int, content1: String?, content2: String?, content3: String?, content4: String?, content5: String?) -> Single<BaseResponse<Bool>>
+    func registerGem(episodeId: Int) -> Single<BaseResponse<Bool>>
+    func fetchAiRecommand(episodeId: Int) -> Single<BaseResponse<AiRecommandDTO>>
 }
 final class JewelryUseCase: JewelryUseCaseProtocol {
     
@@ -72,6 +75,19 @@ final class JewelryUseCase: JewelryUseCaseProtocol {
     
     func fetchKeywordGemList(keyword: String) -> RxSwift.Single<BaseArrayResponse<GemKeywordEpi>> {
         return repositoy.fetchKeywordGemList(keyword: keyword)
+    }
+    
+    func patchSoara(episodeId: Int, content1: String?, content2: String?, content3: String?, content4: String?, content5: String?) -> RxSwift.Single<BaseResponse<Bool>> {
+        return repositoy.patchSoara(episodeId: episodeId, content1: content1, content2: content2, content3: content3,
+                                    content4: content4, content5: content5)
+    }
+    
+    func registerGem(episodeId: Int) -> RxSwift.Single<BaseResponse<Bool>> {
+        return repositoy.registerGem(episodeId: episodeId)
+    }
+    
+    func fetchAiRecommand(episodeId: Int) -> RxSwift.Single<BaseResponse<AiRecommandDTO>> {
+        return repositoy.fetchAiRecommand(episodeId: episodeId)
     }
     
     //MARK: - Method to Model

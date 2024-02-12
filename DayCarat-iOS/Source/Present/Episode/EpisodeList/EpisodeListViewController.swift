@@ -12,7 +12,7 @@ import RxSwift
 import RxDataSources
 
 final class EpisodeListViewController: BaseViewController {
-    
+    private let keywordType: KeywordEnum
     private var disposeBag = DisposeBag()
     private var dataSource: RxCollectionViewSectionedReloadDataSource<GemKeywordSection>!
     private var activityDataSource: RxCollectionViewSectionedReloadDataSource<ActivityEpisodeSection>!
@@ -42,9 +42,10 @@ final class EpisodeListViewController: BaseViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    init(viewModel: EpisodeListViewModel, type: EpiListType) {
+    init(viewModel: EpisodeListViewModel, type: EpiListType, kewordtype: KeywordEnum) {
         self.viewModel = viewModel
         self.type = type
+        self.keywordType = kewordtype
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -100,7 +101,7 @@ final class EpisodeListViewController: BaseViewController {
                 .disposed(by: disposeBag)
             episodeListCollectionView.rx.modelSelected(ActivityEpisodeList.self)
                     .subscribe(onNext: { [weak self] res in
-                        
+                        self?.viewModel.coordinator?.pushDetail(idx:res.id)
                     })
                     .disposed(by: disposeBag)
         case .gem:
@@ -111,7 +112,7 @@ final class EpisodeListViewController: BaseViewController {
                 
             episodeListCollectionView.rx.modelSelected(GemKeywordEpi.self)
                     .subscribe(onNext: { [weak self] res in
-                        
+                        self?.viewModel.coordinator?.pushGemDetail(id: res.episodeId, type: self?.keywordType ?? .communication)
                     })
                     .disposed(by: disposeBag)
         }
@@ -126,7 +127,7 @@ final class EpisodeListViewController: BaseViewController {
                 } else {
                     self.emptyImg.isHidden = true
                 }
-                cell.configure(title: item.title, date: item.date, des: item.content)
+                cell.configure(title: item.title, date: item.date, des: item.content, gem: false, type: .primary, keywordTitle: "")
                 return cell
             },
             configureSupplementaryView: { _, collectionView, kind, indexPath in
@@ -146,7 +147,7 @@ final class EpisodeListViewController: BaseViewController {
                 } else {
                     self.emptyImg.isHidden = true
                 }
-                cell.configure(title: item.title, date: item.date, des: item.content)
+                cell.configure(title: item.title, date: item.date, des: item.date, gem: false, type: .primary, keywordTitle: "")
                 return cell
             },
             configureSupplementaryView: { _, collectionView, kind, indexPath in

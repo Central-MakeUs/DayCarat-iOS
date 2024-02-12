@@ -15,7 +15,8 @@ final class MyPageViewController: BaseViewController, UIImagePickerControllerDel
     
     private var disposeBag = DisposeBag()
     private let viewModel: MyPageViewModel
-    
+    var appCoordinator: (any Coordinator)?
+
     private let imgPickerController = UIImagePickerController()
     private let profileImg = UIImageView().then {
         $0.contentMode = .scaleAspectFill
@@ -101,11 +102,30 @@ final class MyPageViewController: BaseViewController, UIImagePickerControllerDel
         }
         .disposed(by: disposeBag)
         
+        infoTableView.rx
+            .modelSelected(String.self)
+            .bind(onNext: {  [weak self]  str in
+                if str == "로그아웃" {
+                    self?.viewModel.coordinator?.finish()
+                    let navigaitonController = UINavigationController()
+                    self?.appCoordinator = AppCoordinator(navigationController: navigaitonController)
+                    let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+                    let sceneDelegate = windowScene?.delegate as? SceneDelegate
+                    self?.appCoordinator = AppCoordinator(navigationController: navigaitonController)
+                    self?.appCoordinator?.start()
+                    sceneDelegate?.window?.rootViewController = navigaitonController
+                    sceneDelegate?.window?.makeKeyAndVisible()
+                } else {
+                    self?.viewModel.deleteUser()
+                }
+            })
+            .disposed(by: disposeBag)
+        
         viewModel.userData
             .bind(onNext: {  [weak self] info in
                 self?.nickNameLabel.text = info.nickname
-                self?.emailLabel.text = info.email
-                if let imageURL = URL(string: info.profileImage) {
+                //self?.emailLabel.text = info.email
+                if let imageURL = URL(string: info.profileImage ?? "") {
                     self?.profileImg.kf.setImage(with: imageURL)
                 }
             })

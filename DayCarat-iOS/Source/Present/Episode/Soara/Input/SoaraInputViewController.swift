@@ -14,14 +14,15 @@ final class SoaraInputViewController: BaseViewController {
 
     //MARK: - Properties
 
-    private let viewModel: SoaraViewModel
+    private let viewModel: SoaraInputViewModel
     private var disposeBag = DisposeBag()
     private let epiData = BehaviorRelay<[String]>(value: [])
+    private var textData: String?
     private let type: SoaraType
 
     //MARK: - UI
     
-    private let naviBar = CustomNavigaitonBar(btnstate: false, rightBtnText: "", middleText: "")
+    private let naviBar = CustomNavigaitonBar(btnstate: true, rightBtnText: "완료", middleText: "")
     private let titleLabel = DayCaratLabel(type: .Subhead4, text: "", textColor: .Gray900!)
     private let desLabel = DayCaratLabel(type: .Body3, text: "해당 에피소드의 상황을 구체적으로 적어주세요", textColor: .Gray500!)
     private let textCountLabel = DayCaratLabel(type: .Body3, text: "0/200", textColor: .Gray600!)
@@ -35,7 +36,7 @@ final class SoaraInputViewController: BaseViewController {
     
     //MARK: - LifeCycle
     
-    init(viewModel: SoaraViewModel, title: String, type: SoaraType) {
+    init(viewModel: SoaraInputViewModel, title: String, type: SoaraType) {
         self.viewModel = viewModel
         self.type = type
         super.init(nibName: nil, bundle: nil)
@@ -96,8 +97,8 @@ final class SoaraInputViewController: BaseViewController {
                 if text.count < 200 {
                     self?.textCountLabel.text = String("\(text.count)/200")
                     self?.textCountLabel.textColor = .Gray600
-                    self?.viewModel.inputData.accept((text, self?.type) as? (String, SoaraType))
-                    
+                    //self?.viewModel.inputData.accept((text, self?.type) as? (String, SoaraType))
+                    self?.textData = text
                 } else {
                     self?.textCountLabel.text = "200/200"
                     self?.textCountLabel.textColor = .red
@@ -123,7 +124,18 @@ extension SoaraInputViewController: CustomNavigaitonBarDelegate {
     }
     
     func rightBtnClick(_ navibar: CustomNavigaitonBar) {
-        
+        switch type {
+        case .S:
+            viewModel.inputSoara(type: type, content1: textData, content2: nil, content3: nil, content4: nil, content5: nil)
+        case .O:
+            viewModel.inputSoara(type: type, content1: nil, content2: textData, content3: nil, content4: nil, content5: nil)
+        case .A:
+            viewModel.inputSoara(type: type, content1: nil, content2: nil, content3: textData, content4: nil, content5: nil)
+        case .R:
+            viewModel.inputSoara(type: type, content1: nil, content2: nil, content3: nil, content4: textData, content5: nil)
+        case .LastA:
+            viewModel.inputSoara(type: type, content1: nil, content2: nil, content3: nil, content4: nil, content5: textData)
+        }
     }
 }
 extension SoaraInputViewController: UITextViewDelegate {

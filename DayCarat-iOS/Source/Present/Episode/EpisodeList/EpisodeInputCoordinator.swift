@@ -23,7 +23,7 @@ final class EpisodeInputCoordinator: Coordinator {
     }
     
     func start() {
-        let vm = EpisodeInputViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService())), coordinator: self)
+        let vm = EpisodeInputViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService()), gemRepository: GemRepository(service: GemService())), coordinator: self)
         let vc = EpisodeInputViewController(viewModel: vm)
         navigationController.pushViewController(vc, animated: true)
     }

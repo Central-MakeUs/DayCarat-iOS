@@ -22,8 +22,11 @@ class EpisodeService {
                 .map(BaseResponse<Bool>.self)
                 .subscribe(onSuccess: { response in
                     single(.success(response))
+                    print("==========등록성공========")
                 }, onFailure: { error in
                     single(.failure(error))
+                    print("==========등록실패========")
+
                 })
             return Disposables.create {
                 disposable.dispose()
@@ -94,6 +97,23 @@ class EpisodeService {
                     single(.success(response))
                 }, onFailure: { error in
                     print("Debug=====\(error)")
+                    single(.failure(error))
+                })
+            return Disposables.create {
+                disposable.dispose()
+            }
+        }
+    }
+    
+    func fetchEpiDate() -> Single<BaseArrayResponse<DateEpiQuantityDTO>> {
+        return Single.create {  single in
+            let disposable = self.provider.rx
+                .request(.lastestEpi(year: 2024))
+                .filterSuccessfulStatusCodes()
+                .map(BaseArrayResponse<DateEpiQuantityDTO>.self)
+                .subscribe(onSuccess: { response in
+                    single(.success(response))
+                }, onFailure: { error in
                     single(.failure(error))
                 })
             return Disposables.create {

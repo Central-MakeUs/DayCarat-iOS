@@ -22,17 +22,23 @@ final class SoaraCoordinator: Coordinator {
     }
     
     func startSoara(id: Int) {
-        let vc = SoaraViewController(viewModel: SoaraViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService()))), coordinator: self)
+        let vc = SoaraViewController(viewModel: SoaraViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService()), gemRepository: GemRepository(service: GemService()))), coordinator: self, id: id)
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func pushInputSoara(title: String, type: SoaraType) {
+    func pushInputSoara(title: String, type: SoaraType, id: Int) {
         let vc = SoaraInputCoordinator(navigationController: navigationController)
         navigationController.isNavigationBarHidden = true
         childCoordinators.append(vc)
-        vc.start(title: title, type: type)
+        vc.start(title: title, type: type, id: id)
     }
     
+    func registerGem(id: Int) {
+        let vc = MakeGemCoordinator(navigationController: navigationController)
+        navigationController.isNavigationBarHidden = true
+        childCoordinators.append(vc)
+        vc.start(id: id)
+    }
     func start() {
 
     }

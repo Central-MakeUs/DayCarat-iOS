@@ -57,6 +57,17 @@
 		0967D8DB2B4AF04F009CFD0A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8DA2B4AF04F009CFD0A /* BaseView.swift */; };
 		0967D8DD2B4AFB13009CFD0A /* IntroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8DC2B4AFB13009CFD0A /* IntroCollectionViewCell.swift */; };
 		097238552B540AB300626422 /* EpisodeInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097238542B540AB300626422 /* EpisodeInputViewModel.swift */; };
+		09873AC12B7797F1004A1EB2 /* GemSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09873AC02B7797F1004A1EB2 /* GemSectionModel.swift */; };
+		09873AC32B779BEA004A1EB2 /* AiRecommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09873AC22B779BEA004A1EB2 /* AiRecommandCell.swift */; };
+		09873AC52B78AE95004A1EB2 /* SoaraList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09873AC42B78AE95004A1EB2 /* SoaraList.swift */; };
+		09873AC72B78B1B9004A1EB2 /* AiKeywordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09873AC62B78B1B9004A1EB2 /* AiKeywordView.swift */; };
+		09873AC92B79CE4D004A1EB2 /* AiRecommandableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09873AC82B79CE4D004A1EB2 /* AiRecommandableViewCell.swift */; };
+		09873ACB2B7A57A8004A1EB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09873ACA2B7A57A7004A1EB2 /* GoogleService-Info.plist */; };
+		09873ACE2B7A64D7004A1EB2 /* RxKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 09873ACD2B7A64D7004A1EB2 /* RxKeyboard */; };
+		09875D732B750D07004B8E62 /* SoaraInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09875D722B750D07004B8E62 /* SoaraInputViewModel.swift */; };
+		09875D762B7615FE004B8E62 /* MakeGemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09875D752B7615FD004B8E62 /* MakeGemViewController.swift */; };
+		09875D782B761636004B8E62 /* MakeGemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09875D772B761636004B8E62 /* MakeGemViewModel.swift */; };
+		09875D7A2B761668004B8E62 /* MakeGemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09875D792B761668004B8E62 /* MakeGemCoordinator.swift */; };
 		09A67D962B515FE8003EDABE /* DetailEpiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A67D952B515FE8003EDABE /* DetailEpiModel.swift */; };
 		09B9726A2B540D4A00205087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09073D3E2B46F88200D840EC /* Assets.xcassets */; };
 		09B9726C2B540F0700205087 /* JewelryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B9726B2B540F0700205087 /* JewelryUseCase.swift */; };
@@ -101,9 +112,9 @@
 		09DC3F1F2B580B8F0026B857 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F1E2B580B8F0026B857 /* UserRepository.swift */; };
 		09DC3F212B580B9E0026B857 /* UserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F202B580B9E0026B857 /* UserInterface.swift */; };
 		09DC3F242B580E3C0026B857 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 09DC3F232B580E3C0026B857 /* Kingfisher */; };
-		DE0F13652B633D7F0059BCD5 /* CreateSoaraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F13642B633D7F0059BCD5 /* CreateSoaraViewController.swift */; };
-		DE0F136A2B634A0F0059BCD5 /* CreationSoaraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F13692B634A0F0059BCD5 /* CreationSoaraViewModel.swift */; };
-		DE0F136C2B634A1A0059BCD5 /* CreationSoaraCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F136B2B634A1A0059BCD5 /* CreationSoaraCoordinator.swift */; };
+		DE0F13652B633D7F0059BCD5 /* GemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F13642B633D7F0059BCD5 /* GemViewController.swift */; };
+		DE0F136A2B634A0F0059BCD5 /* GemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F13692B634A0F0059BCD5 /* GemViewModel.swift */; };
+		DE0F136C2B634A1A0059BCD5 /* GemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F136B2B634A1A0059BCD5 /* GemCoordinator.swift */; };
 		DE0F136E2B6390E50059BCD5 /* GemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F136D2B6390E50059BCD5 /* GemDTO.swift */; };
 		DE0F13702B6393D40059BCD5 /* GemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F136F2B6393D40059BCD5 /* GemService.swift */; };
 		DE0F13722B6397450059BCD5 /* GemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F13712B6397450059BCD5 /* GemRepository.swift */; };
@@ -181,7 +192,6 @@
 		DEB20E002B50F510001D92B5 /* DetailEpiHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB20DFF2B50F510001D92B5 /* DetailEpiHeaderView.swift */; };
 		DEB20E022B511058001D92B5 /* EpisodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB20E012B511058001D92B5 /* EpisodeUseCase.swift */; };
 		DECD33F42B61FC9E005C223F /* DayCaratToggleBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD33F32B61FC9E005C223F /* DayCaratToggleBtn.swift */; };
-		DEDE44042B6A2BF80068A749 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEDE44032B6A2BF80068A749 /* GoogleService-Info.plist */; };
 		DEDE44072B6A2CD50068A749 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44062B6A2CD50068A749 /* FirebaseAnalytics */; };
 		DEDE44092B6A2CD50068A749 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44082B6A2CD50068A749 /* FirebaseAnalyticsOnDeviceConversion */; };
 		DEDE440B2B6A2CD50068A749 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE440A2B6A2CD50068A749 /* FirebaseAnalyticsSwift */; };
@@ -266,6 +276,16 @@
 		0967D8DA2B4AF04F009CFD0A /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		0967D8DC2B4AFB13009CFD0A /* IntroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IntroCollectionViewCell.swift; path = "DayCarat-iOS/Source/Present/Base/IntroCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		097238542B540AB300626422 /* EpisodeInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EpisodeInputViewModel.swift; path = "DayCarat-iOS/Source/Present/MyPage/EpisodeInputViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		09873AC02B7797F1004A1EB2 /* GemSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemSectionModel.swift; sourceTree = "<group>"; };
+		09873AC22B779BEA004A1EB2 /* AiRecommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiRecommandCell.swift; sourceTree = "<group>"; };
+		09873AC42B78AE95004A1EB2 /* SoaraList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraList.swift; sourceTree = "<group>"; };
+		09873AC62B78B1B9004A1EB2 /* AiKeywordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiKeywordView.swift; sourceTree = "<group>"; };
+		09873AC82B79CE4D004A1EB2 /* AiRecommandableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiRecommandableViewCell.swift; sourceTree = "<group>"; };
+		09873ACA2B7A57A7004A1EB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		09875D722B750D07004B8E62 /* SoaraInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraInputViewModel.swift; sourceTree = "<group>"; };
+		09875D752B7615FD004B8E62 /* MakeGemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeGemViewController.swift; sourceTree = "<group>"; };
+		09875D772B761636004B8E62 /* MakeGemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeGemViewModel.swift; sourceTree = "<group>"; };
+		09875D792B761668004B8E62 /* MakeGemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeGemCoordinator.swift; sourceTree = "<group>"; };
 		09A67D952B515FE8003EDABE /* DetailEpiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEpiModel.swift; sourceTree = "<group>"; };
 		09B9726B2B540F0700205087 /* JewelryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JewelryUseCase.swift; sourceTree = "<group>"; };
 		09B9726D2B54128E00205087 /* JewelryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JewelryInterface.swift; sourceTree = "<group>"; };
@@ -304,9 +324,9 @@
 		09DC3F1C2B580A730026B857 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		09DC3F1E2B580B8F0026B857 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		09DC3F202B580B9E0026B857 /* UserInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterface.swift; sourceTree = "<group>"; };
-		DE0F13642B633D7F0059BCD5 /* CreateSoaraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSoaraViewController.swift; sourceTree = "<group>"; };
-		DE0F13692B634A0F0059BCD5 /* CreationSoaraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationSoaraViewModel.swift; sourceTree = "<group>"; };
-		DE0F136B2B634A1A0059BCD5 /* CreationSoaraCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationSoaraCoordinator.swift; sourceTree = "<group>"; };
+		DE0F13642B633D7F0059BCD5 /* GemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemViewController.swift; sourceTree = "<group>"; };
+		DE0F13692B634A0F0059BCD5 /* GemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemViewModel.swift; sourceTree = "<group>"; };
+		DE0F136B2B634A1A0059BCD5 /* GemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemCoordinator.swift; sourceTree = "<group>"; };
 		DE0F136D2B6390E50059BCD5 /* GemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemDTO.swift; sourceTree = "<group>"; };
 		DE0F136F2B6393D40059BCD5 /* GemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemService.swift; sourceTree = "<group>"; };
 		DE0F13712B6397450059BCD5 /* GemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemRepository.swift; sourceTree = "<group>"; };
@@ -376,7 +396,6 @@
 		DEB20DFF2B50F510001D92B5 /* DetailEpiHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEpiHeaderView.swift; sourceTree = "<group>"; };
 		DEB20E012B511058001D92B5 /* EpisodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeUseCase.swift; sourceTree = "<group>"; };
 		DECD33F32B61FC9E005C223F /* DayCaratToggleBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCaratToggleBtn.swift; sourceTree = "<group>"; };
-		DEDE44032B6A2BF80068A749 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DEDE443C2B6A3A3E0068A749 /* DayCarat-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DayCarat-iOS.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -422,6 +441,7 @@
 				DE84799E2B47910C00471B4F /* Then in Frameworks */,
 				0967D8D22B4AE733009CFD0A /* RxGesture in Frameworks */,
 				DEDE44152B6A39160068A749 /* FirebaseAnalyticsSwift in Frameworks */,
+				09873ACE2B7A64D7004A1EB2 /* RxKeyboard in Frameworks */,
 				09DC3F082B5690910026B857 /* ReactiveMoya in Frameworks */,
 				DE5F41422B4BE05200581075 /* Differentiator in Frameworks */,
 				DEDE443B2B6A39160068A749 /* FirebasePerformance in Frameworks */,
@@ -465,8 +485,8 @@
 			isa = PBXGroup;
 			children = (
 				DEDE443C2B6A3A3E0068A749 /* DayCarat-iOS.entitlements */,
+				09873ACA2B7A57A7004A1EB2 /* GoogleService-Info.plist */,
 				09073D432B46F88200D840EC /* Info.plist */,
-				DEDE44032B6A2BF80068A749 /* GoogleService-Info.plist */,
 				09073D492B46FE6A00D840EC /* App */,
 				09073D522B46FED100D840EC /* Source */,
 				09073D4A2B46FE7800D840EC /* Resource */,
@@ -534,6 +554,7 @@
 		09073D522B46FED100D840EC /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				09073D402B46F88200D840EC /* LaunchScreen.storyboard */,
 				DE5F41172B4B90CE00581075 /* Protocol */,
 				DE8479A22B47922600471B4F /* Extension */,
 				DE8479832B478E9D00471B4F /* DesignSystem */,
@@ -547,6 +568,7 @@
 		0908E47A2B5E9B860095D016 /* Soara */ = {
 			isa = PBXGroup;
 			children = (
+				09875D742B7615E2004B8E62 /* MakeGem */,
 				DE4DD7022B60A7C40033EAB4 /* Input */,
 				DE4DD7012B60A7B20033EAB4 /* Main */,
 			);
@@ -587,6 +609,27 @@
 				0967D8CC2B4A7417009CFD0A /* DayCaratCheckBox.swift */,
 			);
 			path = CheckBox;
+			sourceTree = "<group>";
+		};
+		09875D742B7615E2004B8E62 /* MakeGem */ = {
+			isa = PBXGroup;
+			children = (
+				09875D752B7615FD004B8E62 /* MakeGemViewController.swift */,
+				09875D772B761636004B8E62 /* MakeGemViewModel.swift */,
+				09875D792B761668004B8E62 /* MakeGemCoordinator.swift */,
+			);
+			path = MakeGem;
+			sourceTree = "<group>";
+		};
+		09875D7C2B762DF1004B8E62 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				09873AC62B78B1B9004A1EB2 /* AiKeywordView.swift */,
+				09873AC22B779BEA004A1EB2 /* AiRecommandCell.swift */,
+				09873AC82B79CE4D004A1EB2 /* AiRecommandableViewCell.swift */,
+				09873AC42B78AE95004A1EB2 /* SoaraList.swift */,
+			);
+			path = Sections;
 			sourceTree = "<group>";
 		};
 		09B972812B54297600205087 /* Network */ = {
@@ -641,14 +684,15 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		DE0F13632B633D700059BCD5 /* CreateSoara */ = {
+		DE0F13632B633D700059BCD5 /* DetailGem */ = {
 			isa = PBXGroup;
 			children = (
-				DE0F13642B633D7F0059BCD5 /* CreateSoaraViewController.swift */,
-				DE0F13692B634A0F0059BCD5 /* CreationSoaraViewModel.swift */,
-				DE0F136B2B634A1A0059BCD5 /* CreationSoaraCoordinator.swift */,
+				09875D7C2B762DF1004B8E62 /* Sections */,
+				DE0F13642B633D7F0059BCD5 /* GemViewController.swift */,
+				DE0F13692B634A0F0059BCD5 /* GemViewModel.swift */,
+				DE0F136B2B634A1A0059BCD5 /* GemCoordinator.swift */,
 			);
-			path = CreateSoara;
+			path = DetailGem;
 			sourceTree = "<group>";
 		};
 		DE1E94EE2B5FB464008FFC8B /* Recovered References */ = {
@@ -682,6 +726,7 @@
 			isa = PBXGroup;
 			children = (
 				DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */,
+				09875D722B750D07004B8E62 /* SoaraInputViewModel.swift */,
 				DE4DD7052B60A7EA0033EAB4 /* SoaraInputCoordinator.swift */,
 			);
 			path = Input;
@@ -700,6 +745,7 @@
 				DE2E7D9E2B6741160016D9F2 /* KeywordModel.swift */,
 				DE2E7DA02B6798CC0016D9F2 /* EpiListModel.swift */,
 				DE28449E2B71EA9A009E18A1 /* MyPageModel.swift */,
+				09873AC02B7797F1004A1EB2 /* GemSectionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -814,7 +860,6 @@
 		DE8479862B478FE000471B4F /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
-				09073D402B46F88200D840EC /* LaunchScreen.storyboard */,
 				DE8479D72B47DFCC00471B4F /* Login */,
 				0967D8B62B4A6117009CFD0A /* Agree */,
 				DE8479D82B47DFD300471B4F /* Intro */,
@@ -950,7 +995,7 @@
 		DE8479E32B47E35900471B4F /* JewelryBox */ = {
 			isa = PBXGroup;
 			children = (
-				DE0F13632B633D700059BCD5 /* CreateSoara */,
+				DE0F13632B633D700059BCD5 /* DetailGem */,
 				DE0F13622B633D640059BCD5 /* Main */,
 			);
 			path = JewelryBox;
@@ -1115,6 +1160,7 @@
 				DEDE44362B6A39160068A749 /* FirebaseMLModelDownloader */,
 				DEDE44382B6A39160068A749 /* FirebaseMessaging */,
 				DEDE443A2B6A39160068A749 /* FirebasePerformance */,
+				09873ACD2B7A64D7004A1EB2 /* RxKeyboard */,
 			);
 			productName = "DayCarat-iOS";
 			productReference = 09073D322B46F87E00D840EC /* DayCarat-iOS.app */;
@@ -1157,6 +1203,7 @@
 				09DC3F222B580E3C0026B857 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				096546072B5AC19100CDF4CC /* XCRemoteSwiftPackageReference "PanModal" */,
 				DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				09873ACC2B7A64D6004A1EB2 /* XCRemoteSwiftPackageReference "RxKeyboard" */,
 			);
 			productRefGroup = 09073D332B46F87E00D840EC /* Products */;
 			projectDirPath = "";
@@ -1177,7 +1224,7 @@
 				0967D8C92B4A62CA009CFD0A /* Pretendard-Medium.otf in Resources */,
 				0967D8C72B4A62CA009CFD0A /* Pretendard-Bold.otf in Resources */,
 				09073D422B46F88200D840EC /* LaunchScreen.storyboard in Resources */,
-				DEDE44042B6A2BF80068A749 /* GoogleService-Info.plist in Resources */,
+				09873ACB2B7A57A8004A1EB2 /* GoogleService-Info.plist in Resources */,
 				0967D8C52B4A62CA009CFD0A /* Pretendard-Regular.otf in Resources */,
 				0967D8C82B4A62CA009CFD0A /* Pretendard-Black.otf in Resources */,
 				0967D8C22B4A62CA009CFD0A /* Pretendard-ExtraBold.otf in Resources */,
@@ -1197,16 +1244,17 @@
 				DE4DD7062B60A7EA0033EAB4 /* SoaraInputCoordinator.swift in Sources */,
 				DEA5443B2B4E73C800813CC6 /* AppCoordinator.swift in Sources */,
 				DE28449D2B71E732009E18A1 /* KeywordView.swift in Sources */,
-				DE0F136A2B634A0F0059BCD5 /* CreationSoaraViewModel.swift in Sources */,
+				DE0F136A2B634A0F0059BCD5 /* GemViewModel.swift in Sources */,
 				0957F9142B52D12F0031B291 /* MyPageCoordinator.swift in Sources */,
 				0908E4832B5EA49A0095D016 /* EpiCollectionViewCell.swift in Sources */,
-				DE0F13652B633D7F0059BCD5 /* CreateSoaraViewController.swift in Sources */,
+				DE0F13652B633D7F0059BCD5 /* GemViewController.swift in Sources */,
 				0901430C2B4C2E21006EAE30 /* JobCollectionViewCell.swift in Sources */,
 				09DC3F0F2B56C14F0026B857 /* EpiInputHeadrView.swift in Sources */,
 				DE8479882B47907D00471B4F /* LoginViewController.swift in Sources */,
 				0967D8DB2B4AF04F009CFD0A /* BaseView.swift in Sources */,
 				09C574252B4ED85B00CCABCB /* CustomNavigaitonBar.swift in Sources */,
 				DE8479A42B47924200471B4F /* Color+.swift in Sources */,
+				09875D762B7615FE004B8E62 /* MakeGemViewController.swift in Sources */,
 				09058FBB2B5BFA7300DA5E74 /* EpisodeRepository.swift in Sources */,
 				09DC3F172B57F5A30026B857 /* HomeRepository.swift in Sources */,
 				DEA544302B4E53A700813CC6 /* JewelryHeaderView.swift in Sources */,
@@ -1222,6 +1270,7 @@
 				DE86A1B02B4CFFF700C206DE /* LoginViewModel.swift in Sources */,
 				DECD33F42B61FC9E005C223F /* DayCaratToggleBtn.swift in Sources */,
 				DE86A1BA2B4D31E800C206DE /* HelpCollectionViewCell.swift in Sources */,
+				09873AC92B79CE4D004A1EB2 /* AiRecommandableViewCell.swift in Sources */,
 				0967D8CF2B4AE19E009CFD0A /* AgreeViewModel.swift in Sources */,
 				DEA5443D2B4E749200813CC6 /* LoginUseCase.swift in Sources */,
 				09073D362B46F87E00D840EC /* AppDelegate.swift in Sources */,
@@ -1233,9 +1282,11 @@
 				DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */,
 				09DC3F152B57F4330026B857 /* EpiDTO.swift in Sources */,
 				09BDC1D52B4D818200C07F34 /* BannerCollectionViewCell.swift in Sources */,
+				09875D782B761636004B8E62 /* MakeGemViewModel.swift in Sources */,
 				09C5741D2B4EC4BA00CCABCB /* EpisodeListCollectionViewCell.swift in Sources */,
 				09BDC1E12B4D9E2900C07F34 /* MyPageTableViewCell.swift in Sources */,
 				DEA544372B4E678300813CC6 /* MyPageInfoSection.swift in Sources */,
+				09873AC52B78AE95004A1EB2 /* SoaraList.swift in Sources */,
 				DEB20DFB2B50F348001D92B5 /* DetailEpisodeViewModel.swift in Sources */,
 				09BDC1DD2B4D966E00C07F34 /* JewelryViewController.swift in Sources */,
 				DEA544432B4E751500813CC6 /* LoginService.swift in Sources */,
@@ -1271,10 +1322,13 @@
 				09DC3F022B5689180026B857 /* Moya.swift in Sources */,
 				DEA544322B4E59A900813CC6 /* JewelryBodyCell.swift in Sources */,
 				09B9726C2B540F0700205087 /* JewelryUseCase.swift in Sources */,
+				09873AC12B7797F1004A1EB2 /* GemSectionModel.swift in Sources */,
 				09B972742B5412A900205087 /* MyPageInterface.swift in Sources */,
 				09C5741F2B4EC4EE00CCABCB /* EpisodeListHeaderView.swift in Sources */,
 				09C574212B4EC87600CCABCB /* EpisodeListViewModel.swift in Sources */,
 				DE8479A12B47912900471B4F /* BaseViewController.swift in Sources */,
+				09875D7A2B761668004B8E62 /* MakeGemCoordinator.swift in Sources */,
+				09873AC32B779BEA004A1EB2 /* AiRecommandCell.swift in Sources */,
 				DE0F13702B6393D40059BCD5 /* GemService.swift in Sources */,
 				09B972782B54134800205087 /* EpisodeListCoordinator.swift in Sources */,
 				09B972702B54129700205087 /* EpisodeInterface.swift in Sources */,
@@ -1304,6 +1358,7 @@
 				DE8479DB2B47E0D000471B4F /* HomeViewController.swift in Sources */,
 				09BDC1D12B4D63F400C07F34 /* ScrollView+.swift in Sources */,
 				09DC3F212B580B9E0026B857 /* UserInterface.swift in Sources */,
+				09873AC72B78B1B9004A1EB2 /* AiKeywordView.swift in Sources */,
 				0908E47E2B5EA13D0095D016 /* SoaraCoordinator.swift in Sources */,
 				0967D8B82B4A6128009CFD0A /* AgreeViewController.swift in Sources */,
 				DEA544472B4E7B6300813CC6 /* IntroCoordinator.swift in Sources */,
@@ -1320,7 +1375,8 @@
 				09DC3F1F2B580B8F0026B857 /* UserRepository.swift in Sources */,
 				DE2E7D9F2B6741160016D9F2 /* KeywordModel.swift in Sources */,
 				DEA544292B4E1F6200813CC6 /* EpisodeHeaderCell.swift in Sources */,
-				DE0F136C2B634A1A0059BCD5 /* CreationSoaraCoordinator.swift in Sources */,
+				09875D732B750D07004B8E62 /* SoaraInputViewModel.swift in Sources */,
+				DE0F136C2B634A1A0059BCD5 /* GemCoordinator.swift in Sources */,
 				DE5F41322B4BD27000581075 /* OnBoardingViewModel.swift in Sources */,
 				09B972722B54129F00205087 /* HomeInterface.swift in Sources */,
 				DE86A1BC2B4D357B00C206DE /* CellModel.swift in Sources */,
@@ -1475,21 +1531,24 @@
 				CODE_SIGN_ENTITLEMENTS = "DayCarat-iOS/DayCarat-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JA7UDVTQBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DayCarat-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "데이캐럿";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "갤러리 접근 권한";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Specker.DayCarat-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1507,21 +1566,24 @@
 				CODE_SIGN_ENTITLEMENTS = "DayCarat-iOS/DayCarat-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JA7UDVTQBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DayCarat-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "데이캐럿";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "갤러리 접근 권한";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Specker.DayCarat-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1585,6 +1647,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 4.0.4;
+			};
+		};
+		09873ACC2B7A64D6004A1EB2 /* XCRemoteSwiftPackageReference "RxKeyboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxKeyboard";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
 			};
 		};
 		09DC3F222B580E3C0026B857 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
@@ -1713,6 +1783,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0967D8D02B4AE733009CFD0A /* XCRemoteSwiftPackageReference "RxGesture" */;
 			productName = RxGesture;
+		};
+		09873ACD2B7A64D7004A1EB2 /* RxKeyboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09873ACC2B7A64D6004A1EB2 /* XCRemoteSwiftPackageReference "RxKeyboard" */;
+			productName = RxKeyboard;
 		};
 		09DC3F032B5690910026B857 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;

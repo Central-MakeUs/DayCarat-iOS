@@ -74,7 +74,7 @@ enum KeywordEnum {
             return "미선택"
         }
     }
-
+    
     var gemImg: UIImage? {
         switch self {
         case .communication:
@@ -93,6 +93,26 @@ enum KeywordEnum {
             return nil
         }
     }
+    
+    var gemBackgroundImg: UIImage? {
+        switch self {
+        case .communication:
+            return UIImage(named: "커뮤니케이션보석배경")!
+        case .problemSolving:
+            return UIImage(named: "문제해결보석배경")!
+        case .creativity:
+            return UIImage(named: "창의성보석배경")!
+        case .challengeSpirit:
+            return UIImage(named: "도전정신보석배경")!
+        case .proficiency:
+            return UIImage(named: "전문성보석배경")!
+        case .execution:
+            return UIImage(named: "실행력보석배경")!
+        case .unset:
+            return nil
+        }
+    }
+
 }
 extension KeywordEnum {
     static var allCases: [KeywordEnum] {

@@ -11,8 +11,12 @@ import RxSwift
 protocol MyPageUseCaseProtocol {
     func fetchUserInfo() -> Single<BaseResponse<UserDTO>>
     func uploadUserProfileImg(img: UIImage) -> Single<BaseResponse<Bool>>
+    func deleteUser() ->  Single<BaseResponse<Bool>>
 }
 final class MyPageUseCase: MyPageUseCaseProtocol {
+    func deleteUser() -> RxSwift.Single<BaseResponse<Bool>> {
+        return repository.deleteUser()
+    }
     
     private let repository: UserInterface
     

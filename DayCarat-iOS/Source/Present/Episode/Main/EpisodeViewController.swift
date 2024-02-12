@@ -19,7 +19,7 @@ final class EpisodeViewController: BaseViewController {
     private let viewModel: EpisodeViewModel
     private var dataSource: RxCollectionViewSectionedReloadDataSource<EpisodeSection>!
     private var allEpisodeCount: epiCount?
-
+    private let btnState = BehaviorRelay(value: true)
     // MARK: -  UI
 
     private let bottomView = UIView().then {
@@ -114,8 +114,24 @@ final class EpisodeViewController: BaseViewController {
             configureSupplementaryView: { _, collectionView, kind, indexPath in
                 let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: EpisodeHeaderView.identifier, for: indexPath) as! EpisodeHeaderView
                 if let count = self.allEpisodeCount {
-                    headerView.configure(count: String(count.episodeCount))
+                    headerView.configure(count: String(count.episodeCount), btnState: self.btnState.value)
                 }
+                headerView.activityBtn.rx
+                    .tap
+                    .asDriver()
+                    .drive(onNext: {  [weak self]  _ in
+                        self?.btnState.accept(true)
+                        headerView.configureBtn(btnState: (self?.btnState.value)!)
+                    })
+                    .disposed(by: self.disposeBag)
+                headerView.dateBtn.rx 
+                    .tap
+                    .asDriver()
+                    .drive(onNext: {  [weak self]  _ in
+                        self?.btnState.accept(false)
+                        headerView.configureBtn(btnState: (self?.btnState.value)!)
+                    })
+                    .disposed(by: self.disposeBag)
                 return headerView
             }
         )

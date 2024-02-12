@@ -16,20 +16,15 @@ enum toggleState {
 ///DayCarat 디자인시스템 커스텀 토글버튼입니다.
 final class DayCaratToggleBtn: UIButton {
     
-    convenience init(text: String = "") {
+    convenience init(text: String = "", state: Bool) {
         self.init(frame: .zero)
         configure(text: text)
+        self.updateUIForEnabledState(state: state)
         translatesAutoresizingMaskIntoConstraints = false
     }
-    
-    override var isEnabled: Bool {
-        didSet {
-            updateUIForEnabledState()
-        }
-    }
 
-    private func updateUIForEnabledState() {
-        if isEnabled {
+    private func updateUIForEnabledState(state: Bool) {
+        if state {
             // 버튼이 활성화된 경우
             self.backgroundColor = .white
             self.layer.borderColor = UIColor.Main?.cgColor
@@ -38,6 +33,7 @@ final class DayCaratToggleBtn: UIButton {
         } else {
             // 버튼이 비활성화된 경우
             self.backgroundColor = .Gray100
+            self.layer.borderWidth = 0
             self.setTitleColor(.Gray400, for: .normal)
         }
     }

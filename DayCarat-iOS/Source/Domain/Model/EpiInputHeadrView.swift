@@ -17,7 +17,7 @@ final class EpiInputHeadrView: UICollectionReusableView {
     
     static let identifier = "EpiInputHeadrView"
     private var disposeBag = DisposeBag()
-    private var viewModel = EpisodeInputViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService())), coordinator: nil)
+    private var viewModel = EpisodeInputViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService()), gemRepository: GemRepository(service: GemService())), coordinator: nil)
 
     let calendarButtonTap = PublishSubject<Void>()
     let date = PublishRelay<String>()
@@ -135,6 +135,10 @@ final class EpiInputHeadrView: UICollectionReusableView {
              })
              .disposed(by: disposeBag)
 
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
     }
     
     override init(frame: CGRect) {

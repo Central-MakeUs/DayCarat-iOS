@@ -26,8 +26,8 @@ final class SoaraInputCoordinator: Coordinator {
     }
     
     
-    func start(title: String, type: SoaraType) {
-        let vc = SoaraInputViewController(viewModel: SoaraViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService()))), title: title, type: type)
+    func start(title: String, type: SoaraType, id: Int) {
+        let vc = SoaraInputViewController(viewModel: SoaraInputViewModel(gemUsecase: JewelryUseCase(repositoy: GemRepository(service: GemService())), id: id, coordinator: self, epiUsecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService()), gemRepository: GemRepository(service: GemService()))), title: title, type: type)
         navigationController.pushViewController(vc, animated: true)
     }
     

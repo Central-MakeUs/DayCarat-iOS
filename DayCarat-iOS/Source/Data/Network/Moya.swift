@@ -36,6 +36,10 @@ enum DayCaratTarget {
     case userImg(img: UIImage) // 유저 프사등록
     case epiActivityTag(tag: String) // 활동별 에피소드 리스트 조회
     case patchUserInfo(nickname: String? = nil, jobTitle: String? = nil , strength: String? = nil, pushAllow: Bool? = nil, fcmToken: String? = nil)
+    case userDelete // 회원탈퇴
+    case fetchSoara(episodeId: Int) // 소아라 정보
+    case appleLogin(id_token: String) // 애플로그인
+    case saveFCMToken(userId: Int, fcmToken: String) // FCM 토큰저장
 }
 
 extension DayCaratTarget: TargetType {
@@ -48,7 +52,7 @@ extension DayCaratTarget: TargetType {
         case .login:
             return "user/oauth/kakao"
         case .monthEpiCount:
-            return "episode/count"
+            return "episode/count/month"
         case .recentEpi:
             return "episode/recent"
         case .lastestEpi:
@@ -94,7 +98,15 @@ extension DayCaratTarget: TargetType {
         case .epiActivityTag(tag: let tag):
             return "episode/activity/\(tag)"
         case .patchUserInfo:
-            return "https://www.daycarat.shop/api/user/userInfo"
+            return "user/userInfo"
+        case .userDelete:
+            return "user/delete"
+        case .fetchSoara(episodeId: let episodeId):
+            return "gem/soara/\(episodeId)"
+        case .appleLogin:
+            return "user/oauth/apple"
+        case .saveFCMToken:
+            return "admin/fcmToken"
         }
     }
     
@@ -102,11 +114,16 @@ extension DayCaratTarget: TargetType {
         switch self {
         case .epiRegister,
              .gemRegister,
+             .appleLogin,
+             .login,
              .userImg:
             return .post
         case .patchEpiKeyword,
-             .patchSoara:
+             .patchSoara,
+             .patchUserInfo:
             return .patch
+        case .userDelete:
+            return .delete
         default:
             return .get
         }
@@ -114,12 +131,33 @@ extension DayCaratTarget: TargetType {
     
     var task: Task {
         switch self {
+        case .patchUserInfo(let nickname, let jobTitle, let strength,let pushAllow, let fcmToken):
+            var parameters: [String: Any] = [:]
+            if let nickname = nickname {
+                parameters["nickname"] = nickname
+            }
+            if let jobTitle = jobTitle {
+                parameters["jobTitle"] = jobTitle
+            }
+            if let strength = strength {
+                parameters["strength"] = strength
+            }
+            if let pushAllow = pushAllow {
+                parameters["pushAllow"] = pushAllow
+            }
+            if let fcmToken = fcmToken {
+                parameters["fcmToken"] = fcmToken
+            }
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         case .userImg(let img):
             let jpegData = img.jpegData(compressionQuality: 1.0)!
             let formData: [MultipartFormData] = [
                 .init(provider: .data(jpegData), name: "multipartFile", fileName: "filename.jpeg", mimeType: "image/jpeg")
             ]
             return .uploadMultipart(formData)
+        case .appleLogin(let id_token):
+            let parameters: [String: Any] = ["email": id_token]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         case .login(let accessToken):
             let parameters: [String: Any] = ["accessToken": accessToken]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
@@ -158,6 +196,12 @@ extension DayCaratTarget: TargetType {
                 parameters["content5"] = content5
             }
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .gemRegister(let episodeId):
+            let parameters: [String: Any] = ["episodeId": episodeId]
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .saveFCMToken(let userId, let fcmToken):
+            let parameters: [String: Any] = ["userId": userId, "fcmToken": fcmToken]
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         default:
             return .requestPlain
         }
@@ -171,6 +215,8 @@ extension DayCaratTarget: TargetType {
             }
             return ["Authorization": "Bearer \(accessToken)", "Content-Type": "multipart/form-data"]
         case .login(_):
+            return ["Content-Type": "application/json"]
+        case .appleLogin(_):
             return ["Content-Type": "application/json"]
         default:
             guard let accessToken = UserDefaults.standard.string(forKey: "accessToken") else {

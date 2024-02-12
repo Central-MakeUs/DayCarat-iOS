@@ -39,7 +39,7 @@ final class HomeViewController: BaseViewController {
         $0.contentMode = .scaleAspectFit
         $0.image = UIImage(named: "splashLogo")
     }
-    private let titleLabel = DayCaratLabel(type: .Subhead1, text: "지철님,\n새로운 에피소드를 캐볼까요?",textColor: .Gray900!)
+    private let titleLabel = DayCaratLabel(type: .Subhead1, text: ",\n새로운 에피소드를 캐볼까요?",textColor: .Gray900!)
     private let folderImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.backgroundColor = .clear
@@ -62,7 +62,7 @@ final class HomeViewController: BaseViewController {
         $0.layer.opacity = 0.7
     }
     private let countIntroLabel = DayCaratLabel(type: .Body3, text: "이번달\n나의 에피소드", textColor: .white)
-    private let countNumLabel = DayCaratLabel(type: .Header2, text: "20", textColor: .white)
+    private let countNumLabel = DayCaratLabel(type: .Header2, text: "0", textColor: .white)
     private let countLabel = DayCaratLabel(type: .Subhead6, text: "개", textColor: .white)
     private let disposeBag = DisposeBag()
     private let helpCollectioView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
@@ -175,8 +175,8 @@ final class HomeViewController: BaseViewController {
             backgroundImg.addSubview($0)
         }
         [backgroundImg,bottomView, logoImg, bellBtn,titleLabel, countView, helpCollectioView, recentEpisodeLabel,
-         recentEpisodeCollectioView, bannerCollectioView, newsLabel, newsDesLabel,
-         newsCollectioView, pageControl].forEach {
+         recentEpisodeCollectioView, bannerCollectioView,
+         pageControl].forEach {
             self.contentView.addSubview($0)
         }
         [countIntroLabel, countNumLabel, countLabel].forEach {
@@ -274,19 +274,19 @@ final class HomeViewController: BaseViewController {
             $0.top.equalTo(bannerCollectioView.snp.bottom).offset(12)
             $0.centerX.equalToSuperview()
         }
-        self.newsLabel.snp.makeConstraints {
-            $0.top.equalTo(bannerCollectioView.snp.bottom).offset(48)
-            $0.leading.equalToSuperview().offset(16)
-        }
-        self.newsDesLabel.snp.makeConstraints {
-            $0.top.equalTo(newsLabel.snp.bottom).offset(8)
-            $0.leading.equalToSuperview().offset(16)
-        }
-        self.newsCollectioView.snp.makeConstraints {
-            $0.top.equalTo(newsDesLabel.snp.bottom).offset(16)
-            $0.horizontalEdges.equalToSuperview().inset(16)
-            $0.height.equalTo(364)
-        }
+//        self.newsLabel.snp.makeConstraints {
+//            $0.top.equalTo(bannerCollectioView.snp.bottom).offset(48)
+//            $0.leading.equalToSuperview().offset(16)
+//        }
+//        self.newsDesLabel.snp.makeConstraints {
+//            $0.top.equalTo(newsLabel.snp.bottom).offset(8)
+//            $0.leading.equalToSuperview().offset(16)
+//        }
+//        self.newsCollectioView.snp.makeConstraints {
+//            $0.top.equalTo(newsDesLabel.snp.bottom).offset(16)
+//            $0.horizontalEdges.equalToSuperview().inset(16)
+//            $0.height.equalTo(364)
+//        }
         self.noEpiImg.snp.makeConstraints {
             $0.center.equalToSuperview()
             $0.height.equalTo(117)
@@ -354,12 +354,12 @@ final class HomeViewController: BaseViewController {
         }
         .disposed(by: disposeBag)
         
-        Observable.just([0, 1, 2, 4])
-            .bind(to: newsCollectioView.rx.items(cellIdentifier: NewsCollectionViewCell.identifier, cellType:NewsCollectionViewCell.self))
-        {  index, item, cell in
-
-        }
-        .disposed(by: disposeBag)
+//        Observable.just([0, 1, 2, 4])
+//            .bind(to: newsCollectioView.rx.items(cellIdentifier: NewsCollectionViewCell.identifier, cellType:NewsCollectionViewCell.self))
+//        {  index, item, cell in
+//
+//        }
+//        .disposed(by: disposeBag)
         
         viewModel.monthEpiCount
             .asDriver(onErrorJustReturn: 0)
