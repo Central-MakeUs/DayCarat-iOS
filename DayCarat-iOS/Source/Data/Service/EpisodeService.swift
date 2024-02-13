@@ -60,8 +60,10 @@ class EpisodeService {
                 .filterSuccessfulStatusCodes()
                 .map(BaseResponse<DetailEpisodeDTO>.self)
                 .subscribe(onSuccess: { response in
+                    print("=======디테일\(response)")
                     single(.success(response))
                 }, onFailure: { error in
+                    print("Debug=====\(error)")
                     single(.failure(error))
                 })
             return Disposables.create {

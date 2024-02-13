@@ -13,14 +13,14 @@ import Then
 final class DetailEpiHeaderView: UICollectionReusableView {
     static let identifier = "DetailEpiHeaderView"
     
-    private let titleLabel = DayCaratLabel(type: .Subhead1, text: "기획회의", textColor: .black)
-    private let dateLabel = DayCaratLabel(type: .Body3, text: "2024년 1월12일 금요일", textColor: .Gray500!)
+    private let titleLabel = DayCaratLabel(type: .Subhead1, text: "", textColor: .black)
+    private let dateLabel = DayCaratLabel(type: .Body3, text: "", textColor: .Gray500!)
     private let tagView = UIView().then {
         $0.backgroundColor = .Gray200
         $0.layer.cornerRadius = 4
     }
     private let tagLabel = UILabel().then {
-        $0.text = "#CMC"
+        $0.text = "#"
         $0.font = .pretendard(.Medium, size: 12)
         $0.textColor = .Gray700
     }

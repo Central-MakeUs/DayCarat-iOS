@@ -37,7 +37,6 @@ final class DetailEpisodeViewModel: ViewModelType {
             .subscribe(onSuccess: {  [weak self]  res in
                 self?.detailData.accept(res.result!)
                 self?.episodeContents.accept(res.result!.episodeContents)
-                print("뷰모델=====\(res.result!.episodeContents)")
             }, onFailure: {  error in
                 
             })

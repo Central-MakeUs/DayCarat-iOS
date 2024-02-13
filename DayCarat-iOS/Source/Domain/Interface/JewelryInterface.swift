@@ -19,4 +19,5 @@ protocol JewelryInterface {
     func fetchSoaraData(episodeId: Int) -> Single<BaseResponse<SoaraInputDTO>>
     func registerGem(episodeId: Int) -> Single<BaseResponse<Bool>>
     func fetchAiRecommand(episodeId: Int) -> Single<BaseResponse<AiRecommandDTO>>
+    func fetchClipboard(episodeId: Int) -> Single<BaseResponse<ClipboardDTO>>
 }

@@ -19,6 +19,10 @@ final class DetailEpisodeViewController: BaseViewController {
     private let input = DetailEpisodeViewModel.Input()
     private let epiId: Int
     private let naviBar = CustomNavigaitonBar(btnstate: true, rightBtnText: "", middleText: "")
+    private var titleStr = ""
+    private var date = ""
+    private var tag = ""
+
     private let detailCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.register(DetailEpiBodySection.self, forCellWithReuseIdentifier: DetailEpiBodySection.identifier)
         $0.register(DetailEpiHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DetailEpiHeaderView.identifier)
@@ -104,6 +108,16 @@ final class DetailEpisodeViewController: BaseViewController {
                 self?.viewModel.coordinator?.pushSoara(id: self?.epiId ?? 0)
             })
             .disposed(by: disposeBag)
+        
+        viewModel.detailData
+            .bind(onNext: {  [weak self] res in
+                self?.titleStr = res.title
+                self?.date = res.selectedDate
+                self?.tag = res.activityTagName
+
+                self?.detailCollectionView.reloadData()
+            })
+            .disposed(by: disposeBag)
     }
     
     private func setupDataSource() {
@@ -116,11 +130,9 @@ final class DetailEpisodeViewController: BaseViewController {
             },
             configureSupplementaryView: { _, collectionView, kind, indexPath in
                 let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DetailEpiHeaderView.identifier, for: indexPath) as! DetailEpiHeaderView
-                self.viewModel.detailData
-                    .bind(onNext: {  res in
-                        headerView.configure(title: res.title , date: res.selectedDate, tag: res.activityTagName)
-                    })
-                    .disposed(by: self.disposeBag)
+
+                headerView.configure(title: self.titleStr , date: self.date, tag: self.tag)
+
                 return headerView
             }
         )

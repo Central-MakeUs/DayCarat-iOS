@@ -123,6 +123,7 @@
 		DE2E7D9F2B6741160016D9F2 /* KeywordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2E7D9E2B6741160016D9F2 /* KeywordModel.swift */; };
 		DE2E7DA12B6798CC0016D9F2 /* EpiListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2E7DA02B6798CC0016D9F2 /* EpiListModel.swift */; };
 		DE43152B2B7AFB1A0018BEEE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DE43152A2B7AFB1A0018BEEE /* RxSwift */; };
+		DE43152E2B7B5CB50018BEEE /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = DE43152D2B7B5CB50018BEEE /* Toast */; };
 		DE4DD7042B60A7D00033EAB4 /* SoaraInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */; };
 		DE4DD7062B60A7EA0033EAB4 /* SoaraInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7052B60A7EA0033EAB4 /* SoaraInputCoordinator.swift */; };
 		DE4DD7082B60A8F30033EAB4 /* SoaraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7072B60A8F30033EAB4 /* SoaraModel.swift */; };
@@ -445,6 +446,7 @@
 				DEDE44152B6A39160068A749 /* FirebaseAnalyticsSwift in Frameworks */,
 				09873ACE2B7A64D7004A1EB2 /* RxKeyboard in Frameworks */,
 				09DC3F082B5690910026B857 /* ReactiveMoya in Frameworks */,
+				DE43152E2B7B5CB50018BEEE /* Toast in Frameworks */,
 				DE5F41422B4BE05200581075 /* Differentiator in Frameworks */,
 				DEDE443B2B6A39160068A749 /* FirebasePerformance in Frameworks */,
 				DEDE44072B6A2CD50068A749 /* FirebaseAnalytics in Frameworks */,
@@ -1173,6 +1175,7 @@
 				DEDE443A2B6A39160068A749 /* FirebasePerformance */,
 				09873ACD2B7A64D7004A1EB2 /* RxKeyboard */,
 				DE43152A2B7AFB1A0018BEEE /* RxSwift */,
+				DE43152D2B7B5CB50018BEEE /* Toast */,
 			);
 			productName = "DayCarat-iOS";
 			productReference = 09073D322B46F87E00D840EC /* DayCarat-iOS.app */;
@@ -1216,6 +1219,7 @@
 				096546072B5AC19100CDF4CC /* XCRemoteSwiftPackageReference "PanModal" */,
 				DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				09873ACC2B7A64D6004A1EB2 /* XCRemoteSwiftPackageReference "RxKeyboard" */,
+				DE43152C2B7B5CB50018BEEE /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 09073D332B46F87E00D840EC /* Products */;
 			projectDirPath = "";
@@ -1543,7 +1547,7 @@
 				CODE_SIGN_ENTITLEMENTS = "DayCarat-iOS/DayCarat-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = JA7UDVTQBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DayCarat-iOS/Info.plist";
@@ -1581,7 +1585,7 @@
 				CODE_SIGN_ENTITLEMENTS = "DayCarat-iOS/DayCarat-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = JA7UDVTQBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DayCarat-iOS/Info.plist";
@@ -1681,6 +1685,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 7.10.2;
+			};
+		};
+		DE43152C2B7B5CB50018BEEE /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
 			};
 		};
 		DE5F410D2B4B841500581075 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
@@ -1836,6 +1848,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DE8479892B4790B500471B4F /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		DE43152D2B7B5CB50018BEEE /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE43152C2B7B5CB50018BEEE /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 		DE5F410E2B4B841500581075 /* SkeletonView */ = {
 			isa = XCSwiftPackageProductDependency;

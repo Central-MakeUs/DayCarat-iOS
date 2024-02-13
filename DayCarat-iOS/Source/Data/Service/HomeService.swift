@@ -22,6 +22,8 @@ class HomeService {
                 .filterSuccessfulStatusCodes()
                 .map(BaseResponse<epiCount>.self)
                 .subscribe(onSuccess: { response in
+                    print("이번달갯수=======\(response)")
+
                     single(.success(response))
                 }, onFailure: { error in
                     print("이번달갯수=======\(error)")

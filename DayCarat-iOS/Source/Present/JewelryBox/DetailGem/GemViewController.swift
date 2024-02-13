@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import Toast
 
 final class GemViewController: BaseViewController {
     
@@ -23,6 +24,7 @@ final class GemViewController: BaseViewController {
     private var allCellHeight: CGFloat = 0
     private var allSoaraCellHeight: CGFloat = 0
     private var allTableHeight: CGFloat = 0
+    private var clipBoardData = ""
 
     private var collectionViewHeightConstraint: NSLayoutConstraint?
     private var soaraCollectionViewHeightConstraint: NSLayoutConstraint?
@@ -241,7 +243,28 @@ final class GemViewController: BaseViewController {
                 self?.soaraCollectionView.reloadData()
             })
             .disposed(by: disposeBag)
+        
+        viewModel.clipboardData
+            .subscribe(onNext: {  [weak self] res in
+                self?.clipBoardData = res.content
+            })
+            .disposed(by: disposeBag)
+        
+        copyBtn.rx
+            .tap
+            .asDriver()
+            .drive(onNext: { [weak self] _ in
+                if self?.clipBoardData == "" {
+                    
+                } else {
+                    UIPasteboard.general.string = self?.clipBoardData
+                    self?.view.makeToast("클립보드 복사 완료!", duration: 1.5, position: .bottom)
+
+                }
+            })
+            .disposed(by: disposeBag)
     }
+
     func updateCollectionViewHeight() {
         collectionViewHeightConstraint?.constant = allCellHeight + 40
         self.epiCollectionView.layoutIfNeeded()

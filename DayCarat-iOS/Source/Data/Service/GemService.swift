@@ -190,4 +190,22 @@ class GemService {
             }
         }
     }
+    
+    func fetchClipboard(episodeId: Int) -> Single<BaseResponse<ClipboardDTO>> {
+        return Single.create {  single in
+            let disposable = self.provider.rx
+                .request(.episodeClipboard(episodeId: episodeId))
+                .filterSuccessfulStatusCodes()
+                .map(BaseResponse<ClipboardDTO>.self)
+                .subscribe(onSuccess: {  res in
+                    single(.success(res))
+                }, onFailure: {  error in
+                    print("복붙에러======\(error)")
+                    single(.failure(error))
+                })
+            return Disposables.create {
+                disposable.dispose()
+            }
+        }
+    }
 }

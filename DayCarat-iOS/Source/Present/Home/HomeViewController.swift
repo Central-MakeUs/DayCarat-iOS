@@ -364,6 +364,7 @@ final class HomeViewController: BaseViewController {
         viewModel.monthEpiCount
             .asDriver(onErrorJustReturn: 0)
             .drive(onNext: {  [weak self] count in
+                print(count)
                 self?.countNumLabel.text = String(count)
             })
             .disposed(by: disposeBag)

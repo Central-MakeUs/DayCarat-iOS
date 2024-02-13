@@ -9,6 +9,10 @@ import RxSwift
 import RxCocoa
 
 final class GemRepository: JewelryInterface {
+    func fetchClipboard(episodeId: Int) -> RxSwift.Single<BaseResponse<ClipboardDTO>> {
+        return service.fetchClipboard(episodeId: episodeId)
+    }
+    
     func fetchAiRecommand(episodeId: Int) -> RxSwift.Single<BaseResponse<AiRecommandDTO>> {
         return service.fetchAiRecommand(episodeId: episodeId)
     }

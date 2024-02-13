@@ -147,7 +147,7 @@ final class EpisodeListViewController: BaseViewController {
                 } else {
                     self.emptyImg.isHidden = true
                 }
-                cell.configure(title: item.title, date: item.date, des: item.date, gem: false, type: .primary, keywordTitle: "")
+                cell.configure(title: item.title, date: item.date, des: item.content, gem: false, type: .primary, keywordTitle: "")
                 return cell
             },
             configureSupplementaryView: { _, collectionView, kind, indexPath in

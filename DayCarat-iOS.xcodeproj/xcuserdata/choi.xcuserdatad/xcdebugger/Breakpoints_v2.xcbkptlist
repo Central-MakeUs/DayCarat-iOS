@@ -14,8 +14,8 @@
             filePath = "DayCarat-iOS/Source/Present/Episode/DetailEpisode/DetailEpisodeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "binding()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "DayCarat-iOS/Source/Present/Episode/DetailEpisode/DetailEpisodeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "binding()"
             landmarkType = "7">
          </BreakpointContent>

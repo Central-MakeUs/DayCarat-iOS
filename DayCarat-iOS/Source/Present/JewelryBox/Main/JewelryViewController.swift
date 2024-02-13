@@ -17,7 +17,15 @@ final class JewelryViewController: BaseViewController {
     private var disposeBag = DisposeBag()
     private var dataSource: RxCollectionViewSectionedReloadDataSource<GemSection>!
     private let viewModel: JewelryBoxViewModel
-    
+    private var gemCount = 0
+    private var tag = ""
+    private var nickName = ""
+    private var stregth = ""
+    private var userClass = ""
+    private var userImg = ""
+    private var keyword = ""
+    private var totalCount = 0
+
     private let jewelryCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.register(JewelryBodyCell.self, forCellWithReuseIdentifier: JewelryBodyCell.identifier)
         $0.register(JewelryHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: JewelryHeaderView.identifier)
@@ -84,6 +92,26 @@ final class JewelryViewController: BaseViewController {
                                                                 , keywordtype: keyword.keyword)
             })
             .disposed(by: disposeBag)
+        
+        viewModel.headerData
+            .bind(onNext: {  [weak self] res in
+                self?.gemCount = res.month.gemCount
+                self?.tag = res.mostActivity.activityTag
+                self?.keyword = res.mostKeyword.episodeKeyword
+                self?.totalCount = res.total.gemCount
+                self?.jewelryCollectionView.reloadData()
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.userData
+            .subscribe(onNext: {  [weak self]  res in
+                self?.nickName = res.nickname
+                self?.stregth = res.strength
+                self?.userClass = res.userClass
+                self?.userImg = res.profileImage ?? ""
+                self?.jewelryCollectionView.reloadData()
+            })
+            .disposed(by: disposeBag)
     }
 
     private func setupDataSource() {
@@ -96,18 +124,8 @@ final class JewelryViewController: BaseViewController {
             }, 
             configureSupplementaryView: { _, collectionView, kind, indexPath in
                 let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: JewelryHeaderView.identifier, for: indexPath) as! JewelryHeaderView
-                self.viewModel.userData
-                    .bind(onNext: {  data in
-                        print(data)
-                        headerView.userConfigure(name: data.nickname, strength: data.strength, img: data.profileImage ?? "", classStr: data.userClass)
-                    })
-                    .disposed(by: self.disposeBag)
-                
-                self.viewModel.headerData
-                    .bind(onNext: {  data in
-                        headerView.configure(month: data.month.gemCount, total: data.total.gemCount, tag: data.mostActivity.activityTag, keyword: data.mostKeyword.episodeKeyword)
-                    })
-                    .disposed(by: self.disposeBag)
+                headerView.userConfigure(name: self.nickName, strength: self.stregth, img: self.userImg, classStr: self.userClass)
+                headerView.configure(month: self.gemCount, total: self.totalCount, tag: self.tag, keyword: self.keyword)
                 return headerView
             }
         )

@@ -17,6 +17,7 @@ final class GemViewModel: ViewModelType {
     let episodeContents = PublishRelay<[DetailEpisodeContentDTO]>()
     let soaraContents = PublishRelay<[String]>()
     let aiRecommandData = PublishRelay<[String]>()
+    let clipboardData = PublishRelay<ClipboardDTO>()
 
     init(usecase: EpisodeUseCaseProtocol, gemUsecase: JewelryUseCaseProtocol, coordinator: GemCoordinator) {
         self.usecase = usecase
@@ -77,6 +78,11 @@ final class GemViewModel: ViewModelType {
                     contents.append(content3)
                 }
                 self?.aiRecommandData.accept(contents)
+            })
+            .disposed(by: disposeBag)
+        gemUsecase.fetchClipboard(episodeId: id)
+            .subscribe(onSuccess: {  [weak self]  res in
+                self?.clipboardData.accept(res.result!)
             })
             .disposed(by: disposeBag)
     }

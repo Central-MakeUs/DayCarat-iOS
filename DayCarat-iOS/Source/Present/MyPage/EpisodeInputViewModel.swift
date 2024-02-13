@@ -33,6 +33,7 @@ final class EpisodeInputViewModel: ViewModelType {
     }
     
     func registerEpi(title: String, date: String, activityTag: String, episodeContents: [EpisodeInputContent]) {
+        
         usecase.registerEpi(title: title, date: date, activityTag: activityTag, episodeContents: episodeContents)
             .subscribe(onSuccess: {  [weak self]_ in
                 self?.coordinator?.popupViewController()

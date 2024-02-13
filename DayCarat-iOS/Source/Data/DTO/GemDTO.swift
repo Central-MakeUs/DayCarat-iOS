@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct ClipboardDTO: Decodable {
+    let content: String
+}
+
 struct GemCountDTO: Decodable {
     let gemCount: Int
 }

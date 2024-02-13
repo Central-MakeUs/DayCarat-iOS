@@ -80,7 +80,7 @@ extension DayCaratTarget: TargetType {
         case .keywordGemInfo(keyword: let keyword):
             return "gem/keyword/\(keyword)"
         case .episodeClipboard(episodeId: let episodeId):
-            return "gem/episode/\(episodeId)"
+            return "gem/clipboard/\(episodeId)"
         case .episodeSoara(episodeId: let episodeId):
             return "gem/soara/\(episodeId)"
         case .patchEpiKeyword:

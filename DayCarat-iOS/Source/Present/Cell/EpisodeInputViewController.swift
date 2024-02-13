@@ -129,6 +129,7 @@ final class EpisodeInputViewController: BaseViewController {
 
         activityTag
             .subscribe(onNext: { [weak self] tag in
+                print("=====tag\(tag)")
                 self?.currentActivityTag = tag
             })
             .disposed(by: disposeBag)
@@ -154,6 +155,7 @@ final class EpisodeInputViewController: BaseViewController {
                             vc.strDate
                                 .subscribe(onNext: { [weak self] date in
                                     headerView.date.accept(date)
+                                    print("date\\\\=\(date)")
                                     self?.selectedDate.accept(date)
                                 })
                                 .disposed(by: vc.disposeBag)
@@ -163,6 +165,11 @@ final class EpisodeInputViewController: BaseViewController {
                     headerView.titleSubject
                         .subscribe(onNext: { [weak self] title in
                             self?.titleStr.accept(title)
+                        })
+                        .disposed(by: self.disposeBag)
+                    headerView.tagSubject
+                        .subscribe(onNext: {  [weak self] res in
+                            self?.activityTag.accept(res)
                         })
                         .disposed(by: self.disposeBag)
                     return headerView
@@ -204,8 +211,11 @@ extension EpisodeInputViewController: CustomNavigaitonBarDelegate {
     }
     
     func rightBtnClick(_ navibar: CustomNavigaitonBar) {
-            print("asdsa")
-        self.viewModel.registerEpi(title: currentTitle ?? "", date: self.currentDate ?? "2024-01-01", activityTag: currentActivityTag ?? "CMC", episodeContents: self.cellContents )
+        let nowDate = Date() 
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let str = dateFormatter.string(from: nowDate)
+        self.viewModel.registerEpi(title: currentTitle ?? "", date: self.currentDate ?? str, activityTag: currentActivityTag ?? "기타", episodeContents: self.cellContents )
             
     }
 }
