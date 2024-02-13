@@ -122,6 +122,7 @@
 		DE28449F2B71EA9A009E18A1 /* MyPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28449E2B71EA9A009E18A1 /* MyPageModel.swift */; };
 		DE2E7D9F2B6741160016D9F2 /* KeywordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2E7D9E2B6741160016D9F2 /* KeywordModel.swift */; };
 		DE2E7DA12B6798CC0016D9F2 /* EpiListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2E7DA02B6798CC0016D9F2 /* EpiListModel.swift */; };
+		DE43152B2B7AFB1A0018BEEE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DE43152A2B7AFB1A0018BEEE /* RxSwift */; };
 		DE4DD7042B60A7D00033EAB4 /* SoaraInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */; };
 		DE4DD7062B60A7EA0033EAB4 /* SoaraInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7052B60A7EA0033EAB4 /* SoaraInputCoordinator.swift */; };
 		DE4DD7082B60A8F30033EAB4 /* SoaraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7072B60A8F30033EAB4 /* SoaraModel.swift */; };
@@ -436,6 +437,7 @@
 				09DC3F242B580E3C0026B857 /* Kingfisher in Frameworks */,
 				DEDE44192B6A39160068A749 /* FirebaseAppCheck in Frameworks */,
 				DEDE440F2B6A2CD50068A749 /* FirebaseAppCheck in Frameworks */,
+				DE43152B2B7AFB1A0018BEEE /* RxSwift in Frameworks */,
 				09339BE92B52256F00820896 /* KakaoSDKCert in Frameworks */,
 				09339BF02B522A9300820896 /* RxKakaoSDK in Frameworks */,
 				DE84799E2B47910C00471B4F /* Then in Frameworks */,
@@ -470,8 +472,10 @@
 				09073D342B46F87E00D840EC /* DayCarat-iOS */,
 				09073D332B46F87E00D840EC /* Products */,
 				DE1E94EE2B5FB464008FFC8B /* Recovered References */,
+				DE4315292B7AFB1A0018BEEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		09073D332B46F87E00D840EC /* Products */ = {
 			isa = PBXGroup;
@@ -709,6 +713,13 @@
 				DE28449C2B71E732009E18A1 /* KeywordView.swift */,
 			);
 			path = KeywordView;
+			sourceTree = "<group>";
+		};
+		DE4315292B7AFB1A0018BEEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DE4DD7012B60A7B20033EAB4 /* Main */ = {
@@ -1161,6 +1172,7 @@
 				DEDE44382B6A39160068A749 /* FirebaseMessaging */,
 				DEDE443A2B6A39160068A749 /* FirebasePerformance */,
 				09873ACD2B7A64D7004A1EB2 /* RxKeyboard */,
+				DE43152A2B7AFB1A0018BEEE /* RxSwift */,
 			);
 			productName = "DayCarat-iOS";
 			productReference = 09073D322B46F87E00D840EC /* DayCarat-iOS.app */;
@@ -1531,15 +1543,18 @@
 				CODE_SIGN_ENTITLEMENTS = "DayCarat-iOS/DayCarat-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = JA7UDVTQBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DayCarat-iOS/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "데이캐럿";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "갤러리 접근 권한";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -1566,15 +1581,18 @@
 				CODE_SIGN_ENTITLEMENTS = "DayCarat-iOS/DayCarat-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = JA7UDVTQBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DayCarat-iOS/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "데이캐럿";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "갤러리 접근 권한";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -1813,6 +1831,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09DC3F222B580E3C0026B857 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		DE43152A2B7AFB1A0018BEEE /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE8479892B4790B500471B4F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 		DE5F410E2B4B841500581075 /* SkeletonView */ = {
 			isa = XCSwiftPackageProductDependency;

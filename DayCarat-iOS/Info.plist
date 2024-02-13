@@ -17,10 +17,6 @@
 	</array>
 	<key>FirebaseAppDelegateProxyEnabled</key>
 	<false/>
-	<key>NSMainNibFile~ipad</key>
-	<string></string>
-	<key>NSMainNibFile~iphone</key>
-	<string></string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Pretendard-Medium.otf</string>
@@ -50,7 +46,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>UIMainStoryboardFile~iphone</key>
-	<string></string>
 </dict>
 </plist>

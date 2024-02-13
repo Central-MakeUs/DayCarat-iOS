@@ -199,7 +199,7 @@ final class HomeViewController: BaseViewController {
         self.contentView.snp.makeConstraints {
             $0.width.equalToSuperview()
             $0.edges.equalToSuperview()
-            $0.height.equalTo(1500)
+            $0.height.equalTo(1000)
         }
         self.backgroundImg.snp.makeConstraints {
             $0.top.equalToSuperview().offset(-500)
