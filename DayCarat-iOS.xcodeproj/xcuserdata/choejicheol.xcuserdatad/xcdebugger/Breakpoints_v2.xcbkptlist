@@ -142,8 +142,8 @@
             filePath = "DayCarat-iOS/Source/Present/JewelryBox/DetailGem/GemViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "layout()"
             landmarkType = "7">
             <Locations>
@@ -190,8 +190,8 @@
             filePath = "DayCarat-iOS/Source/Present/JewelryBox/DetailGem/GemViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "layout()"
             landmarkType = "7">
             <Locations>
@@ -238,10 +238,10 @@
             filePath = "DayCarat-iOS/Source/Present/JewelryBox/DetailGem/GemViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "GemViewController"
-            landmarkType = "3">
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "addView()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

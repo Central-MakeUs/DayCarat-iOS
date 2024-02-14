@@ -131,7 +131,7 @@ final class DetailEpisodeViewController: BaseViewController {
             configureSupplementaryView: { _, collectionView, kind, indexPath in
                 let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DetailEpiHeaderView.identifier, for: indexPath) as! DetailEpiHeaderView
 
-                headerView.configure(title: self.titleStr , date: self.date, tag: self.tag)
+                headerView.configure(title: self.titleStr , date: self.date, tag: "#\(self.tag)")
 
                 return headerView
             }

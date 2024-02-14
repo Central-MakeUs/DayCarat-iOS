@@ -16,7 +16,7 @@ final class EpisodeHeaderView: UICollectionReusableView {
     static let identifier = "EpisodeHeaderView"
     var disposeBag = DisposeBag()
     private let searchBtn = UIButton().then {
-        $0.setImage(UIImage(named: "icon-search"), for: .normal)
+        $0.setImage(UIImage(named: ""), for: .normal) //icon-search
         $0.tintColor = UIColor(hexString: "#2D3648")
     }
     private let titleLabel = DayCaratLabel(type: .Header5, text: "개의\n원석이 있어요.", textColor: .Gray900!)
@@ -37,7 +37,7 @@ final class EpisodeHeaderView: UICollectionReusableView {
         [backgroundImg, titleLabel, desLabel, bottomView, searchBtn].forEach {
             self.addSubview($0)
         }
-        [activityBtn, dateBtn].forEach {
+        [activityBtn].forEach {
             self.bottomView.addSubview($0)
         }
     }
@@ -103,12 +103,12 @@ final class EpisodeHeaderView: UICollectionReusableView {
             $0.width.equalTo(66)
             $0.height.equalTo(36)
         }
-        dateBtn.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(12)
-            $0.leading.equalTo(activityBtn.snp.trailing).offset(8)
-            $0.width.equalTo(66)
-            $0.height.equalTo(36)
-        }
+//        dateBtn.snp.makeConstraints {
+//            $0.top.equalToSuperview().offset(12)
+//            $0.leading.equalTo(activityBtn.snp.trailing).offset(8)
+//            $0.width.equalTo(66)
+//            $0.height.equalTo(36)
+//        }
     }
     
     override init(frame: CGRect) {

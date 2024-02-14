@@ -45,6 +45,10 @@ final class EpisodeViewController: BaseViewController {
     }
     
     // MARK: - init
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.updateData()
+    }
 
     init(viewModel: EpisodeViewModel) {
         self.viewModel = viewModel

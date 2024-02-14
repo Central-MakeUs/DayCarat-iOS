@@ -42,7 +42,7 @@ struct ActivityEpiQuantityDTO: Decodable {
 }
 
 struct DateEpiQuantityDTO: Decodable {
-    let activityTagName: String
+    let month: String
     let quantity: Int
 }
 

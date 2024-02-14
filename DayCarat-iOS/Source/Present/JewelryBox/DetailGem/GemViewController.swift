@@ -31,10 +31,17 @@ final class GemViewController: BaseViewController {
     private var tableViewHeightConstraint: NSLayoutConstraint?
     private let type: KeywordEnum
     private let aiData = BehaviorRelay<[String]>(value: [])
+    
     //MARK: - UI
     private let scrollView = UIScrollView()
     private let headerInfoView = AiKeywordView().then {
         $0.backgroundColor = .clear
+    }
+    private let waitImg = UIImageView().then {
+        $0.image = UIImage(named: "waitKeyword")
+        $0.contentMode = .scaleAspectFit
+        $0.backgroundColor = .Gray100
+        $0.layer.cornerRadius = 8
     }
     private let epiCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.register(DetailEpiBodySection.self, forCellWithReuseIdentifier: DetailEpiBodySection.identifier)
@@ -126,6 +133,7 @@ final class GemViewController: BaseViewController {
         [soaraTitleLabel, soaraImg, copyBtn].forEach {
             soaraHeaderView.addSubview($0)
         }
+        headerInfoView.addSubview(waitImg)
         [headerInfoView, epiCollectionView, dividerView, soaraHeaderView, aiRecommandTableView, soaraCollectionView].forEach {
             contentSV.addArrangedSubview($0)
         }
@@ -177,12 +185,16 @@ final class GemViewController: BaseViewController {
         }
         aiRecommandTableView.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview().inset(16)
-            self.tableViewHeightConstraint = $0.height.equalTo(200).constraint.layoutConstraints.first
+            self.tableViewHeightConstraint = $0.height.equalTo(300).constraint.layoutConstraints.first
 
         }
         soaraCollectionView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
             self.soaraCollectionViewHeightConstraint = $0.height.equalTo(361).constraint.layoutConstraints.first
+        }
+        waitImg.snp.makeConstraints {
+            $0.height.equalTo(260)
+            $0.horizontalEdges.equalToSuperview()
         }
     }
     private func setupDataSource() {
@@ -206,6 +218,12 @@ final class GemViewController: BaseViewController {
         
         viewModel.detailData
             .bind(onNext: {  [weak self]  res in
+                if self?.type.gemTitle == "미선택" {
+                    self?.waitImg.isHidden = false
+
+                } else {
+                    self?.waitImg.isHidden = true
+                }
                 self?.headerInfoView.configure(title: res.title, dateLabel: res.selectedDate, tag: res.activityTagName, keyword: self?.type.gemTitle ?? "", gemImg: self?.type.gemBackgroundImg ?? UIImage(named: "Jewelry")!)
             })
             .disposed(by: disposeBag)

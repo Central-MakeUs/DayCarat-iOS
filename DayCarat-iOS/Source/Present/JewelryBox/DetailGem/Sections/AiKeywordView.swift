@@ -31,6 +31,7 @@ final class AiKeywordView: UIView {
         $0.textColor = .Gray700
     }
     
+    
     private let gemImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
     }
