@@ -115,7 +115,6 @@ extension DayCaratTarget: TargetType {
         case .epiRegister,
              .gemRegister,
              .appleLogin,
-             .login,
              .userImg:
             return .post
         case .patchEpiKeyword,

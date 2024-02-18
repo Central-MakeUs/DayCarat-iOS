@@ -26,7 +26,7 @@ class UserInfoService {
                     single(.success(response))
                     print("====유저정보\(response)")
                 }, onFailure: { error in
-                    print("====유저정보\(error)")
+                    print("====유저정보에러\(error)")
                     single(.failure(error))
                 })
 

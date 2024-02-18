@@ -17,6 +17,7 @@ final class KeywordView: UIView {
     private let title = UILabel().then {
          $0.text = ""
          $0.font = .pretendard(.Medium, size: 12)
+         $0.numberOfLines = 1
          $0.sizeToFit()
      }
     override init(frame: CGRect) {
@@ -35,8 +36,16 @@ final class KeywordView: UIView {
     
     private func layout() {
         addSubview(title)
+        
         title.snp.makeConstraints { make in
             make.center.equalToSuperview()
+            make.leading.greaterThanOrEqualToSuperview().offset(3) // 좌측 여백
+            make.trailing.lessThanOrEqualToSuperview().offset(-3) // 우측 여백
+        }
+        
+        
+        self.snp.makeConstraints { make in
+            make.width.greaterThanOrEqualTo(60) // 최소 넓이 설정
         }
     }
     

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 import RxSwift
 import RxCocoa
@@ -320,6 +321,26 @@ final class HomeViewController: BaseViewController {
         }
         .disposed(by: disposeBag)
         
+        helpCollectioView.rx
+            .modelSelected(Int.self)
+            .subscribe(onNext: {  [weak self]  idx in
+                
+                if idx == 0 {
+                    let url = NSURL(string: "https://daycarat.notion.site/aa1d6e7d00fe4ee9acd41039adc9946a?pvs=4")
+                    let safariView: SFSafariViewController = SFSafariViewController(url: url! as URL)
+                    self?.present(safariView, animated: true, completion: nil)
+                } else if idx == 1 {
+                    let url = NSURL(string: "https://www.notion.so/daycarat/AI-b8e3f747a0444816bc8b858a736202ca?pvs=4")
+                    let safariView: SFSafariViewController = SFSafariViewController(url: url! as URL)
+                    self?.present(safariView, animated: true, completion: nil)
+                } else {
+                    let url = NSURL(string: "https://www.instagram.com/daycarat_official/?igsh=MXJobmZwbTlibGdvNw%3D%3D&utm_source=qr")
+                    let safariView: SFSafariViewController = SFSafariViewController(url: url! as URL)
+                    self?.present(safariView, animated: true, completion: nil)
+                }
+            })
+            .disposed(by: disposeBag)
+        
         viewModel.recentEpi
             .bind(to: recentEpisodeCollectioView.rx.items(cellIdentifier: RecentEpiCollectionViewCell.identifier, cellType:RecentEpiCollectionViewCell.self))
         { index, item, cell in
@@ -347,12 +368,14 @@ final class HomeViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        Observable.just([0, 1, 2])
+        Observable.just(["banner", "banner2", "banner"])
             .bind(to: bannerCollectioView.rx.items(cellIdentifier: BannerCollectionViewCell.identifier, cellType:BannerCollectionViewCell.self))
         {  index, item, cell in
-            cell.configureCell(img: "banner")
+            cell.configureCell(img: item)
         }
         .disposed(by: disposeBag)
+        
+        
         
 //        Observable.just([0, 1, 2, 4])
 //            .bind(to: newsCollectioView.rx.items(cellIdentifier: NewsCollectionViewCell.identifier, cellType:NewsCollectionViewCell.self))

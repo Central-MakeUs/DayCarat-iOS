@@ -24,9 +24,23 @@ class EpisodeListCollectionViewCell: UICollectionViewCell {
         titleLabel.text = title
         dateLabel.text = date
         desLabel.text = des
-        if gem {
+        if keywordTitle != "미선택" {
             gemImg.isHidden = false
-            self.keywordView = KeywordView(title: keywordTitle, type: type)
+            self.keywordView = KeywordView(title: keywordTitle, type: .keyword)
+            self.addSubview(keywordView)
+            self.addSubview(gemImg)
+            gemImg.snp.makeConstraints {
+                $0.top.equalToSuperview().offset(18)
+                $0.width.equalTo(24)
+                $0.height.equalTo(20)
+                $0.trailing.equalToSuperview().inset(20)
+
+            }
+            keywordView.snp.makeConstraints {
+                $0.top.equalToSuperview().offset(18)
+                $0.trailing.equalTo(gemImg.snp.leading).offset(-10)
+                $0.height.equalTo(24)
+            }
         } else {
             gemImg.isHidden = true
         }

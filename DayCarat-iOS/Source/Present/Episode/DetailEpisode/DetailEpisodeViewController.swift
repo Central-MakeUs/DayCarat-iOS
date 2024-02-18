@@ -30,8 +30,7 @@ final class DetailEpisodeViewController: BaseViewController {
         $0.backgroundColor = .clear
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 24, left: 16, bottom: 60, right: 16)
-        layout.minimumInteritemSpacing = 20
+      layout.minimumInteritemSpacing = 20
         layout.sectionInsetReference = .fromContentInset
         $0.collectionViewLayout = layout
         $0.decelerationRate = .fast
@@ -60,6 +59,7 @@ final class DetailEpisodeViewController: BaseViewController {
         self.view.backgroundColor = UIColor(hexString: "#F9F9F9")
         self.naviBar.delegate = self
         self.detailCollectionView.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
         setupDataSource()
     }
     
@@ -169,5 +169,10 @@ extension DetailEpisodeViewController: CustomNavigaitonBarDelegate {
     
     func rightBtnClick(_ navibar: CustomNavigaitonBar) {
         
+    }
+}
+extension DetailEpisodeViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

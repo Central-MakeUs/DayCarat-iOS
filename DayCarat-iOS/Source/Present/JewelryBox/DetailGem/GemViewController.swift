@@ -186,7 +186,6 @@ final class GemViewController: BaseViewController {
         aiRecommandTableView.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview().inset(16)
             self.tableViewHeightConstraint = $0.height.equalTo(300).constraint.layoutConstraints.first
-
         }
         soaraCollectionView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
@@ -194,7 +193,7 @@ final class GemViewController: BaseViewController {
         }
         waitImg.snp.makeConstraints {
             $0.height.equalTo(260)
-            $0.horizontalEdges.equalToSuperview()
+            $0.horizontalEdges.equalToSuperview().inset(16)
         }
     }
     private func setupDataSource() {
@@ -220,7 +219,9 @@ final class GemViewController: BaseViewController {
             .bind(onNext: {  [weak self]  res in
                 if self?.type.gemTitle == "미선택" {
                     self?.waitImg.isHidden = false
-
+                    self?.aiRecommandTableView.snp.makeConstraints {
+                        $0.height.equalTo(190)
+                    }
                 } else {
                     self?.waitImg.isHidden = true
                 }

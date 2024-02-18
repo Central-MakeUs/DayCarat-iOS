@@ -57,6 +57,7 @@
 		0967D8DB2B4AF04F009CFD0A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8DA2B4AF04F009CFD0A /* BaseView.swift */; };
 		0967D8DD2B4AFB13009CFD0A /* IntroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8DC2B4AFB13009CFD0A /* IntroCollectionViewCell.swift */; };
 		097238552B540AB300626422 /* EpisodeInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097238542B540AB300626422 /* EpisodeInputViewModel.swift */; };
+		097DBFC82B7F818000AEDA13 /* YearSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097DBFC72B7F817F00AEDA13 /* YearSelectTableViewCell.swift */; };
 		09873AC12B7797F1004A1EB2 /* GemSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09873AC02B7797F1004A1EB2 /* GemSectionModel.swift */; };
 		09873AC32B779BEA004A1EB2 /* AiRecommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09873AC22B779BEA004A1EB2 /* AiRecommandCell.swift */; };
 		09873AC52B78AE95004A1EB2 /* SoaraList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09873AC42B78AE95004A1EB2 /* SoaraList.swift */; };
@@ -278,6 +279,7 @@
 		0967D8DA2B4AF04F009CFD0A /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		0967D8DC2B4AFB13009CFD0A /* IntroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IntroCollectionViewCell.swift; path = "DayCarat-iOS/Source/Present/Base/IntroCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		097238542B540AB300626422 /* EpisodeInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EpisodeInputViewModel.swift; path = "DayCarat-iOS/Source/Present/MyPage/EpisodeInputViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		097DBFC72B7F817F00AEDA13 /* YearSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearSelectTableViewCell.swift; sourceTree = "<group>"; };
 		09873AC02B7797F1004A1EB2 /* GemSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemSectionModel.swift; sourceTree = "<group>"; };
 		09873AC22B779BEA004A1EB2 /* AiRecommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiRecommandCell.swift; sourceTree = "<group>"; };
 		09873AC42B78AE95004A1EB2 /* SoaraList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraList.swift; sourceTree = "<group>"; };
@@ -661,6 +663,7 @@
 		09C5741B2B4EC48E00CCABCB /* Section */ = {
 			isa = PBXGroup;
 			children = (
+				09C5741C2B4EC4BA00CCABCB /* EpisodeListCollectionViewCell.swift */,
 				09C5741E2B4EC4EE00CCABCB /* EpisodeListHeaderView.swift */,
 			);
 			path = Section;
@@ -991,7 +994,6 @@
 				09BDC1D42B4D818200C07F34 /* BannerCollectionViewCell.swift */,
 				09BDC1D62B4D84F900C07F34 /* NewsCollectionViewCell.swift */,
 				09BDC1E02B4D9E2900C07F34 /* MyPageTableViewCell.swift */,
-				09C5741C2B4EC4BA00CCABCB /* EpisodeListCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1041,6 +1043,7 @@
 			children = (
 				DEA544282B4E1F6200813CC6 /* EpisodeHeaderCell.swift */,
 				DEA5442A2B4E256100813CC6 /* EpisodeBodyCell.swift */,
+				097DBFC72B7F817F00AEDA13 /* YearSelectTableViewCell.swift */,
 			);
 			path = Section;
 			sourceTree = "<group>";
@@ -1365,6 +1368,7 @@
 				DEA544522B4E8A9A00813CC6 /* MyPageViewModel.swift in Sources */,
 				DE8479D12B47A0FD00471B4F /* DayCaratLabel.swift in Sources */,
 				0957F9082B52CA1C0031B291 /* TabBarItem.swift in Sources */,
+				097DBFC82B7F818000AEDA13 /* YearSelectTableViewCell.swift in Sources */,
 				09B9727C2B54256200205087 /* LoginDTO.swift in Sources */,
 				DEA5442B2B4E256100813CC6 /* EpisodeBodyCell.swift in Sources */,
 				DE28449F2B71EA9A009E18A1 /* MyPageModel.swift in Sources */,

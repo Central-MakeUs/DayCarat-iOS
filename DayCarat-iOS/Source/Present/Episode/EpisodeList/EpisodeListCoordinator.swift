@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class EpisodeListCoordinator: Coordinator {
+final class EpisodeListCoordinator: NSObject, Coordinator {
     func start() {
         
     }
@@ -22,6 +22,7 @@ final class EpisodeListCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.navigationController.isNavigationBarHidden = true
+
     }
     
     func startList(title: String, count: String, type: EpiListType, keywordType: KeywordEnum) {
@@ -32,6 +33,7 @@ final class EpisodeListCoordinator: Coordinator {
     }
     
     func pushDetail(idx: Int) {
+
         let vc = DetailEpiCoordinator(navigationController: navigationController)
         navigationController.isNavigationBarHidden = true
         childCoordinators.append(vc)

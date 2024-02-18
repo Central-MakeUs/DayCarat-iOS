@@ -65,6 +65,7 @@ final class EpisodeListViewController: BaseViewController {
         
         naviBar.delegate = self
         episodeListCollectionView.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.view.backgroundColor = UIColor(hexString: "#F9F9F9")
     }
     
@@ -127,7 +128,7 @@ final class EpisodeListViewController: BaseViewController {
                 } else {
                     self.emptyImg.isHidden = true
                 }
-                cell.configure(title: item.title, date: item.date, des: item.content, gem: false, type: .primary, keywordTitle: "")
+                cell.configure(title: item.title, date: item.date, des: item.content, gem: false, type: .keyword, keywordTitle: self.viewModel.headerTitle)
                 return cell
             },
             configureSupplementaryView: { _, collectionView, kind, indexPath in
@@ -147,7 +148,7 @@ final class EpisodeListViewController: BaseViewController {
                 } else {
                     self.emptyImg.isHidden = true
                 }
-                cell.configure(title: item.title, date: item.date, des: item.content, gem: false, type: .primary, keywordTitle: "")
+                cell.configure(title: item.title, date: item.date, des: item.content, gem: false, type: .primary, keywordTitle: item.episodeKeyword)
                 return cell
             },
             configureSupplementaryView: { _, collectionView, kind, indexPath in
@@ -177,5 +178,10 @@ extension EpisodeListViewController: CustomNavigaitonBarDelegate {
     
     func rightBtnClick(_ navibar: CustomNavigaitonBar) {
         
+    }
+}
+extension EpisodeListViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

@@ -8,6 +8,6 @@
 import Foundation
 
 struct CellModel {
-    let helpCell: [String] = ["Soar", "helpcell2", "helpcell1"]
+    let helpCell: [String] = ["Soar", "helpcell2", "helpcell3"]
 }
 

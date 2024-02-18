@@ -37,7 +37,7 @@ final class EpisodeHeaderView: UICollectionReusableView {
         [backgroundImg, titleLabel, desLabel, bottomView, searchBtn].forEach {
             self.addSubview($0)
         }
-        [activityBtn].forEach {
+        [activityBtn,dateBtn, yearTableView].forEach {
             self.bottomView.addSubview($0)
         }
     }
@@ -47,6 +47,19 @@ final class EpisodeHeaderView: UICollectionReusableView {
     }
     var activityBtn = DayCaratToggleBtn(text: "활동별", state: true).then {
         $0.isEnabled = true
+    }
+    
+    var yearBtn = UIButton().then {
+        $0.layer.borderColor = UIColor.Gray300?.cgColor
+        $0.layer.borderWidth = 1
+        $0.layer.cornerRadius = 8
+    }
+    
+    var yearTableView = UITableView(frame: CGRect.zero, style: .grouped).then{
+        $0.backgroundColor = .white
+        $0.register(YearSelectTableViewCell.self, forCellReuseIdentifier: YearSelectTableViewCell.identifier)
+        $0.isScrollEnabled = false
+        $0.separatorInset = .zero
     }
     
     func configure(count: String, btnState: Bool) {
@@ -103,12 +116,19 @@ final class EpisodeHeaderView: UICollectionReusableView {
             $0.width.equalTo(66)
             $0.height.equalTo(36)
         }
-//        dateBtn.snp.makeConstraints {
-//            $0.top.equalToSuperview().offset(12)
-//            $0.leading.equalTo(activityBtn.snp.trailing).offset(8)
-//            $0.width.equalTo(66)
-//            $0.height.equalTo(36)
-//        }
+        dateBtn.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(12)
+            $0.leading.equalTo(activityBtn.snp.trailing).offset(8)
+            $0.width.equalTo(66)
+            $0.height.equalTo(36)
+        }
+        
+        yearTableView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(12)
+            $0.trailing.equalToSuperview().inset(16)
+            $0.width.equalTo(108)
+            $0.height.equalTo(40)
+        }
     }
     
     override init(frame: CGRect) {

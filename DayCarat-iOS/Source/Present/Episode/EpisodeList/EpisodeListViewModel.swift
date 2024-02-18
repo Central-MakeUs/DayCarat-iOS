@@ -50,6 +50,7 @@ final class EpisodeListViewModel: ViewModelType {
         
         usecase.fetchActivityEpiList(activity: keyword)
             .subscribe(onSuccess: {   [weak  self] res in
+                print(res)
                 self?.activityEpiList.accept(res.result!)
             })
             .disposed(by: disposeBag)

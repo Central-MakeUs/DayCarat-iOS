@@ -62,6 +62,7 @@ final class EpisodeInputViewController: BaseViewController {
     override func configure() {
         self.naviBar.delegate = self
         self.epiInputCollectionView.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.naviBar.backgroundColor = .clear
         setupDataSource()
     }
@@ -235,5 +236,10 @@ extension EpisodeInputViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: view.frame.width, height:52)
         }
         return CGSize(width: 0, height: 0)
+    }
+}
+extension EpisodeInputViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
