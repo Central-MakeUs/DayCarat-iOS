@@ -69,6 +69,9 @@
 		09875D762B7615FE004B8E62 /* MakeGemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09875D752B7615FD004B8E62 /* MakeGemViewController.swift */; };
 		09875D782B761636004B8E62 /* MakeGemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09875D772B761636004B8E62 /* MakeGemViewModel.swift */; };
 		09875D7A2B761668004B8E62 /* MakeGemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09875D792B761668004B8E62 /* MakeGemCoordinator.swift */; };
+		0994E7332B83809600051088 /* KeywordEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0994E7322B83809600051088 /* KeywordEditViewController.swift */; };
+		0994E7352B8380B700051088 /* KeywordEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0994E7342B8380B700051088 /* KeywordEditViewModel.swift */; };
+		0994E7372B8380C000051088 /* KeywordEditCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0994E7362B8380C000051088 /* KeywordEditCoordinator.swift */; };
 		09A67D962B515FE8003EDABE /* DetailEpiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A67D952B515FE8003EDABE /* DetailEpiModel.swift */; };
 		09B9726A2B540D4A00205087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09073D3E2B46F88200D840EC /* Assets.xcassets */; };
 		09B9726C2B540F0700205087 /* JewelryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B9726B2B540F0700205087 /* JewelryUseCase.swift */; };
@@ -290,6 +293,9 @@
 		09875D752B7615FD004B8E62 /* MakeGemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeGemViewController.swift; sourceTree = "<group>"; };
 		09875D772B761636004B8E62 /* MakeGemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeGemViewModel.swift; sourceTree = "<group>"; };
 		09875D792B761668004B8E62 /* MakeGemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeGemCoordinator.swift; sourceTree = "<group>"; };
+		0994E7322B83809600051088 /* KeywordEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordEditViewController.swift; sourceTree = "<group>"; };
+		0994E7342B8380B700051088 /* KeywordEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordEditViewModel.swift; sourceTree = "<group>"; };
+		0994E7362B8380C000051088 /* KeywordEditCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordEditCoordinator.swift; sourceTree = "<group>"; };
 		09A67D952B515FE8003EDABE /* DetailEpiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEpiModel.swift; sourceTree = "<group>"; };
 		09B9726B2B540F0700205087 /* JewelryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JewelryUseCase.swift; sourceTree = "<group>"; };
 		09B9726D2B54128E00205087 /* JewelryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JewelryInterface.swift; sourceTree = "<group>"; };
@@ -638,6 +644,16 @@
 				09873AC42B78AE95004A1EB2 /* SoaraList.swift */,
 			);
 			path = Sections;
+			sourceTree = "<group>";
+		};
+		0994E7312B83808000051088 /* KeywordEdit */ = {
+			isa = PBXGroup;
+			children = (
+				0994E7322B83809600051088 /* KeywordEditViewController.swift */,
+				0994E7342B8380B700051088 /* KeywordEditViewModel.swift */,
+				0994E7362B8380C000051088 /* KeywordEditCoordinator.swift */,
+			);
+			path = KeywordEdit;
 			sourceTree = "<group>";
 		};
 		09B972812B54297600205087 /* Network */ = {
@@ -1010,6 +1026,7 @@
 		DE8479E32B47E35900471B4F /* JewelryBox */ = {
 			isa = PBXGroup;
 			children = (
+				0994E7312B83808000051088 /* KeywordEdit */,
 				DE0F13632B633D700059BCD5 /* DetailGem */,
 				DE0F13622B633D640059BCD5 /* Main */,
 			);
@@ -1276,10 +1293,12 @@
 				09875D762B7615FE004B8E62 /* MakeGemViewController.swift in Sources */,
 				09058FBB2B5BFA7300DA5E74 /* EpisodeRepository.swift in Sources */,
 				09DC3F172B57F5A30026B857 /* HomeRepository.swift in Sources */,
+				0994E7372B8380C000051088 /* KeywordEditCoordinator.swift in Sources */,
 				DEA544302B4E53A700813CC6 /* JewelryHeaderView.swift in Sources */,
 				DE5F41162B4B90A700581075 /* IntroViewModel.swift in Sources */,
 				DEA544452B4E763100813CC6 /* LoginCoordinator.swift in Sources */,
 				DE8479D62B47DFB800471B4F /* IntroViewController.swift in Sources */,
+				0994E7332B83809600051088 /* KeywordEditViewController.swift in Sources */,
 				DEA544412B4E74E700813CC6 /* LoginRepository.swift in Sources */,
 				DEA544502B4E89FF00813CC6 /* TabBarCoordinator.swift in Sources */,
 				09DC3F192B57FFBA0026B857 /* EpisodeService.swift in Sources */,
@@ -1369,6 +1388,7 @@
 				DE8479D12B47A0FD00471B4F /* DayCaratLabel.swift in Sources */,
 				0957F9082B52CA1C0031B291 /* TabBarItem.swift in Sources */,
 				097DBFC82B7F818000AEDA13 /* YearSelectTableViewCell.swift in Sources */,
+				0994E7352B8380B700051088 /* KeywordEditViewModel.swift in Sources */,
 				09B9727C2B54256200205087 /* LoginDTO.swift in Sources */,
 				DEA5442B2B4E256100813CC6 /* EpisodeBodyCell.swift in Sources */,
 				DE28449F2B71EA9A009E18A1 /* MyPageModel.swift in Sources */,

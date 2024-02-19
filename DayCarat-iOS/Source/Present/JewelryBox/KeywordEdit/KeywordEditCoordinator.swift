@@ -1,13 +1,13 @@
 //
-//  CreationSoaraCoordinator.swift
+//  KeywordEditCoordinator.swift
 //  DayCarat-iOS
 //
-//  Created by Choi on 1/26/24.
+//  Created by 최지철 on 2/19/24.
 //
 
 import UIKit
 
-final class GemCoordinator: Coordinator {
+final class KeywordEditCoordinator: Coordinator {
     func start() {
         
     }
@@ -24,12 +24,11 @@ final class GemCoordinator: Coordinator {
         self.navigationController.isNavigationBarHidden = true
     }
     
-    func start(id: Int, type: KeywordEnum) {
-        let vm = GemViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService()), gemRepository: GemRepository(service: GemService())), gemUsecase: JewelryUseCase(repositoy: GemRepository(service: GemService())), coordinator: self)
-        let vc = GemViewController(viewModel: vm, id: id, type: type)
+    func start(id: Int) {
+        let vm = KeywordEditViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService()), gemRepository: GemRepository(service: GemService())), coordinator: self)
+        let vc = KeywordEditViewController(viewModel: vm)
         navigationController.pushViewController(vc, animated: true)
     }
-
     
     func setAction(_ action: Action) {
         

@@ -82,6 +82,7 @@ final class GemViewController: BaseViewController {
         $0.layer.cornerRadius = 16
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 46, left: 0, bottom: 10, right: 0)
         layout.minimumInteritemSpacing = 20
         layout.sectionInsetReference = .fromContentInset
         $0.collectionViewLayout = layout
@@ -102,6 +103,7 @@ final class GemViewController: BaseViewController {
         $0.alwaysBounceVertical = true
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
+    private let aiRecommendLabel = DayCaratLabel(type: .Subhead5, text: "AI 추천 문장", textColor: .Main!)
 
     // MARK: - LifeCycle
     
@@ -137,6 +139,7 @@ final class GemViewController: BaseViewController {
         [headerInfoView, epiCollectionView, dividerView, soaraHeaderView, aiRecommandTableView, soaraCollectionView].forEach {
             contentSV.addArrangedSubview($0)
         }
+        aiRecommandTableView.addSubview(aiRecommendLabel)
     }
     
     override func layout() {
@@ -192,8 +195,13 @@ final class GemViewController: BaseViewController {
             self.soaraCollectionViewHeightConstraint = $0.height.equalTo(361).constraint.layoutConstraints.first
         }
         waitImg.snp.makeConstraints {
-            $0.height.equalTo(260)
-            $0.horizontalEdges.equalToSuperview().inset(16)
+            $0.height.equalTo(74)
+            $0.width.equalTo(184)
+            $0.center.equalToSuperview()
+        }
+        aiRecommendLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(18)
+            $0.leading.equalToSuperview().offset(24)
         }
     }
     private func setupDataSource() {
@@ -291,7 +299,7 @@ final class GemViewController: BaseViewController {
     func updateSoaraCollectionViewHeight() {
         soaraCollectionViewHeightConstraint?.constant = allSoaraCellHeight + 40
         self.soaraCollectionView.layoutIfNeeded()
-        tableViewHeightConstraint?.constant = allTableHeight + 80
+        tableViewHeightConstraint?.constant = allTableHeight + 100
         self.aiRecommandTableView.layoutIfNeeded()
     }
 }
