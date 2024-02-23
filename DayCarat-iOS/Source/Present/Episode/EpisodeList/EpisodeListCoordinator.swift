@@ -7,8 +7,10 @@
 
 import UIKit
 
-final class EpisodeListCoordinator: Coordinator {
-    
+final class EpisodeListCoordinator: NSObject, Coordinator {
+    func start() {
+        
+    }
     
     struct Action {
         
@@ -20,19 +22,29 @@ final class EpisodeListCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.navigationController.isNavigationBarHidden = true
+
     }
     
-    func start() {
-        let vm = EpisodeListViewModel(usecase: EpisodeUseCase(), coordinator: self)
-        let vc = EpisodeListViewController(viewModel: vm)
+    func startList(title: String, count: String, type: EpiListType, keywordType: KeywordEnum) {
+        let vm = EpisodeListViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService()), gemRepository: GemRepository(service: GemService())), coordinator: self, title: title, count: count, gemUsecase: JewelryUseCase(repositoy: GemRepository(service: GemService())))
+        let vc = EpisodeListViewController(viewModel: vm, type: type, kewordtype: keywordType)
+        vc.hidesBottomBarWhenPushed = true
         navigationController.pushViewController(vc, animated: true)
     }
     
     func pushDetail(idx: Int) {
+
         let vc = DetailEpiCoordinator(navigationController: navigationController)
         navigationController.isNavigationBarHidden = true
         childCoordinators.append(vc)
         vc.startDetail(id: idx)
+    }
+    
+    func pushGemDetail(id: Int, type: KeywordEnum) {
+        let vc = GemCoordinator(navigationController: navigationController)
+        navigationController.isNavigationBarHidden = true
+        childCoordinators.append(vc)
+        vc.start(id: id, type: type)
     }
     
     func setAction(_ action: Action) {

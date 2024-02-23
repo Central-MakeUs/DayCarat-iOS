@@ -44,12 +44,13 @@ final class DetailEpiBodySection: UICollectionViewCell {
     private func layout() {
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
+            $0.leading.equalToSuperview().offset(16)
         }
         desLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(29)
-            $0.leading.equalToSuperview()
-            $0.width.equalTo(UIScreen.main.bounds.width - 30)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().inset(16)
+            $0.width.equalTo(UIScreen.main.bounds.size.width - 60)
         }
     }
     

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 import RxSwift
 import RxCocoa
@@ -29,7 +30,7 @@ final class HomeViewController: BaseViewController {
     }
     private let backgroundImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
-        $0.image = UIImage(named: "BackGround")
+        $0.backgroundColor = .Main100
     }
     private let bellBtn = UIButton().then {
         $0.setImage(UIImage(named: "icon-bell"), for: .normal)
@@ -39,11 +40,21 @@ final class HomeViewController: BaseViewController {
         $0.contentMode = .scaleAspectFit
         $0.image = UIImage(named: "splashLogo")
     }
-    private let titleLabel = DayCaratLabel(type: .Subhead1, text: "지철님,\n새로운 에피소드를 캐볼까요?",textColor: .Gray900!)
+    private let titleLabel = DayCaratLabel(type: .Subhead1, text: ",\n새로운 에피소드를 캐볼까요?",textColor: .Gray900!)
     private let folderImg = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.backgroundColor = .clear
-        $0.image = UIImage(named: "backFolder")
+        $0.image = UIImage(named: "homeIcon2")
+    }
+    private let noEpiImg = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.backgroundColor = .clear
+        $0.image = UIImage(named: "noEpi")
+    }
+    private let pinkCircle = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.backgroundColor = .clear
+        $0.image = UIImage(named: "homeIcon1")
     }
     private let countView = UIView().then {
         $0.backgroundColor = .Main
@@ -52,7 +63,7 @@ final class HomeViewController: BaseViewController {
         $0.layer.opacity = 0.7
     }
     private let countIntroLabel = DayCaratLabel(type: .Body3, text: "이번달\n나의 에피소드", textColor: .white)
-    private let countNumLabel = DayCaratLabel(type: .Header2, text: "20", textColor: .white)
+    private let countNumLabel = DayCaratLabel(type: .Header2, text: "0", textColor: .white)
     private let countLabel = DayCaratLabel(type: .Subhead6, text: "개", textColor: .white)
     private let disposeBag = DisposeBag()
     private let helpCollectioView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
@@ -121,10 +132,11 @@ final class HomeViewController: BaseViewController {
         $0.isScrollEnabled = true
         $0.backgroundColor = .clear
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 175, height: 175)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2.3, height: 175)
         layout.sectionInset = UIEdgeInsets.zero
         layout.minimumLineSpacing = 14
-        layout.minimumInteritemSpacing = 0
+        layout.minimumInteritemSpacing = 12
+//        layout.
         layout.sectionInsetReference = .fromContentInset
         $0.collectionViewLayout = layout
         $0.decelerationRate = .fast
@@ -153,34 +165,42 @@ final class HomeViewController: BaseViewController {
 
     override func configure() {
         self.bannerCollectioView.delegate = self
+        //noEpiImg.isHidden = true
 
     }
     
     override func addView() {
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(contentView)
-        self.backgroundImg.addSubview(folderImg)
+        [pinkCircle, folderImg].forEach {
+            backgroundImg.addSubview($0)
+        }
         [backgroundImg,bottomView, logoImg, bellBtn,titleLabel, countView, helpCollectioView, recentEpisodeLabel,
-         recentEpisodeCollectioView, bannerCollectioView, newsLabel, newsDesLabel,
-         newsCollectioView, pageControl].forEach {
+         recentEpisodeCollectioView, bannerCollectioView,
+         pageControl].forEach {
             self.contentView.addSubview($0)
         }
         [countIntroLabel, countNumLabel, countLabel].forEach {
             countView.addSubview($0)
         }
+        self.recentEpisodeCollectioView.addSubview(noEpiImg)
     }
     
     override func layout() {
+        pinkCircle.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(-30)
+            $0.leading.equalToSuperview().offset(-73)
+            $0.width.height.equalTo(310)
+        }
         self.folderImg.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom)
-            $0.trailing.equalToSuperview()
-            $0.width.equalTo(171.67)
-            $0.height.equalTo(260.77)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(-10)
+            $0.trailing.equalToSuperview().offset(30)
+            $0.width.height.equalTo(200)
         }
         self.contentView.snp.makeConstraints {
             $0.width.equalToSuperview()
             $0.edges.equalToSuperview()
-            $0.height.equalTo(1500)
+            $0.height.equalTo(1000)
         }
         self.backgroundImg.snp.makeConstraints {
             $0.top.equalToSuperview().offset(-500)
@@ -255,20 +275,24 @@ final class HomeViewController: BaseViewController {
             $0.top.equalTo(bannerCollectioView.snp.bottom).offset(12)
             $0.centerX.equalToSuperview()
         }
-        self.newsLabel.snp.makeConstraints {
-            $0.top.equalTo(bannerCollectioView.snp.bottom).offset(48)
-            $0.leading.equalToSuperview().offset(16)
+//        self.newsLabel.snp.makeConstraints {
+//            $0.top.equalTo(bannerCollectioView.snp.bottom).offset(48)
+//            $0.leading.equalToSuperview().offset(16)
+//        }
+//        self.newsDesLabel.snp.makeConstraints {
+//            $0.top.equalTo(newsLabel.snp.bottom).offset(8)
+//            $0.leading.equalToSuperview().offset(16)
+//        }
+//        self.newsCollectioView.snp.makeConstraints {
+//            $0.top.equalTo(newsDesLabel.snp.bottom).offset(16)
+//            $0.horizontalEdges.equalToSuperview().inset(16)
+//            $0.height.equalTo(364)
+//        }
+        self.noEpiImg.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.height.equalTo(117)
+            $0.width.equalTo(250)
         }
-        self.newsDesLabel.snp.makeConstraints {
-            $0.top.equalTo(newsLabel.snp.bottom).offset(8)
-            $0.leading.equalToSuperview().offset(16)
-        }
-        self.newsCollectioView.snp.makeConstraints {
-            $0.top.equalTo(newsDesLabel.snp.bottom).offset(16)
-            $0.horizontalEdges.equalToSuperview().inset(16)
-            $0.height.equalTo(364)
-        }
-
     }
     
     override func binding() {
@@ -276,7 +300,11 @@ final class HomeViewController: BaseViewController {
         let input = HomeViewModel.Input()
         let output = viewModel.transform(input: input)
         
-    
+        viewModel.userInfo
+            .bind(onNext: {  [weak self] data in
+                self?.titleLabel.text = "\(data.nickname)님,\n새로운 에피소드를 캐볼까요?"
+            })
+            .disposed(by: disposeBag)
         
         Observable.just([0, 1, 2])
             .bind(to: helpCollectioView.rx.items(cellIdentifier: HelpCollectionViewCell.identifier, cellType: HelpCollectionViewCell.self))
@@ -293,38 +321,73 @@ final class HomeViewController: BaseViewController {
         }
         .disposed(by: disposeBag)
         
+        helpCollectioView.rx
+            .modelSelected(Int.self)
+            .subscribe(onNext: {  [weak self]  idx in
+                
+                if idx == 0 {
+                    let url = NSURL(string: "https://daycarat.notion.site/aa1d6e7d00fe4ee9acd41039adc9946a?pvs=4")
+                    let safariView: SFSafariViewController = SFSafariViewController(url: url! as URL)
+                    self?.present(safariView, animated: true, completion: nil)
+                } else if idx == 1 {
+                    let url = NSURL(string: "https://www.notion.so/daycarat/AI-b8e3f747a0444816bc8b858a736202ca?pvs=4")
+                    let safariView: SFSafariViewController = SFSafariViewController(url: url! as URL)
+                    self?.present(safariView, animated: true, completion: nil)
+                } else {
+                    let url = NSURL(string: "https://www.instagram.com/daycarat_official/?igsh=MXJobmZwbTlibGdvNw%3D%3D&utm_source=qr")
+                    let safariView: SFSafariViewController = SFSafariViewController(url: url! as URL)
+                    self?.present(safariView, animated: true, completion: nil)
+                }
+            })
+            .disposed(by: disposeBag)
+        
         viewModel.recentEpi
             .bind(to: recentEpisodeCollectioView.rx.items(cellIdentifier: RecentEpiCollectionViewCell.identifier, cellType:RecentEpiCollectionViewCell.self))
         { index, item, cell in
+        
             cell.configureCell(title: item.title, date: item.time)
         }
         .disposed(by: disposeBag)
+        
+        viewModel.recentEpi
+            .subscribe(onNext: {  [weak self]  items in
+                if items.isEmpty {
+                    self?.noEpiImg.isHidden = false  
+                } else {
+                    self?.noEpiImg.isHidden = true
+                }
+            })
+            .disposed(by: disposeBag)
 
         
         recentEpisodeCollectioView.rx
             .modelSelected(recentEPi.self)
             .subscribe(onNext: {  [weak self]  info in
+                
                 self?.viewModel.coordinator?.pushDetail(idx: info.id)
             })
             .disposed(by: disposeBag)
         
-        Observable.just([0, 1, 2])
+        Observable.just(["banner", "banner2", "banner"])
             .bind(to: bannerCollectioView.rx.items(cellIdentifier: BannerCollectionViewCell.identifier, cellType:BannerCollectionViewCell.self))
         {  index, item, cell in
-            cell.configureCell(img: "banner")
+            cell.configureCell(img: item)
         }
         .disposed(by: disposeBag)
         
-        Observable.just([0, 1, 2, 4])
-            .bind(to: newsCollectioView.rx.items(cellIdentifier: NewsCollectionViewCell.identifier, cellType:NewsCollectionViewCell.self))
-        {  index, item, cell in
-
-        }
-        .disposed(by: disposeBag)
+        
+        
+//        Observable.just([0, 1, 2, 4])
+//            .bind(to: newsCollectioView.rx.items(cellIdentifier: NewsCollectionViewCell.identifier, cellType:NewsCollectionViewCell.self))
+//        {  index, item, cell in
+//
+//        }
+//        .disposed(by: disposeBag)
         
         viewModel.monthEpiCount
             .asDriver(onErrorJustReturn: 0)
             .drive(onNext: {  [weak self] count in
+                print(count)
                 self?.countNumLabel.text = String(count)
             })
             .disposed(by: disposeBag)

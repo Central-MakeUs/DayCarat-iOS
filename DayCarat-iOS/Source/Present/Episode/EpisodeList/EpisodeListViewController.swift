@@ -12,12 +12,17 @@ import RxSwift
 import RxDataSources
 
 final class EpisodeListViewController: BaseViewController {
-    
+    private let keywordType: KeywordEnum
     private var disposeBag = DisposeBag()
-    private var dataSource: RxCollectionViewSectionedReloadDataSource<SectionModel>!
+    private var dataSource: RxCollectionViewSectionedReloadDataSource<GemKeywordSection>!
+    private var activityDataSource: RxCollectionViewSectionedReloadDataSource<ActivityEpisodeSection>!
     private let viewModel: EpisodeListViewModel
-
+    private let type: EpiListType
     private let naviBar = CustomNavigaitonBar(btnstate: false, rightBtnText: "", middleText: "")
+    private let emptyImg = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.image = UIImage(named: "emptyBox")
+    }
     private let episodeListCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.register(EpisodeListCollectionViewCell.self, forCellWithReuseIdentifier: EpisodeListCollectionViewCell.identifier)
         $0.register(EpisodeListHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: EpisodeListHeaderView.identifier)
@@ -27,8 +32,8 @@ final class EpisodeListViewController: BaseViewController {
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 20, left: 16, bottom: 10, right: 16)
         layout.minimumLineSpacing = 16
-        layout.itemSize = CGSize(width: 175, height: 184)
-        layout.minimumInteritemSpacing = 0
+        layout.itemSize = CGSize(width: 328, height: 128)
+        layout.minimumInteritemSpacing = 12
         layout.sectionInsetReference = .fromContentInset
         $0.collectionViewLayout = layout
         $0.decelerationRate = .fast
@@ -37,8 +42,10 @@ final class EpisodeListViewController: BaseViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    init(viewModel: EpisodeListViewModel) {
+    init(viewModel: EpisodeListViewModel, type: EpiListType, kewordtype: KeywordEnum) {
         self.viewModel = viewModel
+        self.type = type
+        self.keywordType = kewordtype
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -47,15 +54,25 @@ final class EpisodeListViewController: BaseViewController {
     }
     
     override func configure() {
-        setupDataSource()
+        
+        switch type {
+            
+        case .epi:
+            activitydataSource()
+        case .gem:
+            setupDataSource()
+        }
+        
         naviBar.delegate = self
         episodeListCollectionView.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.view.backgroundColor = UIColor(hexString: "#F9F9F9")
     }
     
     override func addView() {
         self.view.addSubview(naviBar)
         self.view.addSubview(episodeListCollectionView)
+        self.episodeListCollectionView.addSubview(emptyImg)
     }
     
     override func layout() {
@@ -69,32 +86,74 @@ final class EpisodeListViewController: BaseViewController {
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
         }
+        emptyImg.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.height.equalTo(235)
+        }
     }
     
     override func binding() {
-        let sections = [SectionModel(items: [0, 1, 2, 4,5,6,7,8,9])]
         
-        Observable.just(sections)
-            .bind(to: episodeListCollectionView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
-        
-        episodeListCollectionView.rx.modelSelected(Int.self)
-            .subscribe(onNext: { [weak self] selectedIdx in
-                self?.viewModel.coordinator?.start()
-            })
-            .disposed(by: disposeBag)
+        switch type {
+        case .epi:
+            viewModel.activityEpiList
+                .map{ [ActivityEpisodeSection(items: $0)] }
+                .bind(to: episodeListCollectionView.rx.items(dataSource: activityDataSource))
+                .disposed(by: disposeBag)
+            episodeListCollectionView.rx.modelSelected(ActivityEpisodeList.self)
+                    .subscribe(onNext: { [weak self] res in
+                        self?.viewModel.coordinator?.pushDetail(idx:res.id)
+                    })
+                    .disposed(by: disposeBag)
+        case .gem:
+            viewModel.keywordGemList
+                    .map { [GemKeywordSection(items: $0)] }
+                    .bind(to: episodeListCollectionView.rx.items(dataSource: dataSource))
+                    .disposed(by: disposeBag)
+                
+            episodeListCollectionView.rx.modelSelected(GemKeywordEpi.self)
+                    .subscribe(onNext: { [weak self] res in
+                        self?.viewModel.coordinator?.pushGemDetail(id: res.episodeId, type: self?.keywordType ?? .communication)
+                    })
+                    .disposed(by: disposeBag)
+        }
     }
 
     private func setupDataSource() {
-        dataSource = RxCollectionViewSectionedReloadDataSource<SectionModel>(
+        dataSource = RxCollectionViewSectionedReloadDataSource<GemKeywordSection>(
             configureCell: { _, collectionView, indexPath, item in
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpisodeListCollectionViewCell.identifier, for: indexPath) as! EpisodeListCollectionViewCell
-                
+                if indexPath.count == 0 {
+                    self.emptyImg.isHidden = false
+                } else {
+                    self.emptyImg.isHidden = true
+                }
+                cell.configure(title: item.title, date: item.date, des: item.content, gem: false, type: .keyword, keywordTitle: self.viewModel.headerTitle)
                 return cell
             },
             configureSupplementaryView: { _, collectionView, kind, indexPath in
                 let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: EpisodeListHeaderView.identifier, for: indexPath) as! EpisodeListHeaderView
-                
+                headerView.configure(title: self.viewModel.headerTitle, count: self.viewModel.headerCount)
+                return headerView
+            }
+        )
+    }
+    
+    private func activitydataSource() {
+        activityDataSource = RxCollectionViewSectionedReloadDataSource<ActivityEpisodeSection>(
+            configureCell: { _, collectionView, indexPath, item in
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpisodeListCollectionViewCell.identifier, for: indexPath) as! EpisodeListCollectionViewCell
+                if indexPath.count == 0 {
+                    self.emptyImg.isHidden = false
+                } else {
+                    self.emptyImg.isHidden = true
+                }
+                cell.configure(title: item.title, date: item.date, des: item.content, gem: false, type: .primary, keywordTitle: item.episodeKeyword)
+                return cell
+            },
+            configureSupplementaryView: { _, collectionView, kind, indexPath in
+                let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: EpisodeListHeaderView.identifier, for: indexPath) as! EpisodeListHeaderView
+                headerView.configure(title: self.viewModel.headerTitle, count: self.viewModel.headerCount)
                 return headerView
             }
         )
@@ -119,5 +178,10 @@ extension EpisodeListViewController: CustomNavigaitonBarDelegate {
     
     func rightBtnClick(_ navibar: CustomNavigaitonBar) {
         
+    }
+}
+extension EpisodeListViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

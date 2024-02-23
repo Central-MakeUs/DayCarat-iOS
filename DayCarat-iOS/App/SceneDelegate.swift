@@ -26,11 +26,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let mainViewController = CustomTabBarController()
+//        let vm = GemViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService()), gemRepository: GemRepository(service: GemService())), id: 0, gemUsecase: JewelryUseCase(repositoy: GemRepository(service: GemService())), coordinator: GemCoordinator(navigationController: navigaitonController))
+//        let vc = GemViewController(viewModel: vm)
         /*IntroViewController(viewModel: IntroViewModel(introUseCase: IntroUseCase())) // 맨 처음 보여줄 ViewController*/
         appCoordinator = AppCoordinator(navigationController: navigaitonController)
         appCoordinator?.start()
         window?.rootViewController = navigaitonController
+        window!.windowScene = windowScene
         window?.makeKeyAndVisible()
 
     }

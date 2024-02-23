@@ -15,10 +15,11 @@ final class MyPageViewController: BaseViewController, UIImagePickerControllerDel
     
     private var disposeBag = DisposeBag()
     private let viewModel: MyPageViewModel
-    
+    var appCoordinator: (any Coordinator)?
+
     private let imgPickerController = UIImagePickerController()
     private let profileImg = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
+        $0.contentMode = .scaleAspectFill
         $0.backgroundColor = .clear
         $0.layer.cornerRadius = 35
         $0.layer.borderWidth = 1.5
@@ -92,22 +93,44 @@ final class MyPageViewController: BaseViewController, UIImagePickerControllerDel
         infoTableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
         
-        Observable.just([0, 1])
+        
+        
+        Observable.just(["로그아웃", "회원탈퇴"])
             .bind(to: infoTableView.rx.items(cellIdentifier: MyPageInfoSection.identifier, cellType:MyPageInfoSection.self))
         {  index, item, cell in
-            
+            cell.configure(title: item)
         }
         .disposed(by: disposeBag)
+        
+        infoTableView.rx
+            .modelSelected(String.self)
+            .bind(onNext: {  [weak self]  str in
+                if str == "로그아웃" {
+                    self?.viewModel.coordinator?.finish()
+                    let navigaitonController = UINavigationController()
+                    self?.appCoordinator = AppCoordinator(navigationController: navigaitonController)
+                    let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+                    let sceneDelegate = windowScene?.delegate as? SceneDelegate
+                    self?.appCoordinator = AppCoordinator(navigationController: navigaitonController)
+                    self?.appCoordinator?.start()
+                    sceneDelegate?.window?.rootViewController = navigaitonController
+                    sceneDelegate?.window?.makeKeyAndVisible()
+                } else {
+                    self?.viewModel.deleteUser()
+                }
+            })
+            .disposed(by: disposeBag)
         
         viewModel.userData
             .bind(onNext: {  [weak self] info in
                 self?.nickNameLabel.text = info.nickname
-                self?.emailLabel.text = info.email
-                if let imageURL = URL(string: info.profileImage) {
+                //self?.emailLabel.text = info.email
+                if let imageURL = URL(string: info.profileImage ?? "") {
                     self?.profileImg.kf.setImage(with: imageURL)
                 }
             })
             .disposed(by: disposeBag)
+        
         editBtn.rx
             .tap
             .bind(onNext: {
@@ -118,6 +141,18 @@ final class MyPageViewController: BaseViewController, UIImagePickerControllerDel
             .disposed(by: disposeBag)
     
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage]
+            as? UIImage {
+            DispatchQueue.main.async {
+                self.viewModel.registerImg(img: image)
+                self.profileImg.image = image
+            }
+        }
+        self.dismiss(animated: true)
+    }
+    
 }
 extension MyPageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

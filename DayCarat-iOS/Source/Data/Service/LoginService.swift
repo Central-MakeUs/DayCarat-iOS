@@ -34,4 +34,23 @@ class LoginService {
                 }
             })
     }
+    
+    func requestAppleLogin(id_token: String) -> Single<BaseResponse<LoginResponse>> {
+        return Single.create {  single in
+            let disposable = self.provider.rx
+                .request(.appleLogin(id_token: id_token))
+                .filterSuccessfulStatusCodes()
+                .map(BaseResponse<LoginResponse>.self)
+                .subscribe(onSuccess: { response in
+                    single(.success(response))
+                }, onFailure: { error in
+                    print("애플로그인========\(error)")
+                    single(.failure(error))
+                })
+            return Disposables.create {
+                disposable.dispose()
+            }
+        }
+
+    }
 }

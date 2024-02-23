@@ -24,7 +24,7 @@ final class HomeCoordinator: Coordinator {
     }
     
     func start() {
-        let vm = HomeViewModel(usecase: HomeUseCase(repository: HomeRepository(serivce: HomeService())), coordinator: self)
+        let vm = HomeViewModel(usecase: HomeUseCase(repository: HomeRepository(serivce: HomeService()), user: UserRepository(service: UserInfoService())), coordinator: self)
         let vc = HomeViewController(viewModel: vm)
         navigationController.pushViewController(vc, animated: false)
     }

@@ -23,14 +23,14 @@ final class EpisodeCoordinator: Coordinator {
     }
     
     func start() {
-        let vm = EpisodeViewModel(usecase: EpisodeUseCase(), coordinator: self)
+        let vm = EpisodeViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService()), gemRepository: GemRepository(service: GemService())), coordinator: self)
         let vc = EpisodeViewController(viewModel: vm)
         navigationController.pushViewController(vc, animated: false)
     }
     
-    func pushList() {
+    func startList(title: String, count: String, type: EpiListType) {
         let epiListCoordinator = EpisodeListCoordinator(navigationController: navigationController)
-        epiListCoordinator.start()
+        epiListCoordinator.startList(title: title, count: count, type: type, keywordType: .communication)
         childCoordinators.append(epiListCoordinator)
     }
     

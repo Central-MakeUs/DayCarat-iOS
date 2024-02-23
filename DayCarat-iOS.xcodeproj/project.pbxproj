@@ -11,10 +11,17 @@
 		0901430A2B4C18B2006EAE30 /* TextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090143092B4C18B2006EAE30 /* TextField+.swift */; };
 		0901430C2B4C2E21006EAE30 /* JobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901430B2B4C2E21006EAE30 /* JobCollectionViewCell.swift */; };
 		0901430E2B4C3612006EAE30 /* CollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901430D2B4C3612006EAE30 /* CollectionView+.swift */; };
+		09058FBB2B5BFA7300DA5E74 /* EpisodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09058FBA2B5BFA7300DA5E74 /* EpisodeRepository.swift */; };
 		09073D362B46F87E00D840EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09073D352B46F87E00D840EC /* AppDelegate.swift */; };
 		09073D382B46F87E00D840EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09073D372B46F87E00D840EC /* SceneDelegate.swift */; };
 		09073D422B46F88200D840EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09073D402B46F88200D840EC /* LaunchScreen.storyboard */; };
-		09073D512B46FEBA00D840EC /* tempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09073D502B46FEBA00D840EC /* tempData.swift */; };
+		0908E47C2B5E9B8F0095D016 /* SoaraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E47B2B5E9B8F0095D016 /* SoaraViewController.swift */; };
+		0908E47E2B5EA13D0095D016 /* SoaraCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E47D2B5EA13D0095D016 /* SoaraCoordinator.swift */; };
+		0908E4802B5EA1460095D016 /* SoaraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E47F2B5EA1460095D016 /* SoaraViewModel.swift */; };
+		0908E4832B5EA49A0095D016 /* EpiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E4822B5EA49A0095D016 /* EpiCollectionViewCell.swift */; };
+		0908E4852B5EA6770095D016 /* SoaraCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E4842B5EA6770095D016 /* SoaraCollectionViewCell.swift */; };
+		09099A522B5CCC51009A2C1C /* DropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09099A512B5CCC51009A2C1C /* DropDownTableViewCell.swift */; };
+		09099A542B5CCC72009A2C1C /* EpiInputFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09099A532B5CCC72009A2C1C /* EpiInputFooterView.swift */; };
 		09339BE52B52256F00820896 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 09339BE42B52256F00820896 /* KakaoSDK */; };
 		09339BE72B52256F00820896 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 09339BE62B52256F00820896 /* KakaoSDKAuth */; };
 		09339BE92B52256F00820896 /* KakaoSDKCert in Frameworks */ = {isa = PBXBuildFile; productRef = 09339BE82B52256F00820896 /* KakaoSDKCert */; };
@@ -32,6 +39,8 @@
 		0957F9102B52D1130031B291 /* JewelryBoxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957F90F2B52D1130031B291 /* JewelryBoxViewModel.swift */; };
 		0957F9122B52D1230031B291 /* JewelryBoxCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957F9112B52D1230031B291 /* JewelryBoxCoordinator.swift */; };
 		0957F9142B52D12F0031B291 /* MyPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957F9132B52D12F0031B291 /* MyPageCoordinator.swift */; };
+		096546092B5AC19100CDF4CC /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 096546082B5AC19100CDF4CC /* PanModal */; };
+		0965460B2B5AC1F800CDF4CC /* CalnderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0965460A2B5AC1F800CDF4CC /* CalnderViewController.swift */; };
 		0967D8B82B4A6128009CFD0A /* AgreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8B72B4A6128009CFD0A /* AgreeViewController.swift */; };
 		0967D8C22B4A62CA009CFD0A /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0967D8B92B4A62C9009CFD0A /* Pretendard-ExtraBold.otf */; };
 		0967D8C32B4A62CA009CFD0A /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0967D8BA2B4A62C9009CFD0A /* Pretendard-SemiBold.otf */; };
@@ -48,6 +57,21 @@
 		0967D8DB2B4AF04F009CFD0A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8DA2B4AF04F009CFD0A /* BaseView.swift */; };
 		0967D8DD2B4AFB13009CFD0A /* IntroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967D8DC2B4AFB13009CFD0A /* IntroCollectionViewCell.swift */; };
 		097238552B540AB300626422 /* EpisodeInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097238542B540AB300626422 /* EpisodeInputViewModel.swift */; };
+		097DBFC82B7F818000AEDA13 /* YearSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097DBFC72B7F817F00AEDA13 /* YearSelectTableViewCell.swift */; };
+		09873AC12B7797F1004A1EB2 /* GemSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09873AC02B7797F1004A1EB2 /* GemSectionModel.swift */; };
+		09873AC32B779BEA004A1EB2 /* AiRecommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09873AC22B779BEA004A1EB2 /* AiRecommandCell.swift */; };
+		09873AC52B78AE95004A1EB2 /* SoaraList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09873AC42B78AE95004A1EB2 /* SoaraList.swift */; };
+		09873AC72B78B1B9004A1EB2 /* AiKeywordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09873AC62B78B1B9004A1EB2 /* AiKeywordView.swift */; };
+		09873AC92B79CE4D004A1EB2 /* AiRecommandableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09873AC82B79CE4D004A1EB2 /* AiRecommandableViewCell.swift */; };
+		09873ACB2B7A57A8004A1EB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09873ACA2B7A57A7004A1EB2 /* GoogleService-Info.plist */; };
+		09873ACE2B7A64D7004A1EB2 /* RxKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 09873ACD2B7A64D7004A1EB2 /* RxKeyboard */; };
+		09875D732B750D07004B8E62 /* SoaraInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09875D722B750D07004B8E62 /* SoaraInputViewModel.swift */; };
+		09875D762B7615FE004B8E62 /* MakeGemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09875D752B7615FD004B8E62 /* MakeGemViewController.swift */; };
+		09875D782B761636004B8E62 /* MakeGemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09875D772B761636004B8E62 /* MakeGemViewModel.swift */; };
+		09875D7A2B761668004B8E62 /* MakeGemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09875D792B761668004B8E62 /* MakeGemCoordinator.swift */; };
+		0994E7332B83809600051088 /* KeywordEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0994E7322B83809600051088 /* KeywordEditViewController.swift */; };
+		0994E7352B8380B700051088 /* KeywordEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0994E7342B8380B700051088 /* KeywordEditViewModel.swift */; };
+		0994E7372B8380C000051088 /* KeywordEditCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0994E7362B8380C000051088 /* KeywordEditCoordinator.swift */; };
 		09A67D962B515FE8003EDABE /* DetailEpiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A67D952B515FE8003EDABE /* DetailEpiModel.swift */; };
 		09B9726A2B540D4A00205087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09073D3E2B46F88200D840EC /* Assets.xcassets */; };
 		09B9726C2B540F0700205087 /* JewelryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B9726B2B540F0700205087 /* JewelryUseCase.swift */; };
@@ -92,13 +116,26 @@
 		09DC3F1F2B580B8F0026B857 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F1E2B580B8F0026B857 /* UserRepository.swift */; };
 		09DC3F212B580B9E0026B857 /* UserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F202B580B9E0026B857 /* UserInterface.swift */; };
 		09DC3F242B580E3C0026B857 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 09DC3F232B580E3C0026B857 /* Kingfisher */; };
+		DE0F13652B633D7F0059BCD5 /* GemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F13642B633D7F0059BCD5 /* GemViewController.swift */; };
+		DE0F136A2B634A0F0059BCD5 /* GemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F13692B634A0F0059BCD5 /* GemViewModel.swift */; };
+		DE0F136C2B634A1A0059BCD5 /* GemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F136B2B634A1A0059BCD5 /* GemCoordinator.swift */; };
+		DE0F136E2B6390E50059BCD5 /* GemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F136D2B6390E50059BCD5 /* GemDTO.swift */; };
+		DE0F13702B6393D40059BCD5 /* GemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F136F2B6393D40059BCD5 /* GemService.swift */; };
+		DE0F13722B6397450059BCD5 /* GemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F13712B6397450059BCD5 /* GemRepository.swift */; };
+		DE28449D2B71E732009E18A1 /* KeywordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28449C2B71E732009E18A1 /* KeywordView.swift */; };
+		DE28449F2B71EA9A009E18A1 /* MyPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28449E2B71EA9A009E18A1 /* MyPageModel.swift */; };
+		DE2E7D9F2B6741160016D9F2 /* KeywordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2E7D9E2B6741160016D9F2 /* KeywordModel.swift */; };
+		DE2E7DA12B6798CC0016D9F2 /* EpiListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2E7DA02B6798CC0016D9F2 /* EpiListModel.swift */; };
+		DE43152B2B7AFB1A0018BEEE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DE43152A2B7AFB1A0018BEEE /* RxSwift */; };
+		DE43152E2B7B5CB50018BEEE /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = DE43152D2B7B5CB50018BEEE /* Toast */; };
+		DE4DD7042B60A7D00033EAB4 /* SoaraInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */; };
+		DE4DD7062B60A7EA0033EAB4 /* SoaraInputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7052B60A7EA0033EAB4 /* SoaraInputCoordinator.swift */; };
+		DE4DD7082B60A8F30033EAB4 /* SoaraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4DD7072B60A8F30033EAB4 /* SoaraModel.swift */; };
 		DE5F410F2B4B841500581075 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = DE5F410E2B4B841500581075 /* SkeletonView */; };
 		DE5F41122B4B883400581075 /* IntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41112B4B883400581075 /* IntroModel.swift */; };
 		DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */; };
 		DE5F41162B4B90A700581075 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41152B4B90A700581075 /* IntroViewModel.swift */; };
 		DE5F41192B4B90E300581075 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41182B4B90E300581075 /* ViewModelType.swift */; };
-		DE5F41222B4B92B500581075 /* tempRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41212B4B92B500581075 /* tempRepository.swift */; };
-		DE5F41282B4B92DA00581075 /* tempService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41272B4B92DA00581075 /* tempService.swift */; };
 		DE5F412A2B4B953A00581075 /* IntroUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F41292B4B953A00581075 /* IntroUseCase.swift */; };
 		DE5F412D2B4BC50100581075 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F412C2B4BC50100581075 /* Coordinator.swift */; };
 		DE5F41302B4BD24A00581075 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F412F2B4BD24A00581075 /* OnBoardingViewController.swift */; };
@@ -160,6 +197,34 @@
 		DEB20DFE2B50F4FB001D92B5 /* DetailEpiBodySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB20DFD2B50F4FB001D92B5 /* DetailEpiBodySection.swift */; };
 		DEB20E002B50F510001D92B5 /* DetailEpiHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB20DFF2B50F510001D92B5 /* DetailEpiHeaderView.swift */; };
 		DEB20E022B511058001D92B5 /* EpisodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB20E012B511058001D92B5 /* EpisodeUseCase.swift */; };
+		DECD33F42B61FC9E005C223F /* DayCaratToggleBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD33F32B61FC9E005C223F /* DayCaratToggleBtn.swift */; };
+		DEDE44072B6A2CD50068A749 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44062B6A2CD50068A749 /* FirebaseAnalytics */; };
+		DEDE44092B6A2CD50068A749 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44082B6A2CD50068A749 /* FirebaseAnalyticsOnDeviceConversion */; };
+		DEDE440B2B6A2CD50068A749 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE440A2B6A2CD50068A749 /* FirebaseAnalyticsSwift */; };
+		DEDE440D2B6A2CD50068A749 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE440C2B6A2CD50068A749 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		DEDE440F2B6A2CD50068A749 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE440E2B6A2CD50068A749 /* FirebaseAppCheck */; };
+		DEDE44112B6A39160068A749 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44102B6A39160068A749 /* FirebaseAnalytics */; };
+		DEDE44132B6A39160068A749 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44122B6A39160068A749 /* FirebaseAnalyticsOnDeviceConversion */; };
+		DEDE44152B6A39160068A749 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44142B6A39160068A749 /* FirebaseAnalyticsSwift */; };
+		DEDE44172B6A39160068A749 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44162B6A39160068A749 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		DEDE44192B6A39160068A749 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44182B6A39160068A749 /* FirebaseAppCheck */; };
+		DEDE441B2B6A39160068A749 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE441A2B6A39160068A749 /* FirebaseAppDistribution-Beta */; };
+		DEDE441D2B6A39160068A749 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE441C2B6A39160068A749 /* FirebaseAuth */; };
+		DEDE441F2B6A39160068A749 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE441E2B6A39160068A749 /* FirebaseAuthCombine-Community */; };
+		DEDE44212B6A39160068A749 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44202B6A39160068A749 /* FirebaseCrashlytics */; };
+		DEDE44232B6A39160068A749 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44222B6A39160068A749 /* FirebaseDatabase */; };
+		DEDE44252B6A39160068A749 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44242B6A39160068A749 /* FirebaseDatabaseSwift */; };
+		DEDE44272B6A39160068A749 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44262B6A39160068A749 /* FirebaseDynamicLinks */; };
+		DEDE44292B6A39160068A749 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44282B6A39160068A749 /* FirebaseFirestoreCombine-Community */; };
+		DEDE442B2B6A39160068A749 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE442A2B6A39160068A749 /* FirebaseFirestoreSwift */; };
+		DEDE442D2B6A39160068A749 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE442C2B6A39160068A749 /* FirebaseFunctions */; };
+		DEDE442F2B6A39160068A749 /* FirebaseFunctionsCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE442E2B6A39160068A749 /* FirebaseFunctionsCombine-Community */; };
+		DEDE44312B6A39160068A749 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44302B6A39160068A749 /* FirebaseInAppMessaging-Beta */; };
+		DEDE44332B6A39160068A749 /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44322B6A39160068A749 /* FirebaseInAppMessagingSwift-Beta */; };
+		DEDE44352B6A39160068A749 /* FirebaseInstallations in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44342B6A39160068A749 /* FirebaseInstallations */; };
+		DEDE44372B6A39160068A749 /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44362B6A39160068A749 /* FirebaseMLModelDownloader */; };
+		DEDE44392B6A39160068A749 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE44382B6A39160068A749 /* FirebaseMessaging */; };
+		DEDE443B2B6A39160068A749 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE443A2B6A39160068A749 /* FirebasePerformance */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -180,13 +245,20 @@
 		090143092B4C18B2006EAE30 /* TextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+.swift"; sourceTree = "<group>"; };
 		0901430B2B4C2E21006EAE30 /* JobCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCollectionViewCell.swift; sourceTree = "<group>"; };
 		0901430D2B4C3612006EAE30 /* CollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+.swift"; sourceTree = "<group>"; };
+		09058FBA2B5BFA7300DA5E74 /* EpisodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRepository.swift; sourceTree = "<group>"; };
 		09073D322B46F87E00D840EC /* DayCarat-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DayCarat-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09073D352B46F87E00D840EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09073D372B46F87E00D840EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		09073D3E2B46F88200D840EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09073D412B46F88200D840EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09073D432B46F88200D840EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09073D502B46FEBA00D840EC /* tempData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempData.swift; sourceTree = "<group>"; };
+		0908E47B2B5E9B8F0095D016 /* SoaraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraViewController.swift; sourceTree = "<group>"; };
+		0908E47D2B5EA13D0095D016 /* SoaraCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraCoordinator.swift; sourceTree = "<group>"; };
+		0908E47F2B5EA1460095D016 /* SoaraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraViewModel.swift; sourceTree = "<group>"; };
+		0908E4822B5EA49A0095D016 /* EpiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpiCollectionViewCell.swift; sourceTree = "<group>"; };
+		0908E4842B5EA6770095D016 /* SoaraCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraCollectionViewCell.swift; sourceTree = "<group>"; };
+		09099A512B5CCC51009A2C1C /* DropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DropDownTableViewCell.swift; path = "DayCarat-iOS/Source/Data/DTO/DropDownTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		09099A532B5CCC72009A2C1C /* EpiInputFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EpiInputFooterView.swift; path = "DayCarat-iOS/Source/Data/DTO/EpiInputFooterView.swift"; sourceTree = SOURCE_ROOT; };
 		0957F9072B52CA1C0031B291 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		0957F9092B52D0CB0031B291 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		0957F90B2B52D0E50031B291 /* EpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewModel.swift; sourceTree = "<group>"; };
@@ -194,6 +266,7 @@
 		0957F90F2B52D1130031B291 /* JewelryBoxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JewelryBoxViewModel.swift; sourceTree = "<group>"; };
 		0957F9112B52D1230031B291 /* JewelryBoxCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JewelryBoxCoordinator.swift; sourceTree = "<group>"; };
 		0957F9132B52D12F0031B291 /* MyPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCoordinator.swift; sourceTree = "<group>"; };
+		0965460A2B5AC1F800CDF4CC /* CalnderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalnderViewController.swift; path = "DayCarat-iOS/Source/Domain/Interface/CalnderViewController.swift"; sourceTree = SOURCE_ROOT; };
 		0967D8B72B4A6128009CFD0A /* AgreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeViewController.swift; sourceTree = "<group>"; };
 		0967D8B92B4A62C9009CFD0A /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-ExtraBold.otf"; path = "DayCarat-iOS/Resource/Pretendard-ExtraBold.otf"; sourceTree = SOURCE_ROOT; };
 		0967D8BA2B4A62C9009CFD0A /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-SemiBold.otf"; path = "DayCarat-iOS/Resource/Pretendard-SemiBold.otf"; sourceTree = SOURCE_ROOT; };
@@ -209,6 +282,20 @@
 		0967D8DA2B4AF04F009CFD0A /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		0967D8DC2B4AFB13009CFD0A /* IntroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IntroCollectionViewCell.swift; path = "DayCarat-iOS/Source/Present/Base/IntroCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		097238542B540AB300626422 /* EpisodeInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EpisodeInputViewModel.swift; path = "DayCarat-iOS/Source/Present/MyPage/EpisodeInputViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		097DBFC72B7F817F00AEDA13 /* YearSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearSelectTableViewCell.swift; sourceTree = "<group>"; };
+		09873AC02B7797F1004A1EB2 /* GemSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemSectionModel.swift; sourceTree = "<group>"; };
+		09873AC22B779BEA004A1EB2 /* AiRecommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiRecommandCell.swift; sourceTree = "<group>"; };
+		09873AC42B78AE95004A1EB2 /* SoaraList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraList.swift; sourceTree = "<group>"; };
+		09873AC62B78B1B9004A1EB2 /* AiKeywordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiKeywordView.swift; sourceTree = "<group>"; };
+		09873AC82B79CE4D004A1EB2 /* AiRecommandableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiRecommandableViewCell.swift; sourceTree = "<group>"; };
+		09873ACA2B7A57A7004A1EB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		09875D722B750D07004B8E62 /* SoaraInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraInputViewModel.swift; sourceTree = "<group>"; };
+		09875D752B7615FD004B8E62 /* MakeGemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeGemViewController.swift; sourceTree = "<group>"; };
+		09875D772B761636004B8E62 /* MakeGemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeGemViewModel.swift; sourceTree = "<group>"; };
+		09875D792B761668004B8E62 /* MakeGemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeGemCoordinator.swift; sourceTree = "<group>"; };
+		0994E7322B83809600051088 /* KeywordEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordEditViewController.swift; sourceTree = "<group>"; };
+		0994E7342B8380B700051088 /* KeywordEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordEditViewModel.swift; sourceTree = "<group>"; };
+		0994E7362B8380C000051088 /* KeywordEditCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordEditCoordinator.swift; sourceTree = "<group>"; };
 		09A67D952B515FE8003EDABE /* DetailEpiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEpiModel.swift; sourceTree = "<group>"; };
 		09B9726B2B540F0700205087 /* JewelryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JewelryUseCase.swift; sourceTree = "<group>"; };
 		09B9726D2B54128E00205087 /* JewelryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JewelryInterface.swift; sourceTree = "<group>"; };
@@ -227,7 +314,7 @@
 		09BDC1D62B4D84F900C07F34 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		09BDC1D82B4D8AF300C07F34 /* EpisodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EpisodeInputViewController.swift; path = "DayCarat-iOS/Source/Present/Cell/EpisodeInputViewController.swift"; sourceTree = SOURCE_ROOT; };
 		09BDC1DA2B4D8DE600C07F34 /* NavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+.swift"; sourceTree = "<group>"; };
-		09BDC1DC2B4D966E00C07F34 /* JewelryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JewelryViewController.swift; path = "DayCarat-iOS/Source/Extension/JewelryViewController.swift"; sourceTree = SOURCE_ROOT; };
+		09BDC1DC2B4D966E00C07F34 /* JewelryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JewelryViewController.swift; path = "DayCarat-iOS/Source/Present/JewelryBox/Main/JewelryViewController.swift"; sourceTree = SOURCE_ROOT; };
 		09BDC1DE2B4D96AF00C07F34 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageViewController.swift; path = "DayCarat-iOS/Source/Extension/MyPageViewController.swift"; sourceTree = SOURCE_ROOT; };
 		09BDC1E02B4D9E2900C07F34 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
 		09C574192B4EC2C000CCABCB /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
@@ -247,12 +334,23 @@
 		09DC3F1C2B580A730026B857 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		09DC3F1E2B580B8F0026B857 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		09DC3F202B580B9E0026B857 /* UserInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterface.swift; sourceTree = "<group>"; };
+		DE0F13642B633D7F0059BCD5 /* GemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemViewController.swift; sourceTree = "<group>"; };
+		DE0F13692B634A0F0059BCD5 /* GemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemViewModel.swift; sourceTree = "<group>"; };
+		DE0F136B2B634A1A0059BCD5 /* GemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemCoordinator.swift; sourceTree = "<group>"; };
+		DE0F136D2B6390E50059BCD5 /* GemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemDTO.swift; sourceTree = "<group>"; };
+		DE0F136F2B6393D40059BCD5 /* GemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemService.swift; sourceTree = "<group>"; };
+		DE0F13712B6397450059BCD5 /* GemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemRepository.swift; sourceTree = "<group>"; };
+		DE28449C2B71E732009E18A1 /* KeywordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordView.swift; sourceTree = "<group>"; };
+		DE28449E2B71EA9A009E18A1 /* MyPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageModel.swift; sourceTree = "<group>"; };
+		DE2E7D9E2B6741160016D9F2 /* KeywordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordModel.swift; sourceTree = "<group>"; };
+		DE2E7DA02B6798CC0016D9F2 /* EpiListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpiListModel.swift; sourceTree = "<group>"; };
+		DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraInputViewController.swift; sourceTree = "<group>"; };
+		DE4DD7052B60A7EA0033EAB4 /* SoaraInputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraInputCoordinator.swift; sourceTree = "<group>"; };
+		DE4DD7072B60A8F30033EAB4 /* SoaraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoaraModel.swift; sourceTree = "<group>"; };
 		DE5F41112B4B883400581075 /* IntroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroModel.swift; sourceTree = "<group>"; };
 		DE5F41132B4B8CF400581075 /* CustomPageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControlView.swift; sourceTree = "<group>"; };
 		DE5F41152B4B90A700581075 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		DE5F41182B4B90E300581075 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
-		DE5F41212B4B92B500581075 /* tempRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempRepository.swift; sourceTree = "<group>"; };
-		DE5F41272B4B92DA00581075 /* tempService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempService.swift; sourceTree = "<group>"; };
 		DE5F41292B4B953A00581075 /* IntroUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroUseCase.swift; sourceTree = "<group>"; };
 		DE5F412C2B4BC50100581075 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DE5F412F2B4BD24A00581075 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
@@ -282,6 +380,7 @@
 		DE86A1B72B4D1F4500C206DE /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
 		DE86A1B92B4D31E800C206DE /* HelpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE86A1BB2B4D357B00C206DE /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		DE9038762B5E68DB003860A7 /* SOARAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOARAViewController.swift; sourceTree = "<group>"; };
 		DEA544282B4E1F6200813CC6 /* EpisodeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeHeaderCell.swift; sourceTree = "<group>"; };
 		DEA5442A2B4E256100813CC6 /* EpisodeBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeBodyCell.swift; sourceTree = "<group>"; };
 		DEA5442F2B4E53A700813CC6 /* JewelryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JewelryHeaderView.swift; sourceTree = "<group>"; };
@@ -306,6 +405,8 @@
 		DEB20DFD2B50F4FB001D92B5 /* DetailEpiBodySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEpiBodySection.swift; sourceTree = "<group>"; };
 		DEB20DFF2B50F510001D92B5 /* DetailEpiHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEpiHeaderView.swift; sourceTree = "<group>"; };
 		DEB20E012B511058001D92B5 /* EpisodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeUseCase.swift; sourceTree = "<group>"; };
+		DECD33F32B61FC9E005C223F /* DayCaratToggleBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCaratToggleBtn.swift; sourceTree = "<group>"; };
+		DEDE443C2B6A3A3E0068A749 /* DayCarat-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DayCarat-iOS.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,29 +414,60 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEDE44372B6A39160068A749 /* FirebaseMLModelDownloader in Frameworks */,
+				DEDE44252B6A39160068A749 /* FirebaseDatabaseSwift in Frameworks */,
+				DEDE440B2B6A2CD50068A749 /* FirebaseAnalyticsSwift in Frameworks */,
+				DEDE441B2B6A39160068A749 /* FirebaseAppDistribution-Beta in Frameworks */,
+				DEDE442F2B6A39160068A749 /* FirebaseFunctionsCombine-Community in Frameworks */,
+				DEDE440D2B6A2CD50068A749 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				DE5F410F2B4B841500581075 /* SkeletonView in Frameworks */,
+				DEDE44292B6A39160068A749 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				DEDE44392B6A39160068A749 /* FirebaseMessaging in Frameworks */,
+				DEDE441F2B6A39160068A749 /* FirebaseAuthCombine-Community in Frameworks */,
 				09339BF62B522A9300820896 /* RxKakaoSDKFriend in Frameworks */,
+				096546092B5AC19100CDF4CC /* PanModal in Frameworks */,
+				DEDE44092B6A2CD50068A749 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				DEDE44312B6A39160068A749 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				09339BEB2B52256F00820896 /* KakaoSDKCertCore in Frameworks */,
 				DE5F41442B4BE05200581075 /* RxDataSources in Frameworks */,
 				09339BF42B522A9300820896 /* RxKakaoSDKCommon in Frameworks */,
 				09339BF22B522A9300820896 /* RxKakaoSDKAuth in Frameworks */,
+				DEDE44332B6A39160068A749 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				09DC3F0A2B5690910026B857 /* RxMoya in Frameworks */,
+				DEDE44172B6A39160068A749 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				DEDE44352B6A39160068A749 /* FirebaseInstallations in Frameworks */,
+				DEDE441D2B6A39160068A749 /* FirebaseAuth in Frameworks */,
+				DEDE442D2B6A39160068A749 /* FirebaseFunctions in Frameworks */,
+				DEDE44232B6A39160068A749 /* FirebaseDatabase in Frameworks */,
 				DE8479932B4790B500471B4F /* RxRelay in Frameworks */,
 				09339BED2B52256F00820896 /* KakaoSDKCommon in Frameworks */,
+				DEDE44272B6A39160068A749 /* FirebaseDynamicLinks in Frameworks */,
+				DEDE44132B6A39160068A749 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				09DC3F242B580E3C0026B857 /* Kingfisher in Frameworks */,
+				DEDE44192B6A39160068A749 /* FirebaseAppCheck in Frameworks */,
+				DEDE440F2B6A2CD50068A749 /* FirebaseAppCheck in Frameworks */,
+				DE43152B2B7AFB1A0018BEEE /* RxSwift in Frameworks */,
 				09339BE92B52256F00820896 /* KakaoSDKCert in Frameworks */,
 				09339BF02B522A9300820896 /* RxKakaoSDK in Frameworks */,
 				DE84799E2B47910C00471B4F /* Then in Frameworks */,
 				0967D8D22B4AE733009CFD0A /* RxGesture in Frameworks */,
+				DEDE44152B6A39160068A749 /* FirebaseAnalyticsSwift in Frameworks */,
+				09873ACE2B7A64D7004A1EB2 /* RxKeyboard in Frameworks */,
 				09DC3F082B5690910026B857 /* ReactiveMoya in Frameworks */,
+				DE43152E2B7B5CB50018BEEE /* Toast in Frameworks */,
 				DE5F41422B4BE05200581075 /* Differentiator in Frameworks */,
+				DEDE443B2B6A39160068A749 /* FirebasePerformance in Frameworks */,
+				DEDE44072B6A2CD50068A749 /* FirebaseAnalytics in Frameworks */,
 				DE8479962B4790D400471B4F /* Moya in Frameworks */,
 				09339BF82B522A9300820896 /* RxKakaoSDKShare in Frameworks */,
+				DEDE442B2B6A39160068A749 /* FirebaseFirestoreSwift in Frameworks */,
 				DE8479992B4790F000471B4F /* SnapKit in Frameworks */,
 				09DC3F062B5690910026B857 /* Moya in Frameworks */,
+				DEDE44112B6A39160068A749 /* FirebaseAnalytics in Frameworks */,
 				DE84798F2B4790B500471B4F /* RxCocoa in Frameworks */,
 				09DC3F042B5690910026B857 /* CombineMoya in Frameworks */,
 				DE84798B2B4790B500471B4F /* RxBlocking in Frameworks */,
+				DEDE44212B6A39160068A749 /* FirebaseCrashlytics in Frameworks */,
 				09339BE52B52256F00820896 /* KakaoSDK in Frameworks */,
 				09339BE72B52256F00820896 /* KakaoSDKAuth in Frameworks */,
 			);
@@ -349,8 +481,11 @@
 			children = (
 				09073D342B46F87E00D840EC /* DayCarat-iOS */,
 				09073D332B46F87E00D840EC /* Products */,
+				DE1E94EE2B5FB464008FFC8B /* Recovered References */,
+				DE4315292B7AFB1A0018BEEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		09073D332B46F87E00D840EC /* Products */ = {
 			isa = PBXGroup;
@@ -363,6 +498,8 @@
 		09073D342B46F87E00D840EC /* DayCarat-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				DEDE443C2B6A3A3E0068A749 /* DayCarat-iOS.entitlements */,
+				09873ACA2B7A57A7004A1EB2 /* GoogleService-Info.plist */,
 				09073D432B46F88200D840EC /* Info.plist */,
 				09073D492B46FE6A00D840EC /* App */,
 				09073D522B46FED100D840EC /* Source */,
@@ -424,7 +561,6 @@
 				DE5F41262B4B92D100581075 /* Service */,
 				DE5F41232B4B92C600581075 /* DTO */,
 				DE5F41202B4B929E00581075 /* Repository */,
-				09073D502B46FEBA00D840EC /* tempData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -432,6 +568,7 @@
 		09073D522B46FED100D840EC /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				09073D402B46F88200D840EC /* LaunchScreen.storyboard */,
 				DE5F41172B4B90CE00581075 /* Protocol */,
 				DE8479A22B47922600471B4F /* Extension */,
 				DE8479832B478E9D00471B4F /* DesignSystem */,
@@ -440,6 +577,25 @@
 				09073D4B2B46FE8A00D840EC /* Present */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		0908E47A2B5E9B860095D016 /* Soara */ = {
+			isa = PBXGroup;
+			children = (
+				09875D742B7615E2004B8E62 /* MakeGem */,
+				DE4DD7022B60A7C40033EAB4 /* Input */,
+				DE4DD7012B60A7B20033EAB4 /* Main */,
+			);
+			path = Soara;
+			sourceTree = "<group>";
+		};
+		0908E4812B5EA4820095D016 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				0908E4822B5EA49A0095D016 /* EpiCollectionViewCell.swift */,
+				0908E4842B5EA6770095D016 /* SoaraCollectionViewCell.swift */,
+			);
+			path = Section;
 			sourceTree = "<group>";
 		};
 		0957F9062B52CA0B0031B291 /* TabBar */ = {
@@ -469,6 +625,37 @@
 			path = CheckBox;
 			sourceTree = "<group>";
 		};
+		09875D742B7615E2004B8E62 /* MakeGem */ = {
+			isa = PBXGroup;
+			children = (
+				09875D752B7615FD004B8E62 /* MakeGemViewController.swift */,
+				09875D772B761636004B8E62 /* MakeGemViewModel.swift */,
+				09875D792B761668004B8E62 /* MakeGemCoordinator.swift */,
+			);
+			path = MakeGem;
+			sourceTree = "<group>";
+		};
+		09875D7C2B762DF1004B8E62 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				09873AC62B78B1B9004A1EB2 /* AiKeywordView.swift */,
+				09873AC22B779BEA004A1EB2 /* AiRecommandCell.swift */,
+				09873AC82B79CE4D004A1EB2 /* AiRecommandableViewCell.swift */,
+				09873AC42B78AE95004A1EB2 /* SoaraList.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		0994E7312B83808000051088 /* KeywordEdit */ = {
+			isa = PBXGroup;
+			children = (
+				0994E7322B83809600051088 /* KeywordEditViewController.swift */,
+				0994E7342B8380B700051088 /* KeywordEditViewModel.swift */,
+				0994E7362B8380C000051088 /* KeywordEditCoordinator.swift */,
+			);
+			path = KeywordEdit;
+			sourceTree = "<group>";
+		};
 		09B972812B54297600205087 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +679,7 @@
 		09C5741B2B4EC48E00CCABCB /* Section */ = {
 			isa = PBXGroup;
 			children = (
+				09C5741C2B4EC4BA00CCABCB /* EpisodeListCollectionViewCell.swift */,
 				09C5741E2B4EC4EE00CCABCB /* EpisodeListHeaderView.swift */,
 			);
 			path = Section;
@@ -502,9 +690,78 @@
 			children = (
 				09DC3F0E2B56C14F0026B857 /* EpiInputHeadrView.swift */,
 				09DC3F102B57D9660026B857 /* EpiInputCollectionViewCell.swift */,
+				09099A532B5CCC72009A2C1C /* EpiInputFooterView.swift */,
+				0965460A2B5AC1F800CDF4CC /* CalnderViewController.swift */,
+				09099A512B5CCC51009A2C1C /* DropDownTableViewCell.swift */,
 			);
 			name = Section;
 			path = "DayCarat-iOS/Source/Present/EpisodeInput/Section";
+			sourceTree = "<group>";
+		};
+		DE0F13622B633D640059BCD5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DEA5442E2B4E537E00813CC6 /* Section */,
+				09BDC1DC2B4D966E00C07F34 /* JewelryViewController.swift */,
+				0957F90F2B52D1130031B291 /* JewelryBoxViewModel.swift */,
+				0957F9112B52D1230031B291 /* JewelryBoxCoordinator.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DE0F13632B633D700059BCD5 /* DetailGem */ = {
+			isa = PBXGroup;
+			children = (
+				09875D7C2B762DF1004B8E62 /* Sections */,
+				DE0F13642B633D7F0059BCD5 /* GemViewController.swift */,
+				DE0F13692B634A0F0059BCD5 /* GemViewModel.swift */,
+				DE0F136B2B634A1A0059BCD5 /* GemCoordinator.swift */,
+			);
+			path = DetailGem;
+			sourceTree = "<group>";
+		};
+		DE1E94EE2B5FB464008FFC8B /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				DE9038762B5E68DB003860A7 /* SOARAViewController.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		DE28449B2B71E724009E18A1 /* KeywordView */ = {
+			isa = PBXGroup;
+			children = (
+				DE28449C2B71E732009E18A1 /* KeywordView.swift */,
+			);
+			path = KeywordView;
+			sourceTree = "<group>";
+		};
+		DE4315292B7AFB1A0018BEEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE4DD7012B60A7B20033EAB4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0908E4812B5EA4820095D016 /* Section */,
+				0908E47B2B5E9B8F0095D016 /* SoaraViewController.swift */,
+				0908E47F2B5EA1460095D016 /* SoaraViewModel.swift */,
+				0908E47D2B5EA13D0095D016 /* SoaraCoordinator.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DE4DD7022B60A7C40033EAB4 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				DE4DD7032B60A7D00033EAB4 /* SoaraInputViewController.swift */,
+				09875D722B750D07004B8E62 /* SoaraInputViewModel.swift */,
+				DE4DD7052B60A7EA0033EAB4 /* SoaraInputCoordinator.swift */,
+			);
+			path = Input;
 			sourceTree = "<group>";
 		};
 		DE5F41102B4B854A00581075 /* Model */ = {
@@ -516,6 +773,11 @@
 				DEA544332B4E5B4D00813CC6 /* dummy.swift */,
 				09A67D952B515FE8003EDABE /* DetailEpiModel.swift */,
 				09DC3F0B2B56B3B30026B857 /* TokenManger.swift */,
+				DE4DD7072B60A8F30033EAB4 /* SoaraModel.swift */,
+				DE2E7D9E2B6741160016D9F2 /* KeywordModel.swift */,
+				DE2E7DA02B6798CC0016D9F2 /* EpiListModel.swift */,
+				DE28449E2B71EA9A009E18A1 /* MyPageModel.swift */,
+				09873AC02B7797F1004A1EB2 /* GemSectionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -560,11 +822,12 @@
 		DE5F41202B4B929E00581075 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				DE5F41212B4B92B500581075 /* tempRepository.swift */,
 				DE5F41372B4BD30200581075 /* OnBoardingRepository.swift */,
 				DEA544402B4E74E700813CC6 /* LoginRepository.swift */,
 				09DC3F162B57F5A30026B857 /* HomeRepository.swift */,
 				09DC3F1E2B580B8F0026B857 /* UserRepository.swift */,
+				09058FBA2B5BFA7300DA5E74 /* EpisodeRepository.swift */,
+				DE0F13712B6397450059BCD5 /* GemRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -576,6 +839,7 @@
 				09DC3F142B57F4330026B857 /* EpiDTO.swift */,
 				09B9727D2B5425AE00205087 /* BaseResponse.swift */,
 				09DC3F1C2B580A730026B857 /* UserDTO.swift */,
+				DE0F136D2B6390E50059BCD5 /* GemDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -583,11 +847,11 @@
 		DE5F41262B4B92D100581075 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				DE5F41272B4B92DA00581075 /* tempService.swift */,
 				DEA544422B4E751500813CC6 /* LoginService.swift */,
 				09DC3F122B57F3D60026B857 /* HomeService.swift */,
 				09DC3F182B57FFBA0026B857 /* EpisodeService.swift */,
 				09DC3F1A2B5809D50026B857 /* UserInfoService.swift */,
+				DE0F136F2B6393D40059BCD5 /* GemService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -617,6 +881,7 @@
 		DE8479832B478E9D00471B4F /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				DE28449B2B71E724009E18A1 /* KeywordView */,
 				0967D8CB2B4A7404009CFD0A /* CheckBox */,
 				DE8479D22B47B7DA00471B4F /* Button */,
 				DE8479CF2B47A0ED00471B4F /* FontLabel */,
@@ -627,7 +892,6 @@
 		DE8479862B478FE000471B4F /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
-				09073D402B46F88200D840EC /* LaunchScreen.storyboard */,
 				DE8479D72B47DFCC00471B4F /* Login */,
 				0967D8B62B4A6117009CFD0A /* Agree */,
 				DE8479D82B47DFD300471B4F /* Intro */,
@@ -688,6 +952,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8479D32B47B7E500471B4F /* DayCaratBtn.swift */,
+				DECD33F32B61FC9E005C223F /* DayCaratToggleBtn.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -728,6 +993,7 @@
 				DEB20DF62B50F2FC001D92B5 /* Main */,
 				09C574182B4EC2A300CCABCB /* EpisodeList */,
 				DEB20DF72B50F328001D92B5 /* DetailEpisode */,
+				0908E47A2B5E9B860095D016 /* Soara */,
 			);
 			path = Episode;
 			sourceTree = "<group>";
@@ -744,7 +1010,6 @@
 				09BDC1D42B4D818200C07F34 /* BannerCollectionViewCell.swift */,
 				09BDC1D62B4D84F900C07F34 /* NewsCollectionViewCell.swift */,
 				09BDC1E02B4D9E2900C07F34 /* MyPageTableViewCell.swift */,
-				09C5741C2B4EC4BA00CCABCB /* EpisodeListCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -761,10 +1026,9 @@
 		DE8479E32B47E35900471B4F /* JewelryBox */ = {
 			isa = PBXGroup;
 			children = (
-				DEA5442E2B4E537E00813CC6 /* Section */,
-				09BDC1DC2B4D966E00C07F34 /* JewelryViewController.swift */,
-				0957F90F2B52D1130031B291 /* JewelryBoxViewModel.swift */,
-				0957F9112B52D1230031B291 /* JewelryBoxCoordinator.swift */,
+				0994E7312B83808000051088 /* KeywordEdit */,
+				DE0F13632B633D700059BCD5 /* DetailGem */,
+				DE0F13622B633D640059BCD5 /* Main */,
 			);
 			path = JewelryBox;
 			sourceTree = "<group>";
@@ -796,6 +1060,7 @@
 			children = (
 				DEA544282B4E1F6200813CC6 /* EpisodeHeaderCell.swift */,
 				DEA5442A2B4E256100813CC6 /* EpisodeBodyCell.swift */,
+				097DBFC72B7F817F00AEDA13 /* YearSelectTableViewCell.swift */,
 			);
 			path = Section;
 			sourceTree = "<group>";
@@ -900,6 +1165,37 @@
 				09DC3F072B5690910026B857 /* ReactiveMoya */,
 				09DC3F092B5690910026B857 /* RxMoya */,
 				09DC3F232B580E3C0026B857 /* Kingfisher */,
+				096546082B5AC19100CDF4CC /* PanModal */,
+				DEDE44062B6A2CD50068A749 /* FirebaseAnalytics */,
+				DEDE44082B6A2CD50068A749 /* FirebaseAnalyticsOnDeviceConversion */,
+				DEDE440A2B6A2CD50068A749 /* FirebaseAnalyticsSwift */,
+				DEDE440C2B6A2CD50068A749 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				DEDE440E2B6A2CD50068A749 /* FirebaseAppCheck */,
+				DEDE44102B6A39160068A749 /* FirebaseAnalytics */,
+				DEDE44122B6A39160068A749 /* FirebaseAnalyticsOnDeviceConversion */,
+				DEDE44142B6A39160068A749 /* FirebaseAnalyticsSwift */,
+				DEDE44162B6A39160068A749 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				DEDE44182B6A39160068A749 /* FirebaseAppCheck */,
+				DEDE441A2B6A39160068A749 /* FirebaseAppDistribution-Beta */,
+				DEDE441C2B6A39160068A749 /* FirebaseAuth */,
+				DEDE441E2B6A39160068A749 /* FirebaseAuthCombine-Community */,
+				DEDE44202B6A39160068A749 /* FirebaseCrashlytics */,
+				DEDE44222B6A39160068A749 /* FirebaseDatabase */,
+				DEDE44242B6A39160068A749 /* FirebaseDatabaseSwift */,
+				DEDE44262B6A39160068A749 /* FirebaseDynamicLinks */,
+				DEDE44282B6A39160068A749 /* FirebaseFirestoreCombine-Community */,
+				DEDE442A2B6A39160068A749 /* FirebaseFirestoreSwift */,
+				DEDE442C2B6A39160068A749 /* FirebaseFunctions */,
+				DEDE442E2B6A39160068A749 /* FirebaseFunctionsCombine-Community */,
+				DEDE44302B6A39160068A749 /* FirebaseInAppMessaging-Beta */,
+				DEDE44322B6A39160068A749 /* FirebaseInAppMessagingSwift-Beta */,
+				DEDE44342B6A39160068A749 /* FirebaseInstallations */,
+				DEDE44362B6A39160068A749 /* FirebaseMLModelDownloader */,
+				DEDE44382B6A39160068A749 /* FirebaseMessaging */,
+				DEDE443A2B6A39160068A749 /* FirebasePerformance */,
+				09873ACD2B7A64D7004A1EB2 /* RxKeyboard */,
+				DE43152A2B7AFB1A0018BEEE /* RxSwift */,
+				DE43152D2B7B5CB50018BEEE /* Toast */,
 			);
 			productName = "DayCarat-iOS";
 			productReference = 09073D322B46F87E00D840EC /* DayCarat-iOS.app */;
@@ -940,6 +1236,10 @@
 				09339BE32B52256F00820896 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 				09339BEE2B522A9300820896 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */,
 				09DC3F222B580E3C0026B857 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				096546072B5AC19100CDF4CC /* XCRemoteSwiftPackageReference "PanModal" */,
+				DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				09873ACC2B7A64D6004A1EB2 /* XCRemoteSwiftPackageReference "RxKeyboard" */,
+				DE43152C2B7B5CB50018BEEE /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 09073D332B46F87E00D840EC /* Products */;
 			projectDirPath = "";
@@ -960,6 +1260,7 @@
 				0967D8C92B4A62CA009CFD0A /* Pretendard-Medium.otf in Resources */,
 				0967D8C72B4A62CA009CFD0A /* Pretendard-Bold.otf in Resources */,
 				09073D422B46F88200D840EC /* LaunchScreen.storyboard in Resources */,
+				09873ACB2B7A57A8004A1EB2 /* GoogleService-Info.plist in Resources */,
 				0967D8C52B4A62CA009CFD0A /* Pretendard-Regular.otf in Resources */,
 				0967D8C82B4A62CA009CFD0A /* Pretendard-Black.otf in Resources */,
 				0967D8C22B4A62CA009CFD0A /* Pretendard-ExtraBold.otf in Resources */,
@@ -976,19 +1277,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE4DD7062B60A7EA0033EAB4 /* SoaraInputCoordinator.swift in Sources */,
 				DEA5443B2B4E73C800813CC6 /* AppCoordinator.swift in Sources */,
+				DE28449D2B71E732009E18A1 /* KeywordView.swift in Sources */,
+				DE0F136A2B634A0F0059BCD5 /* GemViewModel.swift in Sources */,
 				0957F9142B52D12F0031B291 /* MyPageCoordinator.swift in Sources */,
+				0908E4832B5EA49A0095D016 /* EpiCollectionViewCell.swift in Sources */,
+				DE0F13652B633D7F0059BCD5 /* GemViewController.swift in Sources */,
 				0901430C2B4C2E21006EAE30 /* JobCollectionViewCell.swift in Sources */,
 				09DC3F0F2B56C14F0026B857 /* EpiInputHeadrView.swift in Sources */,
 				DE8479882B47907D00471B4F /* LoginViewController.swift in Sources */,
 				0967D8DB2B4AF04F009CFD0A /* BaseView.swift in Sources */,
 				09C574252B4ED85B00CCABCB /* CustomNavigaitonBar.swift in Sources */,
 				DE8479A42B47924200471B4F /* Color+.swift in Sources */,
+				09875D762B7615FE004B8E62 /* MakeGemViewController.swift in Sources */,
+				09058FBB2B5BFA7300DA5E74 /* EpisodeRepository.swift in Sources */,
 				09DC3F172B57F5A30026B857 /* HomeRepository.swift in Sources */,
+				0994E7372B8380C000051088 /* KeywordEditCoordinator.swift in Sources */,
 				DEA544302B4E53A700813CC6 /* JewelryHeaderView.swift in Sources */,
 				DE5F41162B4B90A700581075 /* IntroViewModel.swift in Sources */,
 				DEA544452B4E763100813CC6 /* LoginCoordinator.swift in Sources */,
 				DE8479D62B47DFB800471B4F /* IntroViewController.swift in Sources */,
+				0994E7332B83809600051088 /* KeywordEditViewController.swift in Sources */,
 				DEA544412B4E74E700813CC6 /* LoginRepository.swift in Sources */,
 				DEA544502B4E89FF00813CC6 /* TabBarCoordinator.swift in Sources */,
 				09DC3F192B57FFBA0026B857 /* EpisodeService.swift in Sources */,
@@ -996,7 +1306,9 @@
 				0967D8CD2B4A7417009CFD0A /* DayCaratCheckBox.swift in Sources */,
 				09DC3F1D2B580A730026B857 /* UserDTO.swift in Sources */,
 				DE86A1B02B4CFFF700C206DE /* LoginViewModel.swift in Sources */,
+				DECD33F42B61FC9E005C223F /* DayCaratToggleBtn.swift in Sources */,
 				DE86A1BA2B4D31E800C206DE /* HelpCollectionViewCell.swift in Sources */,
+				09873AC92B79CE4D004A1EB2 /* AiRecommandableViewCell.swift in Sources */,
 				0967D8CF2B4AE19E009CFD0A /* AgreeViewModel.swift in Sources */,
 				DEA5443D2B4E749200813CC6 /* LoginUseCase.swift in Sources */,
 				09073D362B46F87E00D840EC /* AppDelegate.swift in Sources */,
@@ -1004,14 +1316,15 @@
 				0967D8DD2B4AFB13009CFD0A /* IntroCollectionViewCell.swift in Sources */,
 				09BDC1D72B4D84F900C07F34 /* NewsCollectionViewCell.swift in Sources */,
 				DE5F413F2B4BD80D00581075 /* StrengthSection.swift in Sources */,
-				DE5F41222B4B92B500581075 /* tempRepository.swift in Sources */,
 				DE5F41342B4BD2EB00581075 /* OnBoardingUseCase.swift in Sources */,
 				DE5F41142B4B8CF400581075 /* CustomPageControlView.swift in Sources */,
 				09DC3F152B57F4330026B857 /* EpiDTO.swift in Sources */,
 				09BDC1D52B4D818200C07F34 /* BannerCollectionViewCell.swift in Sources */,
+				09875D782B761636004B8E62 /* MakeGemViewModel.swift in Sources */,
 				09C5741D2B4EC4BA00CCABCB /* EpisodeListCollectionViewCell.swift in Sources */,
 				09BDC1E12B4D9E2900C07F34 /* MyPageTableViewCell.swift in Sources */,
 				DEA544372B4E678300813CC6 /* MyPageInfoSection.swift in Sources */,
+				09873AC52B78AE95004A1EB2 /* SoaraList.swift in Sources */,
 				DEB20DFB2B50F348001D92B5 /* DetailEpisodeViewModel.swift in Sources */,
 				09BDC1DD2B4D966E00C07F34 /* JewelryViewController.swift in Sources */,
 				DEA544432B4E751500813CC6 /* LoginService.swift in Sources */,
@@ -1021,6 +1334,8 @@
 				DEA544342B4E5B4D00813CC6 /* dummy.swift in Sources */,
 				09DC3F1B2B5809D50026B857 /* UserInfoService.swift in Sources */,
 				09BDC1DB2B4D8DE600C07F34 /* NavigationController+.swift in Sources */,
+				09099A522B5CCC51009A2C1C /* DropDownTableViewCell.swift in Sources */,
+				DE0F136E2B6390E50059BCD5 /* GemDTO.swift in Sources */,
 				09DC3F112B57D9660026B857 /* EpiInputCollectionViewCell.swift in Sources */,
 				0957F9102B52D1130031B291 /* JewelryBoxViewModel.swift in Sources */,
 				DE86A1B62B4D1B5500C206DE /* HomeViewModel.swift in Sources */,
@@ -1037,17 +1352,22 @@
 				09BDC1D32B4D7E1100C07F34 /* RecentEpiCollectionViewCell.swift in Sources */,
 				09A67D962B515FE8003EDABE /* DetailEpiModel.swift in Sources */,
 				DE8479E72B47E8BB00471B4F /* Image+.swift in Sources */,
-				DE5F41282B4B92DA00581075 /* tempService.swift in Sources */,
 				DEA544392B4E6B4900813CC6 /* CompleteViewController.swift in Sources */,
+				0908E47C2B5E9B8F0095D016 /* SoaraViewController.swift in Sources */,
 				DE5F413D2B4BD7F200581075 /* JobSection.swift in Sources */,
+				DE2E7DA12B6798CC0016D9F2 /* EpiListModel.swift in Sources */,
 				DE86A1B82B4D1F4500C206DE /* HomeUseCase.swift in Sources */,
 				09DC3F022B5689180026B857 /* Moya.swift in Sources */,
 				DEA544322B4E59A900813CC6 /* JewelryBodyCell.swift in Sources */,
 				09B9726C2B540F0700205087 /* JewelryUseCase.swift in Sources */,
+				09873AC12B7797F1004A1EB2 /* GemSectionModel.swift in Sources */,
 				09B972742B5412A900205087 /* MyPageInterface.swift in Sources */,
 				09C5741F2B4EC4EE00CCABCB /* EpisodeListHeaderView.swift in Sources */,
 				09C574212B4EC87600CCABCB /* EpisodeListViewModel.swift in Sources */,
 				DE8479A12B47912900471B4F /* BaseViewController.swift in Sources */,
+				09875D7A2B761668004B8E62 /* MakeGemCoordinator.swift in Sources */,
+				09873AC32B779BEA004A1EB2 /* AiRecommandCell.swift in Sources */,
+				DE0F13702B6393D40059BCD5 /* GemService.swift in Sources */,
 				09B972782B54134800205087 /* EpisodeListCoordinator.swift in Sources */,
 				09B972702B54129700205087 /* EpisodeInterface.swift in Sources */,
 				DE8479E22B47E1F400471B4F /* CustomTabBarController.swift in Sources */,
@@ -1060,39 +1380,53 @@
 				DE8479D42B47B7E500471B4F /* DayCaratBtn.swift in Sources */,
 				DEA5443F2B4E74D200813CC6 /* LoginInterface.swift in Sources */,
 				09B9727A2B5413B100205087 /* EpisodeInputCoordinator.swift in Sources */,
+				0965460B2B5AC1F800CDF4CC /* CalnderViewController.swift in Sources */,
 				DE86A1B22B4D03B900C206DE /* StrengthCollectionViewCell.swift in Sources */,
 				DE5F41382B4BD30200581075 /* OnBoardingRepository.swift in Sources */,
 				DE5F41122B4B883400581075 /* IntroModel.swift in Sources */,
 				DEA544522B4E8A9A00813CC6 /* MyPageViewModel.swift in Sources */,
 				DE8479D12B47A0FD00471B4F /* DayCaratLabel.swift in Sources */,
-				09073D512B46FEBA00D840EC /* tempData.swift in Sources */,
 				0957F9082B52CA1C0031B291 /* TabBarItem.swift in Sources */,
+				097DBFC82B7F818000AEDA13 /* YearSelectTableViewCell.swift in Sources */,
+				0994E7352B8380B700051088 /* KeywordEditViewModel.swift in Sources */,
 				09B9727C2B54256200205087 /* LoginDTO.swift in Sources */,
 				DEA5442B2B4E256100813CC6 /* EpisodeBodyCell.swift in Sources */,
+				DE28449F2B71EA9A009E18A1 /* MyPageModel.swift in Sources */,
 				09BDC1DF2B4D96AF00C07F34 /* MyPageViewController.swift in Sources */,
 				DE8479DE2B47E16600471B4F /* EpisodeViewController.swift in Sources */,
+				DE4DD7082B60A8F30033EAB4 /* SoaraModel.swift in Sources */,
 				DE8479DB2B47E0D000471B4F /* HomeViewController.swift in Sources */,
 				09BDC1D12B4D63F400C07F34 /* ScrollView+.swift in Sources */,
 				09DC3F212B580B9E0026B857 /* UserInterface.swift in Sources */,
+				09873AC72B78B1B9004A1EB2 /* AiKeywordView.swift in Sources */,
+				0908E47E2B5EA13D0095D016 /* SoaraCoordinator.swift in Sources */,
 				0967D8B82B4A6128009CFD0A /* AgreeViewController.swift in Sources */,
 				DEA544472B4E7B6300813CC6 /* IntroCoordinator.swift in Sources */,
 				09B972762B54133700205087 /* DetailEpiCoordinator.swift in Sources */,
 				DEB20DFE2B50F4FB001D92B5 /* DetailEpiBodySection.swift in Sources */,
+				09099A542B5CCC72009A2C1C /* EpiInputFooterView.swift in Sources */,
 				0901430A2B4C18B2006EAE30 /* TextField+.swift in Sources */,
+				DE0F13722B6397450059BCD5 /* GemRepository.swift in Sources */,
+				0908E4802B5EA1460095D016 /* SoaraViewModel.swift in Sources */,
 				09C5741A2B4EC2C000CCABCB /* EpisodeListViewController.swift in Sources */,
 				DE5F41192B4B90E300581075 /* ViewModelType.swift in Sources */,
 				0957F90E2B52D0F20031B291 /* EpisodeCoordinator.swift in Sources */,
 				DE5F412A2B4B953A00581075 /* IntroUseCase.swift in Sources */,
 				09DC3F1F2B580B8F0026B857 /* UserRepository.swift in Sources */,
+				DE2E7D9F2B6741160016D9F2 /* KeywordModel.swift in Sources */,
 				DEA544292B4E1F6200813CC6 /* EpisodeHeaderCell.swift in Sources */,
+				09875D732B750D07004B8E62 /* SoaraInputViewModel.swift in Sources */,
+				DE0F136C2B634A1A0059BCD5 /* GemCoordinator.swift in Sources */,
 				DE5F41322B4BD27000581075 /* OnBoardingViewModel.swift in Sources */,
 				09B972722B54129F00205087 /* HomeInterface.swift in Sources */,
 				DE86A1BC2B4D357B00C206DE /* CellModel.swift in Sources */,
 				0957F9122B52D1230031B291 /* JewelryBoxCoordinator.swift in Sources */,
 				DEA544542B4E8B0100813CC6 /* MyPageUseCase.swift in Sources */,
 				0957F90C2B52D0E50031B291 /* EpisodeViewModel.swift in Sources */,
+				0908E4852B5EA6770095D016 /* SoaraCollectionViewCell.swift in Sources */,
 				DEA544492B4E82D700813CC6 /* OnBoardingCoordinator.swift in Sources */,
 				09B9727E2B5425AE00205087 /* BaseResponse.swift in Sources */,
+				DE4DD7042B60A7D00033EAB4 /* SoaraInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1234,23 +1568,30 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "DayCarat-iOS/DayCarat-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = JA7UDVTQBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DayCarat-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "데이캐럿";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "갤러리 접근 권한";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Specker.DayCarat-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1265,23 +1606,30 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "DayCarat-iOS/DayCarat-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = JA7UDVTQBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DayCarat-iOS/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "데이캐럿";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "갤러리 접근 권한";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Specker.DayCarat-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1331,6 +1679,14 @@
 				minimumVersion = 2.20.0;
 			};
 		};
+		096546072B5AC19100CDF4CC /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.7;
+			};
+		};
 		0967D8D02B4AE733009CFD0A /* XCRemoteSwiftPackageReference "RxGesture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture";
@@ -1339,12 +1695,28 @@
 				minimumVersion = 4.0.4;
 			};
 		};
+		09873ACC2B7A64D6004A1EB2 /* XCRemoteSwiftPackageReference "RxKeyboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxKeyboard";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
 		09DC3F222B580E3C0026B857 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 7.10.2;
+			};
+		};
+		DE43152C2B7B5CB50018BEEE /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
 			};
 		};
 		DE5F410D2B4B841500581075 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
@@ -1393,6 +1765,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 3.0.0;
+			};
+		};
+		DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.20.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1448,10 +1828,20 @@
 			package = 09339BEE2B522A9300820896 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */;
 			productName = RxKakaoSDKShare;
 		};
+		096546082B5AC19100CDF4CC /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 096546072B5AC19100CDF4CC /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
+		};
 		0967D8D12B4AE733009CFD0A /* RxGesture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0967D8D02B4AE733009CFD0A /* XCRemoteSwiftPackageReference "RxGesture" */;
 			productName = RxGesture;
+		};
+		09873ACD2B7A64D7004A1EB2 /* RxKeyboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09873ACC2B7A64D6004A1EB2 /* XCRemoteSwiftPackageReference "RxKeyboard" */;
+			productName = RxKeyboard;
 		};
 		09DC3F032B5690910026B857 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1477,6 +1867,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09DC3F222B580E3C0026B857 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		DE43152A2B7AFB1A0018BEEE /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE8479892B4790B500471B4F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		DE43152D2B7B5CB50018BEEE /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE43152C2B7B5CB50018BEEE /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 		DE5F410E2B4B841500581075 /* SkeletonView */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1522,6 +1922,141 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DE84799C2B47910C00471B4F /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		DEDE44062B6A2CD50068A749 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		DEDE44082B6A2CD50068A749 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		DEDE440A2B6A2CD50068A749 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		DEDE440C2B6A2CD50068A749 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		DEDE440E2B6A2CD50068A749 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		DEDE44102B6A39160068A749 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		DEDE44122B6A39160068A749 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		DEDE44142B6A39160068A749 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		DEDE44162B6A39160068A749 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		DEDE44182B6A39160068A749 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		DEDE441A2B6A39160068A749 /* FirebaseAppDistribution-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAppDistribution-Beta";
+		};
+		DEDE441C2B6A39160068A749 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		DEDE441E2B6A39160068A749 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		DEDE44202B6A39160068A749 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		DEDE44222B6A39160068A749 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		DEDE44242B6A39160068A749 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		DEDE44262B6A39160068A749 /* FirebaseDynamicLinks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDynamicLinks;
+		};
+		DEDE44282B6A39160068A749 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		DEDE442A2B6A39160068A749 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		DEDE442C2B6A39160068A749 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		DEDE442E2B6A39160068A749 /* FirebaseFunctionsCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFunctionsCombine-Community";
+		};
+		DEDE44302B6A39160068A749 /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		DEDE44322B6A39160068A749 /* FirebaseInAppMessagingSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessagingSwift-Beta";
+		};
+		DEDE44342B6A39160068A749 /* FirebaseInstallations */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseInstallations;
+		};
+		DEDE44362B6A39160068A749 /* FirebaseMLModelDownloader */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMLModelDownloader;
+		};
+		DEDE44382B6A39160068A749 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		DEDE443A2B6A39160068A749 /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEDE44052B6A2CD50068A749 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

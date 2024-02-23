@@ -22,10 +22,17 @@ final class DetailEpiCoordinator: Coordinator {
     }
     
     func startDetail(id: Int) {
-        let vm = DetailEpisodeViewModel(usecase: EpisodeUseCase(), coordinator: self, epiId: id)
-        let vc = DetailEpisodeViewController(viewModel: vm)
+        let vm = DetailEpisodeViewModel(usecase: EpisodeUseCase(epiRepository: EpisodeRepository(service: EpisodeService()), gemRepository: GemRepository(service: GemService())), coordinator: self)
+        let vc = DetailEpisodeViewController(viewModel: vm, id: id)
         vc.hidesBottomBarWhenPushed = true
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func pushSoara(id: Int) {
+        let vc = SoaraCoordinator(navigationController: navigationController)
+        navigationController.isNavigationBarHidden = true
+        childCoordinators.append(vc)
+        vc.startSoara(id: id)
     }
     
     func start() {

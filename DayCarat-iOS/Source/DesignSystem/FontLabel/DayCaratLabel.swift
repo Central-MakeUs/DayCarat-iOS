@@ -61,7 +61,7 @@ final class DayCaratLabel:UILabel {
         self.numberOfLines = 0
         self.sizeToFit()
         self.adjustKerning(-0.2)
-
+        self.textAlignment = .justified  
         switch type {
         case .Header1:
             self.font = .pretendard(.Bold, size: 64)

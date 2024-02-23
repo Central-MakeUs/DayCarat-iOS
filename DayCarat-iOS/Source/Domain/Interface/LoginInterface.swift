@@ -9,4 +9,5 @@ import RxSwift
 
 protocol LoginInterface {
     func login(token: String) -> Single<BaseResponse<LoginResponse>>
+    func requestAppleLogin(id_token: String) -> Single<BaseResponse<LoginResponse>>
 }

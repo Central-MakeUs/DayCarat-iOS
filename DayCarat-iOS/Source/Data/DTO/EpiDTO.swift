@@ -30,3 +30,27 @@ struct DetailEpisodeContentDTO: Decodable {
     let episodeContentType: String
     let content: String
 }
+
+struct EpisodeInputContent {
+    let episodeContentType: String
+    let content: String
+}
+
+struct ActivityEpiQuantityDTO: Decodable {
+    let activityTagName: String
+    let quantity: Int
+}
+
+struct DateEpiQuantityDTO: Decodable {
+    let month: String
+    let quantity: Int
+}
+
+struct ActivityEpisodeList: Decodable {
+    let id: Int
+    let title: String
+    let date: String
+    let episodeState: String
+    let episodeKeyword: String
+    let content: String
+}

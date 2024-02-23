@@ -30,8 +30,8 @@ final class OnBoardingCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = OnBoardingViewController(viewModel: OnBoardingViewModel(usecase: OnBoardingUseCase()))
-        vc.coordinator = self
+        let vc = OnBoardingViewController(viewModel: OnBoardingViewModel(usecase: OnBoardingUseCase(repository: UserRepository(service: UserInfoService())), coordinator: self))
+        
         navigationController.pushViewController(vc, animated: false)
     }
     

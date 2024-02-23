@@ -7,4 +7,8 @@
 
 import Foundation
 
+import RxSwift
 
+protocol OnBoardingInterface {
+    
+}

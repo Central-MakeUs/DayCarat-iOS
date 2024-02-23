@@ -13,6 +13,11 @@ class EpisodeListHeaderView: UICollectionReusableView {
     private let titleLabel = DayCaratLabel(type: .Subhead1, text: "활동명", textColor: .Gray900!)
     private let countLabel = DayCaratLabel(type: .Subhead1, text: "12", textColor: .Main!)
     
+    func configure(title: String, count: String) {
+        titleLabel.text = title
+        countLabel.text = count
+    }
+    
     private func addView() {
         [titleLabel, countLabel].forEach {
             self.addSubview($0)

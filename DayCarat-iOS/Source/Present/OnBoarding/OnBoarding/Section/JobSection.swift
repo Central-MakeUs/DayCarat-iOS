@@ -23,7 +23,7 @@ class JobSection: BaseView {
                     forCellWithReuseIdentifier: JobCollectionViewCell.identifier)
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets.zero
-        layout.itemSize = CGSize(width: 360, height: 48)
+        layout.itemSize = CGSize(width: 350, height: 48)
         layout.minimumLineSpacing = 16
         layout.minimumInteritemSpacing = 0
         layout.sectionInsetReference = .fromContentInset
