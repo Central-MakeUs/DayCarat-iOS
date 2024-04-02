@@ -1,4 +1,4 @@
-# 💎 DayCarat - 취업준비를 위한 커리어 경험 기록 관리 서비스, 데이캐럿
+# 💎 DayCarat - 취준을 위한 커리어 경험 기록 관리 서비스, 데이캐럿
 
 ![image](https://github.com/Central-MakeUs/DayCarat-iOS/assets/114370871/7cfceca2-6efc-4d31-b9da-f9d632d6e6ad)
 <br>
